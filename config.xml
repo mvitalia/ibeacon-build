@@ -10,7 +10,7 @@
 <author email="websmurf@evothings.com" href="http://evothings.com"> Webb S Murph </author>
 <content src="index.html" />
 
-<plugin name="com.unarin.cordova.beacon" spec="3.4.1" />
+<plugin name="cordova-plugin-ibeacon"  />
 <plugin name="cordova-plugin-device-motion" spec="1.2.2" />
 <plugin name="cordova-plugin-vibration" spec="2.1.2" />
 
