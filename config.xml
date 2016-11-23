@@ -5,7 +5,7 @@
    xmlns="http://www.w3.org/ns/widgets"
    xmlns:gap="http://phonegap.com/ns/1.0">
 
-<name>Beacon scan</name>
+<name>Scan</name>
 <description> Testing the on-board accelerometer </description>
 <author email="websmurf@evothings.com" href="http://evothings.com"> Webb S Murph </author>
 <content src="index.html" />
