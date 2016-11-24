@@ -40,7 +40,7 @@ var app = (function()
 		// Bluetooh
          
 	
-		 
+		 cordova.plugins.BluetoothStatus.initPlugin();
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
 
@@ -68,12 +68,12 @@ var app = (function()
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
-				if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
-				{
+				//if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
+			//	{
 					//prova = beacon.uuid;
 					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
-				}
+			//	}
 				
 			}
 		};
