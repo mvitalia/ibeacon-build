@@ -41,7 +41,7 @@ var app = (function()
 	
 		
           cordova.plugins.BluetoothStatus.initPlugin();
-		  window.addEventListener('BluetoothStatus.disable', function() {
+		  window.addEventListener('BluetoothStatus.disabled', function() {
     alert('Attivare il blue');
     });
 	
