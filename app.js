@@ -64,7 +64,7 @@ var app = (function()
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
 				
-				if(beacon.accuracy<2.00)
+				if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
 				{
 					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
