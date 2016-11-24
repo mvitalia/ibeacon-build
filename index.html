@@ -9,12 +9,14 @@
 
 	<title>iBeacon Scan</title>
 
-
+	<style>
+		@import 'ui/css/evothings-app.css';
+	</style>
      <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
      <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css"/>
 	<script>
 	// Redirect console.log to Evothings Workbench.
-//	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+	if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
 	<script src="cordova.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
@@ -32,7 +34,7 @@
         </div>
         <div role="main" class="ui-content">
          <div class="ui-grid-solo ui-responsive">
-          
+            <ul data-role="listview" id="found-beacons" data-split-theme="a" data-split-icon="delete" data-inset="true"></ul>
         </div>
         </div>
         <div data-role="footer" data-position="fixed">
