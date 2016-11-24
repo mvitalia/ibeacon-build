@@ -73,7 +73,10 @@
         </div>
     </div>
 <script>
-   alert("Dai"+prova);
+ $(document).on("pagecreate", "#home", function () {
+       alert("Dai"+prova);
+    });
+ 
    $(document).on("pageinit", "#database", function () {
       alert("ok");
        $("#lista_datiJson").html("");
