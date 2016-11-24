@@ -78,8 +78,12 @@
         </div>
     </div>
 <script>
- $(document).on("pageshow", "#home", function () {
-    //alert("Valore di prova = "+prova);
+ $(document).on("pageinit", "#home", function () {
+    
+     cordova.plugins.BluetoothStatus.initPlugin();
+		  window.addEventListener('BluetoothStatus.disabled', function() {
+    	     $("#pop").click();
+    	});
     });
  
    $(document).on("pageinit", "#database", function () {
