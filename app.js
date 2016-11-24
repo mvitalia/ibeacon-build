@@ -37,6 +37,13 @@ var app = (function()
 
 	function onDeviceReady()
 	{
+		// Blootooh
+		cordova.plugins.BluetoothStatus.initPlugin();
+		BluetoothStatus.hasBT(g)
+		{
+			alert(g);
+		}
+
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
 
@@ -66,7 +73,7 @@ var app = (function()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
 				{
-					prova = beacon.uuid;
+					//prova = beacon.uuid;
 					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
 				}
