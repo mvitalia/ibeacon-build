@@ -63,9 +63,10 @@ var app = (function()
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
-				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
+				
 				if(beacon.accuracy<2.00)
 				{
+					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
 				}
 				
