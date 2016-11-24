@@ -1,4 +1,4 @@
-var prova = "ok";
+var prova;
 var app = (function()
 {
 	
@@ -63,9 +63,10 @@ var app = (function()
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
-				
+				// Queto if permette di idetificare il Beacon a seconda della distanza
 				if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
 				{
+					prova = beacon.uuid;
 					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
 				}
