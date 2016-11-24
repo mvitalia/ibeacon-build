@@ -12,14 +12,15 @@
 	<style>
 		@import 'ui/css/evothings-app.css';
 	</style>
-
+     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css"/>
 	<script>
 	// Redirect console.log to Evothings Workbench.
 	if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
-
 	<script src="cordova.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script src="libs/evothings/evothings.js"></script>
 	<script src="libs/evothings/ui/ui.js"></script>
 	<script src="app.js"></script>
@@ -27,22 +28,38 @@
 </head>
 
 <body>
+	 <div data-role="page" id="home" >
+        <div data-role="header" class="header" data-position="fixed">
+            <h1 id="app-title">Beacon Scan</h1>
+        </div>
+        <div role="main" class="ui-content">
+         <div class="ui-grid-solo ui-responsive">
+            <ul data-role="listview" id="found-beacons" data-split-theme="a" data-split-icon="delete" data-inset="true"></ul>
+        </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!--Tab bar jquery mobile-->
+            <div data-role="navbar" data-iconpos="top">
+                
+            </div>
+        </div>
+    </div>
 
-	<header>
+<!--	<header>
 		<button class="back" onclick="history.back()">
 			<img src="ui/images/arrow-left.svg" />
 		</button>
 
 		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
 
-		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
+		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>
 	</header>
 
 	<h1>iBeacon Scan</h1>
 	<p id="warning">To detect iBeacons you will have to add the 128bit UUID's you
 	are looking for to the regions array in app.js of the iBeacon example.
 	</p>
-	<ul id="found-beacons" class="dynamic"></ul>
+	<ul id="found-beacons" class="dynamic"></ul>-->
 
 </body>
 
