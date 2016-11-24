@@ -54,7 +54,7 @@ var app = (function()
 		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
-			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
@@ -148,7 +148,7 @@ var app = (function()
 					+	'Minor: ' + beacon.minor + '<br />'
 					+	'Proximity: ' + beacon.proximity + '<br />'
 					+	'RSSI: ' + beacon.rssi + '<br />'
-					+	'Nome: ' + beacon.identifier + '<br />'
+					+	'Precisione: ' + beacon.accuracy + '<br />'
 					+ 	'<div style="background:rgb(255,128,64);height:20px;width:'
 					+ 		rssiWidth + '%;"></div>'
 					+ '</li>'
