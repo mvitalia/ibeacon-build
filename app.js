@@ -165,3 +165,4 @@ var app = (function()
 })();
 
 app.initialize();
+alert(prova);
