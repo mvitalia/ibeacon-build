@@ -37,14 +37,11 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		// Blootooh
-	
-		
+		// Bluetooh
           cordova.plugins.BluetoothStatus.initPlugin();
 		  window.addEventListener('BluetoothStatus.disabled', function() {
-    alert('Attivare il blue');
-	alert(cordova.plugins.BluetoothStatus.BTenabled ());
-    });
+    	     $("#pop").click();
+    	});
 	
 		 
 		// Specify a shortcut for the location manager holding the iBeacon functions.
