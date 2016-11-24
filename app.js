@@ -1,6 +1,7 @@
+var prova = "ok";
 var app = (function()
 {
-	var prova = "ok";
+	
 	// Application object.
 	var app = {};
 
@@ -160,8 +161,9 @@ var app = (function()
 			}
 		});
 	}
-    alert(prova);
+  
 	return app;
 })();
 
 app.initialize();
+  alert(prova);
