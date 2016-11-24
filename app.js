@@ -10,7 +10,7 @@ var app = (function()
 		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
 		// Sample UUIDs for beacons in our lab.
 		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
-		{uuid:'937BD9F3-5C44-971C-F389-35152A80C6B2'},	// verde
+		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
 	];
 
 	// Background detection.
@@ -47,19 +47,20 @@ var app = (function()
 
 	function startScan()
 	{
-		// The delegate object holds the iBeacon callback functions
-		// specified below.
+		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
+		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
 
-		// Called continuously when ranging beacons.
+		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 			//console.log('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult))
 			for (var i in pluginResult.beacons)
 			{
-				// Insert beacon into table of found beacons.
+				// Se trova il Beacon lo inserisce nella var beacon.
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
+				// key, la chiave identifica
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			}
@@ -133,7 +134,7 @@ var app = (function()
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
-				alert(key);
+				
 				// Map the RSSI value to a width in percent for the indicator.
 				var rssiWidth = 1; // Used when RSSI is zero or greater.
 				if (beacon.rssi < -100) { rssiWidth = 100; }
