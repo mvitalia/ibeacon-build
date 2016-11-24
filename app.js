@@ -54,7 +54,7 @@ var app = (function()
 		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
-			//console.log('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult))
+			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
