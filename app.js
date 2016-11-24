@@ -42,7 +42,7 @@ var app = (function()
 		
           cordova.plugins.BluetoothStatus.initPlugin();
 		  var g = BluetoothStatus.hasBT();
-		  alert("init Bluetooth"+g);
+		  alert("init Bluetoothfhg"+g);
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
 
