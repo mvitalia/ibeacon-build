@@ -1,5 +1,6 @@
 var app = (function()
 {
+	var prova = "ok";
 	// Application object.
 	var app = {};
 
