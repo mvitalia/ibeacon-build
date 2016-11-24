@@ -74,10 +74,14 @@
     </div>
 <script>
   
-   $(document).on("pageshow", "#database", function () {
+   $(document).on("pageinit", "#database", function () {
       alert("ok");
        $("#lista_datiJson").html("");
        caricoDatiServerSalvoInDb ();
+    });
+	 $(document).on("pagebeforeshow", "#databse", function () {
+         $("#lista_datiJson").html("");
+         selezionoDati ();
     });
 </script>
 <!--	<header>
