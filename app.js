@@ -160,9 +160,8 @@ var app = (function()
 			}
 		});
 	}
-
+    alert(prova);
 	return app;
 })();
 
 app.initialize();
-alert(prova);
