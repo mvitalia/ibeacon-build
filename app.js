@@ -38,8 +38,7 @@ var app = (function()
 	function onDeviceReady()
 	{
 		// Blootooh
-		cordova.plugins.BluetoothStatus.initPlugin();
-		alert("Bule inizializzato");
+		
 		
 
 		// Specify a shortcut for the location manager holding the iBeacon functions.
