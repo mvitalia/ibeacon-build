@@ -39,7 +39,7 @@ var app = (function()
 	{
 		// Blootooh
 		cordova.plugins.BluetoothStatus.initPlugin();
-		BluetoothStatus.hasBT(g)
+		cordova.plugins.BluetoothStatus.hasBT(g)
 		{
 			alert(g);
 		}
