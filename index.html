@@ -74,7 +74,7 @@
     </div>
 <script>
  $(document).on("pagecreate", "#home", function () {
-       alert("Dai"+prova);
+     
     });
  
    $(document).on("pageinit", "#database", function () {
@@ -83,6 +83,7 @@
        caricoDatiServerSalvoInDb ();
     });
 	 $(document).on("pagebeforeshow", "#databse", function () {
+		   alert("Dai"+prova);
          $("#lista_datiJson").html("");
          selezionoDati ();
     });
