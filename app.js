@@ -42,12 +42,8 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		cordova.plugins.notification.local.schedule({
-    id: 1,
-    title: "Production Jour fixe",
-    text: "Duration 1h",
-    every: 1
-   
+        cordova.plugins.notification.local.hasPermission(function (granted) {
+     alert('Permission has been granted: ' + granted);
 });
 		// Bluetooh
          navigator.notification.beep(2);
