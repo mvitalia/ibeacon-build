@@ -129,7 +129,7 @@ app.runScanTimer = function()
 		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
-			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult.state));
+			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult.state));
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
@@ -151,7 +151,7 @@ app.runScanTimer = function()
 		// (Not used in this example, included as a reference.)
 		delegate.didStartMonitoringForRegion = function(pluginResult)
 		{
-			//console.log('didStartMonitoringForRegion:' + JSON.stringify(pluginResult))
+			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.region.typeName))
 		};
 
 		// Called when monitoring and the state of a region changes.
