@@ -151,7 +151,6 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countUno++;
-					contatore=0;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
 				if(countDue==0 && beacon.uuid=='937BD9F3-5C44-971C-F389-35152A80C632')
@@ -159,7 +158,6 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countDue++;
-					contatore=0;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
 				}
 				if(countTre==0 && beacon.uuid=='B9407F30-F5F8-466E-AFF9-25556B57FE6D')
@@ -167,7 +165,6 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countTre++;
-					contatore=0;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
@@ -262,7 +259,7 @@ app.runScanTimer = function()
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
-				
+				contatore=0;
 				// Map the RSSI value to a width in percent for the indicator.
 				var rssiWidth = 1; // Used when RSSI is zero or greater.
 				if (beacon.rssi < -100) { rssiWidth = 100; }
@@ -289,15 +286,15 @@ app.runScanTimer = function()
 				{
 					if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
 					countUno=0;
-					alert(countUno);
+					
 				}
 				  if(beacon.uuid='937BD9F3-5C44-971C-F389-35152A80C632'){
                    countDue=0;
-				   alert(countDue);
+				 
 				}
 				 if(beacon.uuid='B9407F30-F5F8-466E-AFF9-25556B57FE6D'){
                    countTre=0;
-				   alert(countTre);
+				 
 				}
 				contatore++;
 				}
