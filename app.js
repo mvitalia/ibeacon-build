@@ -44,7 +44,7 @@ var app = (function()
 	{
 		 
 		// Bluetooh
-         // navigator.notification.beep(2);
+         navigator.notification.beep(2);
         // navigator.vibrate(3000);
 	
 	     ble = evothings.ble;
