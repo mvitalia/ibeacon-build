@@ -2,6 +2,7 @@ var prova;
 var app = (function()
 {
 	
+	var ble = null;
 	// Application object.
 	var app = {};
 
@@ -39,9 +40,9 @@ var app = (function()
 	{
 		// Bluetooh
          
-	
-		 cordova.plugins.BluetoothStatus.initPlugin();
-		 cordova.plugins.BluetoothStatus.promptForBT();
+	     ble = evothings.ble;
+		 //cordova.plugins.BluetoothStatus.initPlugin();
+		 //cordova.plugins.BluetoothStatus.promptForBT();
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
 
