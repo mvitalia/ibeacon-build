@@ -121,7 +121,7 @@ app.runScanTimer = function()
 
 	function startScan()
 	{
-		alert("Inizio");
+		
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
@@ -129,6 +129,7 @@ app.runScanTimer = function()
 		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
+			alert("Inizio");
 			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
 			for (var i in pluginResult.beacons)
 			{
@@ -148,6 +149,7 @@ app.runScanTimer = function()
 			//	}
 				
 			}
+			alert("Fine");
 		};
 
 		// Called when starting to monitor a region.
@@ -204,7 +206,7 @@ app.runScanTimer = function()
 				.fail(console.error)
 				.done();
 		}
-		alert("Fine");
+		
 	}
 
 	function displayBeaconList()
