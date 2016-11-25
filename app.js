@@ -39,13 +39,8 @@ var app = (function()
 	function onDeviceReady()
 	{
 		// Bluetooh
-          navigator.notification.beep(2);
-       navigator.notification.alert(
-    'You are the winner!',  // message
-    alertDismissed,         // callback
-    'Game Over',            // title
-    'Done'                  // buttonName
-);
+         
+     
 	     //ble = evothings.ble;
 		 //cordova.plugins.BluetoothStatus.initPlugin();
 		 //cordova.plugins.BluetoothStatus.promptForBT();
