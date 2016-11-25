@@ -179,5 +179,5 @@ var app = (function()
 	return app;
 })();
 
-app.initialize();
+//app.initialize();
  
