@@ -100,7 +100,9 @@
 alert("Dopo confirm");
     });
 
-    
+ function onConfirm(buttonIndex) {
+    alert('You selected button ' + buttonIndex);
+}   
  
    $(document).on("pageinit", "#database", function () {
       alert("ok");
