@@ -2,7 +2,7 @@ var prova;
 var countUno = 0;
 var countDue = 0;
 var countTre = 0;
-var tempoUno = 0;
+var contatore = 0;
 
 var app = (function()
 {
@@ -151,6 +151,7 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countUno++;
+					contatore=0;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
 				if(countDue==0 && beacon.uuid=='937BD9F3-5C44-971C-F389-35152A80C632')
@@ -158,6 +159,7 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countDue++;
+					contatore=0;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
 				}
 				if(countTre==0 && beacon.uuid=='B9407F30-F5F8-466E-AFF9-25556B57FE6D')
@@ -165,6 +167,7 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countTre++;
+					contatore=0;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
@@ -282,18 +285,23 @@ app.runScanTimer = function()
 				//$('#warning').remove();
 				//$('#found-beacons').append(element);
 			}else{
-				if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
+				if(contatore==0)
+				{
+					if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
 					countUno=0;
 					alert(countUno);
 				}
-				if(beacon.uuid='937BD9F3-5C44-971C-F389-35152A80C632'){
+				  if(beacon.uuid='937BD9F3-5C44-971C-F389-35152A80C632'){
                    countDue=0;
 				   alert(countDue);
 				}
-				if(beacon.uuid='B9407F30-F5F8-466E-AFF9-25556B57FE6D'){
+				 if(beacon.uuid='B9407F30-F5F8-466E-AFF9-25556B57FE6D'){
                    countTre=0;
 				   alert(countTre);
 				}
+				contatore++;
+				}
+				
 			
 			}
 		});
