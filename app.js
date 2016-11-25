@@ -39,7 +39,7 @@ var app = (function()
 	function onDeviceReady()
 	{
 		// Bluetooh
-         
+          navigator.notification.beep(2);
      
 	     //ble = evothings.ble;
 		 //cordova.plugins.BluetoothStatus.initPlugin();
