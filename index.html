@@ -85,8 +85,13 @@
     	     $("#pop").click();
     	});
       //  cordova.plugins.BluetoothStatus.promptForBT();
-
-        alert("ok");
+      navigator.notification.beep(2);
+       navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
     });
  
    $(document).on("pageinit", "#database", function () {
