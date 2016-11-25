@@ -42,7 +42,9 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		 
+		 cordova.plugins.notification.local.registerPermission(function (granted) {
+       alert('Permission has been granted: ' + granted);
+});
 		// Bluetooh
          navigator.notification.beep(2);
         // navigator.vibrate(3000);
