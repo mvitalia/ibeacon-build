@@ -133,12 +133,7 @@ app.runScanTimer = function()
 		{
 		
 			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-            if(pluginResult.beacons=="")
-			{
-				alert("Nullo");
-			}else{
-				alert("Pieno");
-			}
+            
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
@@ -149,6 +144,12 @@ app.runScanTimer = function()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//prova = beacon.uuid;
+				if(countUno==0 && beacon.uuid=='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0')
+				{
+					 navigator.notification.beep(1);
+        			// navigator.vibrate(3000);
+					countUno++;
+				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			
@@ -251,6 +252,10 @@ app.runScanTimer = function()
                 $('.noBeacon').remove();
 				//$('#warning').remove();
 				$('#found-beacons').append(element);
+			}else{
+				if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
+					countUno=0;
+				}
 			}
 		});
 	}
