@@ -242,7 +242,7 @@ app.runScanTimer = function()
 		$('#pop').click();
 	}else{
 		//alert("Stai salvando la notizia");
-		$('#pop').click();
+		$('#popDue').click();
 	}
 }
 
