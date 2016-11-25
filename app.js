@@ -1,5 +1,6 @@
 var prova;
 var countUno = 0;
+var tempoUno = 0;
 
 var app = (function()
 {
@@ -131,7 +132,8 @@ app.runScanTimer = function()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+		
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
@@ -139,7 +141,6 @@ app.runScanTimer = function()
 					
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-				alert(beacon.timeStamp);
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//prova = beacon.uuid;
