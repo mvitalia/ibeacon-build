@@ -129,7 +129,7 @@ app.runScanTimer = function()
 		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
-			alert("Inizio");
+		
 			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
 			for (var i in pluginResult.beacons)
 			{
@@ -149,7 +149,7 @@ app.runScanTimer = function()
 			//	}
 				
 			}
-			alert("Fine");
+			
 		};
 
 		// Called when starting to monitor a region.
@@ -163,6 +163,7 @@ app.runScanTimer = function()
 		// If we are in the background, a notification is shown.
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
+			alert("InizioUno");
 				//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
 			if (inBackground)
 			{
@@ -179,6 +180,7 @@ app.runScanTimer = function()
 						});
 				}
 			}
+			alert("FineDue");
 		};
 
 		// Set the delegate object to use.
