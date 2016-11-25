@@ -166,7 +166,8 @@ app.runScanTimer = function()
 						{
 							id: ++notificationID,
 							title: 'Beacon in range',
-							text: 'iBeacon Scan detected a beacon, tap here to open app.'
+							text: 'iBeacon Scan detected a beacon, tap here to open app.',
+							every: 1
 						});
 				}
 			}
