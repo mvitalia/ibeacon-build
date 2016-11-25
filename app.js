@@ -42,13 +42,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		  cordova.plugins.notification.local.schedule({
-          id: 10,
-        title: "Meeting in 15 minutes!",
-        text: "Jour fixe Produktionsbesprechung",
-        at: today_at_12_20_am,
-        data: { meetingId:"#123FG8" }
-        });
+		 
 		// Bluetooh
          // navigator.notification.beep(2);
         // navigator.vibrate(3000);
