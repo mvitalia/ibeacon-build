@@ -133,7 +133,12 @@ app.runScanTimer = function()
 		{
 		
 			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-		    alert(pluginResult.beacons);
+            if(pluginResult.beacons=="")
+			{
+				alert("Nullo");
+			}else{
+				alert("Pieno");
+			}
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
