@@ -80,12 +80,12 @@
 <script>
  $(document).on("pageinit", "#home", function () {
     
-    
+          app.initialize();
 		  window.addEventListener('BluetoothStatus.disabled', function() {
     	     $("#pop").click();
     	});
       //  cordova.plugins.BluetoothStatus.promptForBT();
-   
+    navigator.notification.alert('You are the winner!',alertDismissed,'Game Over','Done'); 
      
     });
    
