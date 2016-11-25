@@ -211,12 +211,12 @@ app.runScanTimer = function()
 		$('#found-beacons').empty();
 
 		var timeNow = Date.now();
-
+        navigator.notification.beep(1);
+	   //navigator.vibrate(3000);
 		// Update beacon list.
 		$.each(beacons, function(key, beacon)
 		{
-			navigator.notification.beep(1);
-			//navigator.vibrate(3000);
+			
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
