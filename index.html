@@ -89,7 +89,9 @@
      
     });
    
-  	 
+  $(document).on("pageshow", "#home", function () {
+    navigator.notification.alert('You are the winner!',alertDismissed,'Game Over','Done'); 
+    });	 
 
 function alertDismissed() {
  alert("Partito");
