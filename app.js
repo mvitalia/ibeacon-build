@@ -1,5 +1,5 @@
 var prova;
-var count = 0;
+var countUno = 0;
 var app = (function()
 {
 	
@@ -121,6 +121,7 @@ app.runScanTimer = function()
 
 	function startScan()
 	{
+		alert("Inizio");
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
@@ -203,6 +204,7 @@ app.runScanTimer = function()
 				.fail(console.error)
 				.done();
 		}
+		alert("Fine");
 	}
 
 	function displayBeaconList()
@@ -211,7 +213,6 @@ app.runScanTimer = function()
 		$('#found-beacons').empty();
 
 		var timeNow = Date.now();
-        alert("Primo");
 		// Update beacon list.
 		$.each(beacons, function(key, beacon)
 		{
@@ -219,7 +220,7 @@ app.runScanTimer = function()
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
-				 alert("Due");
+				
 				// Map the RSSI value to a width in percent for the indicator.
 				var rssiWidth = 1; // Used when RSSI is zero or greater.
 				if (beacon.rssi < -100) { rssiWidth = 100; }
