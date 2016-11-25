@@ -90,18 +90,17 @@
     });
    
     $(document).on("pageshow", "#home", function () {
+        alert("Prima confirm");
    navigator.notification.confirm(
     'You are the winner!', // message
      onConfirm,            // callback to invoke with index of button pressed
     'Game Over',           // title
     ['Restart','Exit']     // buttonLabels
 );
-
+alert("Dopo confirm");
     });
 
-    function onConfirm(buttonIndex) {
-    alert('You selected button ' + buttonIndex);
-}
+    
  
    $(document).on("pageinit", "#database", function () {
       alert("ok");
