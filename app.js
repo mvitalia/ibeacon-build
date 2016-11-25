@@ -149,7 +149,7 @@ app.runScanTimer = function()
 			
 				
 			}
-			
+			alert("ok");
 		};
 
 		// Called when starting to monitor a region.
