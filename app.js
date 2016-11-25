@@ -159,8 +159,8 @@ app.runScanTimer = function()
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
 				alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
-			if (inBackground)
-			{
+		//	if (inBackground)
+		//	{
 				// Show notification if a beacon is inside the region.
 				// TODO: Add check for specific beacon(s) in your app.
 				if (pluginResult.region.typeName == 'BeaconRegion' &&
@@ -173,7 +173,7 @@ app.runScanTimer = function()
 							text: 'iBeacon Scan detected a beacon, tap here to open app.'
 						});
 				}
-			}
+		//	}
 		};
 
 		// Set the delegate object to use.
