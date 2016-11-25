@@ -133,7 +133,7 @@ app.runScanTimer = function()
 		{
 		
 			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-		
+		    alert(pluginResult.beacons);
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
@@ -224,7 +224,7 @@ app.runScanTimer = function()
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
-				alert("ok");
+				
 				// Map the RSSI value to a width in percent for the indicator.
 				var rssiWidth = 1; // Used when RSSI is zero or greater.
 				if (beacon.rssi < -100) { rssiWidth = 100; }
