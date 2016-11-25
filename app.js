@@ -42,7 +42,13 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		
+		cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: "Production Jour fixe",
+    text: "Duration 1h",
+    every: 1
+   
+});
 		// Bluetooh
          navigator.notification.beep(2);
         // navigator.vibrate(3000);
