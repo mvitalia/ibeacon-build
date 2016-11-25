@@ -41,7 +41,7 @@ var app = (function()
 		// Bluetooh
          // navigator.notification.beep(2);
         // navigator.vibrate(3000);
-		 navigator.notification.alert('You are the winner!',alertDismissed,'Game Over','Done');
+	
 	     //ble = evothings.ble;
 		 //cordova.plugins.BluetoothStatus.initPlugin();
 		 //cordova.plugins.BluetoothStatus.promptForBT();
@@ -54,9 +54,7 @@ var app = (function()
 		// Display refresh timer.
 		updateTimer = setInterval(displayBeaconList, 500);
 	}
-function alertDismissed() {
- alert("Partito");
-}
+
 	function startScan()
 	{
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 

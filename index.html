@@ -85,13 +85,15 @@
     	     $("#pop").click();
     	});
       //  cordova.plugins.BluetoothStatus.promptForBT();
-    
+    navigator.notification.alert('You are the winner!',alertDismissed,'Game Over','Done');
      
     });
    
-  
+  	 
 
-
+function alertDismissed() {
+ alert("Partito");
+}
  
    $(document).on("pageinit", "#database", function () {
       alert("ok");
