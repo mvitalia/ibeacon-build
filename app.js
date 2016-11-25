@@ -2,7 +2,7 @@ var prova;
 var countUno = 0;
 var countDue = 0;
 var countTre = 0;
-var contatore = 0;
+
 
 var app = (function()
 {
@@ -259,7 +259,7 @@ app.runScanTimer = function()
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
-				contatore=0;
+				
 				// Map the RSSI value to a width in percent for the indicator.
 				var rssiWidth = 1; // Used when RSSI is zero or greater.
 				if (beacon.rssi < -100) { rssiWidth = 100; }
@@ -281,25 +281,6 @@ app.runScanTimer = function()
                 $('.noBeacon').remove();
 				//$('#warning').remove();
 				//$('#found-beacons').append(element);
-			}else{
-				if(contatore==0)
-				{
-					if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
-					countUno=0;
-					
-				}
-				  if(beacon.uuid='937BD9F3-5C44-971C-F389-35152A80C632'){
-                   countDue=0;
-				 
-				}
-				 if(beacon.uuid='B9407F30-F5F8-466E-AFF9-25556B57FE6D'){
-                   countTre=0;
-				 
-				}
-				contatore++;
-				}
-				
-			
 			}
 		});
 	}
