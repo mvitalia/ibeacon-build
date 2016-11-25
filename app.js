@@ -284,12 +284,15 @@ app.runScanTimer = function()
 			}else{
 				if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
 					countUno=0;
+					alert(countUno);
 				}
 				if(beacon.uuid='937BD9F3-5C44-971C-F389-35152A80C632'){
                    countDue=0;
+				   alert(countDue);
 				}
 				if(beacon.uuid='B9407F30-F5F8-466E-AFF9-25556B57FE6D'){
                    countTre=0;
+				   alert(countTre);
 				}
 			
 			}
