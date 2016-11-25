@@ -133,23 +133,14 @@ app.runScanTimer = function()
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
 				// Faccio partire beep o vibrazione
-				if(count==0)
-				{
-					navigator.notification.beep(1);
-					//navigator.vibrate(3000);
-					count++;
-				}
+					
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				
-				
-				}
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
 			//	{
-				   navigator.notification.beep(1);
-					//navigator.vibrate(3000);
 					//prova = beacon.uuid;
 					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
@@ -224,6 +215,8 @@ app.runScanTimer = function()
 		// Update beacon list.
 		$.each(beacons, function(key, beacon)
 		{
+			navigator.notification.beep(1);
+			//navigator.vibrate(3000);
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
