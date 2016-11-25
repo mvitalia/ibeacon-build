@@ -149,6 +149,7 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countUno++;
+					navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
@@ -216,6 +217,10 @@ app.runScanTimer = function()
 		}
 		
 	}
+
+	function onConfirm(buttonIndex) {
+    alert('You selected button ' + buttonIndex);
+}
 
 	function displayBeaconList()
 	{
