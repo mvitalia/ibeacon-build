@@ -157,14 +157,14 @@ app.runScanTimer = function()
 				{
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
-					countUno++;
+					countDue++;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
 				}
 				if(countTre==0 && beacon.uuid=='B9407F30-F5F8-466E-AFF9-25556B57FE6D')
 				{
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
-					countUno++;
+					countTre++;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
@@ -235,7 +235,7 @@ app.runScanTimer = function()
 	}
 
 	function onConfirm(buttonIndex) {
-    alert('You selected button ' + buttonIndex);
+    //alert('You selected button ' + buttonIndex);
 	if(buttonIndex==1)
 	{
 		alert("Stai guardando la notizia")
