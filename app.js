@@ -1,4 +1,5 @@
 var prova;
+var count = 0;
 var app = (function()
 {
 	
@@ -132,8 +133,12 @@ app.runScanTimer = function()
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
 				// Faccio partire beep o vibrazione
-				navigator.notification.beep(1);
-                //navigator.vibrate(3000);
+				if(count==0)
+				{
+					navigator.notification.beep(1);
+					//navigator.vibrate(3000);
+					count++;
+				}
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
