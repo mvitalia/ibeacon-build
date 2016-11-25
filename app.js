@@ -241,7 +241,8 @@ app.runScanTimer = function()
 		//alert("Stai guardando la notizia")
 		$('#pop').click();
 	}else{
-		alert("Stai salvando la notizia");
+		//alert("Stai salvando la notizia");
+		$('#pop').click();
 	}
 }
 
