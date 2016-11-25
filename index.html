@@ -89,10 +89,19 @@
      
     });
    
-    $(document).on("pageaftershow", "#home", function () {
-      alert("ok");
+    $(document).on("pageshow", "#home", function () {
+   navigator.notification.confirm(
+    'You are the winner!', // message
+     onConfirm,            // callback to invoke with index of button pressed
+    'Game Over',           // title
+    ['Restart','Exit']     // buttonLabels
+);
 
     });
+
+    function onConfirm(buttonIndex) {
+    alert('You selected button ' + buttonIndex);
+}
  
    $(document).on("pageinit", "#database", function () {
       alert("ok");
