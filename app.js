@@ -39,8 +39,8 @@ var app = (function()
 	function onDeviceReady()
 	{
 		// Bluetooh
-          navigator.notification.beep(2);
-         
+         // navigator.notification.beep(2);
+         navigator.vibrate(3000);
 	     //ble = evothings.ble;
 		 //cordova.plugins.BluetoothStatus.initPlugin();
 		 //cordova.plugins.BluetoothStatus.promptForBT();
