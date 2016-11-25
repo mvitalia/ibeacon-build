@@ -1,5 +1,7 @@
 var prova;
 var countUno = 0;
+var countDue = 0;
+var countTre = 0;
 var tempoUno = 0;
 
 var app = (function()
@@ -151,6 +153,20 @@ app.runScanTimer = function()
 					countUno++;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
+				if(countDue==0 && beacon.uuid=='937BD9F3-5C44-971C-F389-35152A80C632')
+				{
+					 navigator.notification.beep(1);
+        			// navigator.vibrate(3000);
+					countUno++;
+					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
+				}
+				if(countTre==0 && beacon.uuid=='B9407F30-F5F8-466E-AFF9-25556B57FE6D')
+				{
+					 navigator.notification.beep(1);
+        			// navigator.vibrate(3000);
+					countUno++;
+					navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
+				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			
@@ -220,6 +236,12 @@ app.runScanTimer = function()
 
 	function onConfirm(buttonIndex) {
     alert('You selected button ' + buttonIndex);
+	if(buttonIndex==1)
+	{
+		alert("Stai guardando la notizia")
+	}else{
+		alert("Stai salvando la notizia");
+	}
 }
 
 	function displayBeaconList()
@@ -256,11 +278,18 @@ app.runScanTimer = function()
 				);
                 $('.noBeacon').remove();
 				//$('#warning').remove();
-				$('#found-beacons').append(element);
+				//$('#found-beacons').append(element);
 			}else{
 				if(beacon.uuid='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'){
 					countUno=0;
 				}
+				if(beacon.uuid='937BD9F3-5C44-971C-F389-35152A80C632'){
+                   countDue=0;
+				}
+				if(beacon.uuid='B9407F30-F5F8-466E-AFF9-25556B57FE6D'){
+                   countTre=0;
+				}
+			
 			}
 		});
 	}
