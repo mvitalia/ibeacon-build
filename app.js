@@ -141,6 +141,18 @@ app.runScanTimer = function()
 				}
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
+				if(count==0)
+				{
+					navigator.notification.beep(1);
+					//navigator.vibrate(3000);
+					if(beacon.accuracy!=-1)
+					{
+						count++;
+					}else{
+						count--;
+					}
+				
+				}
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
@@ -164,7 +176,7 @@ app.runScanTimer = function()
 		// If we are in the background, a notification is shown.
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
-				alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
+				//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
 			if (inBackground)
 			{
 				// Show notification if a beacon is inside the region.
