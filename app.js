@@ -163,7 +163,7 @@ app.runScanTimer = function()
 		// If we are in the background, a notification is shown.
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
-			alert("InizioUno");
+			alert(pluginResult.state);
 				//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
 			if (inBackground)
 			{
@@ -180,7 +180,7 @@ app.runScanTimer = function()
 						});
 				}
 			}
-			alert("FineDue");
+			
 		};
 
 		// Set the delegate object to use.
