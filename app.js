@@ -238,7 +238,8 @@ app.runScanTimer = function()
     //alert('You selected button ' + buttonIndex);
 	if(buttonIndex==1)
 	{
-		alert("Stai guardando la notizia")
+		//alert("Stai guardando la notizia")
+		$('#pop').click();
 	}else{
 		alert("Stai salvando la notizia");
 	}
