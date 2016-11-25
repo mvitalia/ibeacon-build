@@ -6,6 +6,10 @@ var app = (function()
 	// Application object.
 	var app = {};
 
+    app.scanInterval = 5000;
+	app.isScanning = false;
+	app.lastScanEvent = 0;
+
 	// Specify your beacon 128bit UUIDs here.
 	var regions =
 	[
@@ -42,7 +46,8 @@ var app = (function()
          // navigator.notification.beep(2);
         // navigator.vibrate(3000);
 	
-	     //ble = evothings.ble;
+	     ble = evothings.ble;
+		 app.startLeScan();
 		 //cordova.plugins.BluetoothStatus.initPlugin();
 		 //cordova.plugins.BluetoothStatus.promptForBT();
 		// Specify a shortcut for the location manager holding the iBeacon functions.
@@ -54,6 +59,63 @@ var app = (function()
 		// Display refresh timer.
 		updateTimer = setInterval(displayBeaconList, 500);
 	}
+
+	app.startLeScan = function()
+{
+	console.log('startScan');
+
+	app.stopLeScan();
+	app.isScanning = true;
+	app.lastScanEvent = new Date();
+	//app.runScanTimer();
+
+	ble.startScan(function(r)
+	{
+		//address, rssi, name, scanRecord
+		if (app.knownDevices[r.address])
+		{
+			return;
+		}
+		app.knownDevices[r.address] = r;
+		var res = r.rssi + " " + r.name + " " + r.address;
+		console.log('scan result: ' + res);
+		var p = document.getElementById('deviceList');
+		var li = document.createElement('li');
+		var $a = $("<a href=\"#connected\">" + res + "</a>");
+		$(li).append($a);
+		$a.bind("click",
+			{address: r.address, name: r.name},
+			app.eventDeviceClicked);
+		//p.appendChild(li);
+		$("#deviceList").listview("refresh");
+	}, function(errorCode)
+	{
+		console.log('startScan error: ' + errorCode);
+	});
+};
+
+app.stopLeScan = function()
+{
+	console.log('Stopping scan...');
+	ble.stopScan();
+	app.isScanning = false;
+	clearTimeout(app.scanTimer);
+};
+
+app.runScanTimer = function()
+{
+	if (app.isScanning)
+	{
+		var timeSinceLastScan = new Date() - app.lastScanEvent;
+		if (timeSinceLastScan > app.scanInterval)
+		{
+			if (app.scanTimer) { clearTimeout(app.scanTimer); }
+			app.startLeScan(app.callbackFun);
+		}
+		app.scanTimer = setTimeout(app.runScanTimer, app.scanInterval);
+	}
+};
+
 
 	function startScan()
 	{
@@ -179,5 +241,5 @@ var app = (function()
 	return app;
 })();
 
-//app.initialize();
+app.initialize();
  
