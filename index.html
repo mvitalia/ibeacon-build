@@ -84,6 +84,8 @@
 		  window.addEventListener('BluetoothStatus.disabled', function() {
     	     $("#pop").click();
     	});
+        cordova.plugins.BluetoothStatus.promptForBT();
+        alert("ok");
     });
  
    $(document).on("pageinit", "#database", function () {
