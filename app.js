@@ -156,15 +156,15 @@ app.runScanTimer = function()
 		// (Not used in this example, included as a reference.)
 		delegate.didStartMonitoringForRegion = function(pluginResult)
 		{
-			//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
+			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult))
 		};
 
 		// Called when monitoring and the state of a region changes.
 		// If we are in the background, a notification is shown.
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
-			alert(pluginResult.state);
-				//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
+		
+			//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
 			if (inBackground)
 			{
 				// Show notification if a beacon is inside the region.
