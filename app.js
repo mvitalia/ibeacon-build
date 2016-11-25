@@ -151,7 +151,7 @@ app.runScanTimer = function()
 		// (Not used in this example, included as a reference.)
 		delegate.didStartMonitoringForRegion = function(pluginResult)
 		{
-			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.region.typeName))
+			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
 		};
 
 		// Called when monitoring and the state of a region changes.
