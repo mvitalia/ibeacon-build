@@ -141,22 +141,15 @@ app.runScanTimer = function()
 				}
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-				if(count==0)
-				{
-					navigator.notification.beep(1);
-					//navigator.vibrate(3000);
-					if(beacon.accuracy!=-1)
-					{
-						count++;
-					}else{
-						count--;
-					}
+				
 				
 				}
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//if(beacon.accuracy<2.00 && beacon.accuracy!=-1)
 			//	{
+				   navigator.notification.beep(1);
+					//navigator.vibrate(3000);
 					//prova = beacon.uuid;
 					var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 					beacons[key] = beacon;
