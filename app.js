@@ -39,8 +39,14 @@ var app = (function()
 	function onDeviceReady()
 	{
 		// Bluetooh
-         
-	     ble = evothings.ble;
+          navigator.notification.beep(2);
+       navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+	     //ble = evothings.ble;
 		 //cordova.plugins.BluetoothStatus.initPlugin();
 		 //cordova.plugins.BluetoothStatus.promptForBT();
 		// Specify a shortcut for the location manager holding the iBeacon functions.
