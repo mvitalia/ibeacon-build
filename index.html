@@ -35,6 +35,10 @@
         </div>
         <div role="main" class="ui-content">
          <div class="ui-grid-solo ui-responsive">
+             <div class="noBeacon">
+             <p>Spiegazione di cosa fa l ' applicazione</p>
+             <p><b>Avvicinati ad un Beacon </b></p>
+             </div>
           <ul id="found-beacons" class="dynamic"></ul>
         </div>
         <div data-role="popup" id="popupCloseLeft" class="ui-content" style="max-width:280px">
@@ -80,10 +84,7 @@
 <script>
  $(document).on("pageinit", "#home", function () {
     
-		  window.addEventListener('BluetoothStatus.disabled', function() {
-    	     $("#pop").click();
-    	});
-      //  cordova.plugins.BluetoothStatus.promptForBT();
+		
      
     });
    

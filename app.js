@@ -233,8 +233,8 @@ app.runScanTimer = function()
 					+ 		rssiWidth + '%;"></div>'
 					+ '</li>'
 				);
-
-				$('#warning').remove();
+                $('.noBeacon').remove();
+				//$('#warning').remove();
 				$('#found-beacons').append(element);
 			}
 		});
