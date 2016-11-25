@@ -44,8 +44,8 @@ var app = (function()
 	{
 
 		// Bluetooh
-         navigator.notification.beep(1);
-         navigator.vibrate(3000);
+        // navigator.notification.beep(1);
+        // navigator.vibrate(3000);
 	
 	     ble = evothings.ble;
 		 app.startLeScan();
@@ -127,13 +127,13 @@ app.runScanTimer = function()
 		// Richiamto di continuo per cercare i Beacon nei paraggi.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
-			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
 				// Faccio partire beep o vibrazione
 				navigator.notification.beep(1);
-                navigator.vibrate(3000);
+                //navigator.vibrate(3000);
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
