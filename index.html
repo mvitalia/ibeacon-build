@@ -146,13 +146,14 @@
         </div>
     </div>
 <script>
- $(document).on("pageshow", "#home", function () {
-    
-		  cordova.plugins.notification.local.on("click", function (notification) {
+  cordova.plugins.notification.local.on("click", function (notification) {
             joinMeeting(notification.data.meetingId);
             alert("ok");
     });
      
+ $(document).on("pageshow", "#home", function () {
+    
+		
     });
    
   $(document).on("pageshow", "#database", function () {
