@@ -51,7 +51,7 @@ var app = (function()
 		// Bluetooh
         // navigator.notification.beep(1);
         // navigator.vibrate(3000);
-        /* db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
@@ -63,7 +63,7 @@ var app = (function()
                              function(){
                                             alert("Errore");
                                         }
-         )*/
+         )
 	     ble = evothings.ble;
 		 app.startLeScan();
 		 //cordova.plugins.BluetoothStatus.initPlugin();
