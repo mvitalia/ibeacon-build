@@ -206,6 +206,7 @@ app.runScanTimer = function()
 							title: 'Beacon in range',
 							text: 'iBeacon Scan detected a beacon, tap here to open app.'
 						});
+						alert("DopoInvio");
 				}
 			//}
 			
