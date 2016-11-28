@@ -190,23 +190,23 @@ app.runScanTimer = function()
 		{
 		
 			//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
-			//if (inBackground)
-		   	//{
+			if (inBackground)
+		   	{
 				// Show notification if a beacon is inside the region.
 				// TODO: Add check for specific beacon(s) in your app.
 				if (pluginResult.region.typeName == 'BeaconRegion' &&
 					pluginResult.state == 'CLRegionStateInside')
 				{
-					alert("invio");
+					
 					cordova.plugins.notification.local.schedule(
 						{
 							id: ++notificationID,
-							title: 'Beacon in range',
+							title: 'Beacon trovato',
 							text: 'iBeacon Scan detected a beacon, tap here to open app.'
 						});
-						alert("DopoInvio");
+						
 				}
-			//}
+			}
 			
 		};
 
