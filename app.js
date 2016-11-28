@@ -248,9 +248,7 @@ app.runScanTimer = function()
 	}
 }
 
-cordova.plugins.notification.local.on("click", function (notification) {
-   $('#pop').click();
-});
+
 
 	function displayBeaconList()
 	{
