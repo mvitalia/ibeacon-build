@@ -51,9 +51,7 @@ var app = (function()
 		// Bluetooh
         // navigator.notification.beep(1);
         // navigator.vibrate(3000);
-	     cordova.plugins.notification.local.registerPermission(function (granted) {
-     alert('Permission has been granted: ' + granted);
-});
+
 	     ble = evothings.ble;
 		 app.startLeScan();
 		 //cordova.plugins.BluetoothStatus.initPlugin();
@@ -192,8 +190,8 @@ app.runScanTimer = function()
 		{
 		
 			//alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state))
-			//if (inBackground)
-		   //	{
+			if (inBackground)
+		   	{
 				// Show notification if a beacon is inside the region.
 				// TODO: Add check for specific beacon(s) in your app.
 				if (pluginResult.region.typeName == 'BeaconRegion' &&
@@ -208,7 +206,7 @@ app.runScanTimer = function()
 						});
 						alert("DopoInvio");
 				}
-			//}
+			}
 			
 		};
 
