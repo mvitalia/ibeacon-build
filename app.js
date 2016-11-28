@@ -58,7 +58,6 @@ var app = (function()
 		 //cordova.plugins.BluetoothStatus.promptForBT();
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
-        navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
 		// Start tracking beacons!
 		startScan();
 
@@ -134,7 +133,7 @@ app.runScanTimer = function()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
             
 			for (var i in pluginResult.beacons)
 			{
