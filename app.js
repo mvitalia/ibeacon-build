@@ -140,7 +140,7 @@ app.runScanTimer = function()
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
 				// Faccio partire beep o vibrazione
-					
+					alert("Entra"+beacon.uuid);
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
