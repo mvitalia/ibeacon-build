@@ -142,7 +142,7 @@ app.runScanTimer = function()
 				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-				
+
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
@@ -247,6 +247,10 @@ app.runScanTimer = function()
 		$('#popDue').click();
 	}
 }
+
+cordova.plugins.notification.local.on("click", function (notification) {
+   $('#pop').click();
+});
 
 	function displayBeaconList()
 	{
