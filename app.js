@@ -140,7 +140,7 @@ app.runScanTimer = function()
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
 				// Faccio partire beep o vibrazione
-					alert("Entra"+beacon.uuid);
+				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
 				// key, la chiave identifica
@@ -148,7 +148,7 @@ app.runScanTimer = function()
 				//prova = beacon.uuid;
 				if(countUno==0 && beacon.uuid=='5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0')
 				{
-					alert("Azzurro");
+					
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countUno++;
@@ -156,7 +156,7 @@ app.runScanTimer = function()
 				}
 				if(countDue==0 && beacon.uuid=='937BD9F3-5C44-971C-F389-35152A80C632')
 				{
-					alert("Verde");
+				
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countDue++;
@@ -164,7 +164,7 @@ app.runScanTimer = function()
 				}
 				if(countTre==0 && beacon.uuid=='B9407F30-F5F8-466E-AFF9-25556B57FE6D')
 				{
-					alert("Blu");
+				
 					 navigator.notification.beep(1);
         			// navigator.vibrate(3000);
 					countTre++;
