@@ -146,12 +146,9 @@ app.runScanTimer = function()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//prova = beacon.uuid;
-				if("a"=="a" && "b"=="b")
-				{
-					alert("Esegui");
-				}
 				if(countUno==0 && beacon.uuid=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
+					alert("entra");
 					//alert("UUID trovato: "+beacon.uuid);
 				//	alert("uno");
 					 navigator.notification.beep(1);
