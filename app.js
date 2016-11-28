@@ -204,8 +204,7 @@ app.runScanTimer = function()
 						{
 							id: ++notificationID,
 							title: 'Beacon in range',
-							text: 'iBeacon Scan detected a beacon, tap here to open app.',
-							data: { meetingId:"#123FG8" }
+							text: 'iBeacon Scan detected a beacon, tap here to open app.'
 						});
 				}
 			//}
