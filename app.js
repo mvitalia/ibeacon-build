@@ -51,19 +51,19 @@ var app = (function()
 		// Bluetooh
         // navigator.notification.beep(1);
         // navigator.vibrate(3000);
-         db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+        /* db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
                                             tx.executeSql("CREATE TABLE IF NOT EXISTS lettura (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
                                           },
                              function () {
-                                             alert("Creata"+e);
+                                             alert("Creata");
                                          },
                              function(){
-                                            alert("Errore"+e);
+                                            alert("Errore");
                                         }
-         )
+         )*/
 	     ble = evothings.ble;
 		 app.startLeScan();
 		 //cordova.plugins.BluetoothStatus.initPlugin();
