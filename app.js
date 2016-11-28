@@ -142,6 +142,7 @@ app.runScanTimer = function()
 				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
+				alert("UUID trovato: "+beacon.uuid);
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				//prova = beacon.uuid;
