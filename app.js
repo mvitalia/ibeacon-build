@@ -199,6 +199,7 @@ app.runScanTimer = function()
 				if (pluginResult.region.typeName == 'BeaconRegion' &&
 					pluginResult.state == 'CLRegionStateInside')
 				{
+					alert("invio");
 					cordova.plugins.notification.local.schedule(
 						{
 							id: ++notificationID,
