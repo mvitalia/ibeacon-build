@@ -73,7 +73,7 @@ function selezionoDati ()
 
 function select(tx)
 {
-       tx.executeSql("SELECT * FROM clienti ORDER BY id ASC",[], successoSelect,erroreSelect);        
+       tx.executeSql("SELECT * FROM lettura ORDER BY id ASC",[], successoSelect,erroreSelect);        
 }
 
 function successoSelect(tx,dati)
