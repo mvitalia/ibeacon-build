@@ -32,6 +32,9 @@
 	 <div data-role="page" id="home" >
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Beacon Scan</h1>
+        <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
         </div>
         <div role="main" class="ui-content">
          <div class="ui-grid-solo ui-responsive">
@@ -75,6 +78,62 @@
          <div class="ui-grid-solo ui-responsive">
             <ul data-role="listview" id="lista_datiJson" data-split-theme="a" data-split-icon="delete" data-inset="true"></ul>
         </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!--Tab bar jquery mobile-->
+            <div data-role="navbar" data-iconpos="top">
+                 <ul>
+                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
+                    <li ><a href="#database" data-icon="plus"   data-transition="slide">Database</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     <div data-role="page" id="login/home">
+        <div data-role="header" class="header" data-position="fixed">
+            <h1 id="app-title">Login</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h3>Login Form </h3>
+               <form id="loginSincro">
+                    <label for="nome">Username:</label>
+                        <input data-clear-btn="true" name="nome" id="nome" value="" type="text">
+                    <label for="cognome">Password:</label>
+                        <input data-clear-btn="true" name="cognome" id="cognome" value="" type="text">
+                    <label for="email">E-mail:</label>
+                        <input data-clear-btn="true" name="email" id="email" value="" type="text">
+                </form>
+                <div>
+                    <button type="submit" class="ui-btn" id="loginUtente">Login</button>
+                </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!--Tab bar jquery mobile-->
+            <div data-role="navbar" data-iconpos="top">
+                 <ul>
+                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
+                    <li ><a href="#database" data-icon="plus"   data-transition="slide">Database</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="iscrizione">
+        <div data-role="header" class="header" data-position="fixed">
+            <h1 id="app-title">Registrazione Utente</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h3>Form di Registrazione </h3>
+               <form id="registrazioneSincro">
+                    <label for="nome">Nome:</label>
+                        <input data-clear-btn="true" name="nome" id="nome" value="" type="text">
+                    <label for="cognome">Cognome:</label>
+                        <input data-clear-btn="true" name="cognome" id="cognome" value="" type="text">
+                    <label for="email">E-mail:</label>
+                        <input data-clear-btn="true" name="email" id="email" value="" type="text">
+                </form>
+                <div>
+                    <button type="submit" class="ui-btn" id="iscriviUtente">Registrati</button>
+                </div>
         </div>
         <div data-role="footer" data-position="fixed">
             <!--Tab bar jquery mobile-->

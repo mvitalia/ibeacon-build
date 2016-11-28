@@ -766,3 +766,19 @@ input.btn-group.black:checked + label {
 		screen and (orientation: landscape) and (min-device-pixel-ratio : 2) {
 	body { font-size: 4.5vw; }
 }
+
+/* Immagini */
+
+.wrapper {
+    position: relative;
+    width: 20%;
+   /* height:300px; */
+}
+.logoApp{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
