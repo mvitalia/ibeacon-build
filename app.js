@@ -52,7 +52,7 @@ var app = (function()
         // navigator.notification.beep(1);
         // navigator.vibrate(3000);
 	     cordova.plugins.notification.local.registerPermission(function (granted) {
-    // console.log('Permission has been granted: ' + granted);
+     alert('Permission has been granted: ' + granted);
 });
 	     ble = evothings.ble;
 		 app.startLeScan();
