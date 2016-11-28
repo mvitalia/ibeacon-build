@@ -2,7 +2,7 @@ var prova;
 var countUno = 0;
 var countDue = 0;
 var countTre = 0;
-
+var uuid = new String();
 
 var app = (function()
 {
@@ -145,9 +145,9 @@ app.runScanTimer = function()
 				//alert(countUno);
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
-				var prova = new String(bbeacon.uuid);
-				alert(prova.toUpperCase());
-				if(countUno==0 && prova=="5f4df8fb-3ec2-60b1-db6f-6e7013122ee0")
+				uuid =  beacon.uuid;
+				alert(uuid.toUpperCase());
+				if(countUno==0 && uuid=="5f4df8fb-3ec2-60b1-db6f-6e7013122ee0")
 				{
 					//alert("entra");
 					//alert("UUID trovato: "+beacon.uuid);
@@ -157,7 +157,7 @@ app.runScanTimer = function()
 					countUno++;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
-				if(countDue==0 && prova=="937BD9F3-5C44-971C-F389-35152A80C632")
+				if(countDue==0 && uuid=="937BD9F3-5C44-971C-F389-35152A80C632")
 				{
 				     alert("due");
 					 navigator.notification.beep(1);
@@ -165,7 +165,7 @@ app.runScanTimer = function()
 					countDue++;
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
 				}
-				if(countTre==0 && prova=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
+				if(countTre==0 && uuid=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
 				{
 				     alert("tre");
 					 navigator.notification.beep(1);
