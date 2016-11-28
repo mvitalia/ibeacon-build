@@ -152,8 +152,8 @@ app.runScanTimer = function()
 				}
 				if(countUno==0 && beacon.uuid=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
-					alert("UUID trovato: "+beacon.uuid);
-					alert("uno");
+					//alert("UUID trovato: "+beacon.uuid);
+				//	alert("uno");
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countUno++;
@@ -161,7 +161,7 @@ app.runScanTimer = function()
 				}
 				if(countDue==0 && beacon.uuid=="937BD9F3-5C44-971C-F389-35152A80C632")
 				{
-				     alert("due");
+				  //   alert("due");
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countDue++;
@@ -169,7 +169,7 @@ app.runScanTimer = function()
 				}
 				if(countTre==0 && beacon.uuid=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
 				{
-				     alert("tre");
+				    // alert("tre");
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countTre++;
