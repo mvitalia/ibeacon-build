@@ -58,10 +58,10 @@ var app = (function()
                                             tx.executeSql("CREATE TABLE IF NOT EXISTS lettura (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
                                           },
                              function () {
-                                             alert("Creata");
+                                             alert("Creata"+e);
                                          },
                              function(){
-                                            alert("Errore");
+                                            alert("Errore"+e);
                                         }
          )
 	     ble = evothings.ble;
