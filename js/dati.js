@@ -118,12 +118,12 @@ function onDbError ()
 
 // Registra utente
 
-function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,passwordCodificata,privacy)
+function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy)
 {
-    alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+passwordCodificata);
+    alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password);
        $.ajax({
         type: "POST",
-		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+passwordCodificata+'",privacy:"'+privacy+'"}',
+		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+password+'",privacy:"'+privacy+'"}',
 		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiCliente.aspx/prova',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
