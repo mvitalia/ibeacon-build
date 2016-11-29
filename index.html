@@ -142,6 +142,8 @@
                         <input data-clear-btn="true" name="username" id="username" value="" type="text"> 
                     <label for="pass">Password</label>
                         <input data-clear-btn="true" name="pass" id="pass" value="" type="password">    
+                    <hr>
+                        <input type="checkbox" name="privacy" id="privacy" value="html"/> <b>Acconsento Privacy </b>
                 </form>
                 <hr>
                 <div>
@@ -188,7 +190,13 @@
 
      $('#iscriviUtente').click(function(){
       alert("Partito");
-      var nome = $("#nome").val();
+      if ($('#privacy').is(":checked"))
+      {
+         alert("Si")
+      }else{
+          alert("No");
+      }
+    /*  var nome = $("#nome").val();
       var cognome = $("#cognome").val();
       var email = $("#email").val();
       var luogoN = $("#lnascita").val();
@@ -198,7 +206,7 @@
       var password = $("#pass").val();
    
       aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password);
-	
+	*/
       });
 </script>
 <!--	<header>
