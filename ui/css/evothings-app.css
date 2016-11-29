@@ -799,3 +799,11 @@ input.btn-group.black:checked + label {
 .ui-input-text input, .ui-input-search input {
     min-height: 2.8em !important;
 }
+
+.ui-checkbox input, .ui-radio input {
+	margin: -30px -8px 0 !important;
+}
+
+.margine{
+	margin-left: 40px;
+}
