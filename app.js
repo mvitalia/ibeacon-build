@@ -27,7 +27,7 @@ var app = (function()
 		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
 	];*/
-
+    var regions = [];
 	// Background detection.
 	var notificationID = 0;
 	var inBackground = false;
@@ -102,7 +102,7 @@ var app = (function()
                                          }
                     )
                     });
-                      //selezionoDati ();
+                      selezionaBeacon ();
                 });
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
@@ -196,6 +196,50 @@ app.runScanTimer = function()
 	}
 };
 
+
+   function selezionaBeacon ()
+   {
+	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db.transaction(selezione,successoSelezione);     
+   }
+
+   function selezione(tx)
+   {
+       tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[], successoSelezione,erroreSelezione);        
+   }
+
+   function erroreSelezione ()
+   {
+	   alert("Errore selezione");
+   }
+
+   function successoSelezione(tx,dati)
+   {
+    var len = dati.rows.length;
+    alert(len);
+        var li_dati="";
+        if(len!=0)
+        {
+             
+             for(var i=0; i<len; i++)
+            {
+				alert(dati.rows.item(i).uuid);
+              /*  var data = dati.rows.item(i).data_ora;
+                var splitarray = new Array();
+                splitarray = data.split(" ");
+                var dataDue = splitarray[0];
+                var arrayData = new Array ();
+                arrayData = dataDue.split("-");
+                var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
+               // alert(dataCorretta);
+                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + "</h6><p style='text-align:left !important;'>Data: " + dataCorretta + "</p>"
+                        +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"*/
+            
+            }
+            
+        }
+      
+    }
 
 	function startScan()
 	{
