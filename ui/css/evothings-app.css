@@ -783,3 +783,10 @@ input.btn-group.black:checked + label {
     bottom: 0;
 	width: 17%;
 }
+
+.iscrizione{
+    font-size: 18px;
+	color: red;
+	text-decoration: none;
+	text-align: center;
+}
