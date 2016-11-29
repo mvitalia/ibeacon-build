@@ -55,7 +55,7 @@ var app = (function()
                             function(tx) {
                                             //tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity)");
 										    tx.executeSql("DROP TABLE IF EXISTS notifiche");
-											//tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora text, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
+										//	tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -167,7 +167,7 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countUno++;
-				    var data = new Date();
+				    /*var data = new Date();
   					var gg, mm, aaaa, Hh, Mm, Ss;
   					gg = data.getDate() + "-";
   					mm = data.getMonth() + 1 + "-";
@@ -175,13 +175,21 @@ app.runScanTimer = function()
   					Hh = data.getHours() + ":";
   					Mm = data.getMinutes() + ":";
   					Ss = data.getSeconds();
-					var dataBeacon = gg + mm + aaaa + " "+ Hh + Mm + Ss;
+					var dataBeacon = gg + mm + aaaa + " "+ Hh + Mm + Ss;*/
+					var date;
+    				date = new Date();
+    				date = date.getUTCFullYear() + '-' +
+            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getUTCDate()).slice(-2) + ' ' +
+            		('00' + date.getUTCHours()).slice(-2) + ':' +
+            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
+            		('00' + date.getUTCSeconds()).slice(-2);  
 					/* Inserisco notizie nella tabella notifche per Beacon Azzurro 
 					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,dataBeacon,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
+                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
                                          },
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
