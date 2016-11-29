@@ -55,7 +55,7 @@ var app = (function()
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("CREATE TABLE IF NOT EXISTS lettura (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
+                                            tx.executeSql("CREA TABLE IF NOT EXISTS lettura (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
                                           },
                              function () {
                                              alert("Creata");
