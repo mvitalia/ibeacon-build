@@ -124,7 +124,7 @@ function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password)
        $.ajax({
         type: "POST",
 		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+password+'"}',
-		url: 'http://www.trovoperte.com/admin/CS_aggiungiCliente.aspx/prova',
+		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiCliente.aspx/prova',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
