@@ -158,8 +158,8 @@ function loginUtente(usernameLogin,passLogin)
         dataType: 'json',
 		success: function(data){
 		//console.log(data);
-        var ID_utente = data.d;
-		   alert('Cliente Salvato'+ID_utente);
+        var dai = data.d;
+		   alert('Cliente Salvato'+dai);
             
          //   alert(uriImmagine);
          
