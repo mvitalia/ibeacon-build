@@ -55,10 +55,10 @@ var app = (function()
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("CREA TABLE IF NOT EXISTS prova (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
+                                            tx.executeSql("CREA TABLE IF NOT EXISTS catus (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
                                           },
                              function () {
-                                             alert("Creata");
+                                             alert("Creata"+e);
                                          },
                              function(){
                                             alert("Errore");
