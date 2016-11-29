@@ -158,13 +158,13 @@ function loginUtente(usernameLogin,passLogin)
         dataType: 'json',
 		success: function(data){
 		//console.log(data);
-        var dai = data.d;
-		   alert('Cliente Salvato'+dai);
-            
-         //   alert(uriImmagine);
-         
-          //     $("#pop").click();
-
+        var login = data.d;
+		if(login==1)
+        {
+            alert("Utente Loggato")
+        }else{
+            alert("Utente non loggato");
+        }
 		},
 		error: function(e){
 			//console.log(data);
