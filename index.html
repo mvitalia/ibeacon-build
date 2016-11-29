@@ -94,11 +94,9 @@
             <h3 class="titoliForm">Login Form </h3>
                <form id="loginSincro">
                     <label for="nome">Username:</label>
-                        <input data-clear-btn="true" name="nom" id="nom" value="" type="text">
+                        <input data-clear-btn="true" name="usernameLogin" id="usernameLogin" value="" type="text">
                     <label for="cognome">Password:</label>
-                        <input data-clear-btn="true" name="cogno" id="cogn" value="" type="text">
-                    <label for="email">E-mail:</label>
-                        <input data-clear-btn="true" name="ema" id="ema" value="" type="text">
+                        <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="text"
                 </form>
                 <hr>
                 <div>
@@ -212,6 +210,15 @@
      /* var decodifca =  Base64.decode(passwordCodficata);
       alert(decodifca);*/
       aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
+      });
+    $('#iscriviUtente').click(function(){
+     
+      alert("Partito");
+      var usernameLogin = $("#usernameLogin").val();
+      var passLogin = $("#passLogin").val();
+     alert(usernameLogin+" "+passLogin);
+         
+     // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
       });
 </script>
 <!--	<header>
