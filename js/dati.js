@@ -73,7 +73,7 @@ function selezionoDati ()
 
 function select(tx)
 {
-       tx.executeSql("SELECT * FROM clienti ORDER BY id ASC",[], successoSelect,erroreSelect);        
+       tx.executeSql("SELECT * FROM notifiche ORDER BY id ASC",[], successoSelect,erroreSelect);        
 }
 
 function successoSelect(tx,dati)
@@ -87,8 +87,8 @@ function successoSelect(tx,dati)
              for(var i=0; i<len; i++)
             {
                
-                li_dati += "<li id="+dati.rows.item(i).identificativo+" data-itemid="+dati.rows.item(i).identificativo+"><a class='storage' href='#'><img src='"+dati.rows.item(i).foto+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).nome + " - " + dati.rows.item(i).cognome + "</h6>"
-                        +"<p style='font-size:10px;'>E-mail: "+dati.rows.item(i).email+"</p></a></li>"
+                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + " - " + dati.rows.item(i).link + "</h6>"
+                        +"<p style='font-size:10px;'>E-mail: "+dati.rows.item(i).descrizione+"</p></a></li>"
             
             }
             
