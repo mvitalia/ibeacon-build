@@ -66,7 +66,7 @@ function caricoDatiServerSalvoInDb ()
 
 function selezionoDati ()
 {
-    alert("Seleziono Dati");
+   // alert("Seleziono Dati");
      db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
      db.transaction(select,successoSelect);                         
 }
@@ -79,7 +79,7 @@ function select(tx)
 function successoSelect(tx,dati)
 {
     var len = dati.rows.length;
-    alert(len);
+   // alert(len);
         var li_dati="";
         if(len!=0)
         {
@@ -94,8 +94,8 @@ function successoSelect(tx,dati)
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
                 //alert(dataCorretta);
-                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + " - " + dataCorretta + "</h6>"
-                        +"<p style='font-size:10px;'>UUID: "+dati.rows.item(i).uuid+"</p></a></li>"
+                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + " data: " + dataCorretta + "</h6>"
+                        +"<p style='font-size:10px;'>UUID: "+dati.rows.item(i).descrizione+"</p></a></li>"
             
             }
             

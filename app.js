@@ -167,6 +167,7 @@ app.runScanTimer = function()
 					navigator.notification.beep(1);
         			navigator.vibrate(3000);
 					countUno++;
+					// Creazione data ora, per db sul server 
 					var date;
     				date = new Date();
     				date = date.getUTCFullYear() + '-' +
@@ -175,7 +176,9 @@ app.runScanTimer = function()
             		('00' + date.getUTCHours()).slice(-2) + ':' +
             		('00' + date.getUTCMinutes()).slice(-2) + ':' +
             		('00' + date.getUTCSeconds()).slice(-2);  
-					/* Inserisco notizie nella tabella notifche per Beacon Azzurro */
+					// Fine creazione data_ora
+
+					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
 					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
@@ -189,7 +192,7 @@ app.runScanTimer = function()
                                             alert("Inserimento effettuato");
                                          }
                     )
-					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
+					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 	
 				}
 				if(countDue==0 && uuid.toUpperCase()=="937BD9F3-5C44-971C-F389-35152A80C632")
 				{
@@ -197,16 +200,64 @@ app.runScanTimer = function()
 					navigator.notification.beep(1);
         			navigator.vibrate(3000);
 					countDue++;
-					// Inserisco notizie nella tabella notifche per Beacon Verde
-					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
+					// Creazione data ora, per db sul server 
+					var date;
+    				date = new Date();
+    				date = date.getUTCFullYear() + '-' +
+            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getUTCDate()).slice(-2) + ' ' +
+            		('00' + date.getUTCHours()).slice(-2) + ':' +
+            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
+            		('00' + date.getUTCSeconds()).slice(-2);  
+					// Fine creazione data_ora
+
+					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
+					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Due","Offerta Pane","link immagine","link","link allegato","29-11-2016","29-11-2017"]);
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato"+e.message);
+                                         },
+                             function()  {
+                                            alert("Inserimento effettuato");
+                                         }
+                    )
+					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 				}
 				if(countTre==0 && uuid.toUpperCase()=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
 				{
-					 navigator.notification.beep(1);
+					navigator.notification.beep(1);
         			navigator.vibrate(3000);
 					countTre++;
-					// Inserisco notizie nella tabella notifche per Beacon Blu
-					navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
+					var date;
+    				date = new Date();
+    				date = date.getUTCFullYear() + '-' +
+            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getUTCDate()).slice(-2) + ' ' +
+            		('00' + date.getUTCHours()).slice(-2) + ':' +
+            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
+            		('00' + date.getUTCSeconds()).slice(-2);  
+					// Fine creazione data_ora
+
+					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
+					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Tre","Offerta Carne","link img","link","link allegato","29-11-2016","29-11-2017"]);
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato"+e.message);
+                                         },
+                             function()  {
+                                            alert("Inserimento effettuato");
+                                         }
+                    )
+					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
+					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
