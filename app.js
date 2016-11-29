@@ -55,13 +55,13 @@ var app = (function()
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("CREA TABLE IF NOT EXISTS catus (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity");
+                                            tx.executeSql("CREATE TABLE IF NOT EXISTS catus (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity)");
                                           },
                              function () {
-                                             alert("Creata"+e);
+                                             alert("Errore");
                                          },
                              function(){
-                                            alert("Errore");
+                                            alert("Creazione");
                                         }
          )
 	     ble = evothings.ble;
