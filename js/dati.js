@@ -120,7 +120,7 @@ function onDbError ()
 
 function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password64,privacy)
 {
-      // alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password);
+        alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password64);
        $.ajax({
         type: "POST",
 		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+password64+'",privacy:"'+privacy+'"}',
