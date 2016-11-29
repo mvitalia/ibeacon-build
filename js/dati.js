@@ -79,7 +79,7 @@ function select(tx)
 function successoSelect(tx,dati)
 {
     var len = dati.rows.length;
-    alert(len);
+    //alert(len);
         var li_dati="";
         if(len!=0)
         {
@@ -93,7 +93,7 @@ function successoSelect(tx,dati)
                 var arrayData = new Array ();
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-                alert(dataCorretta);
+               // alert(dataCorretta);
                 li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + "</h6><p style='text-align:left !important;'>Data: " + dataCorretta + "</p>"
                         +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"
             
