@@ -86,7 +86,7 @@ var app = (function()
          						)
 		 // Fine della creazione delle tabella db 
 		 // Prelevo dati dal server e salvo nel db
-		  $.getJSON("http://89.36.209.130/scan_dispositivi/sync_dispositivi.aspx", function (dati) {
+		  $.getJSON("http://89.36.209.130/scan_dispositivi/webservices/sync_dispositivi.aspx", function (dati) {
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App

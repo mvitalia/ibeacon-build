@@ -787,11 +787,15 @@ input.btn-group.black:checked + label {
 .iscrizione{
     font-size: 18px;
 	color: red;
-	text-decoration: none;
+	text-decoration: none !important;
 	text-align: center;
 }
 
 .titoliForm{
     font-size: 15px;
 	margin-bottom: 10px;
+}
+
+.ui-input-text input, .ui-input-search input {
+    min-height: 2.8em !important;
 }
