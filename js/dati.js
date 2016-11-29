@@ -121,4 +121,26 @@ function onDbError ()
 function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password)
 {
        alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password);
+       $.ajax({
+        type: "POST",
+		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+password+'"}',
+		url: 'http://www.trovoperte.com/admin/CS_aggiungiCliente.aspx/prova',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+		success: function(data){
+		//console.log(data);
+        var ID_utente = data.d;
+		   alert('Cliente Salvato'+ID_utente);
+            
+         //   alert(uriImmagine);
+         
+          //     $("#pop").click();
+
+		},
+		error: function(e){
+			//console.log(data);
+			alert('Errore'+e.status);
+            alert('Errore2'+e.statusTest);
+		}
+	});
 }
