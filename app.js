@@ -62,7 +62,7 @@ var app = (function()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Creazione");
+                                          //  alert("Creazione");
                                         }
          )
 		 // Fine della creazione delle tabella db 
@@ -190,7 +190,7 @@ app.runScanTimer = function()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                            alert("Inserimento effettuato");
+                                          //  alert("Inserimento effettuato");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 	
@@ -223,7 +223,7 @@ app.runScanTimer = function()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                            alert("Inserimento effettuato");
+                                          //  alert("Inserimento effettuato");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
@@ -254,7 +254,7 @@ app.runScanTimer = function()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                            alert("Inserimento effettuato");
+                                          //  alert("Inserimento effettuato");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
@@ -282,7 +282,7 @@ app.runScanTimer = function()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                            alert("Inserimento effettuato");
+                                           // alert("Inserimento effettuato");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
