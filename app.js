@@ -54,8 +54,8 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
                                             //tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity)");
-										    tx.executeSql("DROP TABLE IF EXISTS notifiche");
-											//tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
+										    //tx.executeSql("DROP TABLE IF EXISTS notifiche");
+											tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -167,7 +167,7 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countUno++;
-					/* Inserisco notizie nella tabella notifche per Beacon Azzurro
+					/* Inserisco notizie nella tabella notifche per Beacon Azzurro */
 					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
@@ -180,7 +180,7 @@ app.runScanTimer = function()
                              function()  {
                                             alert("Inserimento effettuato");
                                          }
-                    )*/
+                    )
 					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
 				if(countDue==0 && uuid.toUpperCase()=="937BD9F3-5C44-971C-F389-35152A80C632")
