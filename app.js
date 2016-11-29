@@ -53,10 +53,10 @@ var app = (function()
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-								                 tx.executeSql("DROP TABLE IF EXISTS letture");
-								                 tx.executeSql("DROP TABLE IF EXISTS notifiche");
-                                           //    tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
-									      //     tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
+								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
+								            //   tx.executeSql("DROP TABLE IF EXISTS notifiche");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
+									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -262,8 +262,30 @@ app.runScanTimer = function()
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
-			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura
-				
+			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
+					var date;
+    				date = new Date();
+    				date = date.getUTCFullYear() + '-' +
+            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getUTCDate()).slice(-2) + ' ' +
+            		('00' + date.getUTCHours()).slice(-2) + ':' +
+            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
+            		('00' + date.getUTCSeconds()).slice(-2);  
+					// Fine creazione data_ora
+					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO letture (uuid, major, minor, proximity, data_ora_lettura, nome_beacon) VALUES (?,?,?,?,?,?)",[beacon.uuid,beacon.major,beacon.minor,beacon.proximity,date,"Nome Beacon"]);
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato"+e.message);
+                                         },
+                             function()  {
+                                            alert("Inserimento effettuato");
+                                         }
+                    )
+					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 			}
 			//alert("ok");
 		};
