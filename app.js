@@ -48,27 +48,29 @@ var app = (function()
 	function onDeviceReady()
 	{
 
-		// Bluetooh
-        // navigator.notification.beep(1);
-        // navigator.vibrate(3000);
+		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("CREATE TABLE IF NOT EXISTS catus (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity)");
+                                            tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity)");
+										    tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
                                           },
                              function () {
-                                             alert("Errore");
+                                             alert("Errore"+e.message);
                                          },
                              function(){
                                             alert("Creazione");
                                         }
          )
+		 // Fine della creazione delle tabella db 
+
+		 // Controllo se bluetooth è accesso
 	     ble = evothings.ble;
 		 app.startLeScan();
-		 //cordova.plugins.BluetoothStatus.initPlugin();
-		 //cordova.plugins.BluetoothStatus.promptForBT();
-		// Specify a shortcut for the location manager holding the iBeacon functions.
+		 // Fine controllo bluetooth acceso
+
+
 		window.locationManager = cordova.plugins.locationManager;
 		// Start tracking beacons!
 		startScan();
@@ -78,7 +80,7 @@ var app = (function()
 	}
 
 	app.startLeScan = function()
-{
+    {
 	console.log('startScan');
 
 	app.stopLeScan();
@@ -164,26 +166,42 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countUno++;
-					navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
+					// Inserisco notizie nella tabella notifche per Beacon Azzurro
+					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,now(),?,?,?,?,?,?,?)",[uuid,"Notizia Uno","Sconto su tutto","link immagine","link allegato","29-11-2016","29-12-2016"]);
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato");
+                                         },
+                             function()  {
+                                            alert("Inserimento effettuato");
+                                         }
+                    )
+					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Azzurro',['Guarda','Salva']);
 				}
 				if(countDue==0 && uuid.toUpperCase()=="937BD9F3-5C44-971C-F389-35152A80C632")
 				{
 				    
-					 navigator.notification.beep(1);
-        			 navigator.vibrate(3000);
+					navigator.notification.beep(1);
+        			navigator.vibrate(3000);
 					countDue++;
+					// Inserisco notizie nella tabella notifche per Beacon Verde
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Verde',['Guarda','Salva']);
 				}
 				if(countTre==0 && uuid.toUpperCase()=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
 				{
 					 navigator.notification.beep(1);
-        			 navigator.vibrate(3000);
+        			navigator.vibrate(3000);
 					countTre++;
+					// Inserisco notizie nella tabella notifche per Beacon Blu
 					navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
 				}
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
-			
+			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura
 				
 			}
 			//alert("ok");
