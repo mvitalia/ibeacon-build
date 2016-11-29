@@ -3,10 +3,10 @@ var countUno = 0;
 var countDue = 0;
 var countTre = 0;
 var uuid = new String();
-
+//sessionStorage.getItem('id');
 var app = (function()
 {
-	
+	sessionStorage.setItem('login', false);
 	var ble = null;
 	// Application object.
 	var app = {};
@@ -109,6 +109,7 @@ var app = (function()
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
 		  }*/
+		  alert(sessionStorage.getItem('login'));
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
