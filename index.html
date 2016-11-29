@@ -42,6 +42,9 @@
              <p class="testo">Spiegazione di cosa fa l ' applicazione</p>
              <p class="testo"><b>Avvicinati ad un Beacon </b></p>
              </div>
+             <div class="LoginUtente">
+                    
+             </div>
           <ul id="found-beacons" class="dynamic"></ul>
         </div>
         <div data-role="popup" id="popupCloseLeft" class="ui-content" style="max-width:280px">
@@ -163,8 +166,12 @@
 
      
  $(document).on("pageshow", "#home", function () {
-      alert(localStorage.getItem('login'));
-		
+     // alert(localStorage.getItem('login'));
+	 if(localStorage.getItem('login')==true)
+     {
+         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp');
+         $('.LoginUtente').append(benvenuto);
+     }
     });
    
   $(document).on("pageshow", "#database", function () {

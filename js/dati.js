@@ -1,7 +1,5 @@
-// Questo file permette di prelevare dati dal server e salvarli all' interno di un database sqllite della applicazione
-
-// funzione per capire se c'è internet
-
+// Variabili globali per il login
+var usernameLoginApp;
  function checkInternet() 
  {
     
@@ -163,6 +161,7 @@ function loginUtente(usernameLogin,passLogin)
         {
             alert("Utente Loggato");
             localStorage.setItem('login', true);
+            localStorage.setItem('usernameLoginApp',usernameLogin);
             window.location.href = "#home";
         }else{
             alert("Utente non loggato");

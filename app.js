@@ -63,6 +63,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
+		// Per il login anche dopo la chiusura dell' applicazione'
 		if(localStorage.getItem('login')==null)
 		{
 			  localStorage.setItem('login', false);
