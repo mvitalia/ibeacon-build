@@ -164,18 +164,9 @@ app.runScanTimer = function()
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 					
-					 navigator.notification.beep(1);
-        			 navigator.vibrate(3000);
+					navigator.notification.beep(1);
+        			navigator.vibrate(3000);
 					countUno++;
-				    /*var data = new Date();
-  					var gg, mm, aaaa, Hh, Mm, Ss;
-  					gg = data.getDate() + "-";
-  					mm = data.getMonth() + 1 + "-";
-  					aaaa = data.getFullYear();
-  					Hh = data.getHours() + ":";
-  					Mm = data.getMinutes() + ":";
-  					Ss = data.getSeconds();
-					var dataBeacon = gg + mm + aaaa + " "+ Hh + Mm + Ss;*/
 					var date;
     				date = new Date();
     				date = date.getUTCFullYear() + '-' +
