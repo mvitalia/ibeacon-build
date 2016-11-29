@@ -116,3 +116,9 @@ function onDbError ()
     alert("Errore");
 }
 
+// Registra utente
+
+function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password)
+{
+       alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password);
+}
