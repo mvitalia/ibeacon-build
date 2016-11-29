@@ -14,16 +14,19 @@ var app = (function()
     app.scanInterval = 5000;
 	app.isScanning = false;
 	app.lastScanEvent = 0;
+    
+
+	// Tabella dei beacon da rilevare 
 
 	// Specify your beacon 128bit UUIDs here.
-	var regions =
+	/*var regions =
 	[
 		// Estimote Beacon factory UUID.
 		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
 		// Sample UUIDs for beacons in our lab.
 		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
-	];
+	];*/
 
 	// Background detection.
 	var notificationID = 0;
@@ -45,9 +48,23 @@ var app = (function()
 			false);
 	};
 
+	function checkInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
+
 	function onDeviceReady()
 	{
 
+        // Creazione della tabella Beacon e notifiche se c'è o non c'è internet
+		  var connessione = checkInternet();
+		  alert(connessione);
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
