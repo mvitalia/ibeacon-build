@@ -86,7 +86,7 @@ function successoSelect(tx,dati)
              
              for(var i=0; i<len; i++)
             {
-                var data = dati.rows.item(i).data_ora_lettura;
+                var data = dati.rows.item(i).data_ora;
                 var splitarray = new Array();
                 splitarray = data.split(" ");
                 var dataDue = splitarray[0];
