@@ -172,7 +172,7 @@ app.runScanTimer = function()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,"29-11-2016","Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
+                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,"now","Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
                                          },
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
