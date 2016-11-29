@@ -86,8 +86,11 @@ function successoSelect(tx,dati)
              
              for(var i=0; i<len; i++)
             {
-                var giorno = dati.rows.item(i).data_ora;
-               alert(giorno);
+                var data = dati.rows.item(i).data_ora;
+                var splitarray = new Array();
+                splitarray = data.split(" ");
+                var dataDue = splitarray[0];
+                alert(dataDue);
                 li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + " - " + dati.rows.item(i).data_ora + "</h6>"
                         +"<p style='font-size:10px;'>UUID: "+dati.rows.item(i).uuid+"</p></a></li>"
             
