@@ -6,7 +6,7 @@ var uuid = new String();
 //sessionStorage.getItem('id');
 var app = (function()
 {
-	localStorage.setItem('login', false);
+
 	var ble = null;
 	// Application object.
 	var app = {};
@@ -63,7 +63,10 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-
+		if(localStorage.getItem('login')==null)
+		{
+			  localStorage.setItem('login', false);
+		}
         /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet
 		  var connessione = checkInternet();
 		  alert(connessione);
