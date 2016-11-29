@@ -169,6 +169,7 @@
       alert(localStorage.getItem('login'));
 	 if(localStorage.getItem('login')==true)
      {
+         alert("entra"+localStorage.getItem('usernameLoginApp'));
          var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
          $('.LoginUtente').append(benvenuto);
      }
