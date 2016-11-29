@@ -90,7 +90,10 @@ function successoSelect(tx,dati)
                 var splitarray = new Array();
                 splitarray = data.split(" ");
                 var dataDue = splitarray[0];
-                alert(dataDue);
+                var arrayData = new Array ();
+                arrayData = dataDue.split("-");
+                var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
+                alert(dataCorretta);
                 li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + " - " + dati.rows.item(i).data_ora + "</h6>"
                         +"<p style='font-size:10px;'>UUID: "+dati.rows.item(i).uuid+"</p></a></li>"
             
