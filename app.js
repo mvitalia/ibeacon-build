@@ -167,12 +167,21 @@ app.runScanTimer = function()
 					 navigator.notification.beep(1);
         			 navigator.vibrate(3000);
 					countUno++;
+				    var data = new Date();
+  					var gg, mm, aaaa, Hh, Mm, Ss;
+  					gg = data.getDate() + "-";
+  					mm = data.getMonth() + 1 + "-";
+  					aaaa = data.getFullYear();
+  					Hh = data.getHours() + ":";
+  					Mm = data.getMinutes() + ":";
+  					Ss = data.getSeconds() + ":";
+					var dataBeacon = gg + mm + aaaa + " "+ Hh + Mm + Ss;
 					/* Inserisco notizie nella tabella notifche per Beacon Azzurro */
 					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,now(),"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
+                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,dataBeacon,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
                                          },
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
