@@ -109,7 +109,7 @@ var app = (function()
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
 		  }*/
-		  alert(sessionStorage.getItem('login'));
+		
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
