@@ -88,7 +88,7 @@ function successoSelect(tx,dati)
             {
                
                 li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + " - " + dati.rows.item(i).link + "</h6>"
-                        +"<p style='font-size:10px;'>E-mail: "+dati.rows.item(i).descrizione+"</p></a></li>"
+                        +"<p style='font-size:10px;'>E-mail: "+dati.rows.item(i).uuid+"</p></a></li>"
             
             }
             
