@@ -79,7 +79,7 @@ function select(tx)
 function successoSelect(tx,dati)
 {
     var len = dati.rows.length;
-   
+    alert(len);
         var li_dati="";
         if(len!=0)
         {
