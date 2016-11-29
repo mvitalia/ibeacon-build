@@ -162,7 +162,7 @@ function loginUtente(usernameLogin,passLogin)
 		if(login==1)
         {
             alert("Utente Loggato");
-            sessionStorage.setItem('login', true);
+            localStorage.setItem('login', true);
             window.location.href = "#home";
         }else{
             alert("Utente non loggato");

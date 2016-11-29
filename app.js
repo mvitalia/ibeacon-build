@@ -6,7 +6,7 @@ var uuid = new String();
 //sessionStorage.getItem('id');
 var app = (function()
 {
-	sessionStorage.setItem('login', false);
+	localStorage.setItem('login', false);
 	var ble = null;
 	// Application object.
 	var app = {};
