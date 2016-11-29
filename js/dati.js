@@ -152,7 +152,7 @@ function loginUtente(usernameLogin,passLogin)
        alert(usernameLogin+"-"+passLogin);
        $.ajax({
         type: "POST",
-		data: '{username:"'+usernameLogin+'",password:"'+passLogin+'"}',
+		data: '{userLogin:"'+usernameLogin+'",passLogin:"'+passLogin+'"}',
 		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_loginUtente.aspx/login',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
