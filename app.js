@@ -260,6 +260,7 @@ app.runScanTimer = function()
                     )
                     });
                       selezionaBeacon ();
+					  alert("ok");
 					  				  for (var i in regions)
 		{
 			alert("Partenza regions");
