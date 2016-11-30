@@ -572,6 +572,7 @@ function startScan()
 				ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 				ID_notizia = dati.rows.item(0).ID_notizia;
                 alert(ID_dispositivo);
+			    alert(ID_notizia);
 			
         }
       
