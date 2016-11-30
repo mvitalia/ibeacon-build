@@ -210,6 +210,25 @@ app.runScanTimer = function()
                         +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"*/
             
             }
+						  				  for (var i in regions)
+		{
+			alert("Partenza regions");
+			alert(regions[i].uuid);
+			var beaconRegion = new locationManager.BeaconRegion(
+				i + 1,
+				regions[i].uuid);
+
+			// Start ranging.
+			locationManager.startRangingBeaconsInRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+
+			// Start monitoring.
+			// (Not used in this example, included as a reference.)
+			locationManager.startMonitoringForRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+		}
 		
             
         }
@@ -261,25 +280,7 @@ app.runScanTimer = function()
                     });
                       selezionaBeacon ();
 					  alert("Dopo beacon Forse");
-					  				  for (var i in regions)
-		{
-			alert("Partenza regions");
-			alert(regions[i].uuid);
-			var beaconRegion = new locationManager.BeaconRegion(
-				i + 1,
-				regions[i].uuid);
-
-			// Start ranging.
-			locationManager.startRangingBeaconsInRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-
-			// Start monitoring.
-			// (Not used in this example, included as a reference.)
-			locationManager.startMonitoringForRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-		}
+		
 		              
                 });
 		  }else{
