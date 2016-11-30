@@ -20,14 +20,14 @@ var app = (function()
 	// Tabella dei beacon da rilevare 
 
 	// Specify your beacon 128bit UUIDs here.
-	var regions =
+	/*var regions =
 	[
 		// Estimote Beacon factory UUID.
 		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
 		// Sample UUIDs for beacons in our lab.
 		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
-	];
+	];*/
 	/* Per Beacon in dinamico */ 
     
 	// Background detection.
@@ -69,52 +69,8 @@ var app = (function()
 		{
 			  localStorage.setItem('login', false);
 		}
-        /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
-		  var connessione = checkInternet();
-		  alert(connessione);
-		  if(connessione==true){
-              // Creazione delle tabelle del db 
-         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         		db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
-								               tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (id INTEGER PRIMARY KEY AUTOINCREMENT,identificativo,uuid, major, minor, nome, stato)");
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(){
-                                            alert("Creazione");
-                                        }
-         						)
-		 // Fine della creazione delle tabella db 
-		 // Prelevo dati dal server e salvo nel db
-		  $.getJSON("http://89.36.209.130/scan_dispositivi/webservices/sync_dispositivi.aspx", function (dati) {
-                    var li_dati = "";
-                    $.each(dati, function (i, name) {
-                        // Inserisco dati nel db sqllite dell' App
-                       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO dispositivi (identificativo,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(){
-                                            alert("Inserimento effettuato");
-                                         }
-                    )
-                    });
-                      selezionaBeacon ();
-                });
-		  }else{
-			  //Seleziono beacon e notifiche da db interno app
-		  }
-		*/
+       
+	
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
@@ -262,6 +218,51 @@ app.runScanTimer = function()
 	function startScan()
 	{
 			alert("StartScan");
+			 /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
+		  var connessione = checkInternet();
+		  alert(connessione);
+		  if(connessione==true){
+              // Creazione delle tabelle del db 
+         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         		db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
+								               tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (id INTEGER PRIMARY KEY AUTOINCREMENT,identificativo,uuid, major, minor, nome, stato)");
+                                          },
+                             function () {
+                                             alert("Errore"+e.message);
+                                         },
+                             function(){
+                                            alert("Creazione");
+                                        }
+         						)
+		 // Fine della creazione delle tabella db 
+		 // Prelevo dati dal server e salvo nel db
+		  $.getJSON("http://89.36.209.130/scan_dispositivi/webservices/sync_dispositivi.aspx", function (dati) {
+                    var li_dati = "";
+                    $.each(dati, function (i, name) {
+                        // Inserisco dati nel db sqllite dell' App
+                       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO dispositivi (identificativo,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
+                                          },
+                             function () {
+                                             alert("Errore"+e.message);
+                                         },
+                             function(){
+                                            alert("Inserimento effettuato");
+                                         }
+                    )
+                    });
+                      selezionaBeacon ();
+                });
+		  }else{
+			  //Seleziono beacon e notifiche da db interno app
+		  }
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
