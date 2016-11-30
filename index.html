@@ -37,7 +37,7 @@
         </div>
          <div class="LogoutUtente">
                 <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-             </div>
+        </div>
         </div>
         <div role="main" class="ui-content">
          <div class="ui-grid-solo ui-responsive">
@@ -76,7 +76,14 @@
 	 <div data-role="page" id="database" >
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Notifiche Salvate</h1>
+             <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
         </div>
+         <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+        </div>
+        </div>
+
         <div role="main" class="ui-content">
         <div class="LoginUtente">
                     
@@ -99,6 +106,12 @@
      <div data-role="page" id="login">
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Login</h1>
+             <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
+         <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+        </div>
         </div>
         <div role="main" class="ui-content">
             <h3 class="titoliForm">Login Form </h3>
@@ -130,6 +143,12 @@
     <div data-role="page" id="iscrizione">
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Registrazione</h1>
+             <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
+         <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+        </div>
         </div>
         <div role="main" class="ui-content">
             <h3 class="titoliForm">Form di Registrazione </h3>
@@ -251,7 +270,7 @@
      // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
       });
 
-    $('#Logout').click(function(){
+    $('.button_logout').click(function(){
           localStorage.setItem('login', false);
           window.location.href = "#home";
       });
