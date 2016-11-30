@@ -230,7 +230,7 @@ app.runScanTimer = function()
              
              for(var i=0; i<len; i++)
             {
-				region.push({
+				regions.push({
 					uuid:dati.rows.item(i).uuid
 				});
 				//alert(dati.rows.item(i).uuid);
