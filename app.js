@@ -553,7 +553,7 @@ function startScan()
    function selezioneDisp(tx)
    {
 	 
-       tx.executeSql("SELECT * FROM dispositivi WHERE uuid=? ORDER BY id ASC",[idUUID], successoSelezioneDisp,erroreSelezione);        
+       tx.executeSql("SELECT * FROM dispositivi,notizie WHERE uuid=? AND dispositivi.identificativo=notizie.ID_dispositivo ORDER BY id ASC",[idUUID], successoSelezioneDisp,erroreSelezione);        
    }
 
    
@@ -561,14 +561,13 @@ function startScan()
    function successoSelezioneDisp(tx,dati)
    {
     var len = dati.rows.length;
-	alert(len);
         var li_dati="";
         if(len!=0)
         {
             
              for(var i=0; i<len; i++)
             {
-			
+				alert(dati.rows.item(i).identificativo);
             }
 			
         }
