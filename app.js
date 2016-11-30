@@ -553,7 +553,20 @@ function startScan()
 		db.transaction(
 			function(tx)
 			{
-               tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione); 
+               tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
+			   function(tx,dati)
+			   {
+				 	var len = dati.rows.length;
+        			var li_dati="";
+       				if(len!=0)
+        			{
+					ID_dispositivo= dati.rows.item(0).ID_dispositivo;
+					ID_notizia = dati.rows.item(0).ID_notizia;
+                	alert("ID_Dispositivo"+ID_dispositivo);
+			    	alert("ID_notiiza"+ID_notizia);
+        			}
+			   },//successoSelezioneDisp,
+			   erroreSelezione); 
  			});
        /*var valori =  db.transaction(
 			  // Metodo di chiamata asincrona
@@ -580,7 +593,7 @@ function startScan()
 */
 
 
-   function successoSelezioneDisp(tx,dati)
+  /* function successoSelezioneDisp(tx,dati)
    {
     var len = dati.rows.length;
         var li_dati="";
@@ -595,7 +608,7 @@ function startScan()
 			
         }
       
-    }
+    }*/
 	
 
 	function displayBeaconList()
