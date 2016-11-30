@@ -129,7 +129,7 @@ var app = (function()
 								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
 								             //  tx.executeSql("DROP TABLE IF EXISTS notifiche");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
-									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
+									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -546,22 +546,41 @@ function startScan()
       
     }
 // Continuare selezione	
- function selezionaDispositiviNotizie ()
+			
+ function selezionaDispositiviNotizie (idUUID)
    {
 	  
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(selezioneDisp,successoSelezioneDisp);     
+         //db.transaction(selezioneDisp,successoSelezioneDisp);  
+		 selezionaID("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid='"+idUUID+"' AND D.id=N.ID_dispositivo", function(dati) {
+              alert(dati);
+     
+   		});   
    }
 
-   function selezioneDisp(tx)
+ /*  function selezioneDisp(tx)
    {
 	 
        tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione);        
-   }
+   }*/
 
-   
+function selezionaID(query, callBack)
+{ 
+   var result = [];
+   db.transaction(function (tx) {
+      tx.executeSql(query, [], function(tx, rs){
+         for(var i=0; i<rs.rows.length; i++) {
+            var row = rs.rows.item(i)
+            result[i] = { ID_dispositivo: row['ID_dispositivo'],
+                          ID_notizia: row['ID_notizia']
+            }
+         }
+         callBack(result); // <-- new bit here
+      }, errorHandler);
+   });
+} 
 
-   function successoSelezioneDisp(tx,dati)
+/*   function successoSelezioneDisp(tx,dati)
    {
     var len = dati.rows.length;
         var li_dati="";
@@ -577,7 +596,7 @@ function startScan()
         }
       
     }
-	
+	*/
 
 	function displayBeaconList()
 	{
