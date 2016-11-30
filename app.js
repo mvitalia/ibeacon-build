@@ -29,7 +29,7 @@ var app = (function()
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
 	];*/
 	/* Per Beacon in dinamico */ 
-    
+     var regions = [];
 	// Background detection.
 	var notificationID = 0;
 	var inBackground = false;
@@ -184,7 +184,7 @@ app.runScanTimer = function()
         var li_dati="";
         if(len!=0)
         {
-             var regions = [];
+            
              for(var i=0; i<len; i++)
             {
 				alert("ok");
@@ -210,25 +210,7 @@ app.runScanTimer = function()
                         +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"*/
             
             }
-						  for (var i in regions)
-		{
-			alert("Partenza regions");
-			alert(regions[i].uuid);
-			var beaconRegion = new locationManager.BeaconRegion(
-				i + 1,
-				regions[i].uuid);
-
-			// Start ranging.
-			locationManager.startRangingBeaconsInRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-
-			// Start monitoring.
-			// (Not used in this example, included as a reference.)
-			locationManager.startMonitoringForRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-		}
+		
             
         }
       
@@ -278,7 +260,26 @@ app.runScanTimer = function()
                     )
                     });
                       selezionaBeacon ();
-		
+					  				  for (var i in regions)
+		{
+			alert("Partenza regions");
+			alert(regions[i].uuid);
+			var beaconRegion = new locationManager.BeaconRegion(
+				i + 1,
+				regions[i].uuid);
+
+			// Start ranging.
+			locationManager.startRangingBeaconsInRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+
+			// Start monitoring.
+			// (Not used in this example, included as a reference.)
+			locationManager.startMonitoringForRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+		}
+		              
                 });
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
