@@ -549,9 +549,14 @@ function startScan()
  function selezionaDispositiviNotizie (idUUID)
    {
 	  
-	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-		
-       var valori =  db.transaction(
+	    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+		db.transaction(
+			function(tx)
+			{
+               selezioneDisp(tx,idUUID)
+ 			},ErrorCallBack
+		);
+       /*var valori =  db.transaction(
 			  // Metodo di chiamata asincrona
                             function(tx) {
                                             tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], function(tx, result)  {
@@ -568,11 +573,11 @@ function startScan()
    		});  */ 
    }
 
-  /* function selezioneDisp(tx,idUUID)
+   function selezioneDisp(tx,idUUID)
    {
 	   alert(idUUID);
        tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione);        
-   }*/
+   }
 
 
 
