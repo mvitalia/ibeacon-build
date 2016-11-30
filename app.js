@@ -551,36 +551,32 @@ function startScan()
    {
 	  
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         //db.transaction(selezioneDisp,successoSelezioneDisp);  
-		 selezionaID("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid='"+idUUID+"' AND D.id=N.ID_dispositivo", function(dati) {
+         db.transaction(
+			  // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID]);
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato");
+                                         },
+                             function(tx,dati)  {
+                                            alert("Inserimento effettuato"+dati);
+                                         }
+
+		 );  
+		/* selezionaID("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid='"+idUUID+"' AND D.id=N.ID_dispositivo", function(dati) {
               alert(dati);
      
-   		});   
+   		});  */ 
    }
 
- /*  function selezioneDisp(tx)
+  /* function selezioneDisp(tx,idUUID)
    {
-	 
+	   alert(idUUID);
        tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione);        
    }*/
 
-function selezionaID(query, callBack)
-{ 
 
-   var result = [];
-   db.transaction(function (tx) {
-      tx.executeSql(query, function(tx, rs){
-         for(var i=0; i<rs.rows.length; i++) {
-            var row = rs.rows.item(i)
-            result[i] = { ID_dispositivo: row['ID_dispositivo'],
-                          ID_notizia: row['ID_notizia']
-            }
-				alert("entra");
-         }
-         callBack(result); // <-- new bit here
-      }, errorHandler);
-   });
-} 
 
 /*   function successoSelezioneDisp(tx,dati)
    {
