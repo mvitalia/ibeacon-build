@@ -278,6 +278,8 @@ function startScan()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
+				var pUUID =uuid.toUpperCase();
+				joinDispositivoNotizie(pUUID);
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -539,7 +541,7 @@ function startScan()
       
     }
 
-	function joinDispositivoNotiziepUUID(pUUID){
+	function joinDispositivoNotizie(pUUID){
 		alert(pUUID);
 		 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(selezioneJoin,successoSelezioneJoin);    
