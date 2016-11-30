@@ -260,7 +260,7 @@ app.runScanTimer = function()
                     )
                     });
                       selezionaBeacon ();
-					  alert("ok");
+					  alert("Dopo beacon Forse");
 					  				  for (var i in regions)
 		{
 			alert("Partenza regions");
@@ -285,6 +285,7 @@ app.runScanTimer = function()
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
 		  }
+		  alert("Dopo beacon");
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
