@@ -235,6 +235,20 @@ app.runScanTimer = function()
 					uuid: dati.rows.item(i).uuid
 				});
 				alert(regions[i].uuid);
+				var beaconRegion = new locationManager.BeaconRegion(
+				i + 1,
+				regions[i].uuid);
+
+			// Start ranging.
+			locationManager.startRangingBeaconsInRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+
+			// Start monitoring.
+			// (Not used in this example, included as a reference.)
+			locationManager.startMonitoringForRegion(beaconRegion)
+				.fail(console.error)
+				.done();
 				//alert(dati.rows.item(i).uuid);
 				// Popolare la var region
 				
@@ -449,7 +463,7 @@ app.runScanTimer = function()
 		locationManager.requestAlwaysAuthorization();
 
 		// Start monitoring and ranging beacons.
-		for (var i in regions)
+	/*	for (var i in regions)
 		{
 			alert(regions[i].uuid);
 			var beaconRegion = new locationManager.BeaconRegion(
@@ -466,7 +480,7 @@ app.runScanTimer = function()
 			locationManager.startMonitoringForRegion(beaconRegion)
 				.fail(console.error)
 				.done();
-		}
+		}*/
 		
 	}
 
