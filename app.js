@@ -551,10 +551,7 @@ function startScan()
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
-                             function(tx,dati)  {
-								            var len = dati.rows.length;
-                                            alert("Selezione ok"+len);
-                                         }
+                            successoSelezioneJoin()
                     )
 	}
 
@@ -564,10 +561,12 @@ function startScan()
            
    }
 
-  
+  */
    function successoSelezioneJoin(tx,dati)
    {
+	   alert("Parte");
     var len = dati.rows.length;
+	alert(len);
         var li_dati="";
         if(len!=0)
         {
@@ -581,7 +580,7 @@ function startScan()
             }
         }
       
-    }*/
+    }
 
 	function displayBeaconList()
 	{
