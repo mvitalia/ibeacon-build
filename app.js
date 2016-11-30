@@ -282,7 +282,26 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
-				selezionaDispositiviNotizie(idUUID);
+				//selezionaDispositiviNotizie(idUUID);
+				  db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+		db.transaction(
+			function(tx)
+			{
+               tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
+			   function(tx,dati)
+			   {
+				 	var len = dati.rows.length;
+        			var li_dati="";
+       				if(len!=0)
+        			{
+					ID_dispositivo= dati.rows.item(0).ID_dispositivo;
+					ID_notizia = dati.rows.item(0).ID_notizia;
+                	alert("ID_Dispositivo"+ID_dispositivo);
+			    	alert("ID_notiiza"+ID_notizia);
+        			}
+			   },//successoSelezioneDisp,
+			   erroreSelezione); 
+ 			});
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
