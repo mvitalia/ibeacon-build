@@ -126,7 +126,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
-								             //  tx.executeSql("DROP TABLE IF EXISTS notifiche");
+								               tx.executeSql("DROP TABLE IF EXISTS notifiche");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
 									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia)");
                                           },
@@ -315,8 +315,6 @@ function startScan()
 						function(tx,dati)
 						{
 						    var len = dati.rows.length;
-							
-        					var li_dati="";
        						if(len==0)
         					{
 
@@ -339,7 +337,7 @@ function startScan()
 								db.transaction(
 										// Metodo di chiamata asincrona
 										function(tx) {
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
+														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016","2","2"]);
 													},
 										function()  {
 														alert("Inserimento non  effettuato"+e.message);
