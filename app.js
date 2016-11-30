@@ -555,12 +555,13 @@ function startScan()
                             function(tx) {
                                             tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID]);
                                          },
+							  function(tx,result)  {
+                                            alert("Inserimento effettuato"+result.rows.length);
+                                         },
                              function()  {
                                             alert("Inserimento non  effettuato");
-                                         },
-                             function(tx,result)  {
-                                            alert("Inserimento effettuato"+result.rows.length);
                                          }
+                           
 
 		 );  
 		/* selezionaID("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid='"+idUUID+"' AND D.id=N.ID_dispositivo", function(dati) {
