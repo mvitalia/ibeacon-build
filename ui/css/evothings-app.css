@@ -808,7 +808,6 @@ input.btn-group.black:checked + label {
 	margin-left: 40px;
 }
 
-.LoginUtente{
+.benvenuto_utente{
 	font-size: 16px;
-
 }
