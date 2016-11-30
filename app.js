@@ -564,7 +564,7 @@ function startScan()
   */
    function successoSelezioneJoin(tx,dati)
    {
-	   alert("Parte");
+	   alert("Parte"+dati.rows.length);
     var len = dati.rows.length;
 	alert(len);
         var li_dati="";
