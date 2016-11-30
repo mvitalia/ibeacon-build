@@ -280,6 +280,7 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
+				join();
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -540,8 +541,23 @@ function startScan()
         }
       
     }
-
+// Continuare selezione	
+function join (){
+db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[]);   
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato"+e.message);
+                                         },
+                             function(tx, dati)  {
+                                            alert("Select ok");
+                                         }
+                    )
 	
+}
 	
 
 	function displayBeaconList()
