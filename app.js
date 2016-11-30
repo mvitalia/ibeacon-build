@@ -581,7 +581,7 @@ function startScan()
 
 
 
-/*   function successoSelezioneDisp(tx,dati)
+   function successoSelezioneDisp(tx,dati)
    {
     var len = dati.rows.length;
         var li_dati="";
@@ -597,7 +597,7 @@ function startScan()
         }
       
     }
-	*/
+	
 
 	function displayBeaconList()
 	{
