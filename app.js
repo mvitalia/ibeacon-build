@@ -337,7 +337,7 @@ function startScan()
 								db.transaction(
 										// Metodo di chiamata asincrona
 										function(tx) {
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016","2","2"]);
+														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016",ID_dispositivo,ID_notizia]);
 													},
 										function()  {
 														alert("Inserimento non  effettuato"+e.message);
@@ -351,7 +351,8 @@ function startScan()
 						},erroreSelezione);
 					}
 				);
-				
+
+			// DA CANCELLARE QUANDO SICURO CHE TUTTO FUNZIONA	
 			/*	if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -454,6 +455,7 @@ function startScan()
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
 				}*/
+				// FINE DA CANCELLARE QUANDO SICURO CHE TUTTO FUNZIONA	
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
