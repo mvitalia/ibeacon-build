@@ -317,19 +317,44 @@ function startScan()
 						    var len = dati.rows.length;
 							
         					var li_dati="";
-       						if(len!=0)
+       						if(len==0)
         					{
-							   rilevaBeacon=true;
-							  // 	alert(rilevaBeacon);
-        			        }else{
-                               rilevaBeacon=false;
-							  // 	alert(rilevaBeacon);
-							}
+
+								navigator.notification.beep(1);
+        						navigator.vibrate(3000);
+								alert("Uno");
+								// Creazione data ora, per db sul server 
+								var date;
+    							date = new Date();
+								date = date.getFullYear() + '-' +
+								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+								('00' + date.getDate()).slice(-2) + ' ' +
+								('00' + date.getHours()).slice(-2) + ':' +
+								('00' + date.getMinutes()).slice(-2) + ':' +
+								('00' + date.getSeconds()).slice(-2);  
+								// Fine creazione data_ora
+
+								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
+								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+								db.transaction(
+										// Metodo di chiamata asincrona
+										function(tx) {
+														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
+													},
+										function()  {
+														alert("Inserimento non  effettuato"+e.message);
+													},
+										function()  {
+													//  alert("Inserimento effettuato Beacon Uno");
+													}
+								)
+							  
+        			        }
 						},erroreSelezione);
 					}
 				);
-				alert(rilevaBeacon);
-				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
+				
+			/*	if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
 					navigator.notification.beep(1);
@@ -430,7 +455,7 @@ function startScan()
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
-				}
+				}*/
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
