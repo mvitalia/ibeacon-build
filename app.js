@@ -550,20 +550,18 @@ function startScan()
    {
 	  
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(
+		
+       var valori =  db.transaction(
 			  // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID]);
-                                         },
-                             function(tx, error)  {
-                                            alert("Inserimento non  effettuato"+error);
-                                         },
-							 function(tx, result)  {
-                                            alert("Inserimento effettuato"+result.rows.length);
+                                            tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], function(tx, result)  {
+                                           
+											return rresult.rows.item[0].ID_dispositivo;
+                                         });
                                          }
-                           
 
 		 );  
+		  alert("Inserimento effettuato"+valori);
 		/* selezionaID("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid='"+idUUID+"' AND D.id=N.ID_dispositivo", function(dati) {
               alert(dati);
      
