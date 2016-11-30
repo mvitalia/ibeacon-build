@@ -20,14 +20,14 @@ var app = (function()
 	// Tabella dei beacon da rilevare 
 
 	// Specify your beacon 128bit UUIDs here.
-	/*var regions =
+	var regions =
 	[
 		// Estimote Beacon factory UUID.
 		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
 		// Sample UUIDs for beacons in our lab.
 		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
-	];*/
+	];
 	/* Per Beacon in dinamico */ 
     
 	// Background detection.
@@ -63,12 +63,13 @@ var app = (function()
 
 	function onDeviceReady()
 	{
+		alert("Ondevice");
 		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
 		if(localStorage.getItem('login')==null)
 		{
 			  localStorage.setItem('login', false);
 		}
-        /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
+        /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  alert(connessione);
 		  if(connessione==true){
@@ -113,7 +114,7 @@ var app = (function()
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
 		  }
-		
+		*/
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
@@ -260,7 +261,7 @@ app.runScanTimer = function()
 
 	function startScan()
 	{
-		
+			alert("StartScan");
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
@@ -454,6 +455,7 @@ app.runScanTimer = function()
 		// Start monitoring and ranging beacons.
 		for (var i in regions)
 		{
+			alert("Partenza regions");
 			alert(regions[i].uuid);
 			var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
