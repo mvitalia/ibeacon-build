@@ -6,6 +6,7 @@ var uuid = new String();
 // Variabili globali per la selezione una tantum dei diversi beacon
 var idUUID;
 var ID_dispositivo;
+var ID_notizia;
 //sessionStorage.getItem('id');
 var app = (function()
 {
@@ -78,7 +79,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS notiize ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (id INTEGER PRIMARY KEY AUTOINCREMENT ,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (id INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -97,7 +98,7 @@ var app = (function()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO notizie (data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
+                                            tx.executeSql("INSERT INTO notizie (id,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -224,7 +225,7 @@ function startScan()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (id INTEGER PRIMARY KEY AUTOINCREMENT,identificativo,uuid, major, minor, nome, stato)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (id INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -243,7 +244,7 @@ function startScan()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO dispositivi (identificativo,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
+                                            tx.executeSql("INSERT INTO dispositivi (id,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -568,7 +569,8 @@ function startScan()
         {
             
             
-				ID_dispositivo= dati.rows.item(0).identificativo;
+				ID_dispositivo= dati.rows.item(0).id;
+				ID_notizia = dati.rows.item(0).id;
                 alert(ID_dispositivo);
 			
         }
