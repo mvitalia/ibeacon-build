@@ -552,7 +552,7 @@ function startScan()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                            alert("Selezione ok");
+                                            alert("Selezione ok"+dati.rows.length);
                                          }
                     )
 	}
