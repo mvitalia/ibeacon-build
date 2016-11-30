@@ -807,3 +807,8 @@ input.btn-group.black:checked + label {
 .margine{
 	margin-left: 40px;
 }
+
+.LoginUtente{
+	font-size: 16px;
+
+}
