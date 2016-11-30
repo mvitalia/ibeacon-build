@@ -553,9 +553,8 @@ function startScan()
 		db.transaction(
 			function(tx)
 			{
-               selezioneDisp(tx,idUUID)
- 			},ErrorCallBack
-		);
+               tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione); 
+ 			});
        /*var valori =  db.transaction(
 			  // Metodo di chiamata asincrona
                             function(tx) {
@@ -573,12 +572,12 @@ function startScan()
    		});  */ 
    }
 
-   function selezioneDisp(tx,idUUID)
+  /* function selezioneDisp(tx,idUUID)
    {
 	   alert(idUUID);
        tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione);        
    }
-
+*/
 
 
    function successoSelezioneDisp(tx,dati)
