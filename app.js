@@ -294,7 +294,7 @@ app.runScanTimer = function()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
             
 			for (var i in pluginResult.beacons)
 			{
