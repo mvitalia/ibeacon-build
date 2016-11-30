@@ -551,7 +551,7 @@ function startScan()
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
-                             function()  {
+                             function(dati)  {
                                             alert("Selezione ok"+dati.rows.length);
                                          }
                     )
