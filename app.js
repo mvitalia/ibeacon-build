@@ -544,7 +544,7 @@ function startScan()
 
 	function selezionaJoin ()
    {
-	   alert("Parte");
+	   alert("Parte"+idUUID);
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(selezioneJoin,successoSelezioneJoin);     
    }
