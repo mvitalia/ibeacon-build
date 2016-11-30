@@ -74,7 +74,7 @@ var app = (function()
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
 	];*/
 	/* Per Beacon in dinamico */ 
-    var regions = [];
+    
 	// Background detection.
 	var notificationID = 0;
 	var inBackground = false;
@@ -227,12 +227,13 @@ app.runScanTimer = function()
         var li_dati="";
         if(len!=0)
         {
-             
+             var regions = [];
              for(var i=0; i<len; i++)
             {
+				alert("ok");
 				regions.push({
-					uuid:dati.rows.item(i).uuid
-				},);
+					uuid: dati.rows.item(i).uuid
+				});
 				//alert(dati.rows.item(i).uuid);
 				// Popolare la var region
 				
