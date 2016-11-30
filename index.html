@@ -64,7 +64,8 @@
                  <ul>
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
-                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
+                     <li id="Login" ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
+                     <li id="Logout" ><a href="#" data-icon="user">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -88,6 +89,7 @@
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
                      <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
+                      <li id="Logout" ><a href="#" data-icon="user">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -192,7 +194,7 @@
          $('.LoginUtente').addClass("benvenuto_utente");
      }
     });
-    
+
  $(document).on("pagebeforeshow", "#iscrizione", function () {
       $(':text, :password, :date', '#registrazioneSincro').val(''); 
     });	 
@@ -243,6 +245,11 @@
       var passLogin = $("#passLogin").val();
       loginUtente(usernameLogin,passLogin);     
      // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
+      });
+
+    $('#Logout').click(function(){
+          localStorage.setItem('login', false);
+          window.location.href = "#home";
       });
 </script>
 <!--	<header>

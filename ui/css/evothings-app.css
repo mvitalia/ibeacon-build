@@ -811,3 +811,7 @@ input.btn-group.black:checked + label {
 .benvenuto_utente{
 	font-size: 20px;
 }
+
+#Logout{
+	display:none;
+}
