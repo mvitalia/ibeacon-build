@@ -315,12 +315,13 @@ function startScan()
 						function(tx,dati)
 						{
 						    var len = dati.rows.length;
+								alert(len);
        						if(len==0)
         					{
 
 								navigator.notification.beep(1);
         						navigator.vibrate(3000);
-								alert("Uno");
+							
 								// Creazione data ora, per db sul server 
 								var date;
     							date = new Date();
