@@ -126,7 +126,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
-								             //  tx.executeSql("DROP TABLE IF EXISTS notifiche");
+								               tx.executeSql("DROP TABLE IF EXISTS notifiche");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
 									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia)");
                                           },
@@ -564,7 +564,7 @@ function startScan()
       
     }
 // Continuare selezione	
-			
+/*			
  function selezionaDispositiviNotizie (idUUID)
    {
 	  
@@ -602,7 +602,7 @@ function startScan()
               alert(dati);
      
    		});  */ 
-   }
+  // }
 
   /* function selezioneDisp(tx,idUUID)
    {
