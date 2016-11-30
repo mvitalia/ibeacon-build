@@ -566,6 +566,7 @@ function startScan()
 
 function selezionaID(query, callBack)
 { 
+	alert("entra");
    var result = [];
    db.transaction(function (tx) {
       tx.executeSql(query, [], function(tx, rs){
