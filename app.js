@@ -79,7 +79,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS notiize ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (id INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -98,7 +98,7 @@ var app = (function()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO notizie (id,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
+                                            tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -225,7 +225,7 @@ function startScan()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (id INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (ID INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -244,7 +244,7 @@ function startScan()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO dispositivi (id,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
+                                            tx.executeSql("INSERT INTO dispositivi (ID,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -556,7 +556,7 @@ function startScan()
    function selezioneDisp(tx)
    {
 	 
-       tx.executeSql("SELECT * FROM dispositivi,notizie WHERE uuid=? AND dispositivi.identificativo=notizie.ID_dispositivo ORDER BY id ASC",[idUUID], successoSelezioneDisp,erroreSelezione);        
+       tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], successoSelezioneDisp,erroreSelezione);        
    }
 
    
@@ -569,8 +569,8 @@ function startScan()
         {
             
             
-				ID_dispositivo= dati.rows.item(0).id;
-				ID_notizia = dati.rows.item(0).id;
+				ID_dispositivo= dati.rows.item(0).ID_dispositivo;
+				ID_notizia = dati.rows.item(0).ID_notizia;
                 alert(ID_dispositivo);
 			
         }
