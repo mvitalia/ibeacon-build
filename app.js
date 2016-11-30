@@ -315,6 +315,7 @@ function startScan()
 						function(tx,dati)
 						{
 						    var len = dati.rows.length;
+							alert(len);
        						if(len==0)
         					{
 
