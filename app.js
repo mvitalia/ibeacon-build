@@ -3,10 +3,11 @@ var countUno = 0;
 var countDue = 0;
 var countTre = 0;
 var uuid = new String();
+var idUUID;
 //sessionStorage.getItem('id');
 var app = (function()
 {
-
+    
     // Varibile che serve per il controllo del bluetooth all' apertura dall' app
 	var ble = null;
 	// Application object.
@@ -278,8 +279,8 @@ function startScan()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
-				var pUUID =uuid.toUpperCase();
-				joinDispositivoNotizie(pUUID);
+				idUUID =uuid.toUpperCase();
+				selezionaJoin();
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -541,46 +542,40 @@ function startScan()
       
     }
 
-	function joinDispositivoNotizie(pUUID){
-		  db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                           tx.executeSql("SELECT * FROM dispositivi  WHERE uuid=?  ORDER BY id ASC",[pUUID]);    
-                                         },
-                             function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
-                                         },
-                            successoSelezioneJoin()
-                    )
-	}
-
-/*	 function selezioneJoin(tx,pUUID)
+	function selezionaJoin ()
    {
-	   alert(pUUID);
-           
+	   alert("Parte");
+	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db.transaction(selezioneJoin,successoSelezioneJoin);     
    }
 
-  */
+   function selezioneJoin(tx)
+   {
+	   alert("Fa la select con uiid"+idUUID);
+       tx.executeSql("SELECT * FROM dispositivi WHERE uuid = ? ORDER BY id ASC",[idUUID], successoSelezioneJoin,erroreSelezione);        
+   }
+
+   
+
    function successoSelezioneJoin(tx,dati)
    {
-	   alert("Parte"+dati.rows.length);
     var len = dati.rows.length;
-	alert(len);
+	alert("Grandezza"+len);
         var li_dati="";
         if(len!=0)
         {
             
              for(var i=0; i<len; i++)
             {
-				// popolo l' array associativo regions che mi permette di ricercare i beacon scaricati dal server e salvati nel db locale dell' app 
-				regions.push({
-					uuid: dati.rows.item(i).uuid
-				});
+				
             }
+			
+			
         }
       
     }
+
+	
 
 	function displayBeaconList()
 	{
