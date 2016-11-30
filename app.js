@@ -15,59 +15,7 @@ var app = (function()
 	app.isScanning = false;
 	app.lastScanEvent = 0;
     
-
-	// Tabella dei beacon da rilevare 
-
-	// Specify your beacon 128bit UUIDs here.
-	var regions =
-	[
-		// Estimote Beacon factory UUID.
-		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
-		// Sample UUIDs for beacons in our lab.
-		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
-		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
-	];
-	/* Per Beacon in dinamico */ 
-    //var regions = [];
-	// Background detection.
-	var notificationID = 0;
-	var inBackground = false;
-	document.addEventListener('pause', function() { inBackground = true });
-	document.addEventListener('resume', function() { inBackground = false });
-
-	// Dictionary of beacons.
-	var beacons = {};
-
-	// Timer that displays list of beacons.
-	var updateTimer = null;
-
-	app.initialize = function()
-	{
-		document.addEventListener(
-			'deviceready',
-			function() { evothings.scriptsLoaded(onDeviceReady) },
-			false);
-	};
-
-	function checkInternet() 
- {
-    
-     var online = window.navigator.onLine;
-            if (online) {
-                return true;
-            } else {
-                return false;
-            }
-  }
-
-	function onDeviceReady()
-	{
-		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
-		if(localStorage.getItem('login')==null)
-		{
-			  localStorage.setItem('login', false);
-		}
-        /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
+	/* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
 		  var connessione = checkInternet();
 		  alert(connessione);
 		  if(connessione==true){
@@ -113,6 +61,59 @@ var app = (function()
 			  //Seleziono beacon e notifiche da db interno app
 		  }
 		
+
+	// Tabella dei beacon da rilevare 
+
+	// Specify your beacon 128bit UUIDs here.
+	/*var regions =
+	[
+		// Estimote Beacon factory UUID.
+		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
+		// Sample UUIDs for beacons in our lab.
+		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
+		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
+	];*/
+	/* Per Beacon in dinamico */ 
+    var regions = [];
+	// Background detection.
+	var notificationID = 0;
+	var inBackground = false;
+	document.addEventListener('pause', function() { inBackground = true });
+	document.addEventListener('resume', function() { inBackground = false });
+
+	// Dictionary of beacons.
+	var beacons = {};
+
+	// Timer that displays list of beacons.
+	var updateTimer = null;
+
+	app.initialize = function()
+	{
+		document.addEventListener(
+			'deviceready',
+			function() { evothings.scriptsLoaded(onDeviceReady) },
+			false);
+	};
+
+	function checkInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
+
+	function onDeviceReady()
+	{
+		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
+		if(localStorage.getItem('login')==null)
+		{
+			  localStorage.setItem('login', false);
+		}
+        
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
