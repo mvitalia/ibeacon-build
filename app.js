@@ -566,7 +566,7 @@ function startScan()
 
 function selezionaID(query, callBack)
 { 
-	alert("entra");
+
    var result = [];
    db.transaction(function (tx) {
       tx.executeSql(query, [], function(tx, rs){
@@ -575,6 +575,7 @@ function selezionaID(query, callBack)
             result[i] = { ID_dispositivo: row['ID_dispositivo'],
                           ID_notizia: row['ID_notizia']
             }
+				alert("entra");
          }
          callBack(result); // <-- new bit here
       }, errorHandler);
