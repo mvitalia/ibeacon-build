@@ -163,10 +163,11 @@ app.runScanTimer = function()
 
   
 
-	function startScan()
-	{
-			
-		  /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
+function startScan()
+{
+		  // Inizio scansione dei vari beacon
+
+		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
               // Creazione delle tabelle del db 
@@ -174,7 +175,6 @@ app.runScanTimer = function()
          		db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
 								               tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (id INTEGER PRIMARY KEY AUTOINCREMENT,identificativo,uuid, major, minor, nome, stato)");
                                           },
@@ -205,10 +205,8 @@ app.runScanTimer = function()
                                          }
                     )
                     });
-                      selezionaBeacon ();
-					
-		
-		              
+					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
+                      selezionaBeacon ();              
                 });
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
@@ -218,7 +216,7 @@ app.runScanTimer = function()
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
 
-		// Richiamto di continuo per cercare i Beacon nei paraggi.
+		// Richiamato di continuo per cercare i Beacon nei paraggi, viene eseguita subito dopo il ciclo for 'Inizio monitoraggio dei beacon che vanno cercati' scritto nella funzione successoSelezione
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
@@ -407,8 +405,8 @@ app.runScanTimer = function()
 		// This is needed on iOS 8.
 		locationManager.requestAlwaysAuthorization();
 
-		// Start monitoring and ranging beacons.
-		/*
+		// Inizio monitoraggio dei beacon che vanno cercati: questa è commentata perchè funziona con la ricerca regions dei beacon statici.
+        /*
 		for (var i in regions)
 		{
 			alert("Partenza regions");
@@ -429,7 +427,7 @@ app.runScanTimer = function()
 				.done();
 		}*/
 		
-	}
+}
 
 	function onConfirm(buttonIndex) {
     //alert('You selected button ' + buttonIndex);
@@ -468,31 +466,30 @@ app.runScanTimer = function()
             
              for(var i=0; i<len; i++)
             {
-			//	alert("ok");
+				// popolo l' array associativo regions che mi permette di ricercare i beacon scaricati dal server e salvati nel db locale dell' app 
 				regions.push({
 					uuid: dati.rows.item(i).uuid
 				});
             }
-		for (var i in regions)
-		{
-			//alert(regions[i].uuid);
-			var beaconRegion = new locationManager.BeaconRegion(
+			//Inizio monitoraggio dei beacon che vanno cercati
+			for (var i in regions)
+			{
+	
+				var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
 				regions[i].uuid);
 
-			// Start ranging.
-			locationManager.startRangingBeaconsInRegion(beaconRegion)
+				// Start ranging.
+				locationManager.startRangingBeaconsInRegion(beaconRegion)
 				.fail(console.error)
 				.done();
 
-			// Start monitoring.
-			// (Not used in this example, included as a reference.)
-			locationManager.startMonitoringForRegion(beaconRegion)
+				// Start monitoring.
+				// (Not used in this example, included as a reference.)
+				locationManager.startMonitoringForRegion(beaconRegion)
 				.fail(console.error)
 				.done();
-		}
-		
-            
+			}   
         }
       
     }
