@@ -543,14 +543,15 @@ function startScan()
     }
 // Continuare selezione	
 function join (){
+	alert("Inizio Join");
 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[]);   
+                                            tx.executeSql("SEL * FROM dispositivi ",[]);   
                                          },
                              function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
+                                            alert("Inserimento non  effettuato");
                                          },
                              function(tx, dati)  {
 								            // var len = result.rows.length;
