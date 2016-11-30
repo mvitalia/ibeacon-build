@@ -565,10 +565,9 @@ function startScan()
         if(len!=0)
         {
             
-             for(var i=0; i<len; i++)
-            {
-				alert(dati.rows.item(i).identificativo);
-            }
+            
+				alert(dati.rows.item(0).identificativo);
+          
 			
         }
       
