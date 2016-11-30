@@ -81,7 +81,7 @@ var app = (function()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Creazione");
+                                            alert("Creazione tabella notizie");
                                         }
          						)
 		 // Fine della creazione delle tabella db 
@@ -100,7 +100,7 @@ var app = (function()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Inserimento effettuato");
+                                            alert("Inserimento effettuato tabelle notizie");
                                          }
                     )
                     });
@@ -131,7 +131,7 @@ var app = (function()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                          //  alert("Creazione");
+                                            alert("Creazione tabella notifiche e letture");
                                         }
          )
 		 // Fine della creazione delle tabella db 
@@ -227,7 +227,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                          //  alert("Creazione");
+                                            alert("Creazione tabella dispositivi");
                                         }
          						)
 		 // Fine della creazione delle tabella db 
@@ -246,7 +246,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                           // alert("Inserimento effettuato");
+                                            alert("Inserimento dispositivi");
                                          }
                     )
                     });
@@ -307,7 +307,7 @@ function startScan()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                          //  alert("Inserimento effettuato");
+                                            alert("Inserimento effettuato Beacon Uno");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 	
@@ -341,7 +341,7 @@ function startScan()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                          //  alert("Inserimento effettuato");
+                                            alert("Inserimento effettuato Beacon Due");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
@@ -374,7 +374,7 @@ function startScan()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function()  {
-                                          //  alert("Inserimento effettuato");
+                                            alert("Inserimento effettuato Beacon Tre");
                                          }
                     )
 					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
