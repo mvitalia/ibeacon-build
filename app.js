@@ -319,13 +319,15 @@ function startScan()
        						if(len!=0)
         					{
 							   rilevaBeacon="No";
+							   	alert(rilevaBeacon);
         			        }else{
                                rilevaBeacon="Si";
+							   	alert(rilevaBeacon);
 							}
 						},erroreSelezione);
 					}
 				);
-				alert(rilevaBeacon);
+				//alert(rilevaBeacon);
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
