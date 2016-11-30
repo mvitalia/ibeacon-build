@@ -7,6 +7,7 @@ var uuid = new String();
 var app = (function()
 {
 
+    // Varibile che serve per il controllo del bluetooth all' apertura dall' app
 	var ble = null;
 	// Application object.
 	var app = {};
@@ -17,9 +18,7 @@ var app = (function()
     
 	
 
-	// Tabella dei beacon da rilevare 
-
-	// Specify your beacon 128bit UUIDs here.
+	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
 		// Estimote Beacon factory UUID.
@@ -28,8 +27,10 @@ var app = (function()
 		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
 		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
 	];*/
-	/* Per Beacon in dinamico */ 
+	
+	// Dichiaro regions per trovare beacon in dinamico  
      var regions = [];
+	
 	// Background detection.
 	var notificationID = 0;
 	var inBackground = false;
@@ -63,15 +64,15 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		
+		// Parte l' onDeviceReady
+
 		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
 		if(localStorage.getItem('login')==null)
 		{
 			  localStorage.setItem('login', false);
 		}
-       
-	
-		// Creazione delle tabelle del db 
+
+		// Creazione delle tabelle letture e notifiche del db interno alla app.. L' unica che sarà visualizzata all' utente è la tabella notifiche
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(
                             // Metodo di chiamata asincrona
@@ -97,15 +98,15 @@ var app = (function()
 
 
 		window.locationManager = cordova.plugins.locationManager;
-		// Start tracking beacons!
+		// Funzione che  inizia la ricerca dei beacon
 		startScan();
-
 		// Display refresh timer.
 		updateTimer = setInterval(displayBeaconList, 500);
 	}
 
-	app.startLeScan = function()
-    {
+// Funzioni per il controllo del bluetooth all' avvio della applicazione
+app.startLeScan = function()
+{
 	console.log('startScan');
 
 	app.stopLeScan();
@@ -130,7 +131,6 @@ var app = (function()
 		$a.bind("click",
 			{address: r.address, name: r.name},
 			app.eventDeviceClicked);
-		//p.appendChild(li);
 		$("#deviceList").listview("refresh");
 	}, function(errorCode)
 	{
@@ -159,68 +159,15 @@ app.runScanTimer = function()
 		app.scanTimer = setTimeout(app.runScanTimer, app.scanInterval);
 	}
 };
+// Fine funzioni per il controllo del bluetooth all' avvio della applicazione
 
-
-   function selezionaBeacon ()
-   {
-	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(selezione,successoSelezione);     
-   }
-
-   function selezione(tx)
-   {
-       tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[], successoSelezione,erroreSelezione);        
-   }
-
-   function erroreSelezione ()
-   {
-	   alert("Errore selezione");
-   }
-
-   function successoSelezione(tx,dati)
-   {
-    var len = dati.rows.length;
-        var li_dati="";
-        if(len!=0)
-        {
-            
-             for(var i=0; i<len; i++)
-            {
-			//	alert("ok");
-				regions.push({
-					uuid: dati.rows.item(i).uuid
-				});
-            }
-		for (var i in regions)
-		{
-			//alert(regions[i].uuid);
-			var beaconRegion = new locationManager.BeaconRegion(
-				i + 1,
-				regions[i].uuid);
-
-			// Start ranging.
-			locationManager.startRangingBeaconsInRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-
-			// Start monitoring.
-			// (Not used in this example, included as a reference.)
-			locationManager.startMonitoringForRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-		}
-		
-            
-        }
-      
-    }
+  
 
 	function startScan()
 	{
 			
-			 /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
+		  /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
 		  var connessione = checkInternet();
-		  alert(connessione);
 		  if(connessione==true){
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
@@ -496,7 +443,59 @@ app.runScanTimer = function()
 	}
 }
 
+ function selezionaBeacon ()
+   {
+	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db.transaction(selezione,successoSelezione);     
+   }
 
+   function selezione(tx)
+   {
+       tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[], successoSelezione,erroreSelezione);        
+   }
+
+   function erroreSelezione ()
+   {
+	   alert("Errore selezione");
+   }
+
+   function successoSelezione(tx,dati)
+   {
+    var len = dati.rows.length;
+        var li_dati="";
+        if(len!=0)
+        {
+            
+             for(var i=0; i<len; i++)
+            {
+			//	alert("ok");
+				regions.push({
+					uuid: dati.rows.item(i).uuid
+				});
+            }
+		for (var i in regions)
+		{
+			//alert(regions[i].uuid);
+			var beaconRegion = new locationManager.BeaconRegion(
+				i + 1,
+				regions[i].uuid);
+
+			// Start ranging.
+			locationManager.startRangingBeaconsInRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+
+			// Start monitoring.
+			// (Not used in this example, included as a reference.)
+			locationManager.startMonitoringForRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+		}
+		
+            
+        }
+      
+    }
 
 	function displayBeaconList()
 	{
