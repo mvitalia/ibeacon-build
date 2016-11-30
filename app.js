@@ -303,7 +303,7 @@ function startScan()
         			       }
 			   		    },erroreSelezione); 
  				});
-				// Select delle notifiche
+				/* Select delle notifiche
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
@@ -323,7 +323,7 @@ function startScan()
 						},erroreSelezione);
 					}
 				);
-				alert(rilevaBeacon);
+				alert(rilevaBeacon);*/
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
