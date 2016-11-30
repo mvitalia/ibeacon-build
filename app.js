@@ -232,7 +232,7 @@ app.runScanTimer = function()
             {
 				regions.push({
 					uuid:dati.rows.item(i).uuid
-				});
+				},);
 				//alert(dati.rows.item(i).uuid);
 				// Popolare la var region
 				
