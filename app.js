@@ -548,7 +548,7 @@ db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("SELECT * FROM dispositivi WHERE uuid= ? ",[idUUID]);   
+                                            tx.executeSql("SELECT * FROM dispositivi WHERE uuid= ? ",[idUUID],sucessoJoin);   
                                          },
                              function()  {
                                             alert("Inserimento non  effettuato");
@@ -559,6 +559,11 @@ db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                                          }
                     )
 	
+}
+
+function successoJoin (tx,dati)
+{
+  alert(dati.rows.length);
 }
 	
 
