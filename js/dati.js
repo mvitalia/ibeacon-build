@@ -93,7 +93,7 @@ function successoSelect(tx,dati)
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
                // alert(dataCorretta);
                 li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + "</h6><p style='text-align:left !important;'>Data: " + dataCorretta + "</p>"
-                        +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"
+                        +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).ID_dispositivo+"</p></a></li>"
             
             }
             
