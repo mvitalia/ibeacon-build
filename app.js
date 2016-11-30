@@ -290,9 +290,10 @@ app.runScanTimer = function()
 				uuid =  beacon.uuid;
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
-					alert("Uno");
+				
 					navigator.notification.beep(1);
         			navigator.vibrate(3000);
+					alert("Uno");
 					countUno++;
 					// Creazione data ora, per db sul server 
 					var date;
@@ -323,9 +324,10 @@ app.runScanTimer = function()
 				}
 				if(countDue==0 && uuid.toUpperCase()=="937BD9F3-5C44-971C-F389-35152A80C632")
 				{
-				    alert("Due");
+				 
 					navigator.notification.beep(1);
         			navigator.vibrate(3000);
+					   alert("Due");
 					countDue++;
 					// Creazione data ora, per db sul server 
 					var date;
@@ -356,9 +358,10 @@ app.runScanTimer = function()
 				}
 				if(countTre==0 && uuid.toUpperCase()=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
 				{
-					alert("Tre");
+					
 					navigator.notification.beep(1);
         			navigator.vibrate(3000);
+					alert("Tre");
 					countTre++;
 					var date;
     				date = new Date();
