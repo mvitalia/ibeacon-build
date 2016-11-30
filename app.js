@@ -552,8 +552,8 @@ db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
-                             function(tx, dati)  {
-								             var len = dati.rows.length;
+                             function(tx, result)  {
+								             var len = result.rows.length;
                                             alert("Select ok"+len);
                                          }
                     )
