@@ -283,7 +283,7 @@ function startScan()
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
 				var ID_dispositivo, ID_notizia;
-				var rilevaBeacon;
+				
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
@@ -305,6 +305,7 @@ function startScan()
 			   		    },erroreSelezione); 
  				});
 				// Select delle notifiche
+				var rilevaBeacon = false;
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
@@ -318,16 +319,16 @@ function startScan()
         					var li_dati="";
        						if(len!=0)
         					{
-							   rilevaBeacon="No";
-							   	alert(rilevaBeacon);
+							   rilevaBeacon=true;
+							  // 	alert(rilevaBeacon);
         			        }else{
-                               rilevaBeacon="Si";
-							   	alert(rilevaBeacon);
+                               rilevaBeacon=false;
+							  // 	alert(rilevaBeacon);
 							}
 						},erroreSelezione);
 					}
 				);
-				//alert(rilevaBeacon);
+				alert(rilevaBeacon);
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
