@@ -311,7 +311,7 @@ function startScan()
 					function(tx)
 					{
 					
-						tx.executeSql("SELECT * FROM notifiche WHERE ID_dispositivo = ? AND ID_notizia = ?",[ID_dispositivo,ID_notizia],
+						tx.executeSql("SELECT * FROM notifiche WHERE ID_dispositivo = '"+ID_dispositivo+"' AND ID_notizia = '"+ID_notizia+"'",[],
 						function(tx,dati)
 						{
 						    var len = dati.rows.length;
