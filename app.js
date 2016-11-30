@@ -288,12 +288,12 @@ function startScan()
 					// Creazione data ora, per db sul server 
 					var date;
     				date = new Date();
-    				date = date.getUTCFullYear() + '-' +
-            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getUTCDate()).slice(-2) + ' ' +
-            		('00' + date.getUTCHours()).slice(-2) + ':' +
-            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
-            		('00' + date.getUTCSeconds()).slice(-2);  
+    				date = date.getFullYear() + '-' +
+            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getDate()).slice(-2) + ' ' +
+            		('00' + date.getHours()).slice(-2) + ':' +
+            		('00' + date.getMinutes()).slice(-2) + ':' +
+            		('00' + date.getSeconds()).slice(-2);  
 					// Fine creazione data_ora
 
 					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
@@ -322,12 +322,12 @@ function startScan()
 					// Creazione data ora, per db sul server 
 					var date;
     				date = new Date();
-    				date = date.getUTCFullYear() + '-' +
-            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getUTCDate()).slice(-2) + ' ' +
-            		('00' + date.getUTCHours()).slice(-2) + ':' +
-            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
-            		('00' + date.getUTCSeconds()).slice(-2);  
+    				date = date.getFullYear() + '-' +
+            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getDate()).slice(-2) + ' ' +
+            		('00' + date.getHours()).slice(-2) + ':' +
+            		('00' + date.getMinutes()).slice(-2) + ':' +
+            		('00' + date.getSeconds()).slice(-2);  
 					// Fine creazione data_ora
 
 					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
@@ -355,12 +355,12 @@ function startScan()
 					countTre++;
 					var date;
     				date = new Date();
-    				date = date.getUTCFullYear() + '-' +
-            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getUTCDate()).slice(-2) + ' ' +
-            		('00' + date.getUTCHours()).slice(-2) + ':' +
-            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
-            		('00' + date.getUTCSeconds()).slice(-2);  
+    				date = date.getFullYear() + '-' +
+            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getDate()).slice(-2) + ' ' +
+            		('00' + date.getHours()).slice(-2) + ':' +
+            		('00' + date.getMinutes()).slice(-2) + ':' +
+            		('00' + date.getSeconds()).slice(-2);  
 					// Fine creazione data_ora
 
 					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
@@ -385,12 +385,12 @@ function startScan()
 			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
 					var date;
     				date = new Date();
-    				date = date.getUTCFullYear() + '-' +
-            		('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getUTCDate()).slice(-2) + ' ' +
-            		('00' + date.getUTCHours()).slice(-2) + ':' +
-            		('00' + date.getUTCMinutes()).slice(-2) + ':' +
-            		('00' + date.getUTCSeconds()).slice(-2);  
+    				date = date.getFullYear() + '-' +
+            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getDate()).slice(-2) + ' ' +
+            		('00' + date.getHours()).slice(-2) + ':' +
+            		('00' + date.getMinutes()).slice(-2) + ':' +
+            		('00' + date.getSeconds()).slice(-2);  
 					// Fine creazione data_ora
 					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
