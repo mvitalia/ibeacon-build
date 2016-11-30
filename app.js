@@ -65,6 +65,51 @@ var app = (function()
 	function onDeviceReady()
 	{
 		// Parte l' onDeviceReady
+        
+		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
+		  var conn = checkInternet();
+		  if(conn==true){
+              // Creazione delle tabelle del db 
+         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         		db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+								               tx.executeSql("DROP TABLE IF EXISTS notiize ");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (id INTEGER PRIMARY KEY AUTOINCREMENT ,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+                                          },
+                             function () {
+                                             alert("Errore"+e.message);
+                                         },
+                             function(){
+                                            alert("Creazione");
+                                        }
+         						)
+		 // Fine della creazione delle tabella db 
+		 // Prelevo dati dal server e salvo nel db
+		  $.getJSON("http://89.36.209.130/scan_dispositivi/webservices/sync_notizie.aspx", function (dati) {
+                    var li_dati = "";
+                    $.each(dati, function (i, name) {
+                        // Inserisco dati nel db sqllite dell' App
+                       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO notizie (data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
+                                          },
+                             function () {
+                                             alert("Errore"+e.message);
+                                         },
+                             function(){
+                                            alert("Inserimento effettuato");
+                                         }
+                    )
+                    });
+					 
+                                
+                });
+		  }else{
+			  //Seleziono notizie da db interno
+		  }
 
 		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
 		if(localStorage.getItem('login')==null)
