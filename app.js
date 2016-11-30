@@ -282,6 +282,7 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
+				var ID_dispositivo, ID_notizia;
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
