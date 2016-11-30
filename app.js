@@ -303,11 +303,13 @@ function startScan()
         			       }
 			   		    },erroreSelezione); 
  				});
-				/* Select delle notifiche
+				// Select delle notifiche
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
 					{
+						alert("ID_Dispositivo"+ID_dispositivo);
+			    	    alert("ID_notiiza"+ID_notizia);
 						tx.executeSql("SELECT FROM notifiche WHERE ID_dispositivo = ? AND ID_notizia = ?",[ID_dispositivo,ID_notizia],
 						function(tx,dati)
 						{
@@ -323,7 +325,7 @@ function startScan()
 						},erroreSelezione);
 					}
 				);
-				alert(rilevaBeacon);*/
+				alert(rilevaBeacon);
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
