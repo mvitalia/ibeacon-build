@@ -4,9 +4,8 @@ var countDue = 0;
 var countTre = 0;
 var uuid = new String();
 // Variabili globali per la selezione una tantum dei diversi beacon
-var idUUID;
-var ID_dispositivo;
-var ID_notizia;
+
+
 //sessionStorage.getItem('id');
 var app = (function()
 {
@@ -559,8 +558,8 @@ function startScan()
                              function()  {
                                             alert("Inserimento non  effettuato");
                                          },
-                             function(tx,dati)  {
-                                            alert("Inserimento effettuato"+dati);
+                             function(tx,result)  {
+                                            alert("Inserimento effettuato"+result.rows.length);
                                          }
 
 		 );  
