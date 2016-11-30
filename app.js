@@ -63,7 +63,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		alert("Ondevice");
+		
 		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
 		if(localStorage.getItem('login')==null)
 		{
@@ -180,7 +180,6 @@ app.runScanTimer = function()
    function successoSelezione(tx,dati)
    {
     var len = dati.rows.length;
-    alert(len);
         var li_dati="";
         if(len!=0)
         {
@@ -191,28 +190,9 @@ app.runScanTimer = function()
 				regions.push({
 					uuid: dati.rows.item(i).uuid
 				});
-				alert(regions[i].uuid);
-				
-
-			
-				//alert(dati.rows.item(i).uuid);
-				// Popolare la var region
-				
-              /*  var data = dati.rows.item(i).data_ora;
-                var splitarray = new Array();
-                splitarray = data.split(" ");
-                var dataDue = splitarray[0];
-                var arrayData = new Array ();
-                arrayData = dataDue.split("-");
-                var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-               // alert(dataCorretta);
-                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).uuid+"'/><h6 style='font-size:12px;'>" + dati.rows.item(i).titolo + "</h6><p style='text-align:left !important;'>Data: " + dataCorretta + "</p>"
-                        +"<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"*/
-            
             }
-						  				  for (var i in regions)
+		for (var i in regions)
 		{
-			alert("Partenza regions");
 			alert(regions[i].uuid);
 			var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
@@ -237,7 +217,7 @@ app.runScanTimer = function()
 
 	function startScan()
 	{
-			alert("StartScan");
+			
 			 /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
 		  var connessione = checkInternet();
 		  alert(connessione);
@@ -279,14 +259,14 @@ app.runScanTimer = function()
                     )
                     });
                       selezionaBeacon ();
-					  alert("Dopo beacon Forse");
+					
 		
 		              
                 });
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
 		  }
-		  alert("Dopo beacon");
+		
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
@@ -295,7 +275,7 @@ app.runScanTimer = function()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
             
 			for (var i in pluginResult.beacons)
 			{
