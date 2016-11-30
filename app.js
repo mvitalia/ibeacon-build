@@ -569,7 +569,7 @@ function selezionaID(query, callBack)
 
    var result = [];
    db.transaction(function (tx) {
-      tx.executeSql(query, [], function(tx, rs){
+      tx.executeSql(query, function(tx, rs){
          for(var i=0; i<rs.rows.length; i++) {
             var row = rs.rows.item(i)
             result[i] = { ID_dispositivo: row['ID_dispositivo'],
