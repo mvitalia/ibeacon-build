@@ -280,7 +280,15 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
-				selezionaJoin();
+			    myDB.transaction(function(transaction) {
+				transaction.executeSql('SELECT * FROM dispositivi', [], function (tx, results) {
+				var len = results.rows.length, i;
+			    alert(len);
+				for (i = 0; i < len; i++){
+			
+				}	
+				}, null);
+				});
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -542,39 +550,7 @@ function startScan()
       
     }
 
-	function selezionaJoin ()
-   {
-	   alert("Parte"+idUUID);
-	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(selezioneJoin,successoSelezioneJoin);     
-   }
-
-   function selezioneJoin(tx)
-   {
-	   alert("Fa la select con uiid"+idUUID);
-       tx.executeSql("SELECT * FROM dispositivi WHERE uuid = ? ORDER BY id ASC",[idUUID], successoSelezioneJoin,erroreSelezione);        
-   }
-
-   
-
-   function successoSelezioneJoin(tx,dati)
-   {
-    var len = dati.rows.length;
-	alert("Grandezza"+len);
-        var li_dati="";
-        if(len!=0)
-        {
-            
-             for(var i=0; i<len; i++)
-            {
-				
-            }
-			
-			
-        }
-      
-    }
-
+	
 	
 
 	function displayBeaconList()
