@@ -280,7 +280,7 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
-				join(idUUID);
+				selezionaDispositiviNotizie(idUUID);
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -491,6 +491,7 @@ function startScan()
 
  function selezionaBeacon ()
    {
+	     
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(selezione,successoSelezione);     
    }
@@ -542,23 +543,60 @@ function startScan()
       
     }
 // Continuare selezione	
-function join (idUUID){
-	
-db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("SELECT * FROM dispositivi WHERE uuid= ? ",[idUUID],sucessoJoin,erroreSelezione);   
-                                         },
-                            
-                    )
-	
-}
+ function selezionaDispositiviNotizie (idUUID)
+   {
+	   var u = idUUID;
+	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db.transaction(selezione(u),successoSelezione);     
+   }
 
-function successoJoin (tx,dati)
-{
-  alert(dati.rows.length);
-}
+   function selezione(tx, u)
+   {
+	   alert(u);
+       tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[], successoSelezione,erroreSelezione);        
+   }
+
+   function erroreSelezione ()
+   {
+	   alert("Errore selezione");
+   }
+
+   function successoSelezione(tx,dati)
+   {
+    var len = dati.rows.length;
+        var li_dati="";
+        if(len!=0)
+        {
+            
+             for(var i=0; i<len; i++)
+            {
+				// popolo l' array associativo regions che mi permette di ricercare i beacon scaricati dal server e salvati nel db locale dell' app 
+				regions.push({
+					uuid: dati.rows.item(i).uuid
+				});
+            }
+			//Inizio monitoraggio dei beacon che vanno cercati
+			for (var i in regions)
+			{
+	
+				var beaconRegion = new locationManager.BeaconRegion(
+				i + 1,
+				regions[i].uuid);
+
+				// Start ranging.
+				locationManager.startRangingBeaconsInRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+
+				// Start monitoring.
+				// (Not used in this example, included as a reference.)
+				locationManager.startMonitoringForRegion(beaconRegion)
+				.fail(console.error)
+				.done();
+			}   
+        }
+      
+    }
 	
 
 	function displayBeaconList()
