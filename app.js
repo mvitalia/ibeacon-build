@@ -186,14 +186,14 @@ app.runScanTimer = function()
             
              for(var i=0; i<len; i++)
             {
-				alert("ok");
+			//	alert("ok");
 				regions.push({
 					uuid: dati.rows.item(i).uuid
 				});
             }
 		for (var i in regions)
 		{
-			alert(regions[i].uuid);
+			//alert(regions[i].uuid);
 			var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
 				regions[i].uuid);
@@ -235,7 +235,7 @@ app.runScanTimer = function()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Creazione");
+                                          //  alert("Creazione");
                                         }
          						)
 		 // Fine della creazione delle tabella db 
@@ -254,7 +254,7 @@ app.runScanTimer = function()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Inserimento effettuato");
+                                           // alert("Inserimento effettuato");
                                          }
                     )
                     });
