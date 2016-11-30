@@ -63,12 +63,12 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		// Per il login anche dopo la chiusura dell' applicazione'
+		// Per il login anche dopo la chiusura dell' applicazione, la prima volta'
 		if(localStorage.getItem('login')==null)
 		{
 			  localStorage.setItem('login', false);
 		}
-        /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet
+        /* Creazione della tabella Beacon e notifiche se c'è o non c'è internet */
 		  var connessione = checkInternet();
 		  alert(connessione);
 		  if(connessione==true){
@@ -112,7 +112,7 @@ var app = (function()
                 });
 		  }else{
 			  //Seleziono beacon e notifiche da db interno app
-		  }*/
+		  }
 		
 		// Creazione delle tabelle del db 
          db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
