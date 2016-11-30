@@ -46,7 +46,7 @@
                     
              </div>
              <div class="LogoutUtente">
-                <a href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
              </div>
           <ul id="found-beacons" class="dynamic"></ul>
         </div>
@@ -182,7 +182,8 @@
          var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
          $('.LoginUtente').append(benvenuto);
          $('.LoginUtente').addClass("benvenuto_utente");
-         $('.Logout').css("display","block");
+         $('.LogoutUtente').css("display","block");
+         $('.button_logout').css("float","right");
      }
     });
 
