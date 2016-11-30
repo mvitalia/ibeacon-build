@@ -123,7 +123,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
-								               tx.executeSql("DROP TABLE IF EXISTS notifiche");
+								             //  tx.executeSql("DROP TABLE IF EXISTS notifiche");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
 									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a)");
                                           },
@@ -278,6 +278,8 @@ function startScan()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
+				var pUUID =uuid.toUpperCase()
+				joinDispositivoNotizie(pUUID);
 				if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
 				{
 				
@@ -535,6 +537,36 @@ function startScan()
 				.fail(console.error)
 				.done();
 			}   
+        }
+      
+    }
+
+	function joinDispositivoNotiziepUUID(pUUID){
+		alert(pUUID);
+		 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db.transaction(selezioneJoin,successoSelezioneJoin);    
+	}
+
+	 function selezioneJoin(tx)
+   {
+       tx.executeSql("SELECT * FROM dispositivi,notizie WHERE  ORDER BY id ASC",[], successoSelezioneJoin,erroreSelezione);        
+   }
+
+  
+   function successoSelezioneJoin(tx,dati)
+   {
+    var len = dati.rows.length;
+        var li_dati="";
+        if(len!=0)
+        {
+            
+             for(var i=0; i<len; i++)
+            {
+				// popolo l' array associativo regions che mi permette di ricercare i beacon scaricati dal server e salvati nel db locale dell' app 
+				regions.push({
+					uuid: dati.rows.item(i).uuid
+				});
+            }
         }
       
     }
