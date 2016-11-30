@@ -812,6 +812,6 @@ input.btn-group.black:checked + label {
 	font-size: 20px;
 }
 
-#Logout{
-	display:none;
+.LogoutUtente{
+	display: none;
 }
