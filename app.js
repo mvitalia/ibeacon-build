@@ -542,15 +542,25 @@ function startScan()
     }
 
 	function joinDispositivoNotizie(pUUID){
-		
-		 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(selezioneJoin(pUUID),successoSelezioneJoin);    
+		  db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                           tx.executeSql("SELECT * FROM dispositivi  WHERE uuid=?  ORDER BY id ASC",[pUUID]);    
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato"+e.message);
+                                         },
+                             function()  {
+                                            alert("Selezione ok");
+                                         }
+                    )
 	}
 
-	 function selezioneJoin(tx,pUUID)
+/*	 function selezioneJoin(tx,pUUID)
    {
 	   alert(pUUID);
-       tx.executeSql("SELECT * FROM dispositivi,notizie WHERE  ORDER BY id ASC",[], successoSelezioneJoin,erroreSelezione);        
+           
    }
 
   
@@ -570,7 +580,7 @@ function startScan()
             }
         }
       
-    }
+    }*/
 
 	function displayBeaconList()
 	{
