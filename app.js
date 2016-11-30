@@ -344,6 +344,7 @@ function startScan()
 													},
 										function()  {
 													//  alert("Inserimento effettuato Beacon Uno");
+													   window.location.href = "#home";
 													}
 								)
 							  
