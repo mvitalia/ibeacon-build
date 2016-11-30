@@ -543,57 +543,34 @@ function startScan()
       
     }
 // Continuare selezione	
- function selezionaDispositiviNotizie (idUUID)
+ function selezionaDispositiviNotizie ()
    {
-	   var u = idUUID;
+	  
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(selezione(u),successoSelezione);     
+         db.transaction(selezioneDisp,successoSelezioneDisp);     
    }
 
-   function selezione(tx, u)
+   function selezioneDisp(tx)
    {
-	   alert(u);
-       tx.executeSql("SELECT * FROM dispositivi ORDER BY id ASC",[], successoSelezione,erroreSelezione);        
+	 
+       tx.executeSql("SELECT * FROM dispositivi WHERE uuid=? ORDER BY id ASC",[idUUID], successoSelezioneDisp,erroreSelezione);        
    }
 
-   function erroreSelezione ()
-   {
-	   alert("Errore selezione");
-   }
+   
 
-   function successoSelezione(tx,dati)
+   function successoSelezioneDisp(tx,dati)
    {
     var len = dati.rows.length;
+	alert(len);
         var li_dati="";
         if(len!=0)
         {
             
              for(var i=0; i<len; i++)
             {
-				// popolo l' array associativo regions che mi permette di ricercare i beacon scaricati dal server e salvati nel db locale dell' app 
-				regions.push({
-					uuid: dati.rows.item(i).uuid
-				});
+			
             }
-			//Inizio monitoraggio dei beacon che vanno cercati
-			for (var i in regions)
-			{
-	
-				var beaconRegion = new locationManager.BeaconRegion(
-				i + 1,
-				regions[i].uuid);
-
-				// Start ranging.
-				locationManager.startRangingBeaconsInRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-
-				// Start monitoring.
-				// (Not used in this example, included as a reference.)
-				locationManager.startMonitoringForRegion(beaconRegion)
-				.fail(console.error)
-				.done();
-			}   
+			
         }
       
     }
