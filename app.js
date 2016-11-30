@@ -235,9 +235,7 @@ app.runScanTimer = function()
 					uuid: dati.rows.item(i).uuid
 				});
 				alert(regions[i].uuid);
-				var beaconRegion = new locationManager.BeaconRegion(
-				i + 1,
-				regions[i].uuid);
+				
 
 			
 				//alert(dati.rows.item(i).uuid);
