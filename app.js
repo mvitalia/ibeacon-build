@@ -552,7 +552,8 @@ function startScan()
                                             alert("Inserimento non  effettuato"+e.message);
                                          },
                              function(tx,dati)  {
-                                            alert("Selezione ok");
+								            var len = dati.rows.length;
+                                            alert("Selezione ok"+len);
                                          }
                     )
 	}
