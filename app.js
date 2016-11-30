@@ -542,13 +542,14 @@ function startScan()
     }
 
 	function joinDispositivoNotizie(pUUID){
-		alert(pUUID);
+		
 		 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         db.transaction(selezioneJoin,successoSelezioneJoin);    
+         db.transaction(selezioneJoin(pUUID),successoSelezioneJoin);    
 	}
 
-	 function selezioneJoin(tx)
+	 function selezioneJoin(tx,pUUID)
    {
+	   alert(pUUID);
        tx.executeSql("SELECT * FROM dispositivi,notizie WHERE  ORDER BY id ASC",[], successoSelezioneJoin,erroreSelezione);        
    }
 
