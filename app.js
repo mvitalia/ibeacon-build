@@ -280,7 +280,8 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
-			    myDB.transaction(function(transaction) {
+				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+			    db.transaction(function(transaction) {
 				transaction.executeSql('SELECT * FROM dispositivi', [], function (tx, results) {
 				var len = results.rows.length, i;
 			    alert(len);
