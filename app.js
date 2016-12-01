@@ -3,7 +3,7 @@ var countUno = 0;
 var countDue = 0;
 var countTre = 0;
 var uuid = new String();
-var millisecondi;
+var millisecondi = 0;
 // Variabili globali per la selezione una tantum dei diversi beacon
 
 
