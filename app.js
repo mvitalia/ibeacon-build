@@ -149,7 +149,8 @@ var app = (function()
 		// Funzione che  inizia la ricerca dei beacon
 		startScan();
 		// Display refresh timer.
-		updateTimer = setInterval(displayBeaconList, 500);
+		//updateTimer = setInterval(displayBeaconList, 500);
+		updateTimer = setInterval(didRangeBeaconsInRegion, 500);
 	}
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
@@ -268,7 +269,7 @@ function startScan()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
             
 			for (var i in pluginResult.beacons)
 			{
