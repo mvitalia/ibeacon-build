@@ -94,6 +94,7 @@ var app = (function()
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App
+						alert(name.immagine);
                        db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
