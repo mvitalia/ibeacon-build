@@ -197,7 +197,10 @@ function successoSelectNotifica(tx,dati)
         if(len!=0)
         {
              
-           li_dati+="<h1>"+dati.rows.item(0).titolo+"</h1>";
+           li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
+           "<div class='wrapper'><img class='immagine_notizia' src='"+dati.rows.item(0).immagine+"' title='imagine'"+dati.rows.item(0).titolo+"'/></div>"+
+           "<p>Attivo da: "+dati.rows.item(0).attivo_da+"</p>"+
+           "<p>Attivo a: "+dati.rows.item(0).attivo_a+"</p>";
            $(".schedaNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
@@ -205,3 +208,7 @@ function successoSelectNotifica(tx,dati)
          $(this).listview("refresh");
         });*/
 }
+
+ <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
