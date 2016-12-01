@@ -361,7 +361,7 @@ function startScan()
 													 /*  $.mobile.changePage('#dettaglioNotifica', {
 														   transition: "flip",
 													   });*/
-													   jQuery.mobile.changePage("#dettaglioNotifica", {
+													  $.mobile.changePage("#dettaglioNotifica", {
 															allowSamePageTransition: true,
 															transition: 'none',
 															changeHash:false,
