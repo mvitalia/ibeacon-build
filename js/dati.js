@@ -201,9 +201,9 @@ function successoSelectNotifica(tx,dati)
             "<p class='notizia_data'>Attivo dal "+dati.rows.item(0).attivo_da+" al "+dati.rows.item(0).attivo_a+"</p>"+
            "<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div>"+
            "<hr>"+
-           "<p class='notizia'>Descrizione: "+dati.rows.item(0).descrizione+"</p>"+
-           "<p class='notizia'>Link: "+dati.rows.item(0).link+"</p>"+
-           "<p class='notizia'>Allegato: "+dati.rows.item(0).allegato+"</p>"
+           "<p class='notizia'><b>Descrizione:</b> "+dati.rows.item(0).descrizione+"</p>"+
+           "<p class='notizia'><b>Link: </b>"+dati.rows.item(0).link+"</p>"+
+           "<p class='notizia'><b>Allegato: </b>"+dati.rows.item(0).allegato+"</p>"
            $(".schedaNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati

@@ -266,7 +266,7 @@
          selezionoDati ();
     });
 
-     $(document).on("pageshow", "#Notifica", function () {
+     $(document).on("pagebeforeshow", "#Notifica", function () {
            $(".schedaNotifica").html("");
      caricaNotifica(); 
      });
