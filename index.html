@@ -317,7 +317,7 @@ function visualizzoNotifica ()
 {
       var idgiusto = localStorage.getItem('Id_notifica');
       alert("Session storage"+ idgiusto);
-/*
+
       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
@@ -339,11 +339,13 @@ function visualizzoNotifica ()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
+                 li_dati +="<h1>"+ dati.rows.item(0).titolo+"</h1>;
 			    				//alert("ID_notiiza"+ID_notizia);
         			       }
 			   		    },erroreSelezione); 
  				});
-                 */
+        
+           $("#schedaNotifica").html(li_dati);
 }
 
 </script>
