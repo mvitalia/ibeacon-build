@@ -300,6 +300,27 @@ function visualizzaNotifica()
     var idgiusto = localStorage.getItem('Id_notifica');
     alert("Session "+ idgiusto);
     alert("dai");
+    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+				db.transaction(
+					function(tx)
+					{
+               			tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = ? ",[idgiusto], 
+			   			function(tx,dati)
+			   			{
+				 			var len = dati.rows.length;
+        					var datiNot="";
+       						if(len!=0)
+        					{
+								
+                 datiNot +="<h1>"+ dati.rows.item(0).titolo+"</h1>;
+                    $(".schedaNotifica").append(datiNot);
+			    				//alert("ID_notiiza"+ID_notizia);
+        			       }
+			   		    },
+                        function{
+                        alert("Errore selezione");
+                        }); 
+ 				});
 }
 
      $('#iscriviUtente').click(function(){
