@@ -357,7 +357,7 @@ function startScan()
 										function()  {
 													//  alert("Inserimento effettuato Beacon Uno
 													   localStorage.setItem('Id_notifica', ID_notizia);
-													    $.mobile.navigate( "#dettaglioNotifica" );  
+													    $.mobile.navigate("#dNotifica");  
 													   //navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													  
 													
