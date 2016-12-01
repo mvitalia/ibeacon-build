@@ -345,7 +345,7 @@ function startScan()
 								('00' + date.getMinutes()).slice(-2) + ':' +
 								('00' + date.getSeconds()).slice(-2);  
 								// Fine creazione data_ora
-
+                                alert(titolo_n);
 								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
 								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 								db.transaction(
