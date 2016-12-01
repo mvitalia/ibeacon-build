@@ -61,7 +61,7 @@
 <script>
 
      
-  $(document).on("pageshow", "#dettaglioNotifica", function () {
+  $(document).on("pageinit", "#dettaglioNotifica", function () {
           var idgiusto = localStorage.getItem('Id_notifica');
       alert("Session "+ idgiusto);
    /*   db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
