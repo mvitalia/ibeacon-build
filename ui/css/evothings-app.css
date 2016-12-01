@@ -830,3 +830,8 @@ input.btn-group.black:checked + label {
     bottom: 0;
 	width: 50%;
 }
+
+.notizia{
+	text-align: center;
+	margin-top: 15px;
+}
