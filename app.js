@@ -356,7 +356,7 @@ function startScan()
 													},
 										function()  {
 													//  alert("Inserimento effettuato Beacon Uno");
-													   sessionStorage.setItem('Id_notifica', ID_notizia);
+													   localStorage.setItem('Id_notifica', ID_notizia);
 													   navigator.notification.confirm("Notifica", onConfirm,'Beacon',['Guarda','No Guarda']);
 													  
 													
@@ -571,7 +571,7 @@ function startScan()
 	if(buttonIndex==1)
 	{
 		//alert("Stai guardando la notizia")
-		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#dettaglioNotifica", {    transition: "flip", } );
+		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html#dettaglioNotifica", {    transition: "flip", } );
 	}else{
 		//alert("Stai salvando la notizia");
 	
