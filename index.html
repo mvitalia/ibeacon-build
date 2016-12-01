@@ -266,7 +266,7 @@
     });
 
       $(document).on("pagebeforeshow", "#dettaglioNotifica", function () {
-     //alert("Session storage"+ localStorage.getItem('Id_notifica'));
+    
      visualizzoNotifica();
      });
   
@@ -310,11 +310,41 @@
           localStorage.setItem('login', false);
           window.location.href = "index.html";
       });
-   
+
+
+// popolo la notifica   
 function visualizzoNotifica ()
-    {
-        alert("ok");
-    }
+{
+      var idgiusto = localStorage.getItem('Id_notifica');
+      alert("Session storage"+ idgiusto);
+/*
+      db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+				db.transaction(
+					function(tx)
+					{
+               			tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = ? ",[idUUID], 
+			   			function(tx,dati)
+			   			{
+				 			var len = dati.rows.length;
+        					var li_dati="";
+       						if(len!=0)
+        					{
+								titolo_n = dati.rows.item(0).titolo;
+								descrizione_n = dati.rows.item(0).descrizione;
+								immagine_n = dati.rows.item(0).immagine;
+								link_n = dati.rows.item(0).link;
+								allegato_n = dati.rows.item(0).allegato;
+								attivo_da_n = dati.rows.item(0).attivo_da;
+								attivo_a_n = dati.rows.item(0).attivo_a;
+								data_creazione_n = dati.rows.item(0).data_creazione;
+								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
+								ID_notizia = dati.rows.item(0).ID_notizia;
+			    				//alert("ID_notiiza"+ID_notizia);
+        			       }
+			   		    },erroreSelezione); 
+ 				});
+                 */
+}
 
 </script>
 <!--	<header>
