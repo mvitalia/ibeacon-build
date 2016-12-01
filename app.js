@@ -150,7 +150,7 @@ var app = (function()
 		startScan();
 		// Display refresh timer.
 		//updateTimer = setInterval(displayBeaconList, 500);
-		updateTimer = setInterval(didRangeBeaconsInRegion, 5000);
+		updateTimer = setInterval(startScan, 5000);
 	}
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
