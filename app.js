@@ -295,7 +295,7 @@ function startScan()
 				db.transaction(
 					function(tx)
 					{
-               			tx.executeSql("SELECT N.ID as ID_notizia, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
+               			tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
