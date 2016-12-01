@@ -237,7 +237,10 @@
          selezionoDati ();
     });
 
-    
+      $(document).on("pagebeforeshow", "#dettaglioNotifica", function () {
+     alert("Session storage"+ sessionStorage.getItem('Id_notifica'));
+     //visualizzoNotifica();
+     });
   
  
      $('#iscriviUtente').click(function(){
