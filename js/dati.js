@@ -175,6 +175,13 @@ function loginUtente(usernameLogin,passLogin)
 		}
 	});
 
-
+function visualizzaNotifica()
+{
+    alert("ok");
+    var idgiusto = localStorage.getItem('Id_notifica');
+    alert("Session "+ idgiusto);
+    alert("dai");
+}
+ 
     
 }
