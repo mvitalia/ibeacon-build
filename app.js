@@ -359,6 +359,7 @@ function startScan()
 													   sessionStorage.setItem('Id_notifica', ID_notizia);
 													  // $.mobile.navigate( "#dettaglioNotifica" ); 
 													   $.mobile.changePage('index.html#dettaglioNotifica', {
+														  allowSamePageTransition: true,
 														   transition: "flip",
 														   reloadPage: true,
 													   });
