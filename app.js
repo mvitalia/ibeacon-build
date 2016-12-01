@@ -280,7 +280,7 @@ function startScan()
 				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-                if(beacon.timeStamp>millisecondi+1000)
+                if(beacon.timeStamp>millisecondi+400)
 				{
  
 				millisecondi = 	beacon.timeStamp;
