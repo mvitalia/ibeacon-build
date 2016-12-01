@@ -322,7 +322,7 @@ function visualizzoNotifica ()
 				db.transaction(
 					function(tx)
 					{
-               			tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = ? ",[idUUID], 
+               			tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = ? ",[idgiusto], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
@@ -342,7 +342,10 @@ function visualizzoNotifica ()
                  li_dati +="<h1>"+ dati.rows.item(0).titolo+"</h1>;
 			    				//alert("ID_notiiza"+ID_notizia);
         			       }
-			   		    },erroreSelezione); 
+			   		    },
+                        function{
+                        alert("Errore selezione");
+                        }); 
  				});
         
            $("#schedaNotifica").html(li_dati);
