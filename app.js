@@ -3,6 +3,7 @@ var countUno = 0;
 var countDue = 0;
 var countTre = 0;
 var uuid = new String();
+var millisecondi;
 // Variabili globali per la selezione una tantum dei diversi beacon
 
 
@@ -126,7 +127,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
-								             //  tx.executeSql("DROP TABLE IF EXISTS notifiche");
+								               tx.executeSql("DROP TABLE IF EXISTS notifiche");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
 									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia)");
                                           },
@@ -150,7 +151,7 @@ var app = (function()
 		startScan();
 		// Display refresh timer.
 		//updateTimer = setInterval(displayBeaconList, 500);
-		window.setInterval(startScan, 5000);
+	
 	}
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
@@ -269,7 +270,7 @@ function startScan()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
             
 			for (var i in pluginResult.beacons)
 			{
@@ -278,7 +279,10 @@ function startScan()
 				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-
+                if(beacon.timeStamp>millisecondi+2000)
+				{
+ 
+				millisecondi = 	beacon.timeStamp;
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
@@ -484,7 +488,7 @@ function startScan()
                                            // alert("Inserimento effettuato");
                                          }
                     )
-					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
+				}		// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 			}
 			//alert("ok");
 		};
