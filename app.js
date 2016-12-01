@@ -280,8 +280,8 @@ function startScan()
 				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-                if(beacon.timeStamp>millisecondi+400)
-				{
+              //  if(beacon.timeStamp>millisecondi+400)
+			//	{
  
 				millisecondi = 	beacon.timeStamp;
 				// key, la chiave identifica
@@ -499,7 +499,7 @@ function startScan()
                                            // alert("Inserimento effettuato");
                                          }
                     )
-				}		// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
+				//}		// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 			}
 			//alert("ok");
 		};
