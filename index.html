@@ -268,7 +268,6 @@
       $(document).on("pagebeforeshow", "#dettaglioNotifica", function () {
           var idgiusto = localStorage.getItem('Id_notifica');
       alert("Session storage"+ idgiusto);
-/*
       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
@@ -277,20 +276,11 @@
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
-        					var li_dati="";
+        					var datiNot="";
        						if(len!=0)
         					{
-								titolo_n = dati.rows.item(0).titolo;
-								descrizione_n = dati.rows.item(0).descrizione;
-								immagine_n = dati.rows.item(0).immagine;
-								link_n = dati.rows.item(0).link;
-								allegato_n = dati.rows.item(0).allegato;
-								attivo_da_n = dati.rows.item(0).attivo_da;
-								attivo_a_n = dati.rows.item(0).attivo_a;
-								data_creazione_n = dati.rows.item(0).data_creazione;
-								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
-								ID_notizia = dati.rows.item(0).ID_notizia;
-                 li_dati +="<h1>"+ dati.rows.item(0).titolo+"</h1>;
+								
+                 datiNot +="<h1>"+ dati.rows.item(0).titolo+"</h1>;
 			    				//alert("ID_notiiza"+ID_notizia);
         			       }
 			   		    },
@@ -299,8 +289,7 @@
                         }); 
  				});
         
-           $("#schedaNotifica").html(li_dati);
-    */
+           $("#schedaNotifica").html("<h1>cio</h1>");
      });
   
  
