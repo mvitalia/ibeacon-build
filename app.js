@@ -546,8 +546,8 @@ function startScan()
         
 		for (var i in regions)
 		{
-			alert("Partenza regions");
-			alert(regions[i].uuid);
+			//alert("Partenza regions");
+			//alert(regions[i].uuid);
 			var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
 				regions[i].uuid);
