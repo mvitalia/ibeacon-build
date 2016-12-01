@@ -265,6 +265,11 @@
          selezionoDati ();
     });
 
+     $.mobile.changePage('#dettaglioNotifica', {
+														  allowSamePageTransition: true,
+														   transition: "flip",
+														   reloadPage: true,
+													   });
     $(document).on("pageshow", "#dettaglioNotifica", function () {
      alert("Session storage"+ sessionStorage.getItem('Id_notifica'));
 
