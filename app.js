@@ -78,7 +78,7 @@ var app = (function()
          		db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-								               tx.executeSql("DROP TABLE IF EXISTS notiize ");
+								               tx.executeSql("DROP TABLE IF EXISTS notize ");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
@@ -94,7 +94,7 @@ var app = (function()
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App
-						alert(name.immagine);
+	
                        db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
