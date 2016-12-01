@@ -175,8 +175,5 @@ function loginUtente(usernameLogin,passLogin)
 		}
 	});
 
-    function visualizzoNotifica ()
-    {
-        alert("ok");
-    }
+    
 }
