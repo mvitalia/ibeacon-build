@@ -357,7 +357,7 @@ function startScan()
 										function()  {
 													//  alert("Inserimento effettuato Beacon Uno");
 													   sessionStorage.setItem('Id_notifica', ID_notizia);
-													   window.location.href = "index.html";
+													   $.mobile.navigate( "#dettaglioNotifica" ); 
 													}
 								)
 							  
