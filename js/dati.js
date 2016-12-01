@@ -177,7 +177,7 @@ function loginUtente(usernameLogin,passLogin)
     
 }
 
-function andiamo ()
+function caricaNotifica ()
 {
     alert("ok");
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
