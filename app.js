@@ -78,7 +78,7 @@ var app = (function()
          		db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-								               tx.executeSql("DROP TABLE IF EXISTS notize ");
+								               tx.executeSql("DROP TABLE IF EXISTS notizie ");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
