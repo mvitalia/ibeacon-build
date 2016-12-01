@@ -302,6 +302,14 @@ function startScan()
         					var li_dati="";
        						if(len!=0)
         					{
+								titolo_n = dati.rows.item(0).titolo;
+								descrizione_n = dati.rows.item(0).descrizione;
+								immagine_n = dati.rows.item(0).immagine;
+								link_n = dati.rows.item(0).link;
+								allegato_n = dati.rows.item(0).allegato;
+								attivo_da_n = dati.rows.item(0).attivo_da;
+								attivo_a_n = dati.rows.item(0).attivo_a;
+								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
                 				//alert("ID_Dispositivo"+ID_dispositivo);
@@ -343,7 +351,7 @@ function startScan()
 								db.transaction(
 										// Metodo di chiamata asincrona
 										function(tx) {
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016",ID_dispositivo,ID_notizia]);
+														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia]);
 													},
 										function()  {
 														alert("Inserimento non  effettuato"+e.message);
