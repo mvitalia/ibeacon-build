@@ -265,7 +265,7 @@
          selezionoDati ();
     });
 
-    $(document).on("pagecreate", "#dettaglioNotifica", function () {
+    $(document).on("pageshow", "#dettaglioNotifica", function () {
      alert("Session storage"+ sessionStorage.getItem('Id_notifica'));
 
      });
