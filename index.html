@@ -269,7 +269,7 @@
      $(document).on("pagebeforeshow", "#dettaglioNotifica", function () {
           var idgiusto = localStorage.getItem('Id_notifica');
       alert("Session "+ idgiusto);
-   /*   db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+      db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
 					{
@@ -282,6 +282,7 @@
         					{
 								
                  datiNot +="<h1>"+ dati.rows.item(0).titolo+"</h1>;
+                    $(".schedaNotifica").append(datiNot);
 			    				//alert("ID_notiiza"+ID_notizia);
         			       }
 			   		    },
@@ -289,8 +290,8 @@
                         alert("Errore selezione");
                         }); 
  				});*/
-        var sd = "<h1>cio</h1>"
-           $(".schedaNotifica").append(sd);
+  
+        
      });
  
      $('#iscriviUtente').click(function(){
