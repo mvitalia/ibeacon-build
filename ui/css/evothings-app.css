@@ -818,7 +818,7 @@ input.btn-group.black:checked + label {
 
 .wrapper_notizia {
     position: relative;
-    width: 50%;
+    width: 100%;
     height:300px; 
 }
 .immagine_notizia{
