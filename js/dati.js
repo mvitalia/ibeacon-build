@@ -179,7 +179,7 @@ function loginUtente(usernameLogin,passLogin)
 
 function caricaNotifica ()
 {
-    alert("ok");
+   
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
      db.transaction(selectNotifica,successoSelectNotifica);  
 }
@@ -192,18 +192,18 @@ function selectNotifica(tx)
 function successoSelectNotifica(tx,dati)
 {
     var len = dati.rows.length;
-    alert(len);
+  
         var li_dati="";
         if(len!=0)
         {
-            alert(dati.rows.item(0).immagine);
+           
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
             "<p class='notizia_data'>Attivo dal "+dati.rows.item(0).attivo_da+" al "+dati.rows.item(0).attivo_a+"</p>"+
            "<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div>"+
            "<hr>"+
-           "<p class='notizia'>Descrzione: "+dati.rows.item(0).descrizione+"</p>"+
-           "<p class='notizia'>Link: "+dati.rows.item(0).descrizione+"</p>"+
-           "<p class='notizia'>Allegato: "+dati.rows.item(0).descrizione+"</p>"
+           "<p class='notizia'>Descrizione: "+dati.rows.item(0).descrizione+"</p>"+
+           "<p class='notizia'>Link: "+dati.rows.item(0).link+"</p>"+
+           "<p class='notizia'>Allegato: "+dati.rows.item(0).allegato+"</p>"
            $(".schedaNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
