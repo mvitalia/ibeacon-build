@@ -186,7 +186,7 @@ function andiamo ()
 
 function selectNotifica(tx)
 {
-       tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = ? ",[], successoSelect,erroreSelect);        
+       tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia =  ",[localStorage.getItem('Id_notifica')], successoSelect,erroreSelect);        
 }
 
 function successoSelectNotifica(tx,dati)
