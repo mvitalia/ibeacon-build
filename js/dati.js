@@ -198,7 +198,7 @@ function successoSelectNotifica(tx,dati)
         {
              
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
-           "<div class='wrapper'><img class='immagine_notizia' src='"+dati.rows.item(0).immagine+"' title='imagine "+dati.rows.item(0).titolo+"'/></div>"+
+           "<div class='wrapper_notizia'><img class='immagine_notizia' src='"+dati.rows.item(0).immagine+"' title='imagine "+dati.rows.item(0).titolo+"'/></div>"+
            "<p class='notizia_data'>Attivo da: "+dati.rows.item(0).attivo_da+"</p>"+
            "<p class='notizia_data'>Attivo a: "+dati.rows.item(0).attivo_a+"</p>"+
            "<hr>"+
