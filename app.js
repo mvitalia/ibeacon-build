@@ -295,7 +295,7 @@ function startScan()
 				db.transaction(
 					function(tx)
 					{
-               			tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
+               			tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
@@ -312,7 +312,6 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-                				alert("Titolo"+titolo_n);
 			    				//alert("ID_notiiza"+ID_notizia);
         			       }
 			   		    },erroreSelezione); 
