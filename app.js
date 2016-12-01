@@ -592,7 +592,7 @@ function startScan()
 
    function erroreSelezione ()
    {
-	   alert("Errore selezione");
+	   //alert("Errore selezione");
    }
 
    function successoSelezione(tx,dati)
