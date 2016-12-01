@@ -209,6 +209,4 @@ function successoSelectNotifica(tx,dati)
         });*/
 }
 
- <div class="wrapper">
-            <img class="logoApp" src="img/search.jpg"/>    
-        </div>
+ 
