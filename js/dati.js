@@ -203,7 +203,8 @@ function successoSelectNotifica(tx,dati)
            "<hr>"+
            "<p class='notizia'><b>Descrizione:</b> "+dati.rows.item(0).descrizione+"</p>"+
            "<p class='notizia'><b>Link: </b>"+dati.rows.item(0).link+"</p>"+
-           "<p class='notizia'><b>Allegato: </b>"+dati.rows.item(0).allegato+"</p>"
+           "<p class='notizia'><b>Allegato: </b>"+dati.rows.item(0).allegato+"</p>"+
+           "<hr>";
            $(".schedaNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
