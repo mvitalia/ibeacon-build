@@ -358,22 +358,6 @@ function startScan()
 													//  alert("Inserimento effettuato Beacon Uno");
 													   sessionStorage.setItem('Id_notifica', ID_notizia);
 													   $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip",  reload: true } );
-
-													 /*  $.mobile.changePage( "#dettaglioNotifica", {
-														    transition: "flip",
-														   	 reloadPage: true
-													   });*/ 
-													 /*  $.mobile.changePage('index.html#dettaglioNotifica', {
-														  allowSamePageTransition: true,
-														   transition: "flip",
-														   reloadPage: true,
-													   });*/
-													/* $.mobile.changePage("#dettaglioNotifica", {
-															allowSamePageTransition: true,
-															transition: 'none',
-															changeHash:false,
-															reloadPage: true
-														});*/
 													}
 								)
 							  

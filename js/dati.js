@@ -174,4 +174,9 @@ function loginUtente(usernameLogin,passLogin)
             alert('Errore2'+e.statusTest);
 		}
 	});
+
+    function visualizzoNotifica ()
+    {
+        alert("ok");
+    }
 }
