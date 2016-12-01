@@ -287,7 +287,7 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
-				var ID_dispositivo, ID_notizia;
+				var ID_dispositivo, ID_notizia,titolo_n,descrizione,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,data_creazione_n;
 				
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
