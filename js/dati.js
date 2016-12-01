@@ -175,7 +175,12 @@ function loginUtente(usernameLogin,passLogin)
 		}
 	});
 
-
+function visualizzaNotifica()
+{
+    alert("ok");
+   
+  
+}
  
     
 }
