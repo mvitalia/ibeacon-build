@@ -543,7 +543,7 @@ function startScan()
 		locationManager.requestAlwaysAuthorization();
 
 		// Inizio monitoraggio dei beacon che vanno cercati: questa è commentata perchè funziona con la ricerca regions dei beacon statici.
-        /*
+        
 		for (var i in regions)
 		{
 			alert("Partenza regions");
@@ -562,7 +562,7 @@ function startScan()
 			locationManager.startMonitoringForRegion(beaconRegion)
 				.fail(console.error)
 				.done();
-		}*/
+		}
 		
 }
 
