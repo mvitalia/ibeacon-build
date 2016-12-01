@@ -92,9 +92,9 @@ function successoSelect(tx,dati)
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
                // alert(dataCorretta);
-                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).immagine+"'/><h6 style='font-size:12px;'>Titolo: " + dati.rows.item(i).titolo + "</h6>"+
-                "<p style='text-align:left !important;font-size:10px'>Data notifica: " + dataCorretta + "</p>"+
-                "<p style='font-size:10px; text-align:left !important;'>Descrizione: "+dati.rows.item(i).descrizione+"</p></a></li>"
+                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='storage' href='#'><img src='"+dati.rows.item(i).immagine+"'/><h6 style='font-size:14px;'>" + dati.rows.item(i).titolo + "</h6>"+
+                "<p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p>"+
+                "<p style='font-size:10px; text-align:left !important;'><b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a></li>"
             
             }
             
