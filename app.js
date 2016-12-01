@@ -571,7 +571,7 @@ function startScan()
 	if(buttonIndex==1)
 	{
 		//alert("Stai guardando la notizia")
-		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#dettaglioNotifica", {    transition: "flip", reload:false } );
 	}else{
 		//alert("Stai salvando la notizia");
 	
