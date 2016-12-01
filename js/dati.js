@@ -180,4 +180,32 @@ function loginUtente(usernameLogin,passLogin)
 function andiamo ()
 {
     alert("ok");
+    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+     db.transaction(selectNotifica,successoSelectNotifica);  
+}
+
+function selectNotifica(tx)
+{
+       tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = ? ",[], successoSelect,erroreSelect);        
+}
+
+function successoSelectNotifica(tx,dati)
+{
+    var len = dati.rows.length;
+    //alert(len);
+        var li_dati="";
+        if(len!=0)
+        {
+             
+             for(var i=0; i<len; i++)
+            {
+                
+            
+            }
+            
+        }
+       // Permette di "appendere" il codice html creato in dinamico con i dati
+      /* $("#lista_datiJson").append(li_dati).promise().done(function () {
+         $(this).listview("refresh");
+        });*/
 }
