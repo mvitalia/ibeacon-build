@@ -198,9 +198,13 @@ function successoSelectNotifica(tx,dati)
         {
              
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
-           "<div class='wrapper'><img class='immagine_notizia' src='"+dati.rows.item(0).immagine+"' title='imagine'"+dati.rows.item(0).titolo+"'/></div>"+
-           "<p>Attivo da: "+dati.rows.item(0).attivo_da+"</p>"+
-           "<p>Attivo a: "+dati.rows.item(0).attivo_a+"</p>";
+           "<div class='wrapper'><img class='immagine_notizia' src='"+dati.rows.item(0).immagine+"' title='imagine "+dati.rows.item(0).titolo+"'/></div>"+
+           "<p class='notizia_data'>Attivo da: "+dati.rows.item(0).attivo_da+"</p>"+
+           "<p class='notizia_data'>Attivo a: "+dati.rows.item(0).attivo_a+"</p>"+
+           "<hr>"+
+           "<p class='notizia'>Descrzione: "+dati.rows.item(0).descrizione+"</p>"+
+           "<p class='notizia'>Link: "+dati.rows.item(0).descrizione+"</p>"+
+           "<p class='notizia'>Allegato: "+dati.rows.item(0).descrizione+"</p>"
            $(".schedaNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
