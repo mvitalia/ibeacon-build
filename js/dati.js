@@ -197,12 +197,8 @@ function successoSelectNotifica(tx,dati)
         if(len!=0)
         {
              
-             for(var i=0; i<len; i++)
-            {
-                
-            
-            }
-            
+           li_dati+="<h1>"+dati.rows.item(0).titolo+"</h1>";
+           $(".schedaNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
       /* $("#lista_datiJson").append(li_dati).promise().done(function () {
