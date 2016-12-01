@@ -358,8 +358,8 @@ function startScan()
 										function()  {
 													//  alert("Inserimento effettuato Beacon Uno
 													   localStorage.setItem('Id_notifica', ID_notizia);
-													    $.mobile.navigate("#Notifica");  
-													   //navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+													   // $.mobile.navigate("#Notifica");  
+													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													  
 													
 													}
@@ -573,7 +573,7 @@ function startScan()
 	if(buttonIndex==1)
 	{
 		//alert("Stai guardando la notizia")
-		// $( ":mobile-pagecontainer" ).pagecontainer( "change", "#dettaglioNotifica", {    transition: "flip", reload:false } );
+		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 		 
 	}else{
 		//alert("Stai salvando la notizia");
