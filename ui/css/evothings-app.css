@@ -835,3 +835,8 @@ input.btn-group.black:checked + label {
 	text-align: center;
 	margin-top: 15px;
 }
+
+.titolo_notizia{
+	text-align: center;
+    color:#AE1C1F;
+}
