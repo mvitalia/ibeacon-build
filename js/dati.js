@@ -174,8 +174,10 @@ function loginUtente(usernameLogin,passLogin)
             alert('Errore2'+e.statusTest);
 		}
 	});
-
-
- 
     
+}
+
+function andiamo ()
+{
+    alert("ok");
 }
