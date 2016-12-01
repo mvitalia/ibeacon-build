@@ -312,7 +312,7 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-                				//alert("ID_Dispositivo"+ID_dispositivo);
+                				alert("Titolo"+titolo_n);
 			    				//alert("ID_notiiza"+ID_notizia);
         			       }
 			   		    },erroreSelezione); 
