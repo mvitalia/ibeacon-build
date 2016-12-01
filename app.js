@@ -357,7 +357,7 @@ function startScan()
 										function()  {
 													//  alert("Inserimento effettuato Beacon Uno");
 													   sessionStorage.setItem('Id_notifica', ID_notizia);
-													   $.mobile.navigate( "#dettaglioNotifica", {
+													   $.mobile.changePage( "#dettaglioNotifica", {
 														    transition: "flip",
 														   	 reloadPage: true
 													   }); 
