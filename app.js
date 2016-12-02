@@ -660,10 +660,10 @@ function startScan()
 			//alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
 		
-	    if(trovato == false)
+	  /*  if(trovato == false)
 		{
 			alert("Esegui insert");
-		}	
+		}	*/
 	}
 
 	function onConfirm(buttonIndex) {
