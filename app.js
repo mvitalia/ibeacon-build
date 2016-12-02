@@ -21,8 +21,6 @@ var app = (function()
 	app.lastScanEvent = 0;
     
 	// Inizializzo matrico
-
-	//var matrice_notizie = [[0],[0]];
 	var  matrice_notizie  = new Array();
  
 	// I beacon da rilevare in modo statico 
@@ -281,13 +279,8 @@ function startScan()
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
 				// Faccio partire beep o vibrazione
-				
 				var beacon = pluginResult.beacons[i];
 				beacon.timeStamp = Date.now();
-               // if(beacon.timeStamp>millisecondi+400)
-			//	{
- 
-				millisecondi = 	beacon.timeStamp;
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
@@ -320,14 +313,11 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-							//	alert("Parte la funzione");
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
-							//	alert("Valore restituito");
 								if(!notiziaEsistente)
 								{
 								navigator.notification.beep(1);
         						navigator.vibrate(3000);
-							
 								// Creazione data ora, per db sul server 
 								var date;
     							date = new Date();
@@ -363,218 +353,6 @@ function startScan()
  				});
 				// Select delle notifiche
 				var rilevaBeacon = false;
-                
-				// controllo la dimensione della matrice
-			//	
-
-			  /*  for (x=0; x<matrice[0].length; x++)
-				{
-					alert("Primo");
-					for (y=0; y<matrice[1].length; y++)
-					{
-				
-						if(matrice[x][y]== ID_dispositivo || matrice[x][y]==ID_notizia)
-						{
-							trovato = true;
-						}else{
-							trovato = false;
-						}
-				    }
-				}
-				alert(trovato);
-				matrice[0][0] = ID_dispositivo;
-				matrice[0][1] = ID_notizia;*/
-/*
-				if(trovato == false)
-				{
-						navigator.notification.beep(1);
-        						navigator.vibrate(3000);
-							
-								// Creazione data ora, per db sul server 
-								var date;
-    							date = new Date();
-								date = date.getFullYear() + '-' +
-								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-								('00' + date.getDate()).slice(-2) + ' ' +
-								('00' + date.getHours()).slice(-2) + ':' +
-								('00' + date.getMinutes()).slice(-2) + ':' +
-								('00' + date.getSeconds()).slice(-2);  
-								// Fine creazione data_ora
-								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-								db.transaction(
-										// Metodo di chiamata asincrona
-										function(tx) {
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia]);
-													},
-										function()  {
-														alert("Inserimento non  effettuato"+e.message);
-													},
-										function()  {
-													//  alert("Inserimento effettuato Beacon Uno
-													   localStorage.setItem('Id_notifica', ID_notizia);
-													   // $.mobile.navigate("#Notifica");  
-													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-													  
-													
-													}
-								)
-				}*/
-			/*	db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-				db.transaction(
-					function(tx)
-					{
-					
-						tx.executeSql("SELECT * FROM notifiche WHERE ID_dispositivo = "+ID_dispositivo+" AND ID_notizia = "+ID_notizia+"",[],
-						function(tx,dati)
-						{
-						    var len = dati.rows.length;
-							//	alert(len);
-       						if(len==0)
-        					{
-
-								navigator.notification.beep(1);
-        						navigator.vibrate(3000);
-							
-								// Creazione data ora, per db sul server 
-								var date;
-    							date = new Date();
-								date = date.getFullYear() + '-' +
-								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-								('00' + date.getDate()).slice(-2) + ' ' +
-								('00' + date.getHours()).slice(-2) + ':' +
-								('00' + date.getMinutes()).slice(-2) + ':' +
-								('00' + date.getSeconds()).slice(-2);  
-								// Fine creazione data_ora
-								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-								db.transaction(
-										// Metodo di chiamata asincrona
-										function(tx) {
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia]);
-													},
-										function()  {
-														alert("Inserimento non  effettuato"+e.message);
-													},
-										function()  {
-													//  alert("Inserimento effettuato Beacon Uno
-													   localStorage.setItem('Id_notifica', ID_notizia);
-													   // $.mobile.navigate("#Notifica");  
-													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-													  
-													
-													}
-								)
-							  
-        			        }
-						},erroreSelezione);
-					}
-				);*/
-
-			// DA CANCELLARE QUANDO SICURO CHE TUTTO FUNZIONA	
-			/*	if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
-				{
-				
-					navigator.notification.beep(1);
-        			navigator.vibrate(3000);
-					alert("Uno");
-					countUno++;
-					// Creazione data ora, per db sul server 
-					var date;
-    				date = new Date();
-    				date = date.getFullYear() + '-' +
-            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getDate()).slice(-2) + ' ' +
-            		('00' + date.getHours()).slice(-2) + ':' +
-            		('00' + date.getMinutes()).slice(-2) + ':' +
-            		('00' + date.getSeconds()).slice(-2);  
-					// Fine creazione data_ora
-
-					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Uno","Sconto su tutto","link immagine","link","link allegato","29-11-2016","29-12-2016"]);
-                                         },
-                             function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
-                                         },
-                             function()  {
-                                          //  alert("Inserimento effettuato Beacon Uno");
-                                         }
-                    )
-					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 	
-				}
-				if(countDue==0 && uuid.toUpperCase()=="937BD9F3-5C44-971C-F389-35152A80C632")
-				{
-				 
-					navigator.notification.beep(1);
-        			navigator.vibrate(3000);
-					   alert("Due");
-					countDue++;
-					// Creazione data ora, per db sul server 
-					var date;
-    				date = new Date();
-    				date = date.getFullYear() + '-' +
-            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getDate()).slice(-2) + ' ' +
-            		('00' + date.getHours()).slice(-2) + ':' +
-            		('00' + date.getMinutes()).slice(-2) + ':' +
-            		('00' + date.getSeconds()).slice(-2);  
-					// Fine creazione data_ora
-
-					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Due","Offerta Pane","link immagine","link","link allegato","29-11-2016","29-11-2017"]);
-                                         },
-                             function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
-                                         },
-                             function()  {
-                                          //  alert("Inserimento effettuato Beacon Due");
-                                         }
-                    )
-					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
-				}
-				if(countTre==0 && uuid.toUpperCase()=="B9407F30-F5F8-466E-AFF9-25556B57FE6D")
-				{
-					
-					navigator.notification.beep(1);
-        			navigator.vibrate(3000);
-					alert("Tre");
-					countTre++;
-					var date;
-    				date = new Date();
-    				date = date.getFullYear() + '-' +
-            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getDate()).slice(-2) + ' ' +
-            		('00' + date.getHours()).slice(-2) + ':' +
-            		('00' + date.getMinutes()).slice(-2) + ':' +
-            		('00' + date.getSeconds()).slice(-2);  
-					// Fine creazione data_ora
-
-					// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a) VALUES (?,?,?,?,?,?,?,?,?)",[uuid,date,"Notizia Tre","Offerta Carne","link img","link","link allegato","29-11-2016","29-11-2017"]);
-                                         },
-                             function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
-                                         },
-                             function()  {
-                                          //  alert("Inserimento effettuato Beacon Tre");
-                                         }
-                    )
-					// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
-					//navigator.notification.confirm('Notizia', onConfirm,'Beacon Blu',['Guarda','Salva']);
-				}*/
-				// FINE DA CANCELLARE QUANDO SICURO CHE TUTTO FUNZIONA	
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
@@ -600,9 +378,7 @@ function startScan()
                                            // alert("Inserimento effettuato");
                                          }
                     )
-			//	}		// Fine inserimento notizie nella tabella notifche per Beacon Azzurro 
 			}
-			//alert("ok");
 		};
 
 		// Called when starting to monitor a region.
