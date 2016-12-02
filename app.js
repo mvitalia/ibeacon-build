@@ -658,8 +658,8 @@ function startScan()
 				//	alert("ok");
 			//	alert(ID_dispositivo+ "-"+ ID_notizia);
 			matrice_notizie[0] = new Array();
-			matrice_notizie[0][0]=""+ID_dispositivo+"";
-			matrice_notizie[0][1]=""+ID_notizia+"";
+			matrice_notizie[0][0]=ID_dispositivo;
+			matrice_notizie[0][1]=ID_notizia;
 			//alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
 		
