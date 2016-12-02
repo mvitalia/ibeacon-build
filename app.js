@@ -345,7 +345,7 @@ function startScan()
 				alert(trovato);
 				matrice[0][0] = ID_dispositivo;
 				matrice[0][1] = ID_notizia;*/
-
+/*
 				if(trovato == false)
 				{
 						navigator.notification.beep(1);
@@ -380,7 +380,7 @@ function startScan()
 													
 													}
 								)
-				}
+				}*/
 			/*	db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
@@ -640,6 +640,7 @@ function startScan()
 				//	alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		 } else {
 					// matrice è vuota inserisco i valori appena rilevati
+					alert("ok");
 			matrice_notizie[0].push(ID_dispositivo,ID_notizia);	
 			alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
