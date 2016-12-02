@@ -158,7 +158,7 @@ function loginUtente(usernameLogin,passLogin)
 		success: function(data){
 		//console.log(data);
         var login = data.d;
-		if(login!=null)
+		if(login!="")
         {
             alert("Utente Loggato"+login);
             localStorage.setItem('login', true);
