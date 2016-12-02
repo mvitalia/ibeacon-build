@@ -22,8 +22,10 @@ var app = (function()
     
 	// Inizializzo matrico
 
-	var matrice_notizie = [[0],[0]];
-	
+	//var matrice_notizie = [[0],[0]];
+	var matrice_notizie = new Array();
+	matrice_notizie[0][0] = 0;
+    matrice_notizie[0][1] = 0;
     var trovato = false;
 	// I beacon da rilevare in modo statico 
 	/*var regions =
