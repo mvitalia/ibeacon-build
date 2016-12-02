@@ -640,10 +640,11 @@ function startScan()
     
     		for (var j=0, len2=matrice_notizie[i].length; j<len2; j++) {
 				 //trovato = true;
+				 alert("si");
 				  if(matrice[i][j]== ID_dispositivo || matrice[i][j]==ID_notizia)
 				  {
 							trovato = true;
-							alert("si");
+							
 				  }else{
 					  		matrice_notizie[matrice_lenght] = new Array();
 			                matrice_notizie[matrice_lenght].push(ID_dispositivo,ID_notizia);
