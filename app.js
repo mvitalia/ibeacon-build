@@ -25,8 +25,10 @@ var app = (function()
 	matrice = new Array();
 	matrice[0] = new Array();
 	matrice[1] = new Array();
-	matrice[0][0] = "Primo, Secondo";
-	matrice[0][1] = "Terzo, Quarto";
+	matrice[0][0] = "Primo Array, prima voce";
+	matrice[0][1] = "Primo Array, seconda voce";
+	matrice[1][0] = "Secondo array, prima voce.";
+    matrice[1][1] = "Secondo array, seconda voce.";
     var trovato = false;
 	// I beacon da rilevare in modo statico 
 	/*var regions =
