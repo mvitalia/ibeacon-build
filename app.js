@@ -316,10 +316,10 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-								alert("Parte la funzione");
-								restituito=checkNotizia(ID_dispositivo,ID_notizia);
-								alert("Valore restituito");
-							/*	if(!restituito)
+							//	alert("Parte la funzione");
+								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
+							//	alert("Valore restituito");
+								if(!notiziaEsistente)
 								{
 								navigator.notification.beep(1);
         						navigator.vibrate(3000);
@@ -353,7 +353,7 @@ function startScan()
 													
 													}
 								)
-								}*/
+								}
         			       }
 			   		    },erroreSelezione); 
  				});
@@ -681,13 +681,12 @@ function startScan()
 				{
 					alert("Non carica niente");
 					trovato = true;
-					return trovato;
+					break;
 				} else {
 					//alert("Carica  id dispositivo e notifica se non trova");
 					matrice_notizie[matrice_len] = new Array();
 					matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
 					trovato = false;
-					return trovato;
 				}			
 			}
 		 } else {
@@ -697,7 +696,7 @@ function startScan()
 			matrice_notizie[0][1]=ID_notizia;
 			//alert(matrice_len + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
-		
+		return trovato;
 	   
 	}
 
