@@ -25,10 +25,7 @@ var app = (function()
 	matrice = new Array();
 	matrice[0] = new Array();
 	matrice[1] = new Array();
-	matrice[0][0] = 0;
-	matrice[0][1] = 0;
-	matrice[1][0] = 0;
-    matrice[1][1] = 0;
+	
     var trovato = false;
 	// I beacon da rilevare in modo statico 
 	/*var regions =
@@ -328,7 +325,19 @@ function startScan()
  				});
 				// Select delle notifiche
 				var rilevaBeacon = false;
-			    for (x=0; x<matrice[0].length; x++)
+
+				// controllo la dimensione della matrice
+				var matrice_lenght = matrice.length;
+				if(matrice_lenght > 0){
+
+				} else {
+					// matrice è vuota inserisco i valori appena rilevati
+					matrice[0][0].push(ID_dispositivo);
+					matrice[0][1].push(ID_notizia);
+				}
+				alert(matrice[0]);
+
+			  /*  for (x=0; x<matrice[0].length; x++)
 				{
 					alert("Primo");
 					for (y=0; y<matrice[1].length; y++)
@@ -344,7 +353,8 @@ function startScan()
 				}
 				alert(trovato);
 				matrice[0][0] = ID_dispositivo;
-				matrice[0][1] = ID_notizia;
+				matrice[0][1] = ID_notizia;*/
+
 				if(trovato == false)
 				{
 						navigator.notification.beep(1);
