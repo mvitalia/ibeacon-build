@@ -24,7 +24,7 @@ var app = (function()
 
 	//var matrice_notizie = [[0],[0]];
 	var  matrice_notizie  = new Array();
-    var trovato = false;
+ 
 	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
@@ -633,7 +633,7 @@ function startScan()
     function checkNotizia(ID_dispositivo,ID_notizia)
 	{
 		var matrice_lenght = matrice_notizie.length;
-	
+	    var  trovato = false;
 		if(matrice_lenght > 0){
 			//alert(ID_dispositivo+ "-"+ ID_notizia);
 			current_id_disp = 0;
@@ -663,7 +663,7 @@ function startScan()
 			//alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
 		
-	    if(trovato == false)
+	    if(!trovato)
 		{
 			alert("Esegui insert");
 		}	
