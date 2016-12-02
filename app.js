@@ -22,7 +22,7 @@ var app = (function()
     
 	// Inizializzo matrico
 	var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice"));
- 
+  alert( JSON.parse(localStorage.getItem("matrice")));
 	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
