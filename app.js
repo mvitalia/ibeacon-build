@@ -71,7 +71,6 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		document.querySelector('#deviceready').classList.toggle('blink')
 
 		// Parte l' onDeviceReady
         
