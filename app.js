@@ -635,17 +635,15 @@ function startScan()
 			var matrice_lenght = matrice_notizie.length;
 	
 		if(matrice_lenght > 0){
-            var n = matrice_lenght;
-			var m = matrice_lenght - matrice_lenght;
+           for (var i=0, len=matrice_notizie.length; i<len; i++) {
+    
+    		for (var j=0, len2=matrice_notizie[i].length; j<len2; j++) {
+                 alert("Dai:"+matrice_notizie[i][j] ); 
+   			 }	
+			}
 			matrice_notizie[matrice_lenght] = new Array();
 			matrice_notizie[matrice_lenght].push(ID_dispositivo,ID_notizia);
 			alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[1][0] + ' - ' + matrice_notizie[1][1]);
-			for (var i=0, len=matrice_notizie.length; i<len; i++) {
-    
-    		for (var j=0, len2=matrice_notizie[i].length; j<len2; j++) {
-       alert( matrice_notizie[i][j] ); 
-   			 }	
-			}
 		 } else {
 					// matrice è vuota inserisco i valori appena rilevati
 				//	alert("ok");
