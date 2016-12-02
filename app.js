@@ -635,16 +635,15 @@ function startScan()
 		
 		var matrice_lenght = matrice_notizie.length;
 		alert(matrice_lenght);
-			/*	if(matrice_lenght > 0){
-					matrice_notizie[0][0] = ID_dispositivo;
-					matrice_notizie[0][1] = ID_notizia;
+	     if(matrice_lenght > 0){
+				
 					
 				//	alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
-				} else {
+		 } else {
 					// matrice è vuota inserisco i valori appena rilevati
-				/*	matrice_notizie[0][0] = ID_dispositivo;
-					matrice_notizie[0][1] = ID_notizia;*/
-				//}
+			matrice_notizie[0].push(ID_dispositivo,ID_notizia);	
+			alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
+		}
 				//	alert(ID_dispositivo);
 			//	matrice_notizie[0][0] = ID_dispositivo;
 			//		matrice_notizie[0][1] = ID_notizia;
