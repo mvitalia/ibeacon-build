@@ -678,7 +678,7 @@ function startScan()
 				current_id_not = matrice_notizie[i][1];
 				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
 				{
-					//alert("Non carica niente");
+					alert("Non carica niente");
 					trovato = true;
 					return trovato;
 				} else {
