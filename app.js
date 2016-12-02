@@ -21,7 +21,7 @@ var app = (function()
 	app.lastScanEvent = 0;
     
 	// Inizializzo matrico
-	var  matrice_notizie  = new Array();
+	var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice"));
  
 	// I beacon da rilevare in modo statico 
 	/*var regions =
@@ -483,7 +483,9 @@ function startScan()
 		if (!trovato){
 			matrice_notizie[matrice_len] = new Array();
 			matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
+			localStorage.setItem("matrice", JSON.stringify(matrice_notizie));
 		}
+	
 		return trovato;
 	   
 	}
