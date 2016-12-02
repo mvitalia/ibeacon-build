@@ -268,7 +268,7 @@ function startScan()
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
-		var x, y;
+		var ID_dispositivo;
 	
 		// Richiamato di continuo per cercare i Beacon nei paraggi, viene eseguita subito dopo il ciclo for 'Inizio monitoraggio dei beacon che vanno cercati' scritto nella funzione successoSelezione
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
@@ -291,7 +291,7 @@ function startScan()
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
-				var ID_dispositivo, ID_notizia,titolo_n,descrizione,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,data_creazione_n;
+				var ID_notizia,titolo_n,descrizione,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,data_creazione_n;
 				
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
