@@ -292,7 +292,7 @@ function startScan()
 				uuid =  beacon.uuid;
 				idUUID =uuid.toUpperCase();
 				var ID_dispositivo, ID_notizia,titolo_n,descrizione,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,data_creazione_n;
-				var restituito;
+				var restituito=true;
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
@@ -318,8 +318,41 @@ function startScan()
 								ID_notizia = dati.rows.item(0).ID_notizia;
 								restituito=checkNotizia(ID_dispositivo,ID_notizia);
 								 alert(restituito);
-								//alert(ID_dispositivo);
-			    				// Inserisco nell' array solo se  ID_dispositivo ed id_notizia non c'è nell' array'
+								if(restituito==false)
+								{
+									navigator.notification.beep(1);
+        						navigator.vibrate(3000);
+							
+								// Creazione data ora, per db sul server 
+								var date;
+    							date = new Date();
+								date = date.getFullYear() + '-' +
+								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+								('00' + date.getDate()).slice(-2) + ' ' +
+								('00' + date.getHours()).slice(-2) + ':' +
+								('00' + date.getMinutes()).slice(-2) + ':' +
+								('00' + date.getSeconds()).slice(-2);  
+								// Fine creazione data_ora
+								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
+								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+								db.transaction(
+										// Metodo di chiamata asincrona
+										function(tx) {
+														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia]);
+													},
+										function()  {
+														alert("Inserimento non  effettuato"+e.message);
+													},
+										function()  {
+													//  alert("Inserimento effettuato Beacon Uno
+													   localStorage.setItem('Id_notifica', ID_notizia);
+													   // $.mobile.navigate("#Notifica");  
+													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+													  
+													
+													}
+								)
+								}
         			       }
 			   		    },erroreSelezione); 
  				});
