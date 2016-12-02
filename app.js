@@ -320,7 +320,7 @@ function startScan()
 								// alert(restituito);
 								if(restituito==false)
 								{
-									navigator.notification.beep(1);
+								navigator.notification.beep(1);
         						navigator.vibrate(3000);
 							
 								// Creazione data ora, per db sul server 
@@ -670,7 +670,7 @@ function startScan()
 		//alert('lung iniziale ' + matrice_notizie.length);
 	    var  trovato = false;
 		if(matrice_len > 0){
-			//alert(ID_dispositivo+ "-"+ ID_notizia);
+			alert(ID_dispositivo+ "-"+ ID_notizia);
 			current_id_disp = 0;
 			current_id_not = 0;
             for (var i=0; i < matrice_notizie.length; i++) {
