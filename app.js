@@ -345,7 +345,7 @@ function startScan()
 				alert(trovato);
 				matrice[0][0] = ID_dispositivo;
 				matrice[0][1] = ID_notizia;
-				if(trovato = false)
+				if(trovato == false)
 				{
 						navigator.notification.beep(1);
         						navigator.vibrate(3000);
