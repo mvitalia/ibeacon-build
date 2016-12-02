@@ -690,6 +690,7 @@ function startScan()
 					trovato = true;
 				} else {
 					//alert("Carica  id dispositivo e notifica se non trova");
+					alert(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
 					matrice_notizie[matrice_len] = new Array();
 					matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
 					trovato = false;
