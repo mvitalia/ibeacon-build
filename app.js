@@ -21,14 +21,12 @@ var app = (function()
 	app.lastScanEvent = 0;
     
 	// Inizializzo matrico
-		var  matrice_notizie = new Array();
-		alert(JSON.parse(localStorage.getItem("matrice_notizie")));
+	var  matrice_notizie = new Array();
     if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
 		
 	}else{
       var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
 	}
-	//alert(matrice_notizie[0][0]);
 	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
