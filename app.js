@@ -636,7 +636,7 @@ function startScan()
 		var matrice_lenght = matrice_notizie.length;
 	     if(matrice_lenght > 0){
 				
-					
+					alert(matrice_lenght);
 				//	alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		 } else {
 					// matrice è vuota inserisco i valori appena rilevati
@@ -644,6 +644,7 @@ function startScan()
 			matrice_notizie[0] = new Array();
 			matrice_notizie[0][0]=""+ID_dispositivo+"";
 			matrice_notizie[0][1]=""+ID_notizia+"";
+			trovato = false;
 			alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
 				//	alert(ID_dispositivo);
