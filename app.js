@@ -22,7 +22,7 @@ var app = (function()
     
 	// Inizializzo matrico
 
-	matrice_notizie = new Array(0,0);
+	var matrice_notizie = [[0],[0]];
 	
     var trovato = false;
 	// I beacon da rilevare in modo statico 
@@ -333,6 +333,8 @@ function startScan()
 					matrice_notizie[0][0] = ID_dispositivo;
 					matrice_notizie[0][1] = ID_notizia;
 				}
+				matrice_notizie[0][0] = ID_dispositivo;
+					matrice_notizie[0][1] = ID_notizia;
 				alert(matrice_lenght + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 
 			  /*  for (x=0; x<matrice[0].length; x++)
