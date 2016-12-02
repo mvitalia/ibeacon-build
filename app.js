@@ -132,7 +132,7 @@ var app = (function()
 								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
 								               tx.executeSql("DROP TABLE IF EXISTS notifiche");
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
-									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia)");
+									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia,ID_utente)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -333,6 +333,8 @@ function startScan()
 								db.transaction(
 										// Metodo di chiamata asincrona
 										function(tx) {
+											           // Se loggato o se non loggato
+													   
 														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia]);
 													},
 										function()  {

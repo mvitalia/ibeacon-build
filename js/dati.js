@@ -158,9 +158,9 @@ function loginUtente(usernameLogin,passLogin)
 		success: function(data){
 		//console.log(data);
         var login = data.d;
-		if(login==1)
+		if(login!=null)
         {
-            alert("Utente Loggato");
+            alert("Utente Loggato"+login);
             localStorage.setItem('login', true);
             localStorage.setItem('usernameLoginApp',usernameLogin);
             window.location.href = "#home";
