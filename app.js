@@ -21,9 +21,9 @@ var app = (function()
 	app.lastScanEvent = 0;
     
 	// Inizializzo matrico
-	
+		var  matrice_notizie = new Array();
     if(JSON.parse(localStorage.getItem("matrice")) == null){
-			var  matrice_notizie = new Array();
+		
 	}else{
       var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice"));
 	}
