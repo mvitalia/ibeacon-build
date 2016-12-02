@@ -326,8 +326,8 @@ function startScan()
 				var rilevaBeacon = false;
 
 				// controllo la dimensione della matrice
-			/*	var matrice_lenght = matrice_notizie.length;
-				if(matrice_lenght > 0){
+				var matrice_lenght = matrice_notizie.length;
+			/*	if(matrice_lenght > 0){
 
 				} else {
 					// matrice è vuota inserisco i valori appena rilevati
