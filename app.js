@@ -634,7 +634,6 @@ function startScan()
 	{
 		
 		var matrice_lenght = matrice_notizie.length;
-		alert(matrice_lenght);
 	     if(matrice_lenght > 0){
 				
 					
