@@ -20,8 +20,11 @@ var app = (function()
 	app.isScanning = false;
 	app.lastScanEvent = 0;
     
-	
+	// Inizializzo matrico
 
+	matrice = new Array();
+	matrice[0] = new Array();
+    var trovato = false;
 	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
@@ -266,7 +269,7 @@ function startScan()
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
-
+       alert(matrice[0].length);
 		// Richiamato di continuo per cercare i Beacon nei paraggi, viene eseguita subito dopo il ciclo for 'Inizio monitoraggio dei beacon che vanno cercati' scritto nella funzione successoSelezione
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
@@ -319,7 +322,8 @@ function startScan()
  				});
 				// Select delle notifiche
 				var rilevaBeacon = false;
-				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+				
+			/*	db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
 					{
@@ -368,7 +372,7 @@ function startScan()
         			        }
 						},erroreSelezione);
 					}
-				);
+				);*/
 
 			// DA CANCELLARE QUANDO SICURO CHE TUTTO FUNZIONA	
 			/*	if(countUno==0 && uuid.toUpperCase()=="5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0")
