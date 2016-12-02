@@ -667,6 +667,7 @@ function startScan()
 
     function checkNotizia(ID_dispositivo,ID_notizia)
 	{
+		alert("ok");
 		var matrice_len = matrice_notizie.length;
 		//alert('lung iniziale ' + matrice_notizie.length);
 	    var  trovato = false;
