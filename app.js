@@ -641,7 +641,8 @@ function startScan()
 		 } else {
 					// matrice è vuota inserisco i valori appena rilevati
 				//	alert("ok");
-			matrice_notizie[0].push(ID_dispositivo,ID_notizia);	
+			matrice_notizie[0][0]=ID_dispositivo;
+			matrice_notizie[0][1]=ID_notizia;
 			alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
 				//	alert(ID_dispositivo);
