@@ -337,7 +337,7 @@ function startScan()
 				}
 			//	matrice_notizie[0][0] = ID_dispositivo;
 			//		matrice_notizie[0][1] = ID_notizia;
-				alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
+			//	alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 
 			  /*  for (x=0; x<matrice[0].length; x++)
 				{
