@@ -277,7 +277,7 @@ function startScan()
 {
     for (y=0; y<matrice[1].length; y++)
     {
-        alert(mio_array[x][y])
+        alert(matrice[x][y]);
     }
 }
 		// Richiamato di continuo per cercare i Beacon nei paraggi, viene eseguita subito dopo il ciclo for 'Inizio monitoraggio dei beacon che vanno cercati' scritto nella funzione successoSelezione
