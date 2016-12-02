@@ -204,6 +204,7 @@ function successoSelectNotifica(tx,dati)
            "<p class='notizia'><b>Descrizione:</b> "+dati.rows.item(0).descrizione+"</p>"+
            "<p class='notizia'><b>Link: </b>"+dati.rows.item(0).link+"</p>"+
            "<p class='notizia'><b>Allegato: </b>"+dati.rows.item(0).allegato+"</p>"+
+           "<p class='notizia'><b>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</p>"+
            "<hr>";
            $(".schedaNotifica").append(li_dati);
         }
