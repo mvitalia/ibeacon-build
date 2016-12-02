@@ -317,7 +317,7 @@ function startScan()
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
 								restituito=checkNotizia(ID_dispositivo,ID_notizia);
-								 alert(restituito);
+								// alert(restituito);
 								if(restituito==false)
 								{
 									navigator.notification.beep(1);
