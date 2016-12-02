@@ -316,9 +316,10 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
+								alert("Parte la funzione");
 								restituito=checkNotizia(ID_dispositivo,ID_notizia);
-								// alert(restituito);
-								if(!restituito)
+								alert("Valore restituito");
+							/*	if(!restituito)
 								{
 								navigator.notification.beep(1);
         						navigator.vibrate(3000);
@@ -352,7 +353,7 @@ function startScan()
 													
 													}
 								)
-								}
+								}*/
         			       }
 			   		    },erroreSelezione); 
  				});
@@ -668,7 +669,7 @@ function startScan()
 	{
 		var matrice_len = matrice_notizie.length;
 		//alert('lung iniziale ' + matrice_notizie.length);
-	    //var  trovato = false;
+	    var  trovato = false;
 		if(matrice_len > 0){
 			//alert(ID_dispositivo+ "-"+ ID_notizia);
 			current_id_disp = 0;
