@@ -275,8 +275,10 @@ function startScan()
 		var x, y;
         for (x=0; x<matrice[0].length; x++)
 {
+	alert("Primo");
     for (y=0; y<matrice[1].length; y++)
     {
+		alert("secondo");
         alert(matrice[x][y]);
     }
 }
