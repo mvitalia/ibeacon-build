@@ -24,6 +24,7 @@ var app = (function()
 
 	matrice = new Array();
 	matrice[0] = new Array();
+	matrice[1] = new Array();
     var trovato = false;
 	// I beacon da rilevare in modo statico 
 	/*var regions =
