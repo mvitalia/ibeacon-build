@@ -637,10 +637,12 @@ function startScan()
 		if(matrice_lenght > 0){
 			//alert(ID_dispositivo+ "-"+ ID_notizia);
 			current_id_disp = 0;
+			 current_id_not = 0;
            for (var i=0, len=matrice_notizie.length; i<len; i++) {
-			   current_id_disp = matrice_notizie[i];
-
-			   current_id_not = 0;
+			   current_id_disp = matrice_notizie[i][0];
+			   current_id_not = matrice_notizie[i][1];
+			 alert('dispositivo: ' + current_id_disp + ' - notizia: ' + current_id_not);
+			 /* 
     		for (var j=0, len2=matrice_notizie[i].length; j<len2; j++) {
 				current_id_not = matrice_notizie[i][j];
 				 //trovato = true;
@@ -655,7 +657,7 @@ function startScan()
 							trovato = false;
 							alert("no");
 				  }
-   			 }	
+   			 }	*/
 			}
 		 } else {
 					// matrice è vuota inserisco i valori appena rilevati
