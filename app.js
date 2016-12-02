@@ -25,8 +25,8 @@ var app = (function()
 	matrice = new Array();
 	matrice[0] = new Array();
 	matrice[1] = new Array();
-	matrice[0][0];
-	matrice[0][1];
+	matrice[0][0] = 3;
+	matrice[0][1] = 4;
 	matrice[1][0];
     matrice[1][1];
     var trovato = false;
