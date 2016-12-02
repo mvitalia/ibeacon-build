@@ -678,11 +678,11 @@ function startScan()
 				current_id_not = matrice_notizie[i][1];
 				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
 				{
-					alert(current_id_disp+"-"+current_id_not);
+					alert("Non carica niente");
 					trovato = true;
 					return trovato;
 				} else {
-					alert("Inizio");
+					alert("Carica  id dispositivo e notifica se non trova");
 					matrice_notizie[matrice_len] = new Array();
 					matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
 					trovato = false;
@@ -690,9 +690,7 @@ function startScan()
 				}			
 			}
 		 } else {
-					// matrice è vuota inserisco i valori appena rilevati
-				//	alert("ok");
-			//	alert(ID_dispositivo+ "-"+ ID_notizia);
+			alert("Carica il primo id dispositivo e notifica");
 			matrice_notizie[0] = new Array();
 			matrice_notizie[0][0]=ID_dispositivo;
 			matrice_notizie[0][1]=ID_notizia;
