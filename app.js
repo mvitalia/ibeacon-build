@@ -272,6 +272,7 @@ function startScan()
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
+		var x, y;
         for (x=0; x<matrice[0].length; x++)
 {
     for (y=0; y<matrice[1].length; y++)
