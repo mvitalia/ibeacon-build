@@ -22,6 +22,7 @@ var app = (function()
     
 	// Inizializzo matrico
 		var  matrice_notizie = new Array();
+		alert(JSON.parse(localStorage.getItem("matrice")));
     if(JSON.parse(localStorage.getItem("matrice")) == null){
 		
 	}else{
