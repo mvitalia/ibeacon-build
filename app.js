@@ -273,6 +273,7 @@ function startScan()
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
 		var x, y;
+		alert(matrice[1].length);
         for (x=0; x<matrice[0].length; x++)
 {
 	alert("Primo");
