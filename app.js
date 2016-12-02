@@ -22,7 +22,7 @@ var app = (function()
     
 	// Inizializzo matrico
 
-	matrice = new Array(0,0);
+	matrice_notizie = new Array(0,0);
 	
     var trovato = false;
 	// I beacon da rilevare in modo statico 
@@ -325,14 +325,15 @@ function startScan()
 				var rilevaBeacon = false;
 
 				// controllo la dimensione della matrice
-				var matrice_lenght = matrice.length;
+				var matrice_lenght = matrice_notizie.length;
 				if(matrice_lenght > 0){
 
 				} else {
 					// matrice è vuota inserisco i valori appena rilevati
-					matrice[0].push(ID_dispositivo,ID_notizia);
+					matrice_notizie[0].push(ID_dispositivo,ID_notizia);
 				}
-				alert(matrice[0][0] + ' - ' + matrice[0][1]);
+				matrice_notizie[0].push(ID_dispositivo,ID_notizia);
+				alert(matrice_lenght + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 
 			  /*  for (x=0; x<matrice[0].length; x++)
 				{
