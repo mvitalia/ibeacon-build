@@ -636,11 +636,15 @@ function startScan()
 	
 		if(matrice_lenght > 0){
 			//alert(ID_dispositivo+ "-"+ ID_notizia);
+			current_id_disp = 0;
            for (var i=0, len=matrice_notizie.length; i<len; i++) {
-    
+			   current_id_disp = matrice_notizie[i];
+
+			   current_id_not = 0;
     		for (var j=0, len2=matrice_notizie[i].length; j<len2; j++) {
+				current_id_not = matrice_notizie[i][j];
 				 //trovato = true;
-				 alert(matrice_notizie[i][j]);
+				 alert('dispositivo: ' + current_id_disp + ' - notizia: ' + current_id_not);
 				  if(matrice_notizie[i][j]== ID_dispositivo || matrice_notizie[i][j]==ID_notizia)
 				  {
 							trovato = true;
