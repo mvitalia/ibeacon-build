@@ -681,7 +681,6 @@ function startScan()
 				{
 					//alert("Non carica niente");
 					trovato = true;
-					break;
 				} else {
 					//alert("Carica  id dispositivo e notifica se non trova");
 					matrice_notizie[matrice_len] = new Array();
