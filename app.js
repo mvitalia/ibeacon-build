@@ -682,19 +682,12 @@ function startScan()
             for (var i=0; i < matrice_notizie.length; i++) {
 				current_id_disp = matrice_notizie[i][0];
 				current_id_not = matrice_notizie[i][1];
-				//alert(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
-				consol.log(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
+				console.log(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
 				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
 				{
-					//alert("Non carica niente");
+				
 					trovato = true;
-				} else {
-					//alert("Carica  id dispositivo e notifica se non trova");
-					alert(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
-					matrice_notizie[matrice_len] = new Array();
-					matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
-					trovato = false;
-				}			
+				}	
 			}
 		 } else {
 			//alert("Carica il primo id dispositivo e notifica");
@@ -702,6 +695,11 @@ function startScan()
 			matrice_notizie[0][0]=ID_dispositivo;
 			matrice_notizie[0][1]=ID_notizia;
 			//alert(matrice_len + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
+		}
+
+		if (!trovato){
+			matrice_notizie[matrice_len] = new Array();
+			matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
 		}
 		return trovato;
 	   
