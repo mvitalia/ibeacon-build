@@ -643,12 +643,12 @@ function startScan()
 				  if(matrice[i][j]== ID_dispositivo || matrice[i][j]==ID_notizia)
 				  {
 							trovato = true;
-							alert("si"+trovato);
+							alert("si");
 				  }else{
 					  		matrice_notizie[matrice_lenght] = new Array();
 			                matrice_notizie[matrice_lenght].push(ID_dispositivo,ID_notizia);
 							trovato = false;
-							alert("no"+trovato);
+							alert("no");
 				  }
    			 }	
 			}
