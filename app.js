@@ -335,7 +335,7 @@ function startScan()
 					matrice[0][0].push(ID_dispositivo);
 					matrice[0][1].push(ID_notizia);
 				}
-				alert(matrice[0]);
+				alert(matrice[0][0] + ' - ' + matrice[0][1]);
 
 			  /*  for (x=0; x<matrice[0].length; x++)
 				{
