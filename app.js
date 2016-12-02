@@ -28,6 +28,7 @@ var app = (function()
 	}else{
       var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice"));
 	}
+	alert(matrice_notizie[0][0]);
 	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
