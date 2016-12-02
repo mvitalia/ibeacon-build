@@ -667,7 +667,7 @@ function startScan()
 
     function checkNotizia(ID_dispositivo,ID_notizia)
 	{
-		alert("ok");
+		
 		var matrice_len = matrice_notizie.length;
 		//alert('lung iniziale ' + matrice_notizie.length);
 	    var  trovato = false;
@@ -678,6 +678,8 @@ function startScan()
             for (var i=0; i < matrice_notizie.length; i++) {
 				current_id_disp = matrice_notizie[i][0];
 				current_id_not = matrice_notizie[i][1];
+				alert(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
+				consol.log(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
 				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
 				{
 					//alert("Non carica niente");
