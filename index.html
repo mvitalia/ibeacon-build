@@ -286,7 +286,7 @@
     $('.button_logout').click(function(){
         alert("entra");
           localStorage.setItem('login', false);
-         $( ":mobile-pagecontainer" ).pagecontainer( "change", "index.html", {    transition: "flip", reload:true } );
+          window.location.href = "index.html";
       });
 
 
