@@ -25,10 +25,10 @@ var app = (function()
 	matrice = new Array();
 	matrice[0] = new Array();
 	matrice[1] = new Array();
-	matrice[0][0] = "Primo Array, prima voce";
-	matrice[0][1] = "Primo Array, seconda voce";
-	matrice[1][0] = "Secondo array, prima voce.";
-    matrice[1][1] = "Secondo array, seconda voce.";
+	matrice[0][0];
+	matrice[0][1];
+	matrice[1][0];
+    matrice[1][1];
     var trovato = false;
 	// I beacon da rilevare in modo statico 
 	/*var regions =
@@ -281,9 +281,9 @@ function startScan()
 	alert("Primo");
     for (y=0; y<matrice[1].length; y++)
     {
-		alert("secondo");
+	//	alert("secondo");
         alert(matrice[x][y]);
-    }
+   }
 }
 		// Richiamato di continuo per cercare i Beacon nei paraggi, viene eseguita subito dopo il ciclo for 'Inizio monitoraggio dei beacon che vanno cercati' scritto nella funzione successoSelezione
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
