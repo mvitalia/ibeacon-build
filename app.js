@@ -317,6 +317,7 @@ function startScan()
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
 								restituito=checkNotizia(ID_dispositivo,ID_notizia);
+								 alert(restituito);
 								//alert(ID_dispositivo);
 			    				// Inserisco nell' array solo se  ID_dispositivo ed id_notizia non c'è nell' array'
         			       }
@@ -324,7 +325,7 @@ function startScan()
  				});
 				// Select delle notifiche
 				var rilevaBeacon = false;
-                 alert(restituito);
+                
 				// controllo la dimensione della matrice
 			//	
 
