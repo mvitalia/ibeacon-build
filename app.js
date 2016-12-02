@@ -275,16 +275,7 @@ function startScan()
 		// Dichiarato di seguito.
 		var delegate = new locationManager.Delegate();
 		var x, y;
-		alert(matrice[1].length);
-        for (x=0; x<matrice[0].length; x++)
-{
-	alert("Primo");
-    for (y=0; y<matrice[1].length; y++)
-    {
-	//	alert("secondo");
-        alert(matrice[x][y]);
-   }
-}
+	
 		// Richiamato di continuo per cercare i Beacon nei paraggi, viene eseguita subito dopo il ciclo for 'Inizio monitoraggio dei beacon che vanno cercati' scritto nella funzione successoSelezione
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
@@ -337,7 +328,21 @@ function startScan()
  				});
 				// Select delle notifiche
 				var rilevaBeacon = false;
+			    for (x=0; x<matrice[0].length; x++)
+				{
+					alert("Primo");
+					for (y=0; y<matrice[1].length; y++)
+					{
 				
+						if(matrice[x][y]== ID_dispositivo || matrice[x][y]==ID_notizia)
+						{
+							trovato = true;
+						}else{
+							trovato = false;
+						}
+				    }
+				}
+				alert(trovato);
 			/*	db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
