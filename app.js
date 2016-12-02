@@ -327,15 +327,16 @@ function startScan()
 
 				// controllo la dimensione della matrice
 				var matrice_lenght = matrice_notizie.length;
-			/*	if(matrice_lenght > 0){
-
-				} else {
-					// matrice è vuota inserisco i valori appena rilevati
+				if(matrice_lenght > 0){
 					matrice_notizie[0][0] = ID_dispositivo;
 					matrice_notizie[0][1] = ID_notizia;
+				} else {
+					// matrice è vuota inserisco i valori appena rilevati
+				/*	matrice_notizie[0][0] = ID_dispositivo;
+					matrice_notizie[0][1] = ID_notizia;*/
 				}
-				matrice_notizie[0][0] = ID_dispositivo;
-					matrice_notizie[0][1] = ID_notizia;
+			//	matrice_notizie[0][0] = ID_dispositivo;
+			//		matrice_notizie[0][1] = ID_notizia;
 				alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);*/
 
 			  /*  for (x=0; x<matrice[0].length; x++)
