@@ -315,7 +315,8 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-								alert(ID_dispositivo);
+								checkNotizia(ID_dispositivo,ID_notizia);
+								//alert(ID_dispositivo);
 			    				// Inserisco nell' array solo se  ID_dispositivo ed id_notizia non c'è nell' array'
         			       }
 			   		    },erroreSelezione); 
@@ -335,7 +336,7 @@ function startScan()
 				/*	matrice_notizie[0][0] = ID_dispositivo;
 					matrice_notizie[0][1] = ID_notizia;*/
 				//}
-					alert(ID_dispositivo);
+				//	alert(ID_dispositivo);
 			//	matrice_notizie[0][0] = ID_dispositivo;
 			//		matrice_notizie[0][1] = ID_notizia;
 			//	alert(matrice_lenght + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
@@ -641,6 +642,11 @@ function startScan()
 		}*/
 		
 }
+
+    function checkNotizia(ID_dispositivo,ID_notizia)
+	{
+		alert(ID_dispositivo +"-"+ ID_notizia );
+	}
 
 	function onConfirm(buttonIndex) {
     //alert('You selected button ' + buttonIndex);
