@@ -633,7 +633,7 @@ function startScan()
     function checkNotizia(titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,data_creazione_n,ID_dispositivo,ID_notizia)
 	{
 		var matrice_len = matrice_notizie.length;
-		alert('lung iniziale ' + matrice_notizie.length);
+		//alert('lung iniziale ' + matrice_notizie.length);
 	    var  trovato = false;
 		if(matrice_len > 0){
 			//alert(ID_dispositivo+ "-"+ ID_notizia);
@@ -683,7 +683,7 @@ function startScan()
 								db.transaction(
 										// Metodo di chiamata asincrona
 										function(tx) {
-											alert("inserimento");
+										//	alert("inserimento");
 														tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia]);
 													},
 										function()  {
