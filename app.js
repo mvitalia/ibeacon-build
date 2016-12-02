@@ -316,7 +316,7 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-								checkNotizia(titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,data_creazione_n,ID_dispositivo,ID_notizia);
+								checkNotizia(uuid,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,data_creazione_n,ID_dispositivo,ID_notizia);
 								//alert(ID_dispositivo);
 			    				// Inserisco nell' array solo se  ID_dispositivo ed id_notizia non c'è nell' array'
         			       }
@@ -665,7 +665,7 @@ function startScan()
 	    if(!trovato)
 		{
 			//alert('lung finale ' + matrice_notizie.length);
-			navigator.notification.beep(1);
+			                    navigator.notification.beep(1);
         						navigator.vibrate(3000);
 							
 								// Creazione data ora, per db sul server 
