@@ -645,11 +645,12 @@ function startScan()
 				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
 				{
 					trovato = true;
-					break;
+					return trovato;
 				} else {
 					matrice_notizie[matrice_len] = new Array();
 					matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
 					trovato = false;
+					return trovato
 				}			
 			}
 		 } else {
@@ -661,7 +662,7 @@ function startScan()
 			matrice_notizie[0][1]=ID_notizia;
 			//alert(matrice_len + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
 		}
-		return trovato
+		
 	   
 	}
 
