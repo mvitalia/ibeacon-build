@@ -22,9 +22,7 @@ var app = (function()
     
 	// Inizializzo matrico
 
-	matrice = new Array();
-	matrice[0] = new Array();
-	matrice[1] = new Array();
+	matrice = new Array(0,0);
 	
     var trovato = false;
 	// I beacon da rilevare in modo statico 
@@ -332,8 +330,7 @@ function startScan()
 
 				} else {
 					// matrice è vuota inserisco i valori appena rilevati
-					matrice[0][0].push(ID_dispositivo);
-					matrice[0][1].push(ID_notizia);
+					matrice[0].push(ID_dispositivo,ID_notizia);
 				}
 				alert(matrice[0][0] + ' - ' + matrice[0][1]);
 
