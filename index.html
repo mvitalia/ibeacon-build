@@ -308,10 +308,14 @@ function visualizzoNotifica ()
 
  $(document).on("click", ".storage", function () {
      var id = $(this).parents("li").data("itemid");
-     sessionStorage.setItem('id', id);
-     alert( sessionStorage.getItem('id'));
-    // $.mobile.navigate( "#modificaCancella" );    
+     sessionStorage.setItem('ID_not', id);
+     
 });
+
+$('.cancellaNot').click(function(){
+       // alert("entra");
+       alert( sessionStorage.getItem('ID_not'));
+      });
 
 </script>
 <!--	<header>
