@@ -349,11 +349,11 @@ function startScan()
 										function()  {
 														alert("Inserimento non  effettuato"+e.message);
 													},
-										function()  {
-													//  alert("Inserimento effettuato Beacon Uno
-													   localStorage.setItem('Id_notifica', ID_notizia);
+										function(tx, results)  {
+													  alert("results.insertId");
+													  // localStorage.setItem('Id_notifica', ID_notizia);
 													   // $.mobile.navigate("#Notifica");  
-													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+													  // navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													  
 													
 													}
