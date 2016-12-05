@@ -365,7 +365,7 @@ function startScan()
 													 "<button type='submit' class='ui-btn' id=''>Salva</button>"+
 													 "</div>";
 													 
-													  $("body").append(div);
+													  $("#home").append(div);
 													
 													}
 								)
