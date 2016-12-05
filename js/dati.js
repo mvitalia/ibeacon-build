@@ -92,7 +92,7 @@ function successoSelect(tx,dati)
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
                // alert(dataCorretta);
-                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/><h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).titolo + "</h6>"+
+                li_dati += "<li id="+dati.rows.item(i).ID_notizia+" data-itemid="+dati.rows.item(i).ID_notizia+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/><h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).titolo + "</h6>"+
                 "<p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p>"+
                 "<p style='font-size:10px; text-align:left !important;'><b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a>"+
                 "<a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
@@ -224,7 +224,7 @@ function cancellaNotifica ()
         db.transaction(
             // Metodo di chiamata asincrona
             function(tx) {
-                tx.executeSql("DELETE FROM notifiche WHERE id=?",[idNotifica]);
+                tx.executeSql("DELETE FROM notifiche WHERE ID_notizia=?",[idNotifica]);
             },
             function(){
                // alert("Cancellazione non effettua");
