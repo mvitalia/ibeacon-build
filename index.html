@@ -34,7 +34,7 @@
 <body>
 
 
-	 <div  data-role="page" id="home" >
+	 <div  data-role="page" id="home" class="container_page" >
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Beacon Scan</h1>
         <div class="wrapper">
@@ -334,21 +334,6 @@ $('#cancellaTutteNotifiche').click(function(){
 });
 
 
-
-
-$(document).on("click", "#SalvaNotifica", function () {
-     var id = $(this).parents("div").data("itemid");
-    $('#box_'+id+'').hide();
-
-});
-
-$(document).on("click", "#ApriNotifica", function () {
-     var id = $(this).parents("div").data("itemid");
-     localStorage.setItem('Id_notifica', id);
-       $('#box_'+id+'').hide();
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
-
-});
 
 
 

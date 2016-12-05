@@ -358,11 +358,11 @@ function startScan()
 													 // visualizza(ID_notizia);
 													 //  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													 // $( ".popupNotifica" ).popup( "open");
-													 var div ="<div id='box_"+ID_notizia+"' data-itemid='"+ID_notizia+"' class='popNotifica'>"+
+													 var div ="<div id='"+ID_notizia+"' data-itemid='"+ID_notizia+"' class='popNotifica'>"+
 													 "<h3>Data: "+date+"</h3>"+
 													 "<p>Notifica: "+titolo_n+"</p>"+
-													 "<button  class='ui-btn' id='ApriNotifica'>Apri</button>"+
-													 "<button  class='ui-btn' id='SalvaNotifica'>Salva</button>"+
+													 "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this)'>Apri</button>"+
+													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this)'>Salva</button>"+
 													 "</div>";	
 													  $("#home").append(div);
 													  $("#Notifica").append(div);
@@ -679,6 +679,24 @@ function startScan()
 			}
 		});
 	}
+
+
+
+	
+function salva_notifica(obj) {
+	var id = obj.parentNode.ID;
+    $('#'+id+'').hide();
+
+}
+
+function apri_notifica(obj) {
+     var id = obj.parentNode.ID;
+     localStorage.setItem('Id_notifica', id);
+       $('#'+id+'').hide();
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+
+}
+
   
 	return app;
 })();
