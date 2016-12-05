@@ -353,8 +353,18 @@ function startScan()
 										function()  {
 													 // alert(results.insertId);
 													 //  localStorage.setItem('Id_notifica', ID_notizia);
-													   // $.mobile.navigate("#Notifica");  
-													   navigator.notification.confirm("Data: "+date, onConfirm(ID_notizia),'Notifica: '+titolo_n,['Guarda','Salva']);
+													   // $.mobile.navigate("#Notifica"); 
+													   function displayError(ID_notizia) {
+															navigator.notification.confirm(
+																ID_notizia,
+																function(buttonIndex){
+																	onConfirm(buttonIndex, errormsg);
+																},
+																'Error',
+																'Submit, Cancel'
+																);
+														}
+													  // navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													  
 													
 													}
