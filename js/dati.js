@@ -287,6 +287,7 @@ $(document).on("click", "#ApriNotifica", function () {
 
 	
 function salva_notifica(obj,id) {
+    alert("ok");
     $('#'+id+'').hide();
 
 }
