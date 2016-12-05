@@ -236,6 +236,8 @@ function cancellaNotifica ()
             }
         )
       $("#purchase").popup( "close" );
+       $("#lista_datiJson").html("");
+      selezionoDati();
 }
 
 
