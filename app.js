@@ -364,8 +364,7 @@ function startScan()
 													 "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this)'>Apri</button>"+
 													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this)'>Salva</button>"+
 													 "</div>";	
-													  $("#home").append(div);
-													  $("#Notifica").append(div);
+													  $(".container_page").append(div);
 												
 													
 													}
