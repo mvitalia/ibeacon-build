@@ -353,7 +353,7 @@ function startScan()
 													},
 										function()  {
 													 // alert(results.insertId);
-													 //  localStorage.setItem('Id_notifica', ID_notizia);
+													   localStorage.setItem('Id_notifica', ID_notizia);
 													   // $.mobile.navigate("#Notifica"); 
 													 // visualizza(ID_notizia);
 													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
