@@ -317,6 +317,7 @@ function visualizzoNotifica ()
 
 $(document).on("click", ".detail", function () {
      var id = $(this).parents("li").data("itemid");
+     localStorage.removeItem("Id_notifica");
      localStorage.setItem('Id_notifica', id);
      $.mobile.navigate("notifica.html");  
      
