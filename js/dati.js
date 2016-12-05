@@ -267,14 +267,14 @@ function apriSocial()
     alert("Apri Sociale");
 }
 
-$(document).on("click", "#SalvaNotifica", function () {
+/*$(document).on("click", "#SalvaNotifica", function () {
     alert("ok");
      var id = $(this).parents("div").data("itemid");
       alert("ok"+id);
     $('.'+id+'').hide();
     alert("Dopo");
 
-});
+});*/
 
 $(document).on("click", "#ApriNotifica", function () {
      var id = $(this).parents("div").data("itemid");
@@ -285,12 +285,12 @@ $(document).on("click", "#ApriNotifica", function () {
 });
 
 
-/*	
+	
 function salva_notifica(obj,id) {
     $('#'+id+'').hide();
 
 }
-
+/*
 function apri_notifica(obj,id) {
      localStorage.setItem('Id_notifica', id);
        $('#'+id+'').hide();
