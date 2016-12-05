@@ -269,4 +269,22 @@ function apriSocial()
 
 
 
+	
+function salva_notifica(obj,id) {
+	alert(id);
+    $('#'+id+'').hide();
+
+}
+
+function apri_notifica(obj,id) {
+	alert(id);
+     localStorage.setItem('Id_notifica', id);
+       $('#'+id+'').hide();
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+
+}
+
+  
+
+
  
