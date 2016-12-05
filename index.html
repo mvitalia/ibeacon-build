@@ -334,9 +334,11 @@ $('#cancellaTutteNotifiche').click(function(){
 });
 
 
-$('#SalvaNotifica').click(function(){
-       var id = $(this).parents("div").data("itemNot");
-       alert(id);
+
+
+$(document).on("click", ".popNotifica", function () {
+     var id = $(this).parents("div").data("itemNot");
+            alert(id);  
 });
 
 
