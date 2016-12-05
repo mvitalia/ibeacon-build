@@ -350,7 +350,7 @@ function startScan()
 														alert("Inserimento non  effettuato"+e.message);
 													},
 										function(tx, results)  {
-													  alert("results.insertId");
+													  alert(results.insertId);
 													  // localStorage.setItem('Id_notifica', ID_notizia);
 													   // $.mobile.navigate("#Notifica");  
 													  // navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
