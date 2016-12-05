@@ -235,74 +235,10 @@ function cancellaNotifica ()
                
             }
         )
-        var ID_dispositivoCanc, ID_notiziaCanc;
-        // Fare Select per idNotizia
-        db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-				db.transaction(
-					function(tx)
-					{
-               			tx.executeSql("SELECT ID_dispositivo, ID_notizia FROM notifiche",[], 
-			   			function(tx,dati)
-			   			{
-				 			var len = dati.rows.length;
-        					var li_dati="";
-       						if(len!=0)
-        					{
-                                                    
-                                for(var i=0; i<len; i++)
-                                {
-                                    ID_dispositivoCanc= dati.rows.item(i).ID_dispositivo;
-								    ID_notiziaCanc = dati.rows.item(i).ID_notizia;
-                                    alert("Dispositivo: "+ID_dispositivoCanc+" - Notizia: "+ID_notiziaCanc);
-                                }
-								
-        			       }
-			   		    },er); 
- 				});
-        var  mat  = JSON.parse(localStorage.getItem("matrice_notizie"));
-        alert(mat.length);
+      
 }
 
 
-function er ()
-{
-    alert("errore selezione cancellazione");
-}
 
- function checkNotizia(ID_dispositivo,ID_notizia)
-	{
-		
-		var matrice_len = matrice_notizie.length;
-		//alert('lung iniziale ' + matrice_notizie.length);
-	    var  trovato = false;
-		if(matrice_len > 0){
-			//alert(ID_dispositivo+ "-"+ ID_notizia);
-			current_id_disp = 0;
-			current_id_not = 0;
-            for (var i=0; i < matrice_notizie.length; i++) {
-				current_id_disp = matrice_notizie[i][0];
-				current_id_not = matrice_notizie[i][1];
-				console.log(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
-				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
-				{
-				
-					trovato = true;
-				}	
-			}
-		 } else {
-			//alert("Carica il primo id dispositivo e notifica");
-			matrice_notizie[0] = new Array();
-			matrice_notizie[0][0]=ID_dispositivo;
-			matrice_notizie[0][1]=ID_notizia;
-			//alert(matrice_len + ' - disp:'+ ID_dispositivo + ' - ' + matrice_notizie[0][0] + ' - ' + matrice_notizie[0][1]);
-		}
 
-		if (!trovato){
-			matrice_notizie[matrice_len] = new Array();
-			matrice_notizie[matrice_len].push(ID_dispositivo,ID_notizia);
-			localStorage.setItem("matrice_notizie", JSON.stringify(matrice_notizie));
-		}
-	
-		return trovato;
-	   
-	}
+ 

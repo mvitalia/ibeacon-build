@@ -22,11 +22,11 @@ var app = (function()
     
 	// Inizializzo matrico
 	var  matrice_notizie = new Array();
-  /* if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
+   if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
 		
 	}else{
       var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
-	}*/
+	}
 	// I beacon da rilevare in modo statico 
 	/*var regions =
 	[
