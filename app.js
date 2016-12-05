@@ -4,6 +4,7 @@ var countDue = 0;
 var countTre = 0;
 var uuid = new String();
 var millisecondi = 0;
+var provaIDNotifica
 // Variabili globali per la selezione una tantum dei diversi beacon
 
 
@@ -354,17 +355,9 @@ function startScan()
 													 // alert(results.insertId);
 													 //  localStorage.setItem('Id_notifica', ID_notizia);
 													   // $.mobile.navigate("#Notifica"); 
-													   function displayError(ID_notizia) {
-															navigator.notification.confirm(
-																ID_notizia,
-																function(buttonIndex){
-																	onConfirm(buttonIndex, errormsg);
-																},
-																'Error',
-																'Submit, Cancel'
-																);
-														}
-													  // navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+													 // visualizza(ID_notizia);
+													 provaIDNotifica = ID_notizia;
+													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													  
 													
 													}
@@ -505,18 +498,19 @@ function startScan()
 	   
 	}
 
-	function onConfirm(buttonIndex,ID_notizia) {
-    alert('You selected button ' +ID_notizia);
-/*	
+	function onConfirm(buttonIndex) {
+    //alert('You selected button ');
+	
 	if(buttonIndex==1)
 	{
 		//alert("Stai guardando la notizia")
+		localStorage.setItem('Id_notifica', provaIDNotifica);
 		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 		 
 	}else{
 		//alert("Stai salvando la notizia");
 	
-	}*/
+	}
 }
 
  function selezionaBeacon ()
