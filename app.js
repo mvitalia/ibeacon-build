@@ -357,7 +357,7 @@ function startScan()
 													   // $.mobile.navigate("#Notifica"); 
 													 // visualizza(ID_notizia);
 													 //  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-													  $( "#popupNotifica" ).popup( "open");
+													  $( ".popupNotifica" ).popup( "open");
 													
 													}
 								)
