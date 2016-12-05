@@ -235,6 +235,7 @@ function cancellaNotifica ()
                
             }
         )
+        alert( matrice_notizie.length);
 }
 
  
