@@ -312,14 +312,16 @@ function visualizzoNotifica ()
  $(document).on("click", ".storage", function () {
      var id = $(this).parents("li").data("itemid");
      sessionStorage.setItem('ID_not', id);
+
      
 });
 
 $(document).on("click", ".detail", function () {
      var id = $(this).parents("li").data("itemid");
-     localStorage.removeItem("Id_notifica");
-     localStorage.setItem('Id_notifica', id);
-     
+     alert(id);
+   //  localStorage.removeItem("Id_notifica");
+    // localStorage.setItem('Id_notifica', id);
+
     // $.mobile.navigate("notifica.html");  
      
 });
