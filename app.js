@@ -361,8 +361,8 @@ function startScan()
 													 var div ="<div id='"+ID_notizia+"' data-itemid='"+ID_notizia+"' class='popNotifica'>"+
 													 "<h3>Data: "+date+"</h3>"+
 													 "<p>Notifica: "+titolo_n+"</p>"+
-													 "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this)'>Apri</button>"+
-													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this)'>Salva</button>"+
+													 "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
+													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+
 													 "</div>";	
 													  $(".container_page").append(div);
 												
@@ -682,16 +682,14 @@ function startScan()
 
 
 	
-function salva_notifica(obj) {
-	var id = obj.parentNode.ID;
+function salva_notifica(obj,id) {
 	alert(id);
     $('#'+id+'').hide();
 
 }
 
-function apri_notifica(obj) {
-     var id = obj.parentNode.ID;
-	 alert(id);
+function apri_notifica(obj,id) {
+	alert(id);
      localStorage.setItem('Id_notifica', id);
        $('#'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
