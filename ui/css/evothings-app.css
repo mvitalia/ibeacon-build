@@ -846,4 +846,5 @@ input.btn-group.black:checked + label {
 	top: 20%;
 	left: auto;
 	z-index: 1000;
+	background: #f2f2f2;
 }
