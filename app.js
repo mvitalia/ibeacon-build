@@ -360,7 +360,7 @@ function startScan()
 													 // $( ".popupNotifica" ).popup( "open");
 													 var div ="<div id='"+ID_notizia+"' class='popNotifica'>"+
 													 "<h3>Data: "+date+">"+
-													 "<p>Notifica: "+titolo_n+">"+
+													 "<p>Notifica: "+titolo_n+"</p>"+
 													 "<button type='submit' class='ui-btn' id=''>Apri</button>"+
 													 "<button type='submit' class='ui-btn' id=''>Salva</button>"+
 													 "</div>";

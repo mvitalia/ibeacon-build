@@ -840,3 +840,10 @@ input.btn-group.black:checked + label {
 	text-align: center;
     color:#AE1C1F;
 }
+
+.popNotifica{
+	position: fixed;
+	top: 20%;
+	left: auto;
+	z-index: 1000;
+}
