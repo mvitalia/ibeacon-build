@@ -843,7 +843,7 @@ input.btn-group.black:checked + label {
 
 .popNotifica{
 	position: fixed;
-	top: 20%;
+	top: 25%;
     left: 50%;
 	z-index: 1000;
 	background: #f2f2f2;
