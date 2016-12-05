@@ -366,6 +366,7 @@ function startScan()
 													 "</div>";
 													 
 													  $("#home").append(div);
+													  $("#Notifica").append(div);
 													
 													}
 								)
