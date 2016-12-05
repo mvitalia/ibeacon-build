@@ -72,7 +72,7 @@ function selezionoDati ()
 			   			function(tx,dati)
 			   			{
                             var len = dati.rows.length;
-                        alert(len);
+                        //alert(len);
                             var li_dati="";
                             if(len!=0)
                             {
@@ -103,7 +103,7 @@ function selezionoDati ()
  				});                        
 }
 
-/*function select(tx)
+function select(tx)
 {
        tx.executeSql("SELECT titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a FROM notizie as D, notifiche as C WHERE D.Id=C.ID_notizia",[], successoSelect,erroreSelect);     
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
@@ -139,7 +139,7 @@ function successoSelect(tx,dati)
        $("#lista_datiJson").append(li_dati).promise().done(function () {
          $(this).listview("refresh");
         });
-}*/
+}
 
 function erroreSelect (e)
 {
