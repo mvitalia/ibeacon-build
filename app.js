@@ -363,10 +363,9 @@ function startScan()
 													 "<p>Notifica: "+titolo_n+"</p>"+
 													 "<button type='submit' class='ui-btn' id='ApriNotifica'>Apri</button>"+
 													 "<button type='submit' class='ui-btn' id='SalvaNotifica'>Salva</button>"+
-													 "</div>";
-													 
-													  $("#home").append(div);
-													  $("#Notifica").append(div);
+													 "</div>";	
+													  $(".appendNotifica").append(div);
+												
 													
 													}
 								)
