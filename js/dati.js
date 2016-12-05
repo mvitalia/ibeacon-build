@@ -235,7 +235,8 @@ function cancellaNotifica ()
                
             }
         )
-        alert( matrice_notizie.length);
+        var  mat  = JSON.parse(localStorage.getItem("matrice_notizie"));
+        alert(mat.length);
 }
 
  
