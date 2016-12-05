@@ -107,9 +107,9 @@ function successoSelect(tx,dati)
         });
 }
 
-function erroreSelect ()
+function erroreSelect (e)
 {
-    alert("Select non avvenuta");
+    alert("Select non avvenuta"+e);
 }
 
 function onDbError ()
