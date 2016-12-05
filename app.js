@@ -358,11 +358,11 @@ function startScan()
 													 // visualizza(ID_notizia);
 													 //  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 													 // $( ".popupNotifica" ).popup( "open");
-													 var div ="<div id='"+ID_notizia+"' class='popNotifica'>"+
+													 var div ="<div id='"+ID_notizia+"' data-itemNot='"+ID_notizia+"' class='popNotifica'>"+
 													 "<h3>Data: "+date+"</h3>"+
 													 "<p>Notifica: "+titolo_n+"</p>"+
-													 "<button type='submit' class='ui-btn' id=''>Apri</button>"+
-													 "<button type='submit' class='ui-btn' id=''>Salva</button>"+
+													 "<button type='submit' class='ui-btn' id='ApriNotifica'>Apri</button>"+
+													 "<button type='submit' class='ui-btn' id='SalvaNotifica'>Salva</button>"+
 													 "</div>";
 													 
 													  $("#home").append(div);
