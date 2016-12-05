@@ -267,7 +267,21 @@ function apriSocial()
     alert("Apri Sociale");
 }
 
+$(document).on("click", "#SalvaNotifica", function () {
+    alert("ok");
+     var id = $(this).parents("div").data("itemid");
+      alert("ok"+id);
+    $('#'+id+'').hide();
+    alert("Dopo");
+});
 
+$(document).on("click", "#ApriNotifica", function () {
+     var id = $(this).parents("div").data("itemid");
+     localStorage.setItem('Id_notifica', id);
+       $('#'+id+'').hide();
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+
+});
 
 
 /*	
