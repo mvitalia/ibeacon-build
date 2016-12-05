@@ -248,7 +248,10 @@
          selezionoDati ();
     });
 
-    
+     $(document).on("pageshow", "#Notifica", function () {
+           $(".schedaNotifica").html("");
+     caricaNotifica(); 
+     });
 
 
      $('#iscriviUtente').click(function(){
@@ -331,6 +334,21 @@ $('#cancellaTutteNotifiche').click(function(){
 });
 
 
+
+
+$(document).on("click", "#SalvaNotifica", function () {
+     var id = $(this).parents("div").data("itemid");
+    $('#box_'+id+'').hide();
+
+});
+
+$(document).on("click", "#ApriNotifica", function () {
+     var id = $(this).parents("div").data("itemid");
+     localStorage.setItem('Id_notifica', id);
+       $('#'+id+'').hide();
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+
+});
 
 
 
