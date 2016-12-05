@@ -227,15 +227,15 @@ function cancellaNotifica ()
                 tx.executeSql("DELETE FROM notifiche WHERE id=?",[idNotifica]);
             },
             function(){
-                alert("Cancellazione non effettua");
+               // alert("Cancellazione non effettua");
                
             },
             function(){
-                alert("Cancellazione effettua");
+               // alert("Cancellazione effettua");
                
             }
         )
-      
+      $("#purchase").popup( "close" );
 }
 
 
