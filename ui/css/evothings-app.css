@@ -844,9 +844,10 @@ input.btn-group.black:checked + label {
 .popNotifica{
 	position: fixed;
 	top: 20%;
-	margin: 0 auto;
+    left: 50%;
 	z-index: 1000;
 	background: #f2f2f2;
 	width: 50%;
+	transform: translate(-50%, 0);
 	border: 1px solid gray;;
 }
