@@ -64,14 +64,48 @@ function caricoDatiServerSalvoInDb ()
 
 function selezionoDati ()
 {
-   // alert("Seleziono Dati");
-     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-     db.transaction(select,successoSelect);                         
+   db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+				db.transaction(
+					function(tx)
+					{
+               			tx.executeSql("SELECT titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a FROM notizie as D, notifiche as C WHERE D.Id=C.ID_notizia",[], 
+			   			function(tx,dati)
+			   			{
+                            var len = dati.rows.length;
+                        //alert(len);
+                            var li_dati="";
+                            if(len!=0)
+                            {
+                                
+                                for(var i=0; i<len; i++)
+                                {
+                                    var data = dati.rows.item(i).data_ora;
+                                    var splitarray = new Array();
+                                    splitarray = data.split(" ");
+                                    var dataDue = splitarray[0];
+                                    var arrayData = new Array ();
+                                    arrayData = dataDue.split("-");
+                                    var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
+                                    alert("Titolo: "+dati.rows.item(i).titolo+"-Descrizione"+dati.rows.item(i).descrizione);
+                                    li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/><h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).titolo + "</h6>"+
+                                    "<p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p>"+
+                                    "<p style='font-size:10px; text-align:left !important;'><b>Descrizione: </b>"+dati.rows.item(i).ID_notizia+"</p></a>"+
+                                    "<a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
+                                
+                                }
+                                
+                            }
+                        // Permette di "appendere" il codice html creato in dinamico con i dati
+                        $("#lista_datiJson").append(li_dati).promise().done(function () {
+                            $(this).listview("refresh");
+                            });
+			   		    },erroreSelezione); 
+ 				});                        
 }
 
-function select(tx)
+/*function select(tx)
 {
-       tx.executeSql("SELECT titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a FROM notizie as D, notifiche as C",[], successoSelect,erroreSelect);     
+       tx.executeSql("SELECT titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a FROM notizie as D, notifiche as C WHERE D.Id=C.ID_notizia",[], successoSelect,erroreSelect);     
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
 }
 
@@ -105,7 +139,7 @@ function successoSelect(tx,dati)
        $("#lista_datiJson").append(li_dati).promise().done(function () {
          $(this).listview("refresh");
         });
-}
+}*/
 
 function erroreSelect (e)
 {
