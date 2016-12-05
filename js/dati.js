@@ -72,7 +72,7 @@ function selezionoDati ()
 			   			function(tx,dati)
 			   			{
                             var len = dati.rows.length;
-                        //alert(len);
+                        alert(len);
                             var li_dati="";
                             if(len!=0)
                             {
