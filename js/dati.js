@@ -271,15 +271,15 @@ $(document).on("click", "#SalvaNotifica", function () {
     alert("ok");
      var id = $(this).parents("div").data("itemid");
       alert("ok"+id);
-    $('#'+id+'').hide();
+    $('.'+id+'').hide();
     alert("Dopo");
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+
 });
 
 $(document).on("click", "#ApriNotifica", function () {
      var id = $(this).parents("div").data("itemid");
      localStorage.setItem('Id_notifica', id);
-       $('#'+id+'').hide();
+       $('.'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 
 });
