@@ -317,7 +317,7 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;
-								alert(descrizione_n);
+								//alert(descrizione_n);
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
