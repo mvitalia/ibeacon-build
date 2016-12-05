@@ -352,9 +352,9 @@ function startScan()
 													},
 										function()  {
 													 // alert(results.insertId);
-													   localStorage.setItem('Id_notifica', ID_notizia);
+													 //  localStorage.setItem('Id_notifica', ID_notizia);
 													   // $.mobile.navigate("#Notifica");  
-													   navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+													   navigator.notification.confirm("Data: "+date, onConfirm(ID_notizia),'Notifica: '+titolo_n,['Guarda','Salva']);
 													  
 													
 													}
@@ -495,8 +495,9 @@ function startScan()
 	   
 	}
 
-	function onConfirm(buttonIndex) {
-    //alert('You selected button ' + buttonIndex);
+	function onConfirm(buttonIndex,ID_notizia) {
+    alert('You selected button ' +ID_notizia);
+/*	
 	if(buttonIndex==1)
 	{
 		//alert("Stai guardando la notizia")
@@ -505,7 +506,7 @@ function startScan()
 	}else{
 		//alert("Stai salvando la notizia");
 	
-	}
+	}*/
 }
 
  function selezionaBeacon ()
