@@ -215,4 +215,9 @@ function successoSelectNotifica(tx,dati)
         });*/
 }
 
+function cancellaNotifica ()
+{
+    alert( sessionStorage.getItem('ID_not'));
+}
+
  
