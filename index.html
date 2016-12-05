@@ -312,7 +312,7 @@ function visualizzoNotifica ()
  $(document).on("click", ".storage", function () {
      var id = $(this).parents("li").data("itemid");
      sessionStorage.setItem('ID_not', id);
-
+    alert(sessionStorage.getItem('ID_not');
      
 });
 
@@ -322,7 +322,7 @@ $(document).on("click", ".detail", function () {
    //  localStorage.removeItem("Id_notifica");
     // localStorage.setItem('Id_notifica', id);
 
-    // $.mobile.navigate("notifica.html");  
+     $.mobile.navigate("notifica.html");  
      
 });
 
