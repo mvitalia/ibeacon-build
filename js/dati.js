@@ -187,7 +187,7 @@ function caricaNotifica ()
 
 function selectNotifica(tx)
 {
-       tx.executeSql("SELECT * FROM notifiche WHERE ID_notizia = "+localStorage.getItem('Id_notifica')+"",[], successoSelectNotifica,erroreSelect);        
+       tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[], successoSelectNotifica,erroreSelect);        
 }
 
 function successoSelectNotifica(tx,dati)
