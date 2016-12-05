@@ -273,6 +273,7 @@ $(document).on("click", "#SalvaNotifica", function () {
       alert("ok"+id);
     $('#'+id+'').hide();
     alert("Dopo");
+     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 });
 
 $(document).on("click", "#ApriNotifica", function () {
