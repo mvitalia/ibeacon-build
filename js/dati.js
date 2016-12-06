@@ -268,9 +268,9 @@ function cancellaAllNotifiche ()
 
 function condividiNotifica()
 {
-    alert("ok");
+    
     window.plugins.socialsharing.share(/* Messaggio*/"OK", /* Soggetto */"OK", /*Immagine*/ null, /* link */null);
-    alert("dopo");
+    
  
 }
 
