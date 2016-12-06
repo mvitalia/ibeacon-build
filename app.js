@@ -322,60 +322,63 @@ function startScan()
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
-								navigator.notification.beep(1);
-        						navigator.vibrate(3000);
-								// Creazione data ora, per db sul server 
-								var date;
-    							date = new Date();
-								date = date.getFullYear() + '-' +
-								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-								('00' + date.getDate()).slice(-2) + ' ' +
-								('00' + date.getHours()).slice(-2) + ':' +
-								('00' + date.getMinutes()).slice(-2) + ':' +
-								('00' + date.getSeconds()).slice(-2);  
-								// Fine creazione data_ora
-								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-								db.transaction(
-										// Metodo di chiamata asincrona
-										function(tx) {
-											           // Se loggato o se non loggato
-													   if(localStorage.getItem('login')=='true')
-													   {
-													    tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,ID_utente) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,localStorage.getItem('Id_login')]);
-													   }else{
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia]); 
-													   }
-														
-													},
-										function()  {
-														alert("Inserimento non  effettuato"+e.message);
-													},
-										function()  {
-													 // alert(results.insertId);
-													 //  localStorage.setItem('Id_notifica', ID_notizia);
-													   // $.mobile.navigate("#Notifica"); 
-													 // visualizza(ID_notizia);
-													 //  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-													 // $( ".popupNotifica" ).popup( "open");
-													 var div ="<div class='popNotifica "+ID_notizia+"' data-itemid='"+ID_notizia+"' >"+
-													 "<h3>Data: "+date+"</h3>"+
-													 "<p>Notifica: "+titolo_n+"</p>"+
-													 "<button  class='ui-btn' id='ApriNotifica'>Apri</button>"+
-													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+
-													 "</div>";	
-													  $(".container_page").append(div);
-												
-													/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
-													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+*/
-													}
-								)
+									navigator.notification.beep(1);
+									navigator.vibrate(3000);
+									// Creazione data ora, per db sul server 
+									var date;
+									date = new Date();
+									date = date.getFullYear() + '-' +
+									('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+									('00' + date.getDate()).slice(-2) + ' ' +
+									('00' + date.getHours()).slice(-2) + ':' +
+									('00' + date.getMinutes()).slice(-2) + ':' +
+									('00' + date.getSeconds()).slice(-2);  
+									// Fine creazione data_ora
+									// Inserisco notizie nella tabella notifche per Beacon Azzurro 
+									db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+									db.transaction(
+											// Metodo di chiamata asincrona
+											function(tx) {
+														// Se loggato o se non loggato
+														if(localStorage.getItem('login')=='true')
+														{
+															tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,ID_utente) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,localStorage.getItem('Id_login')]);
+														}else{
+															tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia]); 
+														}
+															
+														},
+											function()  {
+															alert("Inserimento non  effettuato"+e.message);
+														},
+											function()  {
+														// alert(results.insertId);
+														//  localStorage.setItem('Id_notifica', ID_notizia);
+														// $.mobile.navigate("#Notifica"); 
+														// visualizza(ID_notizia);
+														//  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+														// $( ".popupNotifica" ).popup( "open");
+														var div ="<div class='popNotifica "+ID_notizia+"' data-itemid='"+ID_notizia+"' >"+
+														"<h3>Data: "+date+"</h3>"+
+														"<p>Notifica: "+titolo_n+"</p>"+
+														"<button  class='ui-btn' id='ApriNotifica'>Apri</button>"+
+														"<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+
+														"</div>";	
+														$(".container_page").append(div);
+													
+														/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
+														"<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+*/
+														}
+									)
 								}
+
+
+								salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
         			       }
 			   		    },erroreSelezione); 
  				});
 				// Select delle notifiche
-				var rilevaBeacon = false;
+			/*	var rilevaBeacon = false;
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
 				beacons[key] = beacon;
 			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
@@ -404,7 +407,7 @@ function startScan()
                     )
 					// check internet if-ese, se cè chiamata ajax al server
 					alert(ID_dispositivo);
-					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);
+					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);*/
 				
 			}
 		};
@@ -473,6 +476,36 @@ function startScan()
 		
 }
 
+function salvaLettura ()
+{
+		           var date;
+    			   date = new Date();
+    				date = date.getFullYear() + '-' +
+            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+            		('00' + date.getDate()).slice(-2) + ' ' +
+            		('00' + date.getHours()).slice(-2) + ':' +
+            		('00' + date.getMinutes()).slice(-2) + ':' +
+            		('00' + date.getSeconds()).slice(-2);  
+					// Fine creazione data_ora
+					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia]);
+											 // tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia, ID_utente) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia, localstorage]);
+                                         },
+                             function()  {
+                                            alert("Inserimento non  effettuato"+e.message);
+                                         },
+                             function()  {
+                                           // alert("Inserimento effettuato");
+                                         }
+                    )
+					// check internet if-ese, se cè chiamata ajax al server
+					alert(ID_dispositivo);
+					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);
+				
+}
 
 function 	caricaLetture(proximity,date,dispositivo,ID_notizia)
 {
