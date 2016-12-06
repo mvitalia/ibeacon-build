@@ -374,7 +374,7 @@ function startScan()
 
 
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
-								salvaLettura();
+								salvaLettura(ID_dispositivo,ID_notizia);
         			       }
 			   		    },erroreSelezione); 
  				});
@@ -477,9 +477,9 @@ function startScan()
 		
 }
 
-function salvaLettura ()
+function salvaLettura (dispositivo,notizia)
 {
-	alert("Ok");
+	alert("Ok"+dispositivo);
 		          /* var date;
     			   date = new Date();
     				date = date.getFullYear() + '-' +
