@@ -264,7 +264,7 @@ function cancellaAllNotifiche ()
       selezionoDati();
 }
 
-function apriSocial()
+function  apriCondividi ()
 {
     alert("Apri Sociale");
 }
