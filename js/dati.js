@@ -270,7 +270,7 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
    alert(nome+"-"+cognome+"-"+email+"-"+richiesta);
    $.ajax({
         type: "POST",
-		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",richiesta:"'+richiesta+'",privacy:"'+privacy+'"}',
+		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",richiesta:"'+richiesta+'",privacy:"'+privacy+'",notizia:"'+ sessionStorage.getItem('titolo_notifica')+'"}',
 		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_inviaInfo.aspx/invia',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
