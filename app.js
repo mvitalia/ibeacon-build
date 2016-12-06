@@ -375,9 +375,9 @@ function startScan()
 
                                 if(localStorage.getItem('Id_login')!=null)
 								{
-									alert("ok");
+									//alert("ok");
 								}else{
-									alert("Nullo");
+								//	alert("Nullo");
 								}
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
 								salvaLettura(proximity,ID_dispositivo,ID_notizia);
@@ -502,7 +502,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 		success: function(data){
 		//console.log(data);
         var ritorno = data.d;
-		   alert('Cliente Salvato'+ritorno);
+		 //  alert('Cliente Salvato'+ritorno);
             
          //   alert(uriImmagine);
          
