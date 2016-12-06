@@ -478,9 +478,28 @@ function startScan()
 		
 }
 
+function siInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
+
+
 function salvaLettura (proximity,dispositivo,notizia)
 {
-	alert("Ok"+proximity);
+	 alert("Ok"+proximity);
+	 var conn = siInternet();
+	 if(conn==true)
+	 {
+		 alert("Ok"+proximity);
+	 }else{
+		 alert("Chiamata ricorsiva");
+	 }
 		          /* var date;
     			   date = new Date();
     				date = date.getFullYear() + '-' +
