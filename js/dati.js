@@ -266,7 +266,10 @@ function cancellaAllNotifiche ()
 
 
 
-
+function condividiNotifica()
+{
+    alert("ok");
+}
 
 
 
