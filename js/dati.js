@@ -264,7 +264,7 @@ function cancellaAllNotifiche ()
       selezionoDati();
 }
 
-
+// Gestire ancora la privacy nel file inviaInfo.aspx.cs
 function inviaInformazione(privacy,nome,cognome,email,richiesta)
 {
    alert(nome+"-"+cognome+"-"+email+"-"+richiesta);
@@ -275,10 +275,9 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
-		//console.log(data);
         var ritorno = data.d;
-		   alert('Cliente Salvato'+ritorno);
-            
+		 alert('Cliente Salvato'+ritorno);
+         // Creare popo per invio email
          //   alert(uriImmagine);
          
           //     $("#pop").click();
