@@ -373,7 +373,10 @@ function startScan()
 									)
 								}
 
-                                alert(localStorage.getItem('Id_login'));
+                                if(localStorage.getItem('Id_login')!=null)
+								{
+									alert("ok");
+								}
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
 								salvaLettura(proximity,ID_dispositivo,ID_notizia);
         			       }
