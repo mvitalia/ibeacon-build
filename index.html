@@ -391,19 +391,20 @@ $(document).on("click", "#ApriNotifica", function () {
 
 });
 
-/*$('#inviaInformazione').click(function(){
+$('#inviaInformazione').click(function(){
+    var p
      if ($('#privacyInfo').is(":checked"))
       {
-         privacy=1
+         p=1
       }else{
-         privacy=0
+         p=0
       }
-      var nome = $("#nomeInfo").val();
-      var cognome = $("#cognomeInfo").val();
-      var email = $("#emailInfo").val();
-      var richiesta = $("#richiestaInfo").val();
-     alert(nome+"-"+cognome+"-"+email+"-"richiesta);
-});*/
+      var n = $("#nomeInfo").val();
+      var c = $("#cognomeInfo").val();
+      var e = $("#emailInfo").val();
+      var r = $("#richiestaInfo").val();
+     alert(n+"-"+c+"-"+e+"-"+r);
+});
 
 
 
