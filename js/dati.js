@@ -303,7 +303,7 @@ function richiediInfo()
                 function()  {
                                             alert("Select non  effettuato"+e.message);
                             },
-                function()  {
+                function(tx,dati)  {
                                             //alert("Select effettuata");
                                             var len = dati.rows.length;
                                             alert(len);
