@@ -315,7 +315,7 @@ function richiediInfo()
                                                                                             
                             }
                     )
-    alert(notizia);
+ 
 }
 
 
