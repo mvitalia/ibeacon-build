@@ -198,7 +198,7 @@
     </div>
    <div data-role="page" id="inviaInfo">
         <div data-role="header" class="header" data-position="fixed">
-            <h1>Registrazione</h1>
+            <h1>Informazioni</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
         </div>
@@ -391,7 +391,19 @@ $(document).on("click", "#ApriNotifica", function () {
 
 });
 
-
+$('#inviaInformazione').click(function(){
+     if ($('#privacyInfo').is(":checked"))
+      {
+         privacy=1
+      }else{
+         privacy=0
+      }
+      var nome = $("#nomeInfo").val();
+      var cognome = $("#cognomeInfo").val();
+      var email = $("#emailInfo").val();
+      var richiesta = $("#richiestaInfo").val();
+     alert(nome+"-"+cognome+"-"+email+"-"richiesta);
+});
 
 
 
