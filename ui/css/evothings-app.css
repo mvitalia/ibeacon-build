@@ -855,3 +855,18 @@ input.btn-group.black:checked + label {
 
 .btn_scheda {float:left; width:30%; text-align: center; margin:0; white-space: normal !important; font-size: 14px !important }
 #btnCondividi{margin-left:10px !important;float: right !important}
+
+.wrapper_logo {
+    position: relative;
+    width: 100%;
+    height:300px;
+    border: 1px solid black;
+}
+.logo_mv{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
