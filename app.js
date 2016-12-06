@@ -498,7 +498,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 	 {
 		 var datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
 		 // Chiamata ajax
-		$.ajax({
+	/*	$.ajax({
         type: "POST",
 		data: datiInviare,
 		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/lettura',
@@ -519,51 +519,16 @@ function salvaLettura (proximity,dispositivo,notizia)
 			alert('Errore'+e.status);
             alert('Errore2'+e.statusTest);
 		}
-	});
+	});*/
 
 	 }else{
 		salvaLettura(proximity,dispositivo,,notizia);
 	 }
-		          /* var date;
-    			   date = new Date();
-    				date = date.getFullYear() + '-' +
-            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getDate()).slice(-2) + ' ' +
-            		('00' + date.getHours()).slice(-2) + ':' +
-            		('00' + date.getMinutes()).slice(-2) + ':' +
-            		('00' + date.getSeconds()).slice(-2);  
-					// Fine creazione data_ora
-					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[proximity,date,dispositivo,notizia]);
-											 // tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia, ID_utente) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia, localstorage]);
-                                         },
-                             function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
-                                         },
-                             function()  {
-                                           // alert("Inserimento effettuato");
-                                         }
-                    )
-					// check internet if-ese, se cè chiamata ajax al server
-					alert(ID_dispositivo);
-					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);*/
+		          
 				
 }
 
-function 	caricaLetture(proximity,date,dispositivo,ID_notizia)
-{
-	alert("Proximity"+proximity+"-ID_Dispositivo"+dispositivo);
- /*	if(internet)
-	{
-	  // chiamata ajax
-	}else{
-		caricaLetture(parametri);
-	}
-	*/
-}
+
 
     function checkNotizia(ID_dispositivo,ID_notizia)
 	{
