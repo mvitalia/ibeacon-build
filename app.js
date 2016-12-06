@@ -375,9 +375,9 @@ function startScan()
 
                                 if(localStorage.getItem('Id_login')!=null)
 								{
-									//alert("ok");
+									alert("ok");
 								}else{
-								//	alert("Nullo");
+								    alert("Nullo");
 								}
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
 								salvaLettura(proximity,ID_dispositivo,ID_notizia);
