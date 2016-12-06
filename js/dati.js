@@ -291,7 +291,7 @@ var no = function(result) {
 
 function richiediInfo()
 {
-   var notizia; 
+   var notizia = ""; 
    // Devo selezionare il nome della notifica che si sta chiedendo una info
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
     db.transaction(
@@ -306,6 +306,7 @@ function richiediInfo()
                 function()  {
                                             //alert("Select effettuata");
                                             var len = dati.rows.length;
+                                            alert(len);
                                             if(len!=0)
                                             {
                                                         
