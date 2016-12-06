@@ -289,11 +289,11 @@ var no = function(result) {
   console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
 }
 
-function richiediInfo()
+/*function richiediInfo()
 {
      $( ":mobile-pagecontainer" ).pagecontainer( "change", "#invioInfo", {    transition: "flip", reload:false } );
      //alert(sessionStorage.getItem('titolo_notifica'));
-}
+}*/
 
 
 /*	
