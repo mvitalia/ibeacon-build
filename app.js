@@ -289,6 +289,7 @@ function startScan()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
+				proximity = beacon.proximity;
 				idUUID =uuid.toUpperCase();
 				var ID_dispositivo=0, ID_notizia = 0;
 				var titolo_n,descrizione,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,data_creazione_n;
@@ -374,7 +375,7 @@ function startScan()
 
 
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
-								salvaLettura(ID_dispositivo,ID_notizia);
+								salvaLettura(proximity,ID_dispositivo,ID_notizia);
         			       }
 			   		    },erroreSelezione); 
  				});
@@ -477,9 +478,9 @@ function startScan()
 		
 }
 
-function salvaLettura (dispositivo,notizia)
+function salvaLettura (proximity,dispositivo,notizia)
 {
-	alert("Ok"+dispositivo);
+	alert("Ok"+proximity);
 		          /* var date;
     			   date = new Date();
     				date = date.getFullYear() + '-' +
