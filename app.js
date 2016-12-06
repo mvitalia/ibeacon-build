@@ -478,23 +478,15 @@ function startScan()
 		
 }
 
-function siInternet() 
- {
-    
-     var online = window.navigator.onLine;
-            if (online) {
-                return true;
-            } else {
-                return false;
-            }
-  }
+
 
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
-	 
-	 var conn = siInternet();
-	 if(conn==true)
+	 var online = window.navigator.onLine;
+	  alert("Ok"+online);
+	// var conn = siInternet();
+	/* if(conn==true)
 	 {
 		 alert("Ok"+proximity);
 		 //var datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
