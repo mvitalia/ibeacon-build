@@ -292,7 +292,7 @@ var no = function(result) {
 function richiediInfo()
 {
     
-   alert("ok");
+   alert("Richiedi info");
 }
 
 
