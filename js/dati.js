@@ -268,12 +268,32 @@ function cancellaAllNotifiche ()
 
 function condividiNotifica()
 {
+    var options = {
+  message: 'share this', // not supported on some apps (Facebook, Instagram)
+  subject: 'the subject', // fi. for email
+  files: ['', ''], // an array of filenames either locally or remotely
+  url: 'https://www.website.com/foo/#bar?a=b',
+  chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
+}
+    window.plugins.socialsharing.shareWithOptions(options, yes, no);
     
-    window.plugins.socialsharing.share(/* Messaggio*/"OK", /* Soggetto */"OK", /*Immagine*/ null, /* link */null);
-    
- 
 }
 
+var yes = function(result) {
+  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+}
+
+var no = function(result) {
+  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+}
+
+function richiediInfo()
+{
+    
+   alert("ok");
+}
 
 
 /*	
