@@ -739,7 +739,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 			}
 		});
 	}
-$('#provaClick').click(function(){
+$('.provaClick').click(function(){
   alert("ok");
 });
 	return app;
