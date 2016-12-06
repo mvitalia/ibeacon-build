@@ -403,6 +403,7 @@ function startScan()
                                          }
                     )
 					// check internet if-ese, se cè chiamata ajax al server
+					alert(ID_dispositivo);
 					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);
 				
 			}
