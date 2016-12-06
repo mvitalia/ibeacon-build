@@ -373,12 +373,7 @@ function startScan()
 									)
 								}
 
-                                if(localStorage.getItem('Id_login')!=null)
-								{
-									alert("ok");
-								}else{
-								    alert("Nullo");
-								}
+                               
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
 								salvaLettura(proximity,ID_dispositivo,ID_notizia);
         			       }
@@ -488,15 +483,25 @@ function startScan()
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
+      var datiInviare,urlCorretto;
 	  var online = window.navigator.onLine;
 	  if(online==true)
 	  {
-		//alert("Ok"+proximity);
-		var datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
+		if(localStorage.getItem('Id_login')!=null)
+		{
+			alert("ok");
+			 datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'",Id_utente:"'+localStorage.getItem('Id_login')+'"}';
+			urlCorretto = 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/letturaUtente';
+		}else{
+			alert("Nullo");
+		    datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
+			urlCorretto = 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/lettura';
+		}
+	
 		$.ajax({
         type: "POST",
 		data: datiInviare,
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/lettura',
+		url: urlCorretto,
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
