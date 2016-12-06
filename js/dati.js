@@ -291,31 +291,8 @@ var no = function(result) {
 
 function richiediInfo()
 {
-  /* var notizia = ""; 
-   // Devo selezionare il nome della notifica che si sta chiedendo una info
-    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-    db.transaction(
-                            // Metodo di chiamata asincrona
-                function(tx) {
-                                          tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[]);  
-											 // tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia, ID_utente) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia, localstorage]);
-                             },
-                function()  {
-                                            alert("Select non  effettuato"+e.message);
-                            },
-                function(tx,dati)  {
-                                            alert("Select effettuata");
-                                           /* var len = dati.rows.length;
-                                            alert(len);
-                                            if(len!=0)
-                                            {
-                                               notizia=dati.rows.item(0).titolo;
-                                            }
-                                                                                            
-                            }
-                    )*/
-                    alert(sessionStorage.getItem('titolo_notifica'));
- 
+     $.mobile.navigate( "#inviaInfo" );   
+     //alert(sessionStorage.getItem('titolo_notifica'));
 }
 
 
