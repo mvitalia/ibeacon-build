@@ -373,7 +373,8 @@ function startScan()
 								}
 
 
-								salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
+								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
+								salvaLettura();
         			       }
 			   		    },erroreSelezione); 
  				});
@@ -476,9 +477,10 @@ function startScan()
 		
 }
 
-function salvaLettura (proximity,dispositivo,notizia)
+function salvaLettura ()
 {
-		           var date;
+	alert("Ok");
+		          /* var date;
     			   date = new Date();
     				date = date.getFullYear() + '-' +
             		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
@@ -503,7 +505,7 @@ function salvaLettura (proximity,dispositivo,notizia)
                     )
 					// check internet if-ese, se cè chiamata ajax al server
 					alert(ID_dispositivo);
-					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);
+					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);*/
 				
 }
 
