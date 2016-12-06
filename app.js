@@ -373,7 +373,7 @@ function startScan()
 									)
 								}
 
-
+                                alert(localStorage.getItem('Id_login'));
 								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
 								salvaLettura(proximity,ID_dispositivo,ID_notizia);
         			       }
