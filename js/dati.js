@@ -304,13 +304,13 @@ function richiediInfo()
                                             alert("Select non  effettuato"+e.message);
                             },
                 function(tx,dati)  {
-                                            //alert("Select effettuata");
-                                            var len = dati.rows.length;
+                                            alert("Select effettuata");
+                                           /* var len = dati.rows.length;
                                             alert(len);
                                             if(len!=0)
                                             {
                                                notizia=dati.rows.item(0).titolo;
-                                            }
+                                            }*/
                                                                                             
                             }
                     )
