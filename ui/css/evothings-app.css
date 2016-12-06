@@ -853,5 +853,5 @@ input.btn-group.black:checked + label {
 	padding: 10px;
 }
 
-.btn_scheda {float:left; width:40%; text-align: center; margin:0; white-space: normal !important; font-size: 14px !important }
+.btn_scheda {float:left; width:30%; text-align: center; margin:0; white-space: normal !important; font-size: 14px !important }
 #btnCondividi{margin-left:10px !important;float: right !important}
