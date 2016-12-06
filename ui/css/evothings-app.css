@@ -852,3 +852,13 @@ input.btn-group.black:checked + label {
 	border: 1px solid gray;
 	padding: 10px;
 }
+
+.quadranteUno{
+	width: 50%;
+	float: left;
+}
+
+.quadranteDue{
+	width: 50%;
+	float: right;
+}
