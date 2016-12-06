@@ -489,11 +489,11 @@ function salvaLettura (proximity,dispositivo,notizia)
 	  {
 		if(localStorage.getItem('Id_login')!=null)
 		{
-			alert("ok");
+			//alert("ok");
 			 datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'",Id_utente:"'+localStorage.getItem('Id_login')+'"}';
 			urlCorretto = 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/letturaUtente';
 		}else{
-			alert("Nullo");
+			//alert("Nullo");
 		    datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
 			urlCorretto = 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/lettura';
 		}
