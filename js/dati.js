@@ -291,7 +291,7 @@ var no = function(result) {
 
 function richiediInfo()
 {
-     $.mobile.navigate("#inviaInfo");   
+     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#invioInfo", {    transition: "flip", reload:false } );
      //alert(sessionStorage.getItem('titolo_notifica'));
 }
 
