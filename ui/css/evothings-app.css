@@ -853,12 +853,4 @@ input.btn-group.black:checked + label {
 	padding: 10px;
 }
 
-.quadranteUno{
-	width: 45%;
-	float: left;
-}
-
-.quadranteDue{
-	width: 45%;
-	float: right;
-}
+.btn_scheda {border:1px solid red; float:left; width:40%; text-align: center}
