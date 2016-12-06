@@ -314,7 +314,7 @@ function richiediInfo()
                                                                                             
                             }
                     )*/
-                    alert(localStorage.getItem('titolo_notifica'));
+                    alert(sessionStorage.getItem('titolo_notifica'));
  
 }
 
