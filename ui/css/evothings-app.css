@@ -854,11 +854,11 @@ input.btn-group.black:checked + label {
 }
 
 .quadranteUno{
-	width: 50%;
+	width: 45%;
 	float: left;
 }
 
 .quadranteDue{
-	width: 50%;
+	width: 45%;
 	float: right;
 }
