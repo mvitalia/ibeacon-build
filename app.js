@@ -739,7 +739,9 @@ function salvaLettura (proximity,dispositivo,notizia)
 			}
 		});
 	}
-
+$('#provaClick').click(function(){
+  alert("ok");
+});
 	return app;
 })();
 
