@@ -493,7 +493,7 @@ function siInternet()
 function salvaLettura (proximity,dispositivo,notizia)
 {
 	 alert("Ok"+proximity);
-	 var conn = siInternet();
+	/* var conn = siInternet();
 	 if(conn==true)
 	 {
 		 var datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
@@ -521,10 +521,10 @@ function salvaLettura (proximity,dispositivo,notizia)
 		}
 	});*/
 
-	 }else{
+/*	 }else{
 		salvaLettura(proximity,dispositivo,,notizia);
 	 }
-		          
+		  */        
 				
 }
 
