@@ -483,8 +483,11 @@ function startScan()
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
-	 var online = window.navigator.onLine;
-	  alert("Ok"+online);
+	  var online = window.navigator.onLine;
+	  if(online==true)
+	  {
+		  alert("Ok"+proximity);
+	  }
 	// var conn = siInternet();
 	/* if(conn==true)
 	 {
