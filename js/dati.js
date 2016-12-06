@@ -200,7 +200,7 @@ function successoSelectNotifica(tx,dati)
         var li_dati="";
         if(len!=0)
         {
-           
+           sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
             "<p class='notizia_data'>Attivo dal "+dati.rows.item(0).attivo_da+" al "+dati.rows.item(0).attivo_a+"</p>"+
            "<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div>"+
@@ -291,7 +291,7 @@ var no = function(result) {
 
 function richiediInfo()
 {
-   var notizia = ""; 
+  /* var notizia = ""; 
    // Devo selezionare il nome della notifica che si sta chiedendo una info
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
     db.transaction(
@@ -310,10 +310,11 @@ function richiediInfo()
                                             if(len!=0)
                                             {
                                                notizia=dati.rows.item(0).titolo;
-                                            }*/
+                                            }
                                                                                             
                             }
-                    )
+                    )*/
+                    alert(localStorage.getItem('titolo_notifica'));
  
 }
 
