@@ -573,7 +573,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 	{
 		//alert("Stai guardando la notizia")
 		localStorage.setItem('Id_notifica', provaIDNotifica);
-		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#Notifica", {    transition: "flip", reload:false } );
 		 
 	}else{
 		//alert("Stai salvando la notizia");
