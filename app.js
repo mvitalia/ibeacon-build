@@ -486,7 +486,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 	  var online = window.navigator.onLine;
 	  if(online==true)
 	  {
-		alert("Ok"+proximity);
+		//alert("Ok"+proximity);
 		var datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
 		$.ajax({
         type: "POST",
@@ -510,41 +510,10 @@ function salvaLettura (proximity,dispositivo,notizia)
             alert('Errore2'+e.statusTest);
 		}
      	});
+	  }else{
+		  salvaLettura (proximity,dispositivo,notizia);
 	  }
-	// var conn = siInternet();
-	/* if(conn==true)
-	 {
-		 alert("Ok"+proximity);
-		 //var datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
-		 // Chiamata ajax
-	/*	$.ajax({
-        type: "POST",
-		data: datiInviare,
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/lettura',
-        contentType: "application/json; charset=utf-8",
-        dataType: 'json',
-		success: function(data){
-		//console.log(data);
-        var ritorno = data.d;
-		   alert('Cliente Salvato'+ritorno);
-            
-         //   alert(uriImmagine);
-         
-          //     $("#pop").click();
-
-		},
-		error: function(e){
-			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
-		}
-	});*/
-
-/*	 }else{
-		salvaLettura(proximity,dispositivo,,notizia);
-	 }
-		  */        
-				
+	     			
 }
 
 
