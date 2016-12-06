@@ -745,6 +745,3 @@ function salvaLettura (proximity,dispositivo,notizia)
 
 app.initialize();
 
-$('.provaClick').click(function(){
-  alert("ok");
-});
