@@ -309,7 +309,6 @@ function richiediInfo()
                                             alert(len);
                                             if(len!=0)
                                             {
-                                                        
                                                notizia=dati.rows.item(0).titolo;
                                             }
                                                                                             
