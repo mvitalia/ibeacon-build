@@ -64,87 +64,13 @@ function caricoDatiServerSalvoInDb ()
 
 function selezionoDati ()
 {
-   db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-				db.transaction(
-					function(tx)
-					{
-               			tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
-			   			function(tx,dati)
-			   			{
-				 			var len = dati.rows.length;
-        					var li_dati="";
-       						if(len!=0)
-        					{
-								titolo_n = dati.rows.item(0).titolo;
-								descrizione_n = dati.rows.item(0).descrizione;
-								immagine_n = dati.rows.item(0).immagine;
-								link_n = dati.rows.item(0).link;
-								allegato_n = dati.rows.item(0).allegato;
-								attivo_da_n = dati.rows.item(0).attivo_da;
-								attivo_a_n = dati.rows.item(0).attivo_a;
-								data_creazione_n = dati.rows.item(0).data_creazione;
-								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
-								ID_notizia = dati.rows.item(0).ID_notizia;
-								//alert(descrizione_n);
-								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
-								if(!notiziaEsistente)
-								{
-								navigator.notification.beep(1);
-        						navigator.vibrate(3000);
-								// Creazione data ora, per db sul server 
-								var date;
-    							date = new Date();
-								date = date.getFullYear() + '-' +
-								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-								('00' + date.getDate()).slice(-2) + ' ' +
-								('00' + date.getHours()).slice(-2) + ':' +
-								('00' + date.getMinutes()).slice(-2) + ':' +
-								('00' + date.getSeconds()).slice(-2);  
-								// Fine creazione data_ora
-								// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-								db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-								db.transaction(
-										// Metodo di chiamata asincrona
-										function(tx) {
-											           // Se loggato o se non loggato
-													   if(localStorage.getItem('login')=='true')
-													   {
-													    tx.executeSql("INSERT INTO notifiche (uuid, data_ora, titolo, descrizione, immagine, link, allegato, attivo_da, attivo_a, ID_dispositivo, ID_notizia,ID_utente) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",[uuid,date,titolo_n,descrizione_n,immagine_n,link_n,allegato_n,attivo_da_n,attivo_a_n,ID_dispositivo,ID_notizia,localStorage.getItem('Id_login')]);
-													   }else{
-														tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia]); 
-													   }
-														
-													},
-										function()  {
-														alert("Inserimento non  effettuato"+e.message);
-													},
-										function()  {
-													 // alert(results.insertId);
-													 //  localStorage.setItem('Id_notifica', ID_notizia);
-													   // $.mobile.navigate("#Notifica"); 
-													 // visualizza(ID_notizia);
-													 //  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-													 // $( ".popupNotifica" ).popup( "open");
-													 var div ="<div class='popNotifica "+ID_notizia+"' data-itemid='"+ID_notizia+"' >"+
-													 "<h3>Data: "+date+"</h3>"+
-													 "<p>Notifica: "+titolo_n+"</p>"+
-													 "<button  class='ui-btn' id='ApriNotifica'>Apri</button>"+
-													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+
-													 "</div>";	
-													  $(".container_page").append(div);
-												
-													/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
-													 "<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+*/
-													}
-								)
-								}
-        			       }
-			   		    },erroreSelezione); 
- 				});                        
+    alert("Seleziono dati");
+   db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);                    
 }
 
 function select(tx)
 {
+    alert("Select");
        tx.executeSql("SELECT * FROM notifiche",[], successoSelect,erroreSelect);     
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
 }
@@ -152,7 +78,7 @@ function select(tx)
 function successoSelect(tx,dati)
 {
     var len = dati.rows.length;
-    //alert(len);
+    alert(len);
         var li_dati="";
         if(len!=0)
         {
@@ -167,7 +93,7 @@ function successoSelect(tx,dati)
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
                 alert("Titolo: "+dati.rows.item(i).titolo+"-Descrizione"+dati.rows.item(i).descrizione);
-                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/><h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).titolo + "</h6>"+
+                li_dati += "<li id="+dati.rows.item(i).id+" data-itemid="+dati.rows.item(i).id+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).uuid+"'/><h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).ID_dispositivo + "</h6>"+
                 "<p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p>"+
                 "<p style='font-size:10px; text-align:left !important;'><b>Descrizione: </b>"+dati.rows.item(i).ID_notizia+"</p></a>"+
                 "<a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
