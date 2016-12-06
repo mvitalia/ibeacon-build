@@ -265,33 +265,31 @@ function cancellaAllNotifiche ()
 }
 
 
-
-function condividiNotifica()
-{
-    var options = {
-  message: 'share this', // not supported on some apps (Facebook, Instagram)
-  subject: 'the subject', // fi. for email
-  files: ['', ''], // an array of filenames either locally or remotely
-  url: 'https://www.website.com/foo/#bar?a=b',
-  chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
-}
-    window.plugins.socialsharing.shareWithOptions(options, yes, no);
-    
-}
-
-var yes = function(result) {
-  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
-}
-
-var no = function(result) {
-  console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-  console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
-}
-
 function inviaInformazione(privacy,nome,cognome,email,richiesta)
 {
    alert(nome+"-"+cognome+"-"+email+"-"+richiesta);
+   $.ajax({
+        type: "POST",
+		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",richiesta:"'+richiesta+'",privacy:"'+privacy+'"}',
+		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_inviaInfo.aspx/invia',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+		success: function(data){
+		//console.log(data);
+        var ritorno = data.d;
+		 //  alert('Cliente Salvato'+ritorno);
+            
+         //   alert(uriImmagine);
+         
+          //     $("#pop").click();
+
+		},
+		error: function(e){
+			//console.log(data);
+			alert('Errore'+e.status);
+            alert('Errore2'+e.statusTest);
+		}
+     	});
 }
 
 
