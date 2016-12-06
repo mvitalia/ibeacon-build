@@ -264,14 +264,9 @@ function cancellaAllNotifiche ()
       selezionoDati();
 }
 
-$('#btnCondividi').click(function(){
-  apriCondividi ();
-});
 
-function  apriCondividi ()
-{
-    alert("Apri Sociale");
-}
+
+
 
 
 
