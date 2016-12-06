@@ -72,7 +72,8 @@ function selezionoDati ()
 function select(tx)
 {
     alert("Select join");
-       tx.executeSql("SELECT N.titolo, C.* FROM notizie as N, notifiche as C WHERE c.ID_notizia=N.ID",[], successoSelect,erroreSelect);     
+     //  tx.executeSql("SELECT N.titolo, C.* FROM notizie as N, notifiche as C WHERE c.ID_notizia=N.ID",[], successoSelect,erroreSelect);   
+        tx.executeSql("SELECT * FROM notizie",[], successoSelect,erroreSelect);  
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
 }
 
