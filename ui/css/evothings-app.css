@@ -853,4 +853,5 @@ input.btn-group.black:checked + label {
 	padding: 10px;
 }
 
-.btn_scheda {border:1px solid red; float:left; width:40%; text-align: center}
+.btn_scheda {border:1px solid red !important; float:left; width:30%; text-align: center; margin:0}
+.btn_scheda::last-child{margin-left:10px !important}
