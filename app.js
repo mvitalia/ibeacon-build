@@ -392,7 +392,8 @@ function startScan()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO letture (uuid, major, minor, proximity, data_ora_lettura, nome_beacon) VALUES (?,?,?,?,?,?)",[beacon.uuid,beacon.major,beacon.minor,beacon.proximity,date,"Nome Beacon"]);
+                                            tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia]);
+											 // tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia, ID_utente) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia, localstorage]);
                                          },
                              function()  {
                                             alert("Inserimento non  effettuato"+e.message);
@@ -401,6 +402,9 @@ function startScan()
                                            // alert("Inserimento effettuato");
                                          }
                     )
+					// check internet if-ese, se cè chiamata ajax al server
+					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);
+				
 			}
 		};
 
@@ -466,6 +470,19 @@ function startScan()
 				.done();
 		}*/
 		
+}
+
+
+function 	caricaLetture(proximity,date,ID_dispositivo,ID_notizia)
+{
+	alert("Proximity"+proximity+"-ID_Dispositivo"+ID_dispositivo);
+ /*	if(internet)
+	{
+	  // chiamata ajax
+	}else{
+		caricaLetture(parametri);
+	}
+	*/
 }
 
     function checkNotizia(ID_dispositivo,ID_notizia)
