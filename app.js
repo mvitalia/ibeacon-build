@@ -473,9 +473,9 @@ function startScan()
 }
 
 
-function 	caricaLetture(proximity,date,ID_dispositivo,ID_notizia)
+function 	caricaLetture(proximity,date,dispositivo,ID_notizia)
 {
-	alert("Proximity"+proximity+"-ID_Dispositivo"+ID_dispositivo);
+	alert("Proximity"+proximity+"-ID_Dispositivo"+dispositivo);
  /*	if(internet)
 	{
 	  // chiamata ajax
