@@ -277,7 +277,7 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
 		success: function(data){
 		//console.log(data);
         var ritorno = data.d;
-		 //  alert('Cliente Salvato'+ritorno);
+		   alert('Cliente Salvato'+ritorno);
             
          //   alert(uriImmagine);
          
