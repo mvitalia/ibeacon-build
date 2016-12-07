@@ -267,7 +267,7 @@ function cancellaAllNotifiche ()
 // Gestire ancora la privacy nel file inviaInfo.aspx.cs
 function inviaInformazione(privacy,nome,cognome,email,richiesta)
 {
-   alert(nome+"-"+cognome+"-"+email+"-"+richiesta);
+  
    $.ajax({
         type: "POST",
 		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",richiesta:"'+richiesta+'",privacy:"'+privacy+'",notizia:"'+ sessionStorage.getItem('titolo_notifica')+'"}',
@@ -289,6 +289,11 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
             alert('Errore2'+e.statusTest);
 		}
      	});
+}
+
+function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
+{
+ alert(pMv+"-"+nMv+"-"+cMv+"-"+eMv+"-"+rMv);
 }
 
 

@@ -456,9 +456,20 @@ $('#inviaInformazione').click(function(){
      inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
 });
 
-inviaInfoMV
+
 $('#inviaInfoMV').click(function(){
-        alert("ok");
+      var pMv
+     if ($('#privacyInfo').is(":checked"))
+      {
+         pMv=1
+      }else{
+         pMv=0
+      }
+      var nMv = $("#nomeMv").val();
+      var cMv = $("#cognomeMv").val();
+      var eMv = $("#emailMv").val();
+      var rMv = $("#richiestaMv").val();
+     inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv);
 });
 
 </script>
