@@ -433,6 +433,7 @@ $(document).on("click", "#SalvaNotifica", function () {
 });
 
 $(document).on("click", "#ApriNotifica", function () {
+    alert("ok");
      var id = $(this).parents("div").data("itemid");
      localStorage.setItem('Id_notifica', id);
        $('.'+id+'').hide();
