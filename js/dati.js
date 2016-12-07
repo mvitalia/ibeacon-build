@@ -66,14 +66,14 @@ function caricoDatiServerSalvoInDb ()
 
 function selezionoDati ()
 {
-    
+    alert("ok");
    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);  
    db.transaction(select,successoSelect);                    
 }
 
 function select(tx)
 {
-  
+       alert("select list view");
        tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID",[], successoSelect,erroreSelect);   
      //   tx.executeSql("SELECT * FROM notizie",[], successoSelect,erroreSelect);  
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
