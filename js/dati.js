@@ -322,6 +322,7 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 
 function condividiNotifica ()
 {
+   // Prendere i dati giusti da condividere
    window.plugins.socialsharing.share('Message and subject', 'The subject');
 }
 
