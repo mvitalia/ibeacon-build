@@ -318,11 +318,11 @@ function startScan()
 								attivo_a_n = dati.rows.item(0).attivo_a;
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
-								ID_notizia = dati.rows.item(0).ID_notizia;
-								//alert(descrizione_n);
+								ID_notizia = dati.rows.item(0).ID_notizia;	
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
+									alert(ID_notizia);
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									// Creazione data ora, per db sul server 
