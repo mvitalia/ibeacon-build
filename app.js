@@ -327,12 +327,15 @@ function startScan()
 												
 						               cordova.plugins.notification.local.schedule(
 									   {
-											id: ++notificationID,
+											id: ID_notizia,
 											title: 'Beacon trovato',
 											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
 									    });
 										cordova.plugins.notification.local.on("click", function (notification) {
-											alert(notification.id);
+											//alert(notification.id);
+											 localStorage.removeItem("Id_notifica");
+											 localStorage.setItem('Id_notifica', notification.id);
+											 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 										});
 																							
 												
