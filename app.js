@@ -379,37 +379,7 @@ function startScan()
         			       }
 			   		    },erroreSelezione); 
  				});
-				// Select delle notifiche
-			/*	var rilevaBeacon = false;
-				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
-				beacons[key] = beacon;
-			    // Inserisco dati ogni volta che si legge un beacon, nella tabella lettura 
-					var date;
-    				date = new Date();
-    				date = date.getFullYear() + '-' +
-            		('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-            		('00' + date.getDate()).slice(-2) + ' ' +
-            		('00' + date.getHours()).slice(-2) + ':' +
-            		('00' + date.getMinutes()).slice(-2) + ':' +
-            		('00' + date.getSeconds()).slice(-2);  
-					// Fine creazione data_ora
-					 db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia]);
-											 // tx.executeSql("INSERT INTO letture (proximity, data_ora_lettura, ID_dispositivo, ID_notizia, ID_utente) VALUES (?,?,?,?)",[beacon.proximity,date,ID_dispositivo,ID_notizia, localstorage]);
-                                         },
-                             function()  {
-                                            alert("Inserimento non  effettuato"+e.message);
-                                         },
-                             function()  {
-                                           // alert("Inserimento effettuato");
-                                         }
-                    )
-					// check internet if-ese, se cè chiamata ajax al server
-					alert(ID_dispositivo);
-					caricaLetture(beacon.proximity,date,ID_dispositivo,ID_notizia);*/
+			
 				
 			}
 		};
