@@ -327,6 +327,11 @@ function apriNotifica(id)
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 }
 
+function salvaNotifica(id)
+{
+      $('.'+id+'').hide();
+}
+
 
 function condividiNotifica ()
 {

@@ -387,7 +387,7 @@ function startScan()
 															"<h3>Data: "+date+"</h3>"+
 															"<p>Notifica: "+titolo_n+"</p>"+
 															"<button  class='ui-btn ApriNotifica' onclick='apriNotifica("+ID_notizia+")' >Apri</button>"+
-															"<button  class='ui-btn SalvaNotifica'>Salva</button>"+
+															"<button  class='ui-btn SalvaNotifica' onclick='salvaNotifica("+ID_notizia+")' >Salva</button>"+
 															"</div>";	
 															$(".container_page").append(div);
 														}
