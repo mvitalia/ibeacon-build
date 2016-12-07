@@ -323,8 +323,8 @@ function startScan()
 								if(!notiziaEsistente)
 								{
 								    alert("uno");
-									if (inBackground)
-		   							{
+								//	if (inBackground)
+		   						//	{
 												
 						               cordova.plugins.notification.local.schedule(
 									   {
@@ -340,7 +340,7 @@ function startScan()
 										});
 																							
 												
-							     	}
+							     //	}
 									alert("due");
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
