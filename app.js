@@ -329,7 +329,7 @@ function startScan()
 									   {
 											id: ++notificationID,
 											title: 'Beacon trovato',
-											text: 'Nome App ha trovato un beacon, clicca qui per aprire app.'
+											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
 									    });
 														
 												
