@@ -332,8 +332,8 @@ function startScan()
 											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
 									    });
 										cordova.plugins.notification.local.on("click", function (notification) {
-											alert(notification.text);
-										},scope);
+											alert(notification.id);
+										});
 																							
 												
 							     	}
