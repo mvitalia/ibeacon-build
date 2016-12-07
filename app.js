@@ -408,7 +408,7 @@ function startScan()
 						{
 							id: ++notificationID,
 							title: 'Beacon trovato',
-							text: 'iBeacon Scan detected a beacon, tap here to open app.'
+							text: 'Nome App ha trovato un beacon, clicca qui per aprire app.'
 						});
 						
 				}
