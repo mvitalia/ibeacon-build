@@ -322,7 +322,7 @@ function startScan()
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
-									alert(ID_notizia);
+								
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									// Creazione data ora, per db sul server 
