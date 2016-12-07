@@ -329,10 +329,12 @@ function startScan()
 									   {
 											id: ++notificationID,
 											title: 'Beacon trovato',
-											text: 'Notifica '+titolo_n+', clicca qui per aprire.',
-											data: {meetingId:"ola"}
+											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
 									    });
-														
+										cordova.plugins.notification.local.on("click", function (notification) {
+											alert(notification.text);
+										},scope);
+																							
 												
 							     	}
 									navigator.notification.beep(1);
