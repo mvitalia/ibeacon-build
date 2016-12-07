@@ -226,7 +226,7 @@ function cancellaNotifica ()
         db.transaction(
             // Metodo di chiamata asincrona
             function(tx) {
-                tx.executeSql("DELETE FROM notifiche WHE ID_notizia=?",[idNotifica]);
+                tx.executeSql("DELETE FROM notifiche WHERE ID_notizia=?",[idNotifica]);
             },
             function(){
                 alert("Cancellazione non effettua");
