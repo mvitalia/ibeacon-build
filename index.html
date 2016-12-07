@@ -133,11 +133,12 @@
                         <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="password">
                 </form>
                 <hr>
-                <div>
-                      <h3 class="iscrizione"><a href="#iscrizione"  data-transition="slide">Iscriviti</a></h3>
-                </div>
+               
                 <div>
                     <button type="submit" class="ui-btn" id="loginUtente">Login</button>
+                </div>
+                 <div>
+                      <h3><a href="#iscriviti"  data-transition="slide">Iscriviti</a></h3>
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -152,7 +153,7 @@
             </div>
         </div>
     </div>
-    <div data-role="page" id="iscrizione">
+    <div data-role="page" id="iscriviti">
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Registrazione</h1>
              <div class="wrapper">
@@ -254,7 +255,6 @@
         </div>
         </div>
         <div role="main" class="ui-content">
-            <h3 class="titoliForm">Invia Mvitalia </h3>
             <div class="wrapper_logo">
                   <img class="logo_mv" src="img/logo_mvitalia.png"/>  
             </div>
@@ -323,7 +323,7 @@
      }
     });
 
- $(document).on("pagebeforeshow", "#iscrizione", function () {
+ $(document).on("pagebeforeshow", "#iscriviti", function () {
       $(':text, :password, :date', '#registrazioneSincro').val(''); 
     });	 
 /*function alertDismissed() {
