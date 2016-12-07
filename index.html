@@ -212,7 +212,7 @@
         </div>
         <div role="main" class="ui-content">
             <h3 class="titoliForm">Invia Info </h3>
-               <form id="ok">
+               <form id="inviaInfoNotifica">
                     <label for="nome">Nome:</label>
                         <input data-clear-btn="true" name="nomeInfo" id="nomeInfo" value="" type="text">
                     <label for="cognome">Cognome:</label>
@@ -258,9 +258,21 @@
                   <img class="logo_mv" src="img/logo_mvitalia.png"/>  
             </div>
                <p>Richiedi informazioni tecniche</p>
-                <div>
-                   <!-- <a href="mailto:info@mvitalia.com"  class="ui-btn" id="inviaInformazione">Scrivici</a>-->
-                    <button onclick="window.plugins.socialsharing.share('Message only')">Scrivici</button>
+               <hr>
+                <form id="inviaInfoMv">
+                    <label for="nome">Nome:</label>
+                        <input data-clear-btn="true" name="nomeMv" id="nomeMv" value="" type="text">
+                    <label for="cognome">Cognome:</label>
+                        <input data-clear-btn="true" name="cognomeMv" id="cognomeMv" value="" type="text">
+                    <label for="email">E-mail:</label>
+                        <input data-clear-btn="true" name="emailMv" id="emailMv" value="" type="text">
+                    <label for="lnascita">Richiesta Informazione</label>
+                        <textarea  name="richiestaMv" id="richiestaMv" rows="5" > </textarea>
+                    <hr>
+                      <b class="margine">Acconsento Privacy</b>   <input type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
+                </form>
+                 <div>
+                    <button  class="ui-btn" id="inviaInfoMV">Invia Mvitalia</button>
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -444,8 +456,10 @@ $('#inviaInformazione').click(function(){
      inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
 });
 
-
-
+inviaInfoMV
+$('#inviaInfoMV').click(function(){
+        alert("ok");
+});
 
 </script>
 
