@@ -76,7 +76,7 @@ var app = (function()
 	{
 
 		// Parte l' onDeviceReady
-        
+         window.plugins.socialsharing.share('Message and subject', 'The subject');
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
 		  if(conn==true){
