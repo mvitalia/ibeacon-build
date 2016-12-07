@@ -325,14 +325,12 @@ function startScan()
 									if (inBackground)
 		   							{
 												
-												
-													
-												       cordova.plugins.notification.local.schedule(
-														{
-															id: ++notificationID,
-															title: 'Beacon trovato',
-															text: 'Nome App ha trovato un beacon, clicca qui per aprire app.'
-														});
+						               cordova.plugins.notification.local.schedule(
+									   {
+											id: ++notificationID,
+											title: 'Beacon trovato',
+											text: 'Nome App ha trovato un beacon, clicca qui per aprire app.'
+									    });
 														
 												
 									}
