@@ -272,7 +272,7 @@
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
                 </form>
                  <div>
-                    <button  class="ui-btn" id="inviaInfoMV">Invia Mvitalia</button>
+                    <input type="submit"  class="ui-btn" value="Submit" id="submit">Invia Mvitalia</button>
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -453,8 +453,41 @@ $('#inviaInformazione').click(function(){
      inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
 });
 
+$('#inviaInfoMv').validate({
+    rules: {
+        nomeMv: {
+            required: true
+        },
+        cognomeMv: {
+            required: true
+        },
+        emailMv: {
+            required: true
+        }
+    },
+    messages: {
+        nomeMv: {
+            required: "Please enter your first name."
+        },
+        cognomeMv: {
+            required: "Please enter your last name."
+        },
+        emailMv: {
+            required: "Please enter your email."
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+       /* $(':mobile-pagecontainer').pagecontainer('change', '#success', {
+            reload: false
+        });*/
+        return false;
+    }
+});
 
-$('#inviaInfoMV').click(function(){
+/*$('#inviaInfoMV').click(function(){
       var pMv
      if ($('#privacyMv').is(":checked"))
       {
@@ -467,7 +500,7 @@ $('#inviaInfoMV').click(function(){
       var eMv = $("#emailMv").val();
       var rMv = $("#richiestaMv").val();
      inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv);
-});
+});*/
 
 </script>
 
