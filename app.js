@@ -74,7 +74,9 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-         
+         cordova.plugins.notification.local.registerPermission(function (granted) {
+    // console.log('Permission has been granted: ' + granted);
+		});
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
