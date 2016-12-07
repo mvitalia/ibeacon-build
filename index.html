@@ -409,7 +409,8 @@ $(document).on("click", ".detail", function () {
    //  alert(id);
        localStorage.removeItem("Id_notifica");
        localStorage.setItem('Id_notifica', id);
-       $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+       alert(localStorage.getItem('Id_notifica'));
+       //$( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
     // $.mobile.navigate("notifica.html");  
      
 });
