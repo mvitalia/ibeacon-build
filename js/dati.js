@@ -72,7 +72,7 @@ function selezionoDati ()
 function select(tx)
 {
   
-       tx.executeSql("SELECT  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID",[], successoSelect,erroreSelect);   
+       tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID",[], successoSelect,erroreSelect);   
      //   tx.executeSql("SELECT * FROM notizie",[], successoSelect,erroreSelect);  
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
 }
@@ -94,7 +94,7 @@ function successoSelect(tx,dati)
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
                 alert(dati.rows.item(i).ID_notizia);
-                li_dati += "<li id="+dati.rows.item(i).ID_notizia+" data-itemid="+dati.rows.item(i).ID_notizia+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/>";
+                li_dati += "<li id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/>";
                 li_dati+="<h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).titolo + "</h6> <p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p> <p style='font-size:10px; text-align:left !important;'>";
                 li_dati+="<b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a><a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
             
@@ -226,7 +226,7 @@ function cancellaNotifica ()
         db.transaction(
             // Metodo di chiamata asincrona
             function(tx) {
-                tx.executeSql("DELETE FROM notifiche WHERE ID_notizia=?",[idNotifica]);
+                tx.executeSql("DELETE FROM notifiche WHERE id=?",[idNotifica]);
             },
             function(){
                 alert("Cancellazione non effettua");

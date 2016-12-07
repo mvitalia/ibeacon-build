@@ -396,7 +396,8 @@ function visualizzoNotifica ()
 }
 
  $(document).on("click", ".storage", function () {
-     var id = $(this).parents("li").data("itemid");
+     var id = $(this).parents("li").data("id");
+     alert(id);
      sessionStorage.setItem('ID_not', id);
 });
 
