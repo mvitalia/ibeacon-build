@@ -323,11 +323,11 @@ function startScan()
 								if(!notiziaEsistente)
 								{
 								    alert("uno");
-								//	if (inBackground)
-		   						//	{
+									if (inBackground)
+		   							{
 									   cordova.plugins.notification.local.registerPermission(function (granted) {
-    // console.log('Permission has been granted: ' + granted);
-});		
+											// console.log('Permission has been granted: ' + granted);
+										});		
 						               cordova.plugins.notification.local.schedule(
 									   {
 											id: ID_notizia,
@@ -342,7 +342,7 @@ function startScan()
 										});
 																							
 												
-							     //	}
+							     	}
 									alert("due");
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
