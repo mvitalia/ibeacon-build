@@ -381,7 +381,7 @@ function startScan()
 															//alert(inBackground);
 														   	var div ="<div class='popNotifica "+ID_notizia+"' data-itemid='"+ID_notizia+"' >"+
 															"<h3>Data: "+date+"</h3>"+
-															"<p>Notifica: "+titolo_n+"-Background"+inBackground+"</p>"+
+															"<p>Notifica: "+titolo_n+"</p>"+
 															"<button  class='ui-btn' id='ApriNotifica'>Apri</button>"+
 															"<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+
 															"</div>";	
