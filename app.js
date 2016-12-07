@@ -460,12 +460,8 @@ function startScan()
 		
 }
 
- /*cordova.plugins.notification.local.on("click", function (notification) {
-        
-            joinMeeting(notification.data.meetingId);
-       
-    });
-*/
+ 
+
 
 function salvaLettura (proximity,dispositivo,notizia)
 {

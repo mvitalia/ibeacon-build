@@ -318,6 +318,12 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
      	});
 }
 
+cordova.plugins.notification.local.on("click", function (notification) {
+        
+            joinMeeting(notification.data.meetingId);
+       
+    });
+
 function condividiNotifica ()
 {
  // window.plugins.socialsharing.share('Message and subject', 'The subject');
