@@ -294,6 +294,27 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
 function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 {
  alert(pMv+"-"+nMv+"-"+cMv+"-"+eMv+"-"+rMv);
+  $.ajax({
+        type: "POST",
+		data: '{nome:"'+nMv+'",cognome:"'+cMv+'",email:"'+eMv+'",richiesta:"'+rMv+'",privacy:"'+pMv+'",notizia:""}',
+		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_inviaInfoMv.aspx/invia',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+		success: function(data){
+        var ritorno = data.d;
+		 alert('Cliente Salvato'+ritorno);
+         // Creare popo per invio email
+         //   alert(uriImmagine);
+         
+          //     $("#pop").click();
+
+		},
+		error: function(e){
+			//console.log(data);
+			alert('Errore'+e.status);
+            alert('Errore2'+e.statusTest);
+		}
+     	});
 }
 
 
