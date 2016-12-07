@@ -325,13 +325,13 @@ function startScan()
 								//	if (inBackground)
 		   						//	{
 												
-						               cordova.plugins.notification.local.schedule(
+						          /*     cordova.plugins.notification.local.schedule(
 									   {
 											id: ++notificationID,
 											title: 'Beacon trovato',
 											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
 									    });
-														
+									*/					
 												
 								//	}
 									navigator.notification.beep(1);
