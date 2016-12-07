@@ -455,6 +455,8 @@ $('#inviaInformazione').click(function(){
      inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
 });
 
+// Validazione e invio email Mvitalia
+
 $('#inviaInfoMv').validate({
     rules: {
         nomeMv: {
@@ -505,21 +507,6 @@ $('#inviaInfoMv').validate({
         return false;
     }
 });
-
-/*$('#inviaInfoMV').click(function(){
-      var pMv
-     if ($('#privacyMv').is(":checked"))
-      {
-         pMv=1
-      }else{
-         pMv=0
-      }
-      var nMv = $("#nomeMv").val();
-      var cMv = $("#cognomeMv").val();
-      var eMv = $("#emailMv").val();
-      var rMv = $("#richiestaMv").val();
-     inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv);
-});*/
 
 </script>
 
