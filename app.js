@@ -321,7 +321,21 @@ function startScan()
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
-								
+								    
+									if (inBackground)
+		   							{
+												
+												
+													
+												       cordova.plugins.notification.local.schedule(
+														{
+															id: ++notificationID,
+															title: 'Beacon trovato',
+															text: 'Nome App ha trovato un beacon, clicca qui per aprire app.'
+														});
+														
+												
+									}
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									// Creazione data ora, per db sul server 
@@ -395,7 +409,7 @@ function startScan()
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
 		  
-			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state));
+		//	alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state));
 		/*	if (inBackground)
 		   	{
 				// Show notification if a beacon is inside the region.
