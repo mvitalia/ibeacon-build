@@ -11,6 +11,10 @@ var usernameLoginApp;
             }
   }
 
+ cordova.plugins.notification.local.on("click", function (notification) {
+    caricaNotifica();
+}); 
+
 // Prelevo i dati dal server
 function caricoDatiServerSalvoInDb ()
 {
