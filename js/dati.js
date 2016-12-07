@@ -320,6 +320,7 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 
 function apriNotifica(id)
 {
+    alert(id);
      localStorage.setItem('Id_notifica', id);
        $('.'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
