@@ -396,7 +396,7 @@ function visualizzoNotifica ()
 }
 
  $(document).on("click", ".storage", function () {
-     var id = $(this).parents("li").data("id");
+     var id = $(this).parents("li").attr("id");
      alert(id);
      sessionStorage.setItem('ID_not', id);
 });
@@ -404,7 +404,7 @@ function visualizzoNotifica ()
 
 
 $(document).on("click", ".detail", function () {
-     var id = $(this).parents("li").attr("id");
+     var id = $(this).parents("li").data("itemid");
      localStorage.removeItem("Id_notifica");
      localStorage.setItem('Id_notifica', id);
      $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
