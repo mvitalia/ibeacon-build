@@ -318,9 +318,8 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
      	});
 }
 
-function apriNotifica()
+function apriNotifica(id)
 {
-    var id = $(this).parents("div").data("itemid");
      localStorage.setItem('Id_notifica', id);
        $('.'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
