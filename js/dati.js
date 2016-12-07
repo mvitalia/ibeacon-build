@@ -72,7 +72,7 @@ function selezionoDati ()
 function select(tx)
 {
   
-       tx.executeSql("SELECT C.ID as ID_notifica, N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID",[], successoSelect,erroreSelect);   
+       tx.executeSql("SELECT  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID",[], successoSelect,erroreSelect);   
      //   tx.executeSql("SELECT * FROM notizie",[], successoSelect,erroreSelect);  
       // SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo   
 }
@@ -219,7 +219,7 @@ function successoSelectNotifica(tx,dati)
 
 function cancellaNotifica ()
 {
-    alert( sessionStorage.getItem('ID_not'));
+    alert(sessionStorage.getItem('ID_not'));
     // Cancellare notifica in base all 'id'
     var idNotifica = sessionStorage.getItem('ID_not');
      db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
