@@ -320,7 +320,7 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 
 function condividiNotifica ()
 {
-  window.plugins.socialsharing.share('Message and subject', 'The subject');
+ // window.plugins.socialsharing.share('Message and subject', 'The subject');
 }
 
 /*	

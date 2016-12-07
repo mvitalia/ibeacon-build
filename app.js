@@ -459,10 +459,7 @@ function startScan()
 		
 }
 
-cordova.plugins.notification.local.on("click", function (notification) {
-    // $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
-	alert("ok");
-});
+
 
 
 function salvaLettura (proximity,dispositivo,notizia)
