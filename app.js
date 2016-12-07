@@ -325,7 +325,9 @@ function startScan()
 								    alert("uno");
 								//	if (inBackground)
 		   						//	{
-												
+									   cordova.plugins.notification.local.registerPermission(function (granted) {
+    // console.log('Permission has been granted: ' + granted);
+});		
 						               cordova.plugins.notification.local.schedule(
 									   {
 											id: ID_notizia,
