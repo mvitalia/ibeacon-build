@@ -398,8 +398,6 @@ function visualizzoNotifica ()
  $(document).on("click", ".storage", function () {
      var id = $(this).parents("li").data("itemid");
      sessionStorage.setItem('ID_not', id);
-     cancellaNotifica ();
-     
 });
 
 
@@ -413,8 +411,8 @@ $(document).on("click", ".detail", function () {
 });
 
 $('#cancellaNot').click(function(){
-       // alert("entra");
-      cancellaNotifica ();
+        alert("entra");
+      //cancellaNotifica ();
       });
 
 $('#noCancellanot').click(function(){
