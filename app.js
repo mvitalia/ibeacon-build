@@ -395,7 +395,7 @@ function startScan()
 		delegate.didDetermineStateForRegion = function(pluginResult)
 		{
 		  
-			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult));
+			alert('didStartMonitoringForRegion:' + JSON.stringify(pluginResult.state));
 		/*	if (inBackground)
 		   	{
 				// Show notification if a beacon is inside the region.
