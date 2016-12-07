@@ -318,6 +318,10 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
      	});
 }
 
+function apriNotifica()
+{
+    alert("ok");
+}
 
 
 function condividiNotifica ()
