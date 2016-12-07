@@ -322,7 +322,7 @@ function startScan()
 								if(!notiziaEsistente)
 								{
 								    
-									if (inBackground)
+								/*	if (inBackground)
 		   							{
 												
 						               cordova.plugins.notification.local.schedule(
@@ -334,7 +334,7 @@ function startScan()
 									    });
 														
 												
-							     	}
+							     	}*/
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									// Creazione data ora, per db sul server 
@@ -460,12 +460,12 @@ function startScan()
 		
 }
 
- cordova.plugins.notification.local.on("click", function (notification) {
+/* cordova.plugins.notification.local.on("click", function (notification) {
         if (notification.id == 10) {
             joinMeeting(notification.data.meetingId);
         }
     });
-
+*/
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
