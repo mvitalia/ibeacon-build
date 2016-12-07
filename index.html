@@ -138,7 +138,7 @@
                     <button type="submit" class="ui-btn" id="loginUtente">Login</button>
                 </div>
                  <div>
-                     <a href="#iscriviti"  data-transition="slide"> <h3>Iscriviti</h3></a>
+                     <a href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -153,7 +153,7 @@
             </div>
         </div>
     </div>
-    <div data-role="page" id="iscriviti">
+    <div data-role="page" id="registrazione">
         <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Registrazione</h1>
              <div class="wrapper">
@@ -323,9 +323,9 @@
      }
     });
 
- $(document).on("pagebeforeshow", "#iscriviti", function () {
-      $(':text, :password, :date', '#registrazioneSincro').val(''); 
-    });	 
+ $(document).on("pagebeforeshow", "#registrazione", function () {
+    /*  $(':text, :password, :date', '#registrazioneSincro').val(''); 
+    });*/	 
 /*function alertDismissed() {
  alert("Partito");
 }*/
