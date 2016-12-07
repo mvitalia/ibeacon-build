@@ -218,7 +218,7 @@ function successoSelectNotifica(tx,dati)
 
 function cancellaNotifica ()
 {
-    //alert( sessionStorage.getItem('ID_not'));
+    alert( sessionStorage.getItem('ID_not'));
     // Cancellare notifica in base all 'id'
     var idNotifica = sessionStorage.getItem('ID_not');
      db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
@@ -228,11 +228,11 @@ function cancellaNotifica ()
                 tx.executeSql("DELETE FROM notifiche WHERE ID_notizia=?",[idNotifica]);
             },
             function(){
-               // alert("Cancellazione non effettua");
+                alert("Cancellazione non effettua");
                
             },
             function(){
-               // alert("Cancellazione effettua");
+                alert("Cancellazione effettua");
                
             }
         )
