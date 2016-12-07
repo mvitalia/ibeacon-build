@@ -482,9 +482,18 @@ $('#inviaInfoMv').validate({
         error.appendTo(element.parent().prev());
     },
     submitHandler: function (form) {
-       /* $(':mobile-pagecontainer').pagecontainer('change', '#success', {
-            reload: false
-        });*/
+     var pMv
+     if ($('#privacyMv').is(":checked"))
+      {
+         pMv=1
+      }else{
+         pMv=0
+      }
+      var nMv = $("#nomeMv").val();
+      var cMv = $("#cognomeMv").val();
+      var eMv = $("#emailMv").val();
+      var rMv = $("#richiestaMv").val();
+      inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv);
         return false;
     }
 });
