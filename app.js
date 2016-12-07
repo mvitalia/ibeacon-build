@@ -154,7 +154,9 @@ var app = (function()
 
 
 		window.locationManager = cordova.plugins.locationManager;
-	
+	    cordova.plugins.notification.local.registerPermission(function (granted) {
+											// console.log('Permission has been granted: ' + granted);
+										});		
 		// Funzione che  inizia la ricerca dei beacon
 		startScan();
 		// Display refresh timer.
@@ -325,9 +327,7 @@ function startScan()
 								    alert("uno");
 									if (inBackground)
 		   							{
-									   cordova.plugins.notification.local.registerPermission(function (granted) {
-											// console.log('Permission has been granted: ' + granted);
-										});		
+									  
 						               cordova.plugins.notification.local.schedule(
 									   {
 											id: ID_notizia,
