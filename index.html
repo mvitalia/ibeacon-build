@@ -465,17 +465,23 @@ $('#inviaInfoMv').validate({
         },
         emailMv: {
             required: true
+        },
+         privacyMv: {
+            required: true
         }
     },
     messages: {
         nomeMv: {
-            required: "Please enter your first name."
+            required: "Inserire il nome."
         },
         cognomeMv: {
-            required: "Please enter your last name."
+            required: "Inserire il cognome."
         },
         emailMv: {
-            required: "Please enter your email."
+            required: "Inserire l' E-mail."
+        },
+        privacyMv: {
+            required: "Acconsenti privacy."
         }
     },
     errorPlacement: function (error, element) {

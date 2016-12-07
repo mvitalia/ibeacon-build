@@ -871,3 +871,7 @@ input.btn-group.black:checked + label {
     bottom: 0;
 	width: 50%;
 }
+
+.error {
+    color:red;
+}
