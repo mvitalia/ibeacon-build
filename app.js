@@ -323,7 +323,7 @@ function startScan()
 								if(!notiziaEsistente)
 								{
 								    
-									if (inBackground)
+								/*	if (inBackground)
 		   							{
 												
 						               cordova.plugins.notification.local.schedule(
@@ -340,7 +340,7 @@ function startScan()
 										});
 																							
 												
-							     	}
+							     	}*/
 									navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									// Creazione data ora, per db sul server 
