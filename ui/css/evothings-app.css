@@ -877,10 +877,14 @@ input.btn-group.black:checked + label {
 }
 
 .box_privacy{
-	text-align: left !important;
+	text-align: left;
 }
 
 .box_privacy h3{
 	color: red;
 	font-size: 15px;
+}
+
+.box_privacy p{
+text-align: left !important;
 }
