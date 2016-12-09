@@ -362,7 +362,21 @@ function salvaNotifica(id)
 function condividiNotifica ()
 {
    // Prendere i dati giusti da condividere
-   window.plugins.socialsharing.share('Message and subject', 'The subject');
+    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db.transaction(
+                            // Metodo di chiamata asincrona
+                            function(tx) {
+                                            tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[],);
+                                          },
+                             function () {
+                                             alert("Errore"+e.message);
+                                         },
+                             function(tx,dati){
+                                            var len = dati.rows.length;
+                                            alert(len);
+                                         }
+                    )
+  // window.plugins.socialsharing.share('Message and subject', 'The subject');
 }
 
 /*	
