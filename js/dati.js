@@ -223,14 +223,14 @@ function successoSelectNotifica(tx,dati)
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>";
            li_dati+="<p class='notizia_data'>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</p>";
            li_dati+="<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div><hr>";
-           li_dati+="<div class='notizia'><b class='titolo_notizia_descrizione'>Descrizione:</b> "+dati.rows.item(0).descrizione+"</div>";
+           li_dati+="<div class='notizia'>"+dati.rows.item(0).descrizione+"</div>";
            if(dati.rows.item(0).link!=null)
            {
-           li_dati+="<div class='notizia'><b class='titolo_notizia'>Link: </b>"+dati.rows.item(0).link+"</div>";
+           li_dati+="<div class='notizia'><b class='titolo_notizia'>Link: </b><a href='"+dati.rows.item(0).link+"' target='_blank'>"+dati.rows.item(0).link+"</a></div>";
            }
            if(dati.rows.item(0).allegato!=null)
            {
-           li_dati+="<div class='notizia'><b  class='titolo_notizia'>Allegato: </b>"+dati.rows.item(0).allegato+"</div>";
+           li_dati+="<div class='notizia'><b  class='titolo_notizia'>Allegato: </b><a href='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).link+"' target='_blank'>"+dati.rows.item(0).allegato+"</a></div>";
            }
             if(dati.rows.item(0).ID_utente!=null)
            {
