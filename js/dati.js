@@ -98,7 +98,8 @@ function successoSelect(tx,dati)
                 li_dati+="<b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a><a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
             
             }
-            
+             $("#cancellaTutteNotifiche").show();
+             $("#noNotifiche").hide();
         }else{
               $("#cancellaTutteNotifiche").hide();
              $("#noNotifiche").show();
