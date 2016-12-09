@@ -85,7 +85,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS notizie ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da datetime, attivo_a datetime, ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -298,7 +298,17 @@ function startScan()
 				var restituito=true;
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
-				
+				// Creazione data ora, per db sul server 
+				var dataFiltro;
+				dataFiltro = new Date();
+				dataFiltro = dataFiltro.getFullYear() + '-' +
+				('00' + (dataFiltro.getMonth() + 1)).slice(-2) + '-' +
+				('00' + dataFiltro.getDate()).slice(-2) + ' ' +
+				('00' + dataFiltro.getHours()).slice(-2) + ':' +
+				('00' + dataFiltro.getMinutes()).slice(-2) + ':' +
+				('00' + dataFiltro.getSeconds()).slice(-2);  
+				alert("Data ora: "+dataFiltro);
+				// Fine creazione data_ora
 				//alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
