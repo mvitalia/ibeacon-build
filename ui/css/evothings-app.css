@@ -878,6 +878,7 @@ input.btn-group.black:checked + label {
 
 .box_privacy{
 	text-align: left;
+	margin-bottom:10px;
 }
 
 .box_privacy h3{
