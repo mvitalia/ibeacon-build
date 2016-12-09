@@ -221,7 +221,7 @@ function successoSelectNotifica(tx,dati)
            
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
-            "<p class='notizia_data'>Attivo dal "+data.attivo_da+" al "+data.attivo_a+"</p>"+
+            "<p class='notizia_data'>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</p>"+
            "<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div>"+
            "<hr>"+
            "<p class='notizia'><b>Descrizione:</b> "+dati.rows.item(0).descrizione+"</p>"+
