@@ -875,3 +875,12 @@ input.btn-group.black:checked + label {
 .error {
     color:red;
 }
+
+.box_privacy{
+	text-align: left;
+}
+
+.box_privacy h3{
+	color: red;
+	font-size: 15px;
+}
