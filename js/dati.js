@@ -202,15 +202,16 @@ function successoSelectNotifica(tx,dati)
         var li_dati="";
         if(len!=0)
         {
-            var data = dati.rows.item(i).attivo_da;
+            // Data giusta attivo_da
+            var data = dati.rows.item(0).attivo_da;
             var splitarray = new Array();
             splitarray = data.split(" ");
             var dataDue = splitarray[0];
             var arrayData = new Array ();
             arrayData = dataDue.split("-");
             var data_attivo_da = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-            
-            var dataTre = dati.rows.item(i).attivo_da;
+            // Data giusta attivo_a
+            var dataTre = dati.rows.item(0).attivo_a;
             var splitarrayUno = new Array();
             splitarrayUno = dataTre.split(" ");
             var dataQuattro = splitarrayUno[0];
