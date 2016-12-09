@@ -226,8 +226,12 @@
                         <textarea data-clear-btn="true" name="richiestaInfo" id="richiestaInfo" rows="5" > 
                         </textarea>
                     <hr>
+                    <div>
+                        <h3>Privacy</h3>
+                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
+                        <p>Per maggiori informazioni clicca qui </p>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" required name="privacyInfo" id="privacyInfo" value="html"/> 
-                
+                   </div>
                 <hr>
                 <div>
                     <input type="submit"  class="ui-btn" value="Invia" id="submit">
@@ -326,10 +330,7 @@
     });
 
  $(document).on("pagebeforeshow", "#registrazione", function () {
-    /*  $(':text, :password, :date', '#registrazioneSincro').val(''); 
-    });*/	 
-/*function alertDismissed() {
- alert("Partito");*/
+      $(':text, :password, :date', '#registrazioneSincro').val(''); 
 });
  
    $(document).on("pageinit", "#database", function () {
@@ -503,23 +504,10 @@ $(document).on("click", ".ApriNotifica", function () {
 
 });*/
 
-/*$('#inviaInformazione').click(function(){
-    var pInfo
-     if ($('#privacyInfo').is(":checked"))
-      {
-         pInfo=1
-      }else{
-         pInfo=0
-      }
-      var nInfo = $("#nomeInfo").val();
-      var cInfo = $("#cognomeInfo").val();
-      var eInfo = $("#emailInfo").val();
-      var rInfo = $("#richiestaInfo").val();
-     inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
-});*/
 
 
-// Validazione e invio email Mvitalia
+
+// Validazione e invio email per l' informazione della notifica
 
 $('#inviaInfoNotifica').validate({
     rules: {
