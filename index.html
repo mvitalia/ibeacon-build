@@ -131,17 +131,14 @@
                         <input data-clear-btn="true" name="usernameLogin" id="usernameLogin" value="" type="text">
                     <label for="cognome">Password:</label>
                         <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="password">
-              
-               
-               
                 <div>
-                       <input type="submit"  class="ui-btn" value="Invia" id="submit">
+                       <input type="submit"  class="ui-btn" value="Login" id="submit">
                  
                 </div>
                   </form>
                  <hr>
                  <div>
-                     <a href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
+                     <a class="link_reg_pass" href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -470,10 +467,10 @@ $('#loginSincro').validate({
     },
     messages: {
         usernameLogin: {
-            required: "Inserire il nome."
+            required: "Inserire ilusername."
         },
         passLogin: {
-            required: "Acconsenti privacy."
+            required: "Inserire password."
         }
     },
     errorPlacement: function (error, element) {

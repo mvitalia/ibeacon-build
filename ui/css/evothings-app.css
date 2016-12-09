@@ -889,3 +889,10 @@ input.btn-group.black:checked + label {
 .box_privacy p{
 text-align: left !important;
 }
+
+
+.link_reg_pass{
+	text-align: center;
+	color: red;
+	text-decoration: none !important;
+}
