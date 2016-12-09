@@ -906,3 +906,12 @@ text-align: left !important;
 p{
 	text-align: left !important;
 }
+
+.titolo_notizia_descrizione{
+	text-align: center;
+	color: red;
+}
+
+.titolo_notizia{
+	color: red;
+}
