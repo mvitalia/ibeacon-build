@@ -299,14 +299,14 @@ function startScan()
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
 				// Creazione data ora, per db sul server 
-				var dataFiltro;
-				dataFiltro = new Date();
-				dataFiltro = dataFiltro.getFullYear() + '-' +
-				('00' + (dataFiltro.getMonth() + 1)).slice(-2) + '-' +
-				('00' + dataFiltro.getDate()).slice(-2) + ' ' +
-				('00' + dataFiltro.getHours()).slice(-2) + ':' +
-				('00' + dataFiltro.getMinutes()).slice(-2) + ':' +
-				('00' + dataFiltro.getSeconds()).slice(-2);  
+				var dF;
+				dF = new Date();
+				dF = dF.getFullYear() + '-' +
+				('00' + (dF.getMonth() + 1)).slice(-2) + '-' +
+				('00' + dF.getDate()).slice(-2) + ' ' +
+				('00' + dF.getHours()).slice(-2) + ':' +
+				('00' + dF.getMinutes()).slice(-2) + ':' +
+				('00' + dF.getSeconds()).slice(-2);  
 				//alert("Data ora: "+dataFiltro);
 				// Fine creazione data_ora
 				//alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
@@ -314,7 +314,7 @@ function startScan()
 				db.transaction(
 					function(tx)
 					{
-              tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo AND N.attivo_da <= now() AND N.attivo_a >= now()",[idUUID], 
+              tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo AND N.attivo_da <= '"+dF+"' AND N.attivo_a >= '"+dF+"'",[idUUID], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
