@@ -895,6 +895,6 @@ text-align: left !important;
 	text-align: center;
 	color: red !important;
 	text-decoration: none !important;
-	font-size: 15px;
+	font-size: 15px !important;
 	margin-bottom: 10px;
 }
