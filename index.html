@@ -131,13 +131,14 @@
                         <input data-clear-btn="true" name="usernameLogin" id="usernameLogin" value="" type="text">
                     <label for="cognome">Password:</label>
                         <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="password">
-                </form>
+              
                
                
                 <div>
                        <input type="submit"  class="ui-btn" value="Invia" id="submit">
-                    <button type="submit" class="ui-btn" id="loginUtente">Login</button>
+                 
                 </div>
+                  </form>
                  <hr>
                  <div>
                      <a href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
@@ -458,7 +459,7 @@ $('#registrazioneSincro').validate({
      // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
       });*/
 
-$('#registrazioneSincro').validate({
+$('#loginSincro').validate({
     rules: {
         usernameLogin: {
             required: true
