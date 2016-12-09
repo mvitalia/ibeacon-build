@@ -314,7 +314,7 @@ function startScan()
 				db.transaction(
 					function(tx)
 					{
-                        tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo AND N.attivo_da<="+df+"",[idUUID], 
+                        tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo AND N.attivo_da<= datatime('now','localtime')",[idUUID], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
