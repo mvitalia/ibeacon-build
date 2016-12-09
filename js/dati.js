@@ -102,6 +102,8 @@ function successoSelect(tx,dati)
             
             }
             
+        }else{
+              $("#cancellaTutteNotifiche").hide();
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
        $("#lista_datiJson").append(li_dati).promise().done(function () {
