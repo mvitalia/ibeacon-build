@@ -369,7 +369,12 @@ function condividiNotifica ()
                                             tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[],
                                          function(tx,dati){
                                             var len = dati.rows.length;
-                                            alert(len);
+                                            if(len!=0)
+                                            {
+                                                var immagine = "http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"";
+                                                var notifica = "Notifica"+dati.rows.item(0).descrizione+"Descrizione:"+dati.rows.item(0).descrizione;
+                                                window.plugins.socialsharing.share(notifica, 'The subject',immagine);
+                                            }
                                          },
                                            function () {
                                              alert("Errore"+e.message);
@@ -378,7 +383,7 @@ function condividiNotifica ()
                            
                             
                     
-  // window.plugins.socialsharing.share('Message and subject', 'The subject');
+  // 
 }
 
 /*	
