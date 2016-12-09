@@ -92,7 +92,6 @@ function successoSelect(tx,dati)
                 var arrayData = new Array ();
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-                alert(dati.rows.item(i).ID_notizia);
                 li_dati += "<li id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/>";
                 li_dati+="<h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).ID_notifica +"-"+ dati.rows.item(i).titolo +  "</h6> <p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p> <p style='font-size:10px; text-align:left !important;'>";
                 li_dati+="<b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a><a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
