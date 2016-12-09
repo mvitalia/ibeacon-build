@@ -319,10 +319,10 @@
         </div>
         </div>
         <div role="main" class="ui-content">
-            <h3 class="titoliForm">Recupero Form </h3>
+            <h3 class="titoliForm">Recupero Password Form </h3>
                <form id="recuperoPass">
                     <label for="nome">Email:</label>
-                        <input data-clear-btn="true" name="emailRecuperoPass" id="emailRecuperoPass" value="" type="text">
+                        <input data-clear-btn="true" name="emailRecuperoPass" id="emailRecuperoPass" value="" placeholder="Inserire la propria E-mail" type="text">
                    
                 <div>
                        <input type="submit"  class="ui-btn" value="Login" id="submit">
@@ -482,15 +482,8 @@ $('#registrazioneSincro').validate({
     }
 });
 
- /*   $('#loginUtente').click(function(){
-     
-      alert("Partito");
-      var usernameLogin = $("#usernameLogin").val();
-      var passLogin = $("#passLogin").val();
-      loginUtente(usernameLogin,passLogin);     
-     // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
-      });*/
 
+// Validate del form login 
 $('#loginSincro').validate({
     rules: {
         usernameLogin: {
@@ -516,6 +509,30 @@ $('#loginSincro').validate({
       var passLogin = $("#passLogin").val();
       loginUtente(usernameLogin,passLogin);  
       return false;
+    }
+});
+
+// Validate del form recupero password
+$('#recuperoPass').validate({
+    rules: {
+        emailRecuperoPass: {
+            required: true,
+            email: true
+        }
+    },
+    messages: {
+        usernameLogin: {
+            required: "Inserire E-mail",
+            email: "Inserire un E-mail valida"
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+     var emailRecuperoPass = $("#emailRecuperoPass").val();
+     recuperoPassword(emailRecuperoPass);  
+     return false;
     }
 });
 
