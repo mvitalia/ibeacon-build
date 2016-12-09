@@ -183,21 +183,21 @@ function loginUtente(usernameLogin,passLogin)
 
 function caricaNotifica ()
 {
-   alert("ok");
+   
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
      db.transaction(selectNotifica,successoSelectNotifica);  
 }
 
 function selectNotifica(tx)
 {
-        alert("select");       
+         
        tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[], successoSelectNotifica,erroreSelect);        
 }
 
 function successoSelectNotifica(tx,dati)
 {
     var len = dati.rows.length;
-        alert(len);
+       
         var li_dati="";
         if(len!=0)
         {
