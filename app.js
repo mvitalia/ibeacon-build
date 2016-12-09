@@ -307,7 +307,7 @@ function startScan()
 				('00' + dataFiltro.getHours()).slice(-2) + ':' +
 				('00' + dataFiltro.getMinutes()).slice(-2) + ':' +
 				('00' + dataFiltro.getSeconds()).slice(-2);  
-				alert("Data ora: "+dataFiltro);
+				//alert("Data ora: "+dataFiltro);
 				// Fine creazione data_ora
 				//alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
