@@ -363,7 +363,7 @@ function recuperoPassword(email)
         dataType: 'json',
 		success: function(data){
         var ritorno = data.d;
-		 alert('Cliente Salvato'+ritorno);
+		 alert(ritorno);
          // Creare popo per invio email
          //   alert(uriImmagine);
          
