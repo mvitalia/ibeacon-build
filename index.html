@@ -132,11 +132,13 @@
                     <label for="cognome">Password:</label>
                         <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="password">
                 </form>
-                <hr>
+               
                
                 <div>
+                       <input type="submit"  class="ui-btn" value="Invia" id="submit">
                     <button type="submit" class="ui-btn" id="loginUtente">Login</button>
                 </div>
+                 <hr>
                  <div>
                      <a href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
                 </div>
@@ -447,14 +449,42 @@ $('#registrazioneSincro').validate({
     }
 });
 
-    $('#loginUtente').click(function(){
+ /*   $('#loginUtente').click(function(){
      
       alert("Partito");
       var usernameLogin = $("#usernameLogin").val();
       var passLogin = $("#passLogin").val();
       loginUtente(usernameLogin,passLogin);     
      // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
-      });
+      });*/
+
+$('#registrazioneSincro').validate({
+    rules: {
+        usernameLogin: {
+            required: true
+        },
+        passLogin: {
+            required: true
+        }
+    },
+    messages: {
+        usernameLogin: {
+            required: "Inserire il nome."
+        },
+        passLogin: {
+            required: "Acconsenti privacy."
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+     var usernameLogin = $("#usernameLogin").val();
+      var passLogin = $("#passLogin").val();
+      loginUtente(usernameLogin,passLogin);  
+      return false;
+    }
+});
 
     $('.button_logout').click(function(){
         alert("entra");
