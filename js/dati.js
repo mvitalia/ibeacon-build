@@ -348,7 +348,6 @@ function apriNotifica(id)
 {
     var prova = id;
      localStorage.setItem('Id_notifica', prova);
-    alert(localStorage.getItem('Id_notifica'));
     $('.'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 }
