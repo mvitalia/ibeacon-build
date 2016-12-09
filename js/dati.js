@@ -373,7 +373,7 @@ function condividiNotifica ()
                                             {
                                                 var immagine = "http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"";
                                                 var notifica = "Notifica"+dati.rows.item(0).descrizione+"Descrizione:"+dati.rows.item(0).descrizione;
-                                                window.plugins.socialsharing.share(notifica, 'The subject',immagine);
+                                                window.plugins.socialsharing.share(notifica, 'The subject',immagine,immagine);
                                             }
                                          },
                                            function () {
