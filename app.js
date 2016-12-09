@@ -314,7 +314,7 @@ function startScan()
 				db.transaction(
 					function(tx)
 					{
-tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo AND N.attivo_da <= datetime(1092941466, 'unixepoch', 'localtime')",[idUUID], 
+tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo ",[idUUID], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
@@ -331,6 +331,7 @@ tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,alle
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;	
+								alert(attivo_da_n);
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
