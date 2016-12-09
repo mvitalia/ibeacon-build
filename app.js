@@ -85,7 +85,7 @@ var app = (function()
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS notizie ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da date , attivo_a date , ultima_modifica, ID_dispositivo)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, datetime_int (attivo_da int) , datetime_int (attivo_a int) , ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
