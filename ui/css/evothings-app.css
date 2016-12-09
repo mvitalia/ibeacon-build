@@ -902,3 +902,7 @@ text-align: left !important;
 #noNotifiche{
 	display: none;
 }
+
+p{
+	text-align: left !important;
+}
