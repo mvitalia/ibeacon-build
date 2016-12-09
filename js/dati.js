@@ -202,9 +202,25 @@ function successoSelectNotifica(tx,dati)
         var li_dati="";
         if(len!=0)
         {
+            var data = dati.rows.item(i).attivo_da;
+            var splitarray = new Array();
+            splitarray = data.split(" ");
+            var dataDue = splitarray[0];
+            var arrayData = new Array ();
+            arrayData = dataDue.split("-");
+            var data_attivo_da = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
+            
+            var dataTre = dati.rows.item(i).attivo_da;
+            var splitarrayUno = new Array();
+            splitarrayUno = dataTre.split(" ");
+            var dataQuattro = splitarrayUno[0];
+            var arrayDataDue = new Array ();
+            arrayDataDue = dataQuattro.split("-");
+            var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0] + " " + splitarrayUno[1];
+           
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>"+
-            "<p class='notizia_data'>Attivo dal "+dati.rows.item(0).attivo_da+" al "+dati.rows.item(0).attivo_a+"</p>"+
+            "<p class='notizia_data'>Attivo dal "+data.attivo_da+" al "+data.attivo_a+"</p>"+
            "<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div>"+
            "<hr>"+
            "<p class='notizia'><b>Descrizione:</b> "+dati.rows.item(0).descrizione+"</p>"+
