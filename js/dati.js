@@ -366,16 +366,18 @@ function condividiNotifica ()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[],);
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(tx,dati){
+                                            tx.executeSql("SELECT * FROM notizie WHERE ID = "+localStorage.getItem('Id_notifica')+"",[],
+                                         function(tx,dati){
                                             var len = dati.rows.length;
                                             alert(len);
-                                         }
-                    )
+                                         },
+                                           function () {
+                                             alert("Errore"+e.message);
+                                         });
+                        });
+                           
+                            
+                    
   // window.plugins.socialsharing.share('Message and subject', 'The subject');
 }
 
