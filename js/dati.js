@@ -230,7 +230,7 @@ function successoSelectNotifica(tx,dati)
            }
            if(dati.rows.item(0).allegato!=null)
            {
-           li_dati+="<div class='notizia'><b  class='titolo_notizia'>Allegato: </b><a href='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).link+"' target='_blank'>"+dati.rows.item(0).allegato+"</a></div>";
+           li_dati+="<div class='notizia'><b  class='titolo_notizia'>Allegato: </b><a href='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'>"+dati.rows.item(0).allegato+"</a></div>";
            }
             if(dati.rows.item(0).ID_utente!=null)
            {
