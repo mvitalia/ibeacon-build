@@ -877,7 +877,7 @@ input.btn-group.black:checked + label {
 }
 
 .box_privacy{
-	text-align: left;
+	text-align: left !important;
 }
 
 .box_privacy h3{
