@@ -138,7 +138,7 @@
                   </form>
                  <hr>
                  <div> 
-                     <div style="text-align:center; margin-bottom:15px;" >  <a class="link_reg_pass"  href="#registrazione"  data-transition="slide">Password dimenticata?</a> </div>   
+                     <div style="text-align:center; margin-bottom:15px;" >  <a class="link_reg_pass"  href="#lostPassword"  data-transition="slide">Password dimenticata?</a> </div>   
                      <div style="text-align:center" >  <a class="link_reg_pass" href="#registrazione"  data-transition="slide">Iscriviti</a> </div>
                     
                 </div>
@@ -308,7 +308,40 @@
             </div>
         </div>
     </div>
-     
+     <div data-role="page" id="lostPassword">
+        <div data-role="header" class="header" data-position="fixed">
+            <h1 id="app-title">Password Dimenticata</h1>
+             <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
+         <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+        </div>
+        </div>
+        <div role="main" class="ui-content">
+            <h3 class="titoliForm">Recupero Form </h3>
+               <form id="recuperoPass">
+                    <label for="nome">Email:</label>
+                        <input data-clear-btn="true" name="emailRecuperoPass" id="emailRecuperoPass" value="" type="text">
+                   
+                <div>
+                       <input type="submit"  class="ui-btn" value="Login" id="submit">
+                 
+                </div>
+                  </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!--Tab bar jquery mobile-->
+            <div data-role="navbar" data-iconpos="top">
+                 <ul>
+                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
+                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
+                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
+                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
   
 <script>
 
