@@ -224,9 +224,9 @@ function successoSelectNotifica(tx,dati)
            li_dati+="<p class='notizia_data'>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</p>";
            li_dati+="<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div><hr>";
            li_dati+="<div class='notizia'>"+dati.rows.item(0).descrizione+"</div>";
-           if(dati.rows.item(0).link!=null)
+           if(dati.rows.item(0).link!="")
            {
-           li_dati+="<div class='notizia'><b class='titolo_notizia'>Link: </b><a href='http://"+dati.rows.item(0).link+"' target='_blank'>"+dati.rows.item(0).link+"</a></div>";
+           li_dati+="<div class='notizia'><b class='titolo_notizia'>Link: </b><a href='http://"+dati.rows.item(0).link+"'>"+dati.rows.item(0).link+"</a></div>";
            }
            if(dati.rows.item(0).allegato!="")
            {
