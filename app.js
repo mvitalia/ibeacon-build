@@ -74,7 +74,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-        
+        window.analytics.startTrackerWithId('UA-88870503-1');
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
