@@ -771,16 +771,12 @@ input.btn-group.black:checked + label {
 
 .wrapper {
   /*  position: relative;*/
-    width: 20%;
    /* height:300px; */
+   float: right;
+   margin-top: -50px;
 }
 .logoApp{
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 250px;
-   /* right: 0;*/
-    bottom: 0;
+    float: right;
 	width: 17%;
 }
 
