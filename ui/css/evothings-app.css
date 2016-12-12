@@ -930,3 +930,7 @@ p{
 .ui-header-fixed .ui-btn-left, .ui-header-fixed .ui-btn-right {
     margin-top: 15px !important;
 }
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    background-color: #fff !important;
+}
