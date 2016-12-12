@@ -74,15 +74,15 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		alert("prima");
+		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
-		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);
+		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
     //  alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
 		  if(conn==true){
-			  alert("ok");
+			//  alert("ok");
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
@@ -168,7 +168,7 @@ var app = (function()
 	
 	}
 
-	function checkPermissionCallback(status) {
+/*	function checkPermissionCallback(status) {
 		 alert("dentro"+status.hasPermission);
   if(!status.hasPermission) {
 	  alert("prova");
@@ -183,7 +183,7 @@ var app = (function()
       },
       errorCallback);
   }
-}
+}*/
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
