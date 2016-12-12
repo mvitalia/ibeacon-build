@@ -226,11 +226,11 @@ app.runScanTimer = function()
 function startScan()
 {
 		  // Inizio scansione dei vari beacon
-		alert("start scan");
+		//alert("start scan");
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
-			  	alert("internet");
+			 // 	alert("internet");
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
@@ -240,10 +240,10 @@ function startScan()
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (ID INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
                                           },
                              function () {
-                                             alert("Errore"+e.message);
+                                          //   alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Creazione tabella dispositivi");
+                                          //  alert("Creazione tabella dispositivi");
                                         }
          						)
 		 // Fine della creazione delle tabella db 
