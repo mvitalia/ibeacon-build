@@ -917,12 +917,12 @@ p{
 }
 
 .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
-    background-color: #fff;
-    border-color: #070707;
+    background-color: #fff !important;
+    border-color: #070707 !important;
 
 }
 
 .ui-header-fixed {
-    padding-top: 10px;
+    padding-top: 10px !important;
     
 }
