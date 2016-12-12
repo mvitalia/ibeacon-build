@@ -926,3 +926,7 @@ p{
     padding-top: 20px !important;
     
 }
+
+.ui-header-fixed .ui-btn-left, .ui-header-fixed .ui-btn-right {
+    margin-top: 15px !important;
+}
