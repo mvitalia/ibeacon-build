@@ -41,11 +41,12 @@
         <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
         </div>
-         <div class="LogoutUtente">
-                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-        </div>
+        
         </div>
         <div role="main" class="ui-content">
+            <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+             </div>
          <div class="ui-grid-solo ui-responsive">
              <div class="noBeacon">
              <p class="testo">Spiegazione di cosa fa l ' applicazione</p>
@@ -370,7 +371,7 @@
 	 if(p=='true')
      {
          $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
+         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('Id_login')+"</h2>";
          $('.LoginUtente').append(benvenuto);
          $('.LoginUtente').addClass("benvenuto_utente");
      }
@@ -380,11 +381,7 @@
     //  $(':text, :password, :date', '#registrazioneSincro').val(''); 
 });
  
-   $(document).on("pageinit", "#database", function () {
-    /*  alert("ok");
-       $("#lista_datiJson").html("");
-       caricoDatiServerSalvoInDb ();*/
-    });
+  
 	 $(document).on("pagebeforeshow", "#database", function () {
 		// alert("ok");
          $("#lista_datiJson").html("");
