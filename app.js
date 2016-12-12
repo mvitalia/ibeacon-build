@@ -522,8 +522,8 @@ function salvaLettura (proximity,dispositivo,notizia)
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+		//	alert('Errore'+e.status);
+          //  alert('Errore2'+e.statusTest);
 		}
      	});
 	  }else{
