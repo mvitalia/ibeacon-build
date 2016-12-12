@@ -243,7 +243,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                          //  alert("Creazione tabella dispositivi");
+                                            alert("Creazione tabella dispositivi");
                                         }
          						)
 		 // Fine della creazione delle tabella db 
@@ -262,7 +262,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                          //  alert("Inserimento dispositivi");
+                                            alert("Inserimento dispositivi");
                                          }
                     )
                     });
