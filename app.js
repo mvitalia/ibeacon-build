@@ -170,6 +170,7 @@ var app = (function()
 	function checkPermissionCallback(status) {
 		 alert("dentro");
   if(!status.hasPermission) {
+	  alert("prova");
     var errorCallback = function() {
       alert('Camera permission is not turned on');
     }
