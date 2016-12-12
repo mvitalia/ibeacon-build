@@ -153,7 +153,6 @@ function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,
 
 function loginUtente(usernameLogin,passLogin)
 {
-       alert(usernameLogin+"-"+passLogin);
        $.ajax({
         type: "POST",
 		data: '{userLogin:"'+usernameLogin+'",passLogin:"'+passLogin+'"}',
@@ -165,7 +164,7 @@ function loginUtente(usernameLogin,passLogin)
         var login = data.d;
 		if(login!="")
         {
-            //alert("Utente Loggato"+login);
+            alert("Utente Loggato"+login);
             localStorage.setItem('login', true);
             localStorage.setItem('Id_login',login);
             window.location.href = "#home";
