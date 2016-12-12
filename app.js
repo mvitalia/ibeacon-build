@@ -74,6 +74,9 @@ var app = (function()
 
 	function onDeviceReady()
 	{
+		alert("prima");
+		var permissions = cordova.plugins.permissions;
+		permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
     //  alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
@@ -163,6 +166,21 @@ var app = (function()
 		//updateTimer = setInterval(displayBeaconList, 500);
 	
 	}
+
+	function checkPermissionCallback(status) {
+  if(!status.hasPermission) {
+    var errorCallback = function() {
+      alert('Camera permission is not turned on');
+    }
+    alert("dentro");
+    permissions.requestPermission(
+      permissions.CAMERA,
+      function(status) {
+        if(!status.hasPermission) errorCallback();
+      },
+      errorCallback);
+  }
+}
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
