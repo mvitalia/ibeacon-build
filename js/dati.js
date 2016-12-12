@@ -164,9 +164,9 @@ function loginUtente(usernameLogin,passLogin)
         var login = data.d;
 		if(login!="")
         {
-           // alert("Utente Loggato"+login);
+            alert("Utente Loggato"+login);
             localStorage.setItem('login', true);
-            localStorage.setItem('Id_login',usernamelogin);
+            localStorage.setItem('Id_login',login);
             window.location.href = "#home";
         }else{
             alert("Utente non loggato");
