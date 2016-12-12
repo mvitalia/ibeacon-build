@@ -358,7 +358,7 @@
      {
          //alert("entra");
          $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('Id_login')+"</h2>";
+         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('username')+"</h2>";
          $('.LoginUtente').append(benvenuto);
          $('.LoginUtente').addClass("benvenuto_utente");
          $('.LogoutUtente').css("display","block");
@@ -373,7 +373,7 @@
 	 if(p=='true')
      {
          $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('Id_login')+"</h2>";
+         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('username')+"</h2>";
          $('.LoginUtente').append(benvenuto);
          $('.LoginUtente').addClass("benvenuto_utente");
      }
