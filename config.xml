@@ -32,9 +32,7 @@
 <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
 
- <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
-    </feature>
+ 
 
 <platform name="ios">
    <allow-intent href="itms:*" />
