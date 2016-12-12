@@ -82,6 +82,7 @@ var app = (function()
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
 		  if(conn==true){
+			  alert("ok");
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
