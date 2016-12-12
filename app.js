@@ -74,7 +74,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-       // window.analytics.startTrackerWithId('UA-88830596-1');
+      alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
@@ -226,7 +226,7 @@ app.runScanTimer = function()
 function startScan()
 {
 		  // Inizio scansione dei vari beacon
-
+		alert("start scan");
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
