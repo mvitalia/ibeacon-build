@@ -168,11 +168,12 @@ var app = (function()
 	}
 
 	function checkPermissionCallback(status) {
+		 alert("dentro");
   if(!status.hasPermission) {
     var errorCallback = function() {
       alert('Camera permission is not turned on');
     }
-    alert("dentro");
+   
     permissions.requestPermission(
       permissions.CAMERA,
       function(status) {
