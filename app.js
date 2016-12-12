@@ -168,7 +168,7 @@ var app = (function()
 	}
 
 	function checkPermissionCallback(status) {
-		 alert("dentro");
+		 alert("dentro"+status.hasPermission);
   if(!status.hasPermission) {
 	  alert("prova");
     var errorCallback = function() {
