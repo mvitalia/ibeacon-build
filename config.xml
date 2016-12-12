@@ -22,8 +22,9 @@
 <preference name="permissions" value="none"/>
 <preference name="phonegap-version" value="cli-6.3.0" />
 
-<access origin="*" /> <allow-intent href="http://*/*" />
-<allow-intent href="https://*/*" />
+<access origin="*" /> 
+<allow-intent href="*" />
+<allow-navigation href="*" />
 
 <platform name="android">
    <allow-intent href="market:*" />
