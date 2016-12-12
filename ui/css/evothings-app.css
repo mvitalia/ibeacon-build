@@ -778,7 +778,7 @@ input.btn-group.black:checked + label {
     position: absolute;
     margin: auto;
     top: 0;
-    left: 0;
+    left: 250px;
    /* right: 0;*/
     bottom: 0;
 	width: 17%;
