@@ -242,7 +242,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                          //  alert("Creazione tabella dispositivi");
+                                            alert("Creazione tabella dispositivi");
                                         }
          						)
 		 // Fine della creazione delle tabella db 
@@ -261,7 +261,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                           // alert("Inserimento dispositivi");
+                                            alert("Inserimento dispositivi");
                                          }
                     )
                     });
@@ -589,7 +589,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 
  function selezionaBeacon ()
    {
-	     
+	     alert("Seleziona beacon")
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(selezione,successoSelezione);     
    }
@@ -621,7 +621,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 			//Inizio monitoraggio dei beacon che vanno cercati
 			for (var i in regions)
 			{
-	
+	           alert("ok");
 				var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
 				regions[i].uuid);
