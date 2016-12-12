@@ -25,9 +25,9 @@
 
 <platform name="android">
    <allow-intent href="market:*" />
-       <config-file parent="/*" target="AndroidManifest.xml">
+       <config-file parent="/manifest" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.BLUETOOTH" />
-               <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+               <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
 </platform>
 
