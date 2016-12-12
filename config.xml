@@ -25,7 +25,13 @@
 
 <platform name="android">
    <allow-intent href="market:*" />
-    
+       <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+        </config-file>
+
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        </config-file>
 </platform>
 
 <feature name="Notification">
