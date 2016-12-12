@@ -76,7 +76,7 @@ var app = (function()
 	{
 		alert("prima");
 		var permissions = cordova.plugins.permissions;
-		permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
+		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);
     //  alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
@@ -176,7 +176,7 @@ var app = (function()
     }
    
     permissions.requestPermission(
-      permissions.CAMERA,
+      permissions.WRITE_EXTERNAL_STORAGE,
       function(status) {
         if(!status.hasPermission) errorCallback();
       },
