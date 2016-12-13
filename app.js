@@ -509,6 +509,9 @@ function startScan()
             }
   }
 
+window.cordova.plugins.firebase.messaging.onMessage(function(payload) {
+    alert("New FCM message: ", payload);
+});
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
