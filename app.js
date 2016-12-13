@@ -65,7 +65,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-	    window.FirebasePlugin.grantPermission();
+	    
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
