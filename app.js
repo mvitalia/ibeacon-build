@@ -65,6 +65,12 @@ var app = (function()
 
 	function onDeviceReady()
 	{
+		window.FirebasePlugin.getToken(function(token) {
+    // save this server-side and use it to push notifications to this device
+    alert(token);
+}, function(error) {
+    alert(error);
+});
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/

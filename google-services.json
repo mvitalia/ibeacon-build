@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "679615843317",
+    "firebase_url": "https://mvitalia-push-notification.firebaseio.com",
+    "project_id": "mvitalia-push-notification",
+    "storage_bucket": "mvitalia-push-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679615843317:android:63d776831421e91f",
+        "android_client_info": {
+          "package_name": "com.demomvitalia.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679615843317-qu38i8mafsustn8rpmm9usfhrlc6ah51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7RL5w3j3WNzAL_R4x-LUxv7CizL5Px2Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
