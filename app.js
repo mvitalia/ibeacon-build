@@ -81,7 +81,7 @@ var app = (function()
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
-		  alert("connessione: "+conn);
+		 // alert("connessione: "+conn);
 		  if(conn==true){
 			//  alert("ok");
               // Creazione delle tabelle del db 
@@ -284,7 +284,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                            alert("Inserimento dispositivi");
+                                          //  alert("Inserimento dispositivi");
                                          }
                     )
                     });
