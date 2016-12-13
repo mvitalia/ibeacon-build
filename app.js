@@ -244,12 +244,12 @@ function startScan()
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
-			  	window.FirebasePlugin.getToken(function(token) {
+		/*	  	window.FirebasePlugin.getToken(function(token) {
     // save this server-side and use it to push notifications to this device
     alert("Token"+token);
 }, function(error) {
     alert("Errore"+error);
-});
+});*/
 
 	     	//alert("internet"+connessione);
               // Creazione delle tabelle del db 
