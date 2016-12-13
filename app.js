@@ -59,6 +59,7 @@ var app = (function()
 			'deviceready',
 			function() { evothings.scriptsLoaded(onDeviceReady) },
 			false);
+			document.addEventListener("checkInternet", onOnline, false);
 	};
 
 	function checkInternet() 
