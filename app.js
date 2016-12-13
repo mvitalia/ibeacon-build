@@ -77,13 +77,13 @@ var app = (function()
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
-    //  alert("OnDevice");
+        alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
-		 // alert("connessione: "+conn);
+		  alert("connessione: "+conn);
 		  if(conn==true){
-			//  alert("ok");
+			 alert("ok");
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
@@ -248,11 +248,11 @@ app.runScanTimer = function()
 function startScan()
 {
 		  // Inizio scansione dei vari beacon
-		//alert("start scan");
+		 alert("start scan");
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
-			 // 	alert("internet");
+	     	alert("internet"+connessione);
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
