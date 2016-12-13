@@ -65,7 +65,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-	
+	    window.FirebasePlugin.grantPermission();
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
@@ -177,6 +177,12 @@ var app = (function()
       errorCallback);
   }
 }*/
+
+window.FirebasePlugin.onNotificationOpen(function(notification) {
+alert(notification);
+}, function(error) {
+    alert(error);
+});
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
