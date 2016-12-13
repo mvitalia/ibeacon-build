@@ -178,11 +178,7 @@ var app = (function()
   }
 }*/
 
-window.FirebasePlugin.onNotificationOpen(function(notification) {
-alert(notification);
-}, function(error) {
-    alert(error);
-});
+
 
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
@@ -250,12 +246,7 @@ function startScan()
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
-			  	window.FirebasePlugin.getToken(function(token) {
-    // save this server-side and use it to push notifications to this device
-    alert("Token"+token);
-}, function(error) {
-    alert("Errore"+error);
-});
+	
 
 	     	//alert("internet"+connessione);
               // Creazione delle tabelle del db 
