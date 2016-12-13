@@ -24,13 +24,13 @@
 <preference name="permissions" value="none"/>
 <preference name="phonegap-version" value="cli-6.3.0" />
 
-<access origin="*" /> 
-<allow-intent href="*" />
-<allow-navigation href="*" />
+
 
 <platform name="android">
    <allow-intent href="market:*" />
-      
+   <access origin="*" /> 
+   <allow-intent href="*" />
+   <allow-navigation href="*" />
 </platform>
 
 <feature name="Notification">
