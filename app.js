@@ -59,20 +59,19 @@ var app = (function()
 			'deviceready',
 			function() { evothings.scriptsLoaded(onDeviceReady) },
 			false);
-			document.addEventListener("checkInternet", onOnline, false);
 	};
 
-	function checkInternet() 
+/*	function checkInternet() 
  {
     
-     var online = window.connection.type;
+     var online = 
             if (online!=Connection.NONE) {
                 return true;
             } else {
                 return false;
             }
   }
-
+*/
 	function onDeviceReady()
 	{
 		/*alert("prima");
@@ -81,7 +80,7 @@ var app = (function()
         alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
-		  var conn = checkInternet();
+		  var conn = window.connection.type;
 		  alert("connessione: "+conn);
 		  if(conn==true){
 			 alert("ok");
