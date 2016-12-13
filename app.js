@@ -61,26 +61,17 @@ var app = (function()
 			false);
 	};
 
-/*	function checkInternet() 
- {
-    
-     var online = 
-            if (online!=Connection.NONE) {
-                return true;
-            } else {
-                return false;
-            }
-  }
-*/
+
+
 	function onDeviceReady()
 	{
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
-        alert("OnDevice");
+    //  alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
-		  var conn = window.connection.type;
+		  var conn = checkInternet();
 		  alert("connessione: "+conn);
 		  if(conn==true){
 			 alert("ok");
@@ -507,7 +498,16 @@ function startScan()
 		
 }
 
- 
+ 	function checkInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
 
 
 function salvaLettura (proximity,dispositivo,notizia)
