@@ -65,12 +65,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-		window.FirebasePlugin.getToken(function(token) {
-    // save this server-side and use it to push notifications to this device
-    alert(token);
-}, function(error) {
-    alert(error);
-});
+	
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
@@ -249,6 +244,12 @@ function startScan()
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
+			  	window.FirebasePlugin.getToken(function(token) {
+    // save this server-side and use it to push notifications to this device
+    alert(token);
+}, function(error) {
+    alert(error);
+});
 	     	//alert("internet"+connessione);
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
