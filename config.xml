@@ -28,7 +28,8 @@
 <platform name="android">
    <allow-intent href="market:*" />
    <access origin="*" /> 
- 
+   <allow-intent href="*" />
+   <allow-navigation href="*" />
 </platform>
 
 <feature name="Notification">
