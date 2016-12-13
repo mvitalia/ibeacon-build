@@ -64,8 +64,8 @@ var app = (function()
 	function checkInternet() 
  {
     
-     var online = window.navigator.onLine;
-            if (online) {
+     var online = window.connection.type;
+            if (online!=Connection.NONE) {
                 return true;
             } else {
                 return false;
