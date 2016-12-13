@@ -81,6 +81,7 @@ var app = (function()
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
+		  alert("connessione: "+conn);
 		  if(conn==true){
 			//  alert("ok");
               // Creazione delle tabelle del db 
