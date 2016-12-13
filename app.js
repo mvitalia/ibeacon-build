@@ -246,9 +246,9 @@ function startScan()
 		  if(connessione==true){
 			  	window.FirebasePlugin.getToken(function(token) {
     // save this server-side and use it to push notifications to this device
-    alert(token);
+    alert("Token"+token);
 }, function(error) {
-    alert(error);
+    alert("Errore"+error);
 });
 	     	//alert("internet"+connessione);
               // Creazione delle tabelle del db 
