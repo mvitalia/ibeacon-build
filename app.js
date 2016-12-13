@@ -235,11 +235,7 @@ app.runScanTimer = function()
 };
 // Fine funzioni per il controllo del bluetooth all' avvio della applicazione
 
-window.FirebasePlugin.onNotificationOpen(function(notification) {
-    alert(notification);
-}, function(error) {
-    alert(error);
-});
+
 
 function startScan()
 {
@@ -254,12 +250,7 @@ function startScan()
 }, function(error) {
     alert("Errore"+error);
 });
-window.FirebasePlugin.onTokenRefresh(function(token) {
-    // save this server-side and use it to push notifications to this device
-    alert(token);
-}, function(error) {
-    alert(error);
-});
+
 	     	//alert("internet"+connessione);
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
