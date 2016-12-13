@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>679615843317-sk0thpmm6b5lksr0939pjlqh0k5eb57b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.679615843317-sk0thpmm6b5lksr0939pjlqh0k5eb57b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDLALWC_l80mGxRBftvKngQwM9FVGtEgv8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>679615843317</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.demomvitalia.com</string>
+	<key>PROJECT_ID</key>
+	<string>mvitalia-push-notification</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mvitalia-push-notification.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:679615843317:ios:63d776831421e91f</string>
+	<key>DATABASE_URL</key>
+	<string>https://mvitalia-push-notification.firebaseio.com</string>
+</dict>
+</plist>
