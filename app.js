@@ -244,14 +244,12 @@ function startScan()
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		  if(connessione==true){
-		FCMPlugin.getToken(
-  function(token){
-    alert(token);
-  },
-  function(err){
-    alert('error retrieving token: ' + err);
-  }
-)
+			  	window.FirebasePlugin.getToken(function(token) {
+    // save this server-side and use it to push notifications to this device
+    alert("Token"+token);
+}, function(error) {
+    alert("Errore"+error);
+});
 	     	//alert("internet"+connessione);
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
