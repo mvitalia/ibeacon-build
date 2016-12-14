@@ -618,7 +618,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 
  function selezionaBeacon ()
    {
-	    // alert("Seleziona beacon")
+	     alert("Seleziona beacon")
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(selezione,successoSelezione);     
    }
@@ -630,7 +630,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 
    function erroreSelezione ()
    {
-	   //alert("Errore selezione");
+	   alert("Errore selezione");
    }
 
    function successoSelezione(tx,dati)
