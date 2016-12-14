@@ -748,9 +748,10 @@ $('#inviaInfoMv').validate({
 </script>
 <script>
 /* Per la mappa */
-$(document).ready(function() {
-	GMap.init();
-});
+
+ $(document).on("pagebeforeshow", "#mappa", function () {
+		GMap.init();
+    });
 
 	/* Style of the map */
 		 var styles = [
