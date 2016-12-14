@@ -864,12 +864,12 @@ google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
 
 <!---loop dei progetti della zona --->
 
-var image = 'img/marker.png';
+//var image = 'img/marker.png';
 var marker = new google.maps.Marker({
 map: GMap.map,
 position: new google.maps.LatLng(45.02045, 7.66473),
-draggable: false,
-icon: image
+draggable: false
+//icon: image
 });
 
 google.maps.event.addListener(marker, 'click', function() {
@@ -879,8 +879,8 @@ GMap.openInfoWindow(marker, '<strong>titolo</strong><br/><br/><a href="#" target
 var marker2 = new google.maps.Marker({
 map: GMap.map,
 position: new google.maps.LatLng(44.9177489, 8.1323169),
-draggable: false,
-icon: image
+draggable: false
+//icon: image
 });
 
 google.maps.event.addListener(marker2, 'click', function() {
