@@ -131,14 +131,16 @@
                         <input data-clear-btn="true" name="usernameLogin" id="usernameLogin" value="" type="text">
                     <label for="cognome">Password:</label>
                         <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="password">
-                </form>
-                <hr>
-               
                 <div>
-                    <button type="submit" class="ui-btn" id="loginUtente">Login</button>
+                       <input type="submit"  class="ui-btn" value="Login" id="submit">
+                 
                 </div>
-                 <div>
-                     <a href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
+                  </form>
+                 <hr>
+                 <div> 
+                     <div style="text-align:center; margin-bottom:15px;" >  <a class="link_reg_pass"  href="#lostPassword"  data-transition="slide">Password dimenticata?</a> </div>   
+                     <div style="text-align:center" >  <a class="link_reg_pass" href="#registrazione"  data-transition="slide">Iscriviti</a> </div>
+                    
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -164,7 +166,7 @@
         </div>
         </div>
         <div role="main" class="ui-content">
-            <h3 class="titoliForm">Form di Registrazione </h3>
+             <h3 class="titoliForm">Form di Registrazione </h3>
                <form id="registrazioneSincro">
                     <label for="nome">Nome:</label>
                         <input data-clear-btn="true" name="nome" id="nome" value="" type="text">
@@ -183,12 +185,18 @@
                     <label for="pass">Password</label>
                         <input data-clear-btn="true" name="pass" id="pass" value="" type="password">    
                     <hr>
+                     <div class="box_privacy">
+                        <h3>Privacy</h3>
+                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
+                        <p>Per maggiori informazioni clicca qui </p>
+                    </div>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" name="privacy" id="privacy" value="html"/> 
-                </form>
+              
                 <hr>
                 <div>
-                    <button type="submit" class="ui-btn" id="iscriviUtente">Registrati</button>
+                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
                 </div>
+                  </form>
         </div>
         <div data-role="footer" data-position="fixed">
             <!--Tab bar jquery mobile-->
@@ -213,7 +221,7 @@
         </div>
         </div>
         <div role="main" class="ui-content">
-            <h3 class="titoliForm">Invia Info </h3>
+           <h3 class="titoliForm">Invia Info </h3>
                <form id="inviaInfoNotifica">
                     <label for="nome">Nome:</label>
                         <input data-clear-btn="true" name="nomeInfo" id="nomeInfo" required value="" type="text">
@@ -225,12 +233,18 @@
                         <textarea data-clear-btn="true" name="richiestaInfo" id="richiestaInfo" rows="5" > 
                         </textarea>
                     <hr>
+                    <div class="box_privacy">
+                        <h3>Privacy</h3>
+                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
+                        <p>Per maggiori informazioni clicca qui </p>
+                    </div>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" required name="privacyInfo" id="privacyInfo" value="html"/> 
-                </form>
+                
                 <hr>
                 <div>
-                    <button  class="ui-btn" id="inviaInformazione">Invia Info</button>
+                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
                 </div>
+                </form>
         </div>
         <div data-role="footer" data-position="fixed">
             <!--Tab bar jquery mobile-->
@@ -255,7 +269,7 @@
         </div>
         </div>
         <div role="main" class="ui-content">
-            <div class="wrapper_logo">
+             <div class="wrapper_logo">
                   <img class="logo_mv" src="img/logo_mvitalia.png"/>  
             </div>
                <p>Richiedi informazioni tecniche</p>
@@ -270,10 +284,15 @@
                     <label for="lnascita">Richiesta Informazione</label>
                         <textarea  name="richiestaMv" id="richiestaMv" rows="5" > </textarea>
                     <hr>
+                     <div class="box_privacy">
+                        <h3>Privacy</h3>
+                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
+                        <p>Per maggiori informazioni clicca qui </p>
+                    </div>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
                
                  <div>
-                    <input type="submit"  class="ui-btn" value="Invia Mvitalia" id="submit">
+                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
                 </div>
                  </form>
         </div>
@@ -289,7 +308,41 @@
             </div>
         </div>
     </div>
-     
+      <div data-role="page" id="lostPassword">
+        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+            <h1 id="app-title">Password Dimenticata</h1>
+             <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
+         <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+        </div>
+        </div>
+        <div role="main" class="ui-content">
+            <h3 class="titoliForm">Recupero Password Form </h3>
+               <form id="recuperoPass">
+                    <label for="nome">Email:</label>
+                        <input data-clear-btn="true" name="emailRecuperoPass" id="emailRecuperoPass" value="" placeholder="Inserire la propria E-mail" type="text">
+                   
+                <div>
+                       <input type="submit"  class="ui-btn" value="Login" id="submit">
+                 
+                </div>
+                  </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!--Tab bar jquery mobile-->
+            <div data-role="navbar" data-iconpos="top">
+                 <ul>
+                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
+                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
+                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
+                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
+                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
   
 <script>
 
@@ -347,11 +400,73 @@
      });
 
 
-     $('#iscriviUtente').click(function(){
-      /*   var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/rn/g,"n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}*/
-     
-     // alert("Partito");
-      var privacy;
+    // Validazione e registrazione utente
+$('#registrazioneSincro').validate({
+    rules: {
+        nome: {
+            required: true
+        },
+        cognome: {
+            required: true
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        lnascita: {
+            required: true
+        },
+        dataNascita: {
+            required: true
+        },
+        citta: {
+            required: true
+        },
+        username: {
+            required: true
+        },
+        pass: {
+            required: true
+        },
+         privacy: {
+            required: true
+        }
+    },
+    messages: {
+        nome: {
+            required: "Inserire il nome."
+        },
+        cognome: {
+            required: "Inserire il cognome."
+        },
+        email: {
+            required: "Inserire l' E-mail.",
+            email:"Prego inserire un E-mail corretta"
+        },
+         lnascita: {
+            required: "Inserire luogo di nascita"
+        },
+         dataNascita: {
+            required: "Inserire la data di nascita"
+        },
+         citta: {
+            required: "Inserire residenza"
+        },
+         username: {
+            required: "Inserire username"
+        },
+         pass: {
+            required: "Inserire password"
+        },
+        privacy: {
+            required: "Acconsenti privacy."
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+     var privacy;
       if ($('#privacy').is(":checked"))
       {
          privacy=1
@@ -366,20 +481,65 @@
       var citta = $("#citta").val();
       var username = $("#username").val();
       var password = $("#pass").val();
-    /*  var passwordCodficata = Base64.encode(password);
-    alert(passwordCodficata);
-     /* var decodifca =  Base64.decode(passwordCodficata);
-      alert(decodifca);*/
       aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
-      });
-    $('#loginUtente').click(function(){
-     
-      alert("Partito");
-      var usernameLogin = $("#usernameLogin").val();
+      return false;
+    }
+});
+
+
+// Validate del form login 
+$('#loginSincro').validate({
+    rules: {
+        usernameLogin: {
+            required: true
+        },
+        passLogin: {
+            required: true
+        }
+    },
+    messages: {
+        usernameLogin: {
+            required: "Inserire ilusername."
+        },
+        passLogin: {
+            required: "Inserire password."
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+     var usernameLogin = $("#usernameLogin").val();
       var passLogin = $("#passLogin").val();
-      loginUtente(usernameLogin,passLogin);     
-     // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
-      });
+      loginUtente(usernameLogin,passLogin);  
+      return false;
+    }
+});
+
+// Validate del form recupero password
+$('#recuperoPass').validate({
+    rules: {
+        emailRecuperoPass: {
+            required: true,
+            email: true
+        }
+    },
+    messages: {
+        usernameLogin: {
+            required: "Inserire E-mail",
+            email: "Inserire un E-mail valida"
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+     var emailRecuperoPass = $("#emailRecuperoPass").val();
+     recuperoPassword(emailRecuperoPass);  
+     return false;
+    }
+});
+
 
     $('.button_logout').click(function(){
         alert("entra");
@@ -440,8 +600,50 @@ $(document).on("click", ".ApriNotifica", function () {
 
 });*/
 
-$('#inviaInformazione').click(function(){
-    var pInfo
+// Validazione e invio email per l' informazione della notifica
+
+$('#inviaInfoNotifica').validate({
+    rules: {
+        nomeInfo: {
+            required: true
+        },
+        cognomeInfo: {
+            required: true
+        },
+        emailInfo: {
+            required: true,
+            email: true
+        },
+        richiestaInfo: {
+            required: true
+        },
+         privacyInfo: {
+            required: true
+        }
+    },
+    messages: {
+        nomeInfo: {
+            required: "Inserire il nome."
+        },
+        cognomeInfo: {
+            required: "Inserire il cognome."
+        },
+        emailInfo: {
+            required: "Inserire l' E-mail.",
+            email:"Prego inserire un E-mail corretta"
+        },
+        richiestaInfo: {
+            required: "Inserire la richiesta."
+        },
+        privacyInfo: {
+            required: "Acconsenti privacy."
+        }
+    },
+    errorPlacement: function (error, element) {
+        error.appendTo(element.parent().prev());
+    },
+    submitHandler: function (form) {
+     var pInfo
      if ($('#privacyInfo').is(":checked"))
       {
          pInfo=1
@@ -453,6 +655,8 @@ $('#inviaInformazione').click(function(){
       var eInfo = $("#emailInfo").val();
       var rInfo = $("#richiestaInfo").val();
      inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
+        return false;
+    }
 });
 
 // Validazione e invio email Mvitalia
