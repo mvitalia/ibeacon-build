@@ -74,7 +74,7 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-        
+        alert("ok");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
