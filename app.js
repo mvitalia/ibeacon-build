@@ -69,11 +69,9 @@ var app = (function()
 		/*alert("prima");
 		var permissions = cordova.plugins.permissions;
 		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
-        alert("OnDevice");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
-		  alert("connessione: "+conn);
 		  if(conn==true){
 			// alert("ok");
               // Creazione delle tabelle del db 
@@ -248,7 +246,7 @@ function startScan()
 		  if(connessione==true){
 	
 
-	     	alert("internet"+connessione);
+	     	
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
