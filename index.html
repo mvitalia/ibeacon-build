@@ -28,7 +28,6 @@
 	<script src="libs/evothings/ui/ui.js"></script>
 	<script src="app.js"></script>
     <script type="text/javascript" src="js/dati.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
     
 </head>
@@ -42,12 +41,11 @@
         <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
         </div>
-          <div class="LogoutUtente">
+         <div class="LogoutUtente">
                 <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-             </div>
+        </div>
         </div>
         <div role="main" class="ui-content">
-          
          <div class="ui-grid-solo ui-responsive">
              <div class="noBeacon">
              <p class="testo">Spiegazione di cosa fa l ' applicazione</p>
@@ -72,18 +70,17 @@
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
                     <li id="Login" ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                    <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
 	 <div data-role="page" id="database" >
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+        <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Notifiche Salvate</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
         </div>
-        <div class="LogoutUtente">
+         <div class="LogoutUtente">
                 <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
         </div>
         </div>
@@ -92,10 +89,8 @@
         <div class="LoginUtente">
                     
          </div>
-       
          <div class="ui-grid-solo ui-responsive">
             <ul data-role="listview" id="lista_datiJson" data-split-theme="a" data-split-icon="delete" data-inset="true"></ul>
-            <div id="noNotifiche"><p>Non ci sono notifiche da visualizzare</p></div>
             <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
                 <h3>Sei sicuro di volre cancellare le notifica?</h3>
                     <p>Se confermi la notifica verrà cancellata dalla memoria del dispositivo.</p>
@@ -115,39 +110,35 @@
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
                      <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
      <div data-role="page" id="login">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+        <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Login</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
         </div>
-          <div class="LogoutUtente">
+         <div class="LogoutUtente">
                 <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-            </div>
+        </div>
         </div>
         <div role="main" class="ui-content">
-           
             <h3 class="titoliForm">Login Form </h3>
                <form id="loginSincro">
                     <label for="nome">Username:</label>
                         <input data-clear-btn="true" name="usernameLogin" id="usernameLogin" value="" type="text">
                     <label for="cognome">Password:</label>
                         <input data-clear-btn="true" name="passLogin" id="passLogin" value="" type="password">
+                </form>
+                <hr>
+               
                 <div>
-                       <input type="submit"  class="ui-btn" value="Login" id="submit">
-                 
+                    <button type="submit" class="ui-btn" id="loginUtente">Login</button>
                 </div>
-                  </form>
-                 <hr>
-                 <div> 
-                     <div style="text-align:center; margin-bottom:15px;" >  <a class="link_reg_pass"  href="#lostPassword"  data-transition="slide">Password dimenticata?</a> </div>   
-                     <div style="text-align:center" >  <a class="link_reg_pass" href="#registrazione"  data-transition="slide">Iscriviti</a> </div>
-                    
+                 <div>
+                     <a href="#registrazione"  data-transition="slide"> <h3>Iscriviti</h3></a>
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
@@ -158,23 +149,21 @@
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
                      <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div data-role="page" id="registrazione">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+        <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Registrazione</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
         </div>
-          <div class="LogoutUtente">
+         <div class="LogoutUtente">
                 <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-            </div>
+        </div>
         </div>
         <div role="main" class="ui-content">
-            
             <h3 class="titoliForm">Form di Registrazione </h3>
                <form id="registrazioneSincro">
                     <label for="nome">Nome:</label>
@@ -194,18 +183,12 @@
                     <label for="pass">Password</label>
                         <input data-clear-btn="true" name="pass" id="pass" value="" type="password">    
                     <hr>
-                     <div class="box_privacy">
-                        <h3>Privacy</h3>
-                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
-                        <p>Per maggiori informazioni clicca qui </p>
-                    </div>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" name="privacy" id="privacy" value="html"/> 
-              
+                </form>
                 <hr>
                 <div>
-                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
+                    <button type="submit" class="ui-btn" id="iscriviUtente">Registrati</button>
                 </div>
-                  </form>
         </div>
         <div data-role="footer" data-position="fixed">
             <!--Tab bar jquery mobile-->
@@ -215,13 +198,12 @@
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Database</a></li>
                      <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
    <div data-role="page" id="inviaInfo">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+        <div data-role="header" class="header" data-position="fixed">
             <h1>Informazioni</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
@@ -243,18 +225,12 @@
                         <textarea data-clear-btn="true" name="richiestaInfo" id="richiestaInfo" rows="5" > 
                         </textarea>
                     <hr>
-                    <div class="box_privacy">
-                        <h3>Privacy</h3>
-                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
-                        <p>Per maggiori informazioni clicca qui </p>
-                    </div>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" required name="privacyInfo" id="privacyInfo" value="html"/> 
-                
+                </form>
                 <hr>
                 <div>
-                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
+                    <button  class="ui-btn" id="inviaInformazione">Invia Info</button>
                 </div>
-                </form>
         </div>
         <div data-role="footer" data-position="fixed">
             <!--Tab bar jquery mobile-->
@@ -264,13 +240,12 @@
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Database</a></li>
                      <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
      <div data-role="page" id="infoMvitalia">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+        <div data-role="header" class="header" data-position="fixed">
             <h1>Mvitalia</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
@@ -295,15 +270,10 @@
                     <label for="lnascita">Richiesta Informazione</label>
                         <textarea  name="richiestaMv" id="richiestaMv" rows="5" > </textarea>
                     <hr>
-                     <div class="box_privacy">
-                        <h3>Privacy</h3>
-                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
-                        <p>Per maggiori informazioni clicca qui </p>
-                    </div>
                       <b class="margine">Acconsento Privacy</b>   <input type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
                
                  <div>
-                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
+                    <input type="submit"  class="ui-btn" value="Invia Mvitalia" id="submit">
                 </div>
                  </form>
         </div>
@@ -315,76 +285,11 @@
                     <li ><a href="#database" data-icon="eye"   data-transition="slide">Database</a></li>
                      <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
-     <div data-role="page" id="lostPassword">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
-            <h1 id="app-title">Password Dimenticata</h1>
-             <div class="wrapper">
-            <img class="logoApp" src="img/search.jpg"/>    
-        </div>
-         <div class="LogoutUtente">
-                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-        </div>
-        </div>
-        <div role="main" class="ui-content">
-            <h3 class="titoliForm">Recupero Password Form </h3>
-               <form id="recuperoPass">
-                    <label for="nome">Email:</label>
-                        <input data-clear-btn="true" name="emailRecuperoPass" id="emailRecuperoPass" value="" placeholder="Inserire la propria E-mail" type="text">
-                   
-                <div>
-                       <input type="submit"  class="ui-btn" value="Login" id="submit">
-                 
-                </div>
-                  </form>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
-            <div data-role="navbar" data-iconpos="top">
-                 <ul>
-                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
-                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
-                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
-                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
-                </ul>
-            </div>
-        </div>
-    </div> 
-     <div data-role="page" id="mappa">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
-            <h1 id="app-title">Mappa Beacon</h1>
-             <div class="wrapper">
-            <img class="logoApp" src="img/search.jpg"/>    
-        </div>
-         <div class="LogoutUtente">
-                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-        </div>
-        </div>
-        <div role="main" class="ui-content">
-            <div id="map_canvas" style="width:100%;height:700px"></div>
-<a href="#mappa_ingrandita"  class="fancybox_mappa" style="display:none"></a>
-<div id="mappa_ingrandita" style="display:none;">
-<div id="map_canvas" style="width:100%;height:100%; max-width:750px; min-height:750px;"></div>
-</div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
-            <div data-role="navbar" data-iconpos="top">
-                 <ul>
-                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
-                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
-                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
-                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
-                </ul>
-            </div>
-        </div>
-    </div> 
+     
   
 <script>
 
@@ -397,7 +302,7 @@
      {
          //alert("entra");
          $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('username')+"</h2>";
+         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
          $('.LoginUtente').append(benvenuto);
          $('.LoginUtente').addClass("benvenuto_utente");
          $('.LogoutUtente').css("display","block");
@@ -412,17 +317,24 @@
 	 if(p=='true')
      {
          $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('username')+"</h2>";
+         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
          $('.LoginUtente').append(benvenuto);
          $('.LoginUtente').addClass("benvenuto_utente");
      }
     });
 
  $(document).on("pagebeforeshow", "#registrazione", function () {
-    //  $(':text, :password, :date', '#registrazioneSincro').val(''); 
+    /*  $(':text, :password, :date', '#registrazioneSincro').val(''); 
+    });*/	 
+/*function alertDismissed() {
+ alert("Partito");*/
 });
  
-  
+   $(document).on("pageinit", "#database", function () {
+    /*  alert("ok");
+       $("#lista_datiJson").html("");
+       caricoDatiServerSalvoInDb ();*/
+    });
 	 $(document).on("pagebeforeshow", "#database", function () {
 		// alert("ok");
          $("#lista_datiJson").html("");
@@ -435,73 +347,11 @@
      });
 
 
-// Validazione e registrazione utente
-$('#registrazioneSincro').validate({
-    rules: {
-        nome: {
-            required: true
-        },
-        cognome: {
-            required: true
-        },
-        email: {
-            required: true,
-            email: true
-        },
-        lnascita: {
-            required: true
-        },
-        dataNascita: {
-            required: true
-        },
-        citta: {
-            required: true
-        },
-        username: {
-            required: true
-        },
-        pass: {
-            required: true
-        },
-         privacy: {
-            required: true
-        }
-    },
-    messages: {
-        nome: {
-            required: "Inserire il nome."
-        },
-        cognome: {
-            required: "Inserire il cognome."
-        },
-        email: {
-            required: "Inserire l' E-mail.",
-            email:"Prego inserire un E-mail corretta"
-        },
-         lnascita: {
-            required: "Inserire luogo di nascita"
-        },
-         dataNascita: {
-            required: "Inserire la data di nascita"
-        },
-         citta: {
-            required: "Inserire residenza"
-        },
-         username: {
-            required: "Inserire username"
-        },
-         pass: {
-            required: "Inserire password"
-        },
-        privacy: {
-            required: "Acconsenti privacy."
-        }
-    },
-    errorPlacement: function (error, element) {
-        error.appendTo(element.parent().prev());
-    },
-    submitHandler: function (form) {
-     var privacy;
+     $('#iscriviUtente').click(function(){
+      /*   var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/rn/g,"n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}*/
+     
+     // alert("Partito");
+      var privacy;
       if ($('#privacy').is(":checked"))
       {
          privacy=1
@@ -516,67 +366,23 @@ $('#registrazioneSincro').validate({
       var citta = $("#citta").val();
       var username = $("#username").val();
       var password = $("#pass").val();
+    /*  var passwordCodficata = Base64.encode(password);
+    alert(passwordCodficata);
+     /* var decodifca =  Base64.decode(passwordCodficata);
+      alert(decodifca);*/
       aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
-      return false;
-    }
-});
-
-
-// Validate del form login 
-$('#loginSincro').validate({
-    rules: {
-        usernameLogin: {
-            required: true
-        },
-        passLogin: {
-            required: true
-        }
-    },
-    messages: {
-        usernameLogin: {
-            required: "Inserire ilusername."
-        },
-        passLogin: {
-            required: "Inserire password."
-        }
-    },
-    errorPlacement: function (error, element) {
-        error.appendTo(element.parent().prev());
-    },
-    submitHandler: function (form) {
-     var usernameLogin = $("#usernameLogin").val();
+      });
+    $('#loginUtente').click(function(){
+     
+      alert("Partito");
+      var usernameLogin = $("#usernameLogin").val();
       var passLogin = $("#passLogin").val();
-      loginUtente(usernameLogin,passLogin);  
-      return false;
-    }
-});
-
-// Validate del form recupero password
-$('#recuperoPass').validate({
-    rules: {
-        emailRecuperoPass: {
-            required: true,
-            email: true
-        }
-    },
-    messages: {
-        usernameLogin: {
-            required: "Inserire E-mail",
-            email: "Inserire un E-mail valida"
-        }
-    },
-    errorPlacement: function (error, element) {
-        error.appendTo(element.parent().prev());
-    },
-    submitHandler: function (form) {
-     var emailRecuperoPass = $("#emailRecuperoPass").val();
-     recuperoPassword(emailRecuperoPass);  
-     return false;
-    }
-});
+      loginUtente(usernameLogin,passLogin);     
+     // aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy);
+      });
 
     $('.button_logout').click(function(){
-      //  alert("entra");
+        alert("entra");
        // localStorage.removeItem("login");
           localStorage.setItem('login', false);
           localStorage.removeItem("Id_login");
@@ -634,53 +440,8 @@ $(document).on("click", ".ApriNotifica", function () {
 
 });*/
 
-
-
-
-// Validazione e invio email per l' informazione della notifica
-
-$('#inviaInfoNotifica').validate({
-    rules: {
-        nomeInfo: {
-            required: true
-        },
-        cognomeInfo: {
-            required: true
-        },
-        emailInfo: {
-            required: true,
-            email: true
-        },
-        richiestaInfo: {
-            required: true
-        },
-         privacyInfo: {
-            required: true
-        }
-    },
-    messages: {
-        nomeInfo: {
-            required: "Inserire il nome."
-        },
-        cognomeInfo: {
-            required: "Inserire il cognome."
-        },
-        emailInfo: {
-            required: "Inserire l' E-mail.",
-            email:"Prego inserire un E-mail corretta"
-        },
-        richiestaInfo: {
-            required: "Inserire la richiesta."
-        },
-        privacyInfo: {
-            required: "Acconsenti privacy."
-        }
-    },
-    errorPlacement: function (error, element) {
-        error.appendTo(element.parent().prev());
-    },
-    submitHandler: function (form) {
-     var pInfo
+$('#inviaInformazione').click(function(){
+    var pInfo
      if ($('#privacyInfo').is(":checked"))
       {
          pInfo=1
@@ -692,8 +453,6 @@ $('#inviaInfoNotifica').validate({
       var eInfo = $("#emailInfo").val();
       var rInfo = $("#richiestaInfo").val();
      inviaInformazione(pInfo,nInfo,cInfo,eInfo,rInfo);
-        return false;
-    }
 });
 
 // Validazione e invio email Mvitalia
@@ -750,151 +509,7 @@ $('#inviaInfoMv').validate({
 });
 
 </script>
-<script>
-/* Per la mappa */
 
- $(document).on("pagebeforeshow", "#mappa", function () {
-		GMap.init();
-    });
-
-	/* Style of the map */
-		 var styles = [
-		 {
-			stylers: [
-			  //{ "hue": "#f0f0f0" }
-	
-			]
-		 }
-		 ,{
-			  "featureType": "water",
-			  "stylers": [
-				 { "hue": "#90B8FD" },
-				 { "lightness": 0 },
-				 { "visibility": "on" }
-			  ]
-			}
-  
- 
-  
-			
-		 ,{
-			  "featureType": "landscape",
-			  "stylers": [
-				 { "color": "#F0F0F0" },
-				
-			  ]
-			}
-		  ,{ 
-		 "featureType": "administrative.country",
-		 "elementType": "geometry",
-		 "stylers": [
-			{ "color": "#777777" },
-			{ "weight": 1 }
-		 
-		 ]
-		  }
-		 ,{
-			  "featureType": "administrative.country",
-			  "elementType": "labels.text",
-			  "stylers": [
-				 { "visibility": "simplified" },
-				 { "color": "#333333" }
-			  ]
-			},
-		 
-		 {
-			featureType: "road",
-			elementType: "geometry",
-			stylers: [
-			  { lightness: 100 },
-			  { visibility: "simplified" }
-			]
-		 },{
-			featureType: "road",
-			elementType: "labels",
-			stylers: [
-			  { visibility: "off" }
-			]
-		 },{
-				featureType: "poi",
-				elementType: "labels",
-				stylers: [
-				  { visibility: "off" }
-				]
-			 }
-	 
-	
-		  ];
-
-</script>
-<script>
-var GMap = {
-map: null,
-infoWindow: null
-};
-
-GMap.closeInfoWindow = function() {
-GMap.infoWindow.close();
-};
-
-GMap.openInfoWindow = function(marker, testo) {
-var markerLatLng = marker.getPosition();
-GMap.infoWindow.setContent(testo);
-GMap.infoWindow.open(GMap.map, marker);
-},
-
-GMap.init = function() {
-var centerLatLng = new google.maps.LatLng(45.0199796,7.6471059);
-var styledMap = new google.maps.StyledMapType(styles, {name: "titolo"});
-
-var mapOptions = {
-zoom: 11, 				//zoom level
-center: centerLatLng, 		//center position
-scrollwheel: false, 	//zoom when scroll disable
-zoomControl: true, 		//show control zoom
-
-mapTypeControlOptions: {
-mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] 
-}
-
-};
-
-GMap.map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
-GMap.infoWindow = new google.maps.InfoWindow();
-
-//Associate the styled map with the MapTypeId and set it to display.
-GMap.map.mapTypes.set('map_style', styledMap);
-GMap.map.setMapTypeId('map_style');
-google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
-
-<!---loop dei progetti della zona --->
-
-//var image = "img/marker.png";
-var marker = new google.maps.Marker({
-map: GMap.map,
-position: new google.maps.LatLng(45.02045, 7.66473)
-//draggable: false,
-//icon: image
-});
-
-/*google.maps.event.addListener(marker, 'click', function() {
-GMap.openInfoWindow(marker, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
-});*/
-
-var marker2 = new google.maps.Marker({
-map: GMap.map,
-position: new google.maps.LatLng(44.9177489, 8.1323169)
-//draggable: false,
-//icon: image
-});
-
-/*google.maps.event.addListener(marker2, 'click', function() {
-GMap.openInfoWindow(marker2, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
-});*/
-
-
-}
-</script>
 </body>
 
 </html>
