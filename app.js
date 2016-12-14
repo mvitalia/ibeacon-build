@@ -69,6 +69,7 @@ var app = (function()
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
+		  alert(conn);
 		  if(conn==true){
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
@@ -212,16 +213,7 @@ app.runScanTimer = function()
 };
 // Fine funzioni per il controllo del bluetooth all' avvio della applicazione
 
-	function checkInternet() 
- {
-    
-     var online = window.navigator.onLine;
-            if (online) {
-                return true;
-            } else {
-                return false;
-            }
-  }
+
   
 
 function startScan()
@@ -230,6 +222,7 @@ function startScan()
 
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
+		  alert(connessione);
 		  if(connessione==true){
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
@@ -475,7 +468,16 @@ function startScan()
 }
 
  
-
+	function checkInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
