@@ -69,16 +69,18 @@
           </div>
         </li>
         <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
-        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-eye"></i>User/Login</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
-        <li><a href="infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
       <!-- Page Content -->
       <div class="conntet bg-v-2">
        
         <!-- Toolbar -->
-        <div id="toolbar" class="primary-color">
+        <div  class="toolbar primary-color">
           <span class="title">Magic Beep</span>
           <div class="open-right" id="open-right" data-activates="slide-out">
             <i class="ion-android-menu"></i>
@@ -205,7 +207,7 @@
             <div class="m-scene"> <!-- Main Container -->
         <!-- Sidebars -->
         <!-- Right Sidebar -->
-        <ul id="slide-out" class="side-nav collapsible">
+        <ul id="slide-out-2" class="side-nav collapsible">
         <li>
           <div class="sidenav-header primary-color">
             <div class="nav-social">
@@ -232,10 +234,11 @@
         <div  class="content grey-blue login">
 
         <!-- Toolbar -->
-        <div id="toolbar" class="tool-login primary-color animated fadeindown">
-          <a href="javascript:history.back()" class="open-left">
-            <i class="ion-android-arrow-back"></i>
-          </a>
+      <div  class="toolbar primary-color">
+          <span class="title">Magic Beep</span>
+          <div class="open-right" id="open-right" data-activates="slide-out-2">
+            <i class="ion-android-menu"></i>
+          </div>
         </div>
           <!-- Main Content -->
           <div class="login-form animated fadeinup delay-2 z-depth-1">
@@ -306,7 +309,7 @@
         <div  class="content grey-blue login">
 
         <!-- Toolbar -->
-        <div id="toolbar" class="tool-login primary-color animated fadeindown">
+        <div  class="toolbar tool-login primary-color animated fadeindown">
           <a href="javascript:history.back()" class="open-left">
             <i class="ion-android-arrow-back"></i>
           </a>
@@ -466,7 +469,94 @@
         </div>
     </div>
      <div data-role="page" id="infoMvitalia">
-        <div data-role="header" class="header" data-position="fixed">
+            <div class="m-scene"> <!-- Main Container -->
+        <!-- Sidebars -->
+        <!-- Right Sidebar -->
+        <ul id="slide-out-3" class="side-nav collapsible">
+        <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+            <div class="nav-avatar">
+              <img class="circle avatar" src="img/user.jpg" alt="">
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+      <!-- Page Content -->
+      <div class="content bg-v-2">
+       
+        <!-- Toolbar -->
+        <div  class="toolbar primary-color">
+          <span class="title">Magic Beep</span>
+          <div class="open-right" id="open-right-due" data-activates="slide-out-3">
+            <i class="ion-android-menu"></i>
+          </div>
+        </div>
+         <!-- Main Content -->
+        <div class="animated fadeinup delay-1">
+          
+    
+
+          <!-- Form Inputs --> 
+          <div class="form-inputs">
+                <div class="wrapper_logo">
+                  <img class="logo_mv" src="img/logo_mvitalia.png"/>  
+            </div>
+            <h4 class="center">Invia Informazioni</h4>
+             <form id="inviaInfoMv">
+            <div>
+              <div class="input-field animated fadeinright">
+                  <input data-role="none" name="nomeMv" id="nomeMv" value="" type="text">
+                <label for="nomeMv">Nome</label>
+              </div>
+              <div class="input-field animated fadeinright delay-1">
+                   <input data-role="none" name="cognomeMv" id="cognomeMv" value="" type="text">
+                <label for="cognomeMv">Cognome</label>
+              </div>
+            </div>
+            <div class="input-field animated fadeinright delay-2">
+                <input data-role="none" name="emailMv" id="emailMv" value="" type="text">
+              <label for="emailMv">Email</label>
+            </div>
+            <div class="input-field animated fadeinright delay-3">
+              <textarea class="materialize-textarea" id="richiestaMv"></textarea> 
+              <label for="richiestaMv">Richiesta</label>
+            </div>
+            <div>
+                        <h3>Privacy</h3>
+                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
+                        <p>Per maggiori informazioni clicca qui </p>
+            </div>
+            <p class="remember animated bouncein delay-6">
+               <input data-role="none" type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
+              <label for="privacyMv">Acconsento privacy</label>
+            </p>
+             <div class="box_submit_button">
+                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Invia" id="btn_submit_infoMv">
+            </div>
+       
+            </form>
+          </div>
+        </div> <!-- End of Main Contents -->
+      </div> <!-- End of Page Content -->
+    
+     </div> <!-- End of Page Container -->
+      <!--  <div data-role="header" class="header" data-position="fixed">
             <h1>Mvitalia</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
@@ -504,7 +594,7 @@
                  </form>
         </div>
         <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
+            <!--Tab bar jquery mobile
             <div data-role="navbar" data-iconpos="top">
                  <ul>
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
@@ -513,7 +603,7 @@
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
       <div data-role="page" id="lostPassword">
         <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">

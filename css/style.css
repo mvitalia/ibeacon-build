@@ -603,7 +603,7 @@ footer.page-footer {
 }
 /* Toolbar */
 
-#toolbar {
+.toolbar {
     width: 100%;
     height: 56px;
     position: fixed;
@@ -612,7 +612,7 @@ footer.page-footer {
     left: 0;
     right: 0;
 }
-#toolbar.transparent {
+.toolbar.transparent {
     background-color: transparent !important;
     position: absolute;
     top: 0;
@@ -636,12 +636,12 @@ footer.page-footer {
     text-align: center;
     position: relative;
 }
-#toolbar i {
+.toolbar i {
     font-size: 24px;
     line-height: 56px;
     color: #fff;
 }
-#toolbar .title {
+.toolbar .title {
     font-size: 22px;
     font-weight: 300;
     color: #fff;
@@ -666,7 +666,7 @@ footer.page-footer {
     padding: 16px;
     margin: 0;
     min-height: auto;
-    color: #444;
+    color: #444 !important;
     background-color: transparent;
     border: none;
     line-height: inherit;
@@ -1691,6 +1691,7 @@ li.your-comment {
 }
 .form-inputs {
     padding: 20px;
+    margin-top: 50px;
 }
 .form-inputs h4 {
     margin-bottom: 25px;
