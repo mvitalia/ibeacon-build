@@ -33,6 +33,12 @@ $('#open-right').sideNav({
     closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
 });
 
+$('#open-right-uno').sideNav({
+    menuWidth: 240, // Default is 240
+    edge: 'right', // Choose the horizontal origin
+    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+});
+
 $('#open-right-due').sideNav({
     menuWidth: 240, // Default is 240
     edge: 'right', // Choose the horizontal origin

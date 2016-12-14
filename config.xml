@@ -5,8 +5,8 @@
    xmlns="http://www.w3.org/ns/widgets"
    xmlns:gap="http://phonegap.com/ns/1.0">
 
-<name>Scan dispositivi</name>
-<description> Testing the on-board accelerometer </description>
+<name>Magic Beep</name>
+<description> App per rilevare dispositivi </description>
 <author email="a.carlucci@mvitalia" href="http://www.mvitalia.com"> MVitalia </author>
 <content src="index.html" />
 
