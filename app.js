@@ -61,16 +61,7 @@ var app = (function()
 			false);
 	};
 
-	function checkInternet() 
- {
-    
-     var online = window.navigator.onLine;
-            if (online) {
-                return true;
-            } else {
-                return false;
-            }
-  }
+
 
 	function onDeviceReady()
 	{
@@ -221,6 +212,16 @@ app.runScanTimer = function()
 };
 // Fine funzioni per il controllo del bluetooth all' avvio della applicazione
 
+	function checkInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
   
 
 function startScan()
