@@ -28,6 +28,7 @@
 	<script src="libs/evothings/ui/ui.js"></script>
 	<script src="app.js"></script>
     <script type="text/javascript" src="js/dati.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
     
 </head>
@@ -334,6 +335,31 @@
                  
                 </div>
                   </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!--Tab bar jquery mobile-->
+            <div data-role="navbar" data-iconpos="top">
+                 <ul>
+                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
+                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
+                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
+                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+     <div data-role="page" id="mappa">
+        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+            <h1 id="app-title">Mappa Beacon</h1>
+             <div class="wrapper">
+            <img class="logoApp" src="img/search.jpg"/>    
+        </div>
+         <div class="LogoutUtente">
+                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
+        </div>
+        </div>
+        <div role="main" class="ui-content">
+            <div id="map_canvas" style="width:100%;height:700px"></div>
         </div>
         <div data-role="footer" data-position="fixed">
             <!--Tab bar jquery mobile-->
@@ -712,7 +738,150 @@ $('#inviaInfoMv').validate({
 });
 
 </script>
+<script>
+/* Per la mappa */
+$(document).ready(function() {
+	GMap.init();
+});
 
+	/* Style of the map */
+		 var styles = [
+		 {
+			stylers: [
+			  //{ "hue": "#f0f0f0" }
+	
+			]
+		 }
+		 ,{
+			  "featureType": "water",
+			  "stylers": [
+				 { "hue": "#90B8FD" },
+				 { "lightness": 0 },
+				 { "visibility": "on" }
+			  ]
+			}
+  
+ 
+  
+			
+		 ,{
+			  "featureType": "landscape",
+			  "stylers": [
+				 { "color": "#F0F0F0" },
+				
+			  ]
+			}
+		  ,{ 
+		 "featureType": "administrative.country",
+		 "elementType": "geometry",
+		 "stylers": [
+			{ "color": "#777777" },
+			{ "weight": 1 }
+		 
+		 ]
+		  }
+		 ,{
+			  "featureType": "administrative.country",
+			  "elementType": "labels.text",
+			  "stylers": [
+				 { "visibility": "simplified" },
+				 { "color": "#333333" }
+			  ]
+			},
+		 
+		 {
+			featureType: "road",
+			elementType: "geometry",
+			stylers: [
+			  { lightness: 100 },
+			  { visibility: "simplified" }
+			]
+		 },{
+			featureType: "road",
+			elementType: "labels",
+			stylers: [
+			  { visibility: "off" }
+			]
+		 },{
+				featureType: "poi",
+				elementType: "labels",
+				stylers: [
+				  { visibility: "off" }
+				]
+			 }
+	 
+	
+		  ];
+
+</script>
+<script>
+var GMap = {
+map: null,
+infoWindow: null
+};
+
+GMap.closeInfoWindow = function() {
+GMap.infoWindow.close();
+};
+
+GMap.openInfoWindow = function(marker, testo) {
+var markerLatLng = marker.getPosition();
+GMap.infoWindow.setContent(testo);
+GMap.infoWindow.open(GMap.map, marker);
+},
+
+GMap.init = function() {
+var centerLatLng = new google.maps.LatLng(45.0199796,7.6471059);
+var styledMap = new google.maps.StyledMapType(styles, {name: "titolo"});
+
+var mapOptions = {
+zoom: 11, 				//zoom level
+center: centerLatLng, 		//center position
+scrollwheel: false, 	//zoom when scroll disable
+zoomControl: true, 		//show control zoom
+
+mapTypeControlOptions: {
+mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] 
+}
+
+};
+
+GMap.map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
+GMap.infoWindow = new google.maps.InfoWindow();
+
+//Associate the styled map with the MapTypeId and set it to display.
+GMap.map.mapTypes.set('map_style', styledMap);
+GMap.map.setMapTypeId('map_style');
+google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
+
+<!---loop dei progetti della zona --->
+
+var image = 'img/marker.png';
+var marker = new google.maps.Marker({
+map: GMap.map,
+position: new google.maps.LatLng(45.02045, 7.66473),
+draggable: false,
+icon: image
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+GMap.openInfoWindow(marker, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+});
+
+var marker2 = new google.maps.Marker({
+map: GMap.map,
+position: new google.maps.LatLng(44.9177489, 8.1323169),
+draggable: false,
+icon: image
+});
+
+google.maps.event.addListener(marker2, 'click', function() {
+GMap.openInfoWindow(marker2, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+});
+
+
+}
+</script>
 </body>
 
 </html>
