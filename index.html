@@ -10,7 +10,7 @@
 	<title>iBeacon Scan</title>
 
 	<style>
-	/*	@import 'ui/css/evothings-app.css';*/
+		@import 'ui/css/evothings-app.css';
 	</style>
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
      <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css"/>
@@ -248,7 +248,7 @@
                 </div>
                  <div class="input-field" style="margin-bottom:20px;">
                     <i class="ion-android-lock prefix"></i> 
-                      <input data-role="none" name="passLogin" id="passLogin" value="" type="password">
+                      <input data-role="none"  name="passLogin" id="passLogin" value="" type="password">
                  <label for="passLogin">Password:</label>
                  </div>
                 <div class="box_submit_button">
@@ -722,7 +722,8 @@ $('#loginSincro').validate({
       return false;
     }
 });
-
+ 
+ 
 // Validate del form recupero password
 $('#recuperoPass').validate({
     rules: {
