@@ -518,7 +518,7 @@ blockquote {
 .page-content {
     padding: 30px 20px;
 }
-#content {
+.content {
     overflow: auto;
 }
 /* Footer */

@@ -12,7 +12,7 @@
 	<style>
 	/*	@import 'ui/css/evothings-app.css';*/
 	</style>
-     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
      <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css"/>
       <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -24,6 +24,7 @@
     <link href="css/swiper.css" rel="stylesheet" type="text/css">
     <link href="css/swipebox.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+     <link href="css/custom.css" rel="stylesheet" type="text/css">
   
 	<script>
 	// Redirect console.log to Evothings Workbench.
@@ -37,6 +38,13 @@
 	<script src="libs/evothings/ui/ui.js"></script>
 	<script src="app.js"></script>
     <script type="text/javascript" src="js/dati.js"></script>
+    <script src="js/jquery.swipebox.min.js"></script>   
+    <script src="js/materialize.min.js"></script> 
+    <script src="js/swiper.min.js"></script>  
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="js/masonry.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/functions.js"></script>
    
 
     
@@ -46,7 +54,7 @@
  
 
 	 <div  data-role="page" id="home" class="container_page" >
-         <div class="m-scene" id="main"> <!-- Main Container -->
+         <div class="m-scene"> <!-- Main Container -->
         <!-- Sidebars -->
         <!-- Right Sidebar -->
         <ul id="slide-out" class="side-nav collapsible">
@@ -73,7 +81,7 @@
       </ul>
       <!-- End of Sidebars -->
       <!-- Page Content -->
-      <div id="content" class="bg-v-2">
+      <div class="conntet bg-v-2">
        
         <!-- Toolbar -->
         <div id="toolbar" class="primary-color">
@@ -200,7 +208,64 @@
         </div>
     </div>
      <div data-role="page" id="login">
-        <div data-role="header" class="header" data-position="fixed">
+            <div class="m-scene"> <!-- Main Container -->
+        <!-- Sidebars -->
+        <!-- Right Sidebar -->
+        <ul id="slide-out" class="side-nav collapsible">
+        <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+            <div class="nav-avatar">
+              <img class="circle avatar" src="img/user.jpg" alt="">
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-eye"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+      <!-- Page Content -->
+        <div  class="content grey-blue login">
+
+        <!-- Toolbar -->
+        <div id="toolbar" class="tool-login primary-color animated fadeindown">
+          <a href="javascript:history.back()" class="open-left">
+            <i class="ion-android-arrow-back"></i>
+          </a>
+        </div>
+          <!-- Main Content -->
+          <div class="login-form animated fadeinup delay-2 z-depth-1">
+          <form id="loginSincro">
+                <div class="input-field">
+                    <i class="ion-android-contact prefix"></i> 
+                   <input data-role="none" name="usernameLogin" id="usernameLogin" value="" type="text">
+                    <label for="usernameLogin">Username:</label>
+                </div>
+                 <div class="input-field" style="margin-bottom:20px;">
+                    <i class="ion-android-lock prefix"></i> 
+                      <input data-role="none" name="passLogin" id="passLogin" value="" type="password">
+                 <label for="passLogin">Password:</label>
+                 </div>
+                <div class="box_submit_button">
+                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Login" id="btn_submit">
+                </div>
+         </form>
+          <span>Don't have an account? <a class="primary-text" href="signup.html">Sign Up</a></span>
+        </div><!-- End of Main Contents -->
+      </div> <!-- End of Page Content -->
+    
+     </div> <!-- End of Page Container -->
+       <!-- <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Login</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
@@ -229,7 +294,7 @@
                 </div>
         </div>
         <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
+            <!--Tab bar jquery mobile
             <div data-role="navbar" data-iconpos="top">
                  <ul>
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
@@ -238,7 +303,7 @@
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
     <div data-role="page" id="registrazione">
         <div data-role="header" class="header" data-position="fixed">
@@ -798,13 +863,7 @@ $('#inviaInfoMv').validate({
 });
 
 </script>
-<script src="js/jquery.swipebox.min.js"></script>   
-    <script src="js/materialize.min.js"></script> 
-    <script src="js/swiper.min.js"></script>  
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/masonry.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/functions.js"></script>
+
 </body>
 
 </html>
