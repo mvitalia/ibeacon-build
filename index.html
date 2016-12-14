@@ -239,6 +239,7 @@
         </div>
           <!-- Main Content -->
           <div class="login-form animated fadeinup delay-2 z-depth-1">
+               <h1>Login</h1>
           <form id="loginSincro">
                 <div class="input-field">
                     <i class="ion-android-contact prefix"></i> 
@@ -254,7 +255,7 @@
                        <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Login" id="btn_submit">
                 </div>
          </form>
-          <span>Don't have an account? <a class="primary-text" href="signup.html">Sign Up</a></span>
+          <span>Non hai ancora un' account? <a class="primary-text" href="#registrazione">Registrati</a></span>
         </div><!-- End of Main Contents -->
       </div> <!-- End of Page Content -->
     
@@ -300,7 +301,69 @@
         </div>-->
     </div>
     <div data-role="page" id="registrazione">
-        <div data-role="header" class="header" data-position="fixed">
+           <div class="m-scene"> <!-- Main Container -->
+      <!-- Page Content -->
+        <div  class="content grey-blue login">
+
+        <!-- Toolbar -->
+        <div id="toolbar" class="tool-login primary-color animated fadeindown">
+          <a href="javascript:history.back()" class="open-left">
+            <i class="ion-android-arrow-back"></i>
+          </a>
+        </div>
+          <!-- Main Content -->
+          <div class="login-form animated fadeinup delay-2 z-depth-1">
+                 <h1>Registrazione</h1>
+          <form id="registrazioneSincro">
+               <div class="input-field">
+                    <i class="ion-person prefix"></i> 
+                   <input data-role="none" name="nome" id="nome" value="" type="text">
+                    <label for="nome">Nome:</label>
+                </div>
+                <div class="input-field">
+                    <i class="ion-person prefix"></i> 
+                   <input data-role="none" name="cognome" id="cognome" value="" type="text">
+                    <label for="cognome">Cognome:</label>
+                </div>
+                <div class="input-field">
+                    <i class="ion-email prefix"></i> 
+                   <input data-role="none" name="email" id="email" value="" type="text">
+                    <label for="email">E-mail:</label>
+                </div>
+                <div class="input-field">
+                    <i class="ion-map prefix"></i> 
+                   <input data-role="none" name="lnascita" id="lnascita" value="" type="text">
+                    <label for="lnascita">Luogo Nascita:</label>
+                </div>
+                 <div class="input-field">
+                    <i class="ion-calendar prefix"></i> 
+                   <input data-role="none" name="dataNascita" id="dataNascita" value="" type="date">
+                    <label for="dataNascita">Data Nascita:</label>
+                </div>
+                <div class="input-field">
+                    <i class="ion-home prefix"></i> 
+                   <input data-role="none" name="citta" id="citta" value="" type="text">
+                    <label for="citta">Città Residenza:</label>
+                </div>
+                <div class="input-field">
+                    <i class="ion-android-contact prefix"></i> 
+                   <input data-role="none" name="username" id="username" value="" type="text">
+                    <label for="username">Username:</label>
+                </div>
+                 <div class="input-field" style="margin-bottom:20px;">
+                    <i class="ion-android-lock prefix"></i> 
+                      <input data-role="none" name="pass" id="pass" value="" type="password">
+                 <label for="pass">Password:</label>
+                 </div>
+                <div class="box_submit_button">
+                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Invia" id="btn_submit">
+                </div>
+         </form>
+        </div><!-- End of Main Contents -->
+      </div> <!-- End of Page Content -->
+    
+     </div> <!-- End of Page Container -->
+      <!--  <div data-role="header" class="header" data-position="fixed">
             <h1 id="app-title">Registrazione</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
@@ -343,7 +406,7 @@
                   </form>
         </div>
         <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
+            <!--Tab bar jquery mobile
             <div data-role="navbar" data-iconpos="top">
                  <ul>
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
@@ -352,7 +415,7 @@
                     <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
    <div data-role="page" id="inviaInfo">
         <div data-role="header" class="header" data-position="fixed">
