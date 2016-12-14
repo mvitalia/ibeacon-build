@@ -61,31 +61,27 @@ var app = (function()
 			false);
 	};
 
-	function checkInternet() 
- {
-    
-     var online = window.navigator.onLine;
-            if (online) {
-                return true;
-            } else {
-                return false;
-            }
-  }
+
 
 	function onDeviceReady()
 	{
-        
+	    
+		alert("prima");
+		/*var permissions = cordova.plugins.permissions;
+		permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, checkPermissionCallback, null);*/
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
 		  var conn = checkInternet();
+		  alert("conn"+conn);
 		  if(conn==true){
+			alert("ok");
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
 								               tx.executeSql("DROP TABLE IF EXISTS notizie ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione,  attivo_da datetime ,  attivo_a datetime , ultima_modifica, ID_dispositivo)");
                                           },
                              function () {
                                              alert("Errore"+e.message);
@@ -164,6 +160,25 @@ var app = (function()
 	
 	}
 
+/*	function checkPermissionCallback(status) {
+		 alert("dentro"+status.hasPermission);
+  if(!status.hasPermission) {
+	  alert("prova");
+    var errorCallback = function() {
+      alert('Camera permission is not turned on');
+    }
+   
+    permissions.requestPermission(
+      permissions.WRITE_EXTERNAL_STORAGE,
+      function(status) {
+        if(!status.hasPermission) errorCallback();
+      },
+      errorCallback);
+  }
+}*/
+
+
+
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
 {
@@ -221,15 +236,19 @@ app.runScanTimer = function()
 };
 // Fine funzioni per il controllo del bluetooth all' avvio della applicazione
 
-  
+
 
 function startScan()
 {
 		  // Inizio scansione dei vari beacon
-
+		// alert("start scan");
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
+		  alert("connessione"+connessione);
 		  if(connessione==true){
+	
+
+	     	
               // Creazione delle tabelle del db 
          		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          		db.transaction(
@@ -239,7 +258,7 @@ function startScan()
                                                tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (ID INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
                                           },
                              function () {
-                                             alert("Errore"+e.message);
+                                          //   alert("Errore"+e.message);
                                          },
                              function(){
                                           //  alert("Creazione tabella dispositivi");
@@ -261,11 +280,12 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                           // alert("Inserimento dispositivi");
+                                          //  alert("Inserimento dispositivi");
                                          }
                     )
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
+					  alert("Seleziona Beacon");
                      selezionaBeacon ();              
                 });
 		  }else{
@@ -280,7 +300,7 @@ function startScan()
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 		
-			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+			alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
             
 			for (var i in pluginResult.beacons)
 			{
@@ -298,13 +318,23 @@ function startScan()
 				var restituito=true;
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
-				
+				// Creazione data ora, per db sul server 
+				var dF;
+				dF = new Date();
+				dF = dF.getFullYear() + '-' +
+				('00' + (dF.getMonth() + 1)).slice(-2) + '-' +
+				('00' + dF.getDate()).slice(-2) + ' ' +
+				('00' + dF.getHours()).slice(-2) + ':' +
+				('00' + dF.getMinutes()).slice(-2) + ':' +
+				('00' + dF.getSeconds()).slice(-2);  
+				//alert("Data ora: "+dataFiltro);
+				// Fine creazione data_ora
 				//alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
 				db.transaction(
 					function(tx)
 					{
-               			tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo",[idUUID], 
+                        tx.executeSql("SELECT N.ID as ID_notizia, titolo, descrizione,immagine,link,allegato,attivo_da,attivo_a,data_creazione, D.ID as ID_dispositivo FROM dispositivi as D,notizie as N WHERE D.uuid=? AND D.id=N.ID_dispositivo AND N.attivo_da<= datetime('now','localtime') AND N.attivo_a>=datetime('now','localtime')",[idUUID], 
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
@@ -321,6 +351,7 @@ function startScan()
 								data_creazione_n = dati.rows.item(0).data_creazione;
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;	
+								//alert(attivo_da_n);
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
@@ -473,7 +504,17 @@ function startScan()
 		
 }
 
- 
+ 	function checkInternet() 
+ {
+    
+     var online = window.navigator.onLine;
+            if (online) {
+                return true;
+            } else {
+                return false;
+            }
+  }
+
 
 
 function salvaLettura (proximity,dispositivo,notizia)
@@ -511,8 +552,8 @@ function salvaLettura (proximity,dispositivo,notizia)
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+		//	alert('Errore'+e.status);
+          //  alert('Errore2'+e.statusTest);
 		}
      	});
 	  }else{
@@ -578,7 +619,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 
  function selezionaBeacon ()
    {
-	     
+	     alert("Seleziona beacon")
 	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
          db.transaction(selezione,successoSelezione);     
    }
@@ -590,7 +631,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 
    function erroreSelezione ()
    {
-	   //alert("Errore selezione");
+	   alert("Errore selezione");
    }
 
    function successoSelezione(tx,dati)
@@ -610,7 +651,7 @@ function salvaLettura (proximity,dispositivo,notizia)
 			//Inizio monitoraggio dei beacon che vanno cercati
 			for (var i in regions)
 			{
-	
+	          // alert("ok");
 				var beaconRegion = new locationManager.BeaconRegion(
 				i + 1,
 				regions[i].uuid);
