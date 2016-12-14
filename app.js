@@ -285,6 +285,7 @@ function startScan()
                     )
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
+					  alert("Seleziona Beacon");
                      selezionaBeacon ();              
                 });
 		  }else{
