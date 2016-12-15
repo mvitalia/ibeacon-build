@@ -237,14 +237,7 @@
           </div>
           <div id="lista_datiJson">
              <!-- Qua aggiungo in dinamico le notifiche -->   
-              <div class="single-news animated fadeinright delay-2">
-              <h4 class="single-news-title">
-                <a href="article.html">That I neglect my talents</a>
-              </h4>
-              <span class="single-news-channel">technet.com - 1 min ago</span> <span class="single-news-category">TECH</span>
-              <div class="clr">
-              </div>
-            </div>
+             
            </div>
         </div> 
          <!-- Footer -->
@@ -794,11 +787,11 @@
        $("#lista_datiJson").html("");
        caricoDatiServerSalvoInDb ();*/
     });
-/*	 $(document).on("pagebeforeshow", "#database", function () {
+	 $(document).on("pagebeforeshow", "#database", function () {
 		// alert("ok");
          $("#lista_datiJson").html("");
          selezionoDati ();
-    });*/
+    });
 
      $(document).on("pageshow", "#Notifica", function () {
            $(".schedaNotifica").html("");
