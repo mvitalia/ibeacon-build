@@ -92,22 +92,33 @@ function successoSelect(tx,dati)
                 var arrayData = new Array ();
                 arrayData = dataDue.split("-");
                 var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-                li_dati += "<li id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/>";
+              /*  li_dati += "<li id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+"><a class='detail' href='#'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(i).immagine+"'/>";
                 li_dati+="<h6 style='font-size:14px;color:#AE1C1F'>" + dati.rows.item(i).ID_notifica +"-"+ dati.rows.item(i).titolo +  "</h6> <p style='text-align:left !important;font-size:10px'><b>Data notifica: </b>" + dataCorretta + "</p> <p style='font-size:10px; text-align:left !important;'>";
-                li_dati+="<b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a><a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";
-            
+                li_dati+="<b>Descrizione: </b>"+dati.rows.item(i).descrizione+"</p></a><a  class='storage' href='#purchase' data-rel='popup' data-position-to='window' data-transition='pop'>Cancella</a></li>";*/
+                li_dati+="<div class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+">"+dati.rows.item(i).titolo+"</a>";
+                li_dati+=" </h4><span class='single-news-channel'>"+dati.rows.item(i).descrizione+"</span> <span class='single-news-category'>"+dataCorretta+"</span>";
+                li_dati+="div class='clr'></div></div>";
             }
-             $("#cancellaTutteNotifiche").show();
-             $("#noNotifiche").hide();
+           /*  $("#cancellaTutteNotifiche").show();
+             $("#noNotifiche").hide();*/
         }else{
-              $("#cancellaTutteNotifiche").hide();
-             $("#noNotifiche").show();
+           /*   $("#cancellaTutteNotifiche").hide();
+             $("#noNotifiche").show();*/
             
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
-       $("#lista_datiJson").append(li_dati).promise().done(function () {
+     /*  $("#lista_datiJson").append(li_dati).promise().done(function () {
          $(this).listview("refresh");
-        });
+        });*/
+         $("#lista_datiJson").append(li_dati);
+       /*   <div class="single-news animated fadeinright delay-2">
+              <h4 class="single-news-title">
+                <a href="article.html">That I neglect my talents</a>
+              </h4>
+              <span class="single-news-channel">technet.com - 1 min ago</span> <span class="single-news-category">TECH</span>
+              <div class="clr">
+              </div>
+            </div>*/
 }
 
 function erroreSelect (e)

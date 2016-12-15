@@ -4,3 +4,7 @@
     border: none !important;
     font-style: normal !important;
 }
+
+.p-20 {
+    margin-top: 40px;
+}
